@@ -1,0 +1,3 @@
+[General]
+buildDir="/home/cylindr/player/build/Desktop_Debug/qml"
+no-cmake-calls=false

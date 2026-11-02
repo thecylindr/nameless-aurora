@@ -1,0 +1,17 @@
+-rootPath
+/home/cylindr/player
+-cmake-output
+-output-file
+/home/cylindr/player/build/.qt/qml_imports/AuroraPlayer_build.cmake
+-importPath
+/home/cylindr/player/build
+-importPath
+/home/cylindr/player/build/qml/AuroraPlayer
+-importPath
+/home/cylindr/player/build/qml
+-importPath
+/usr/lib/qt6/qml
+-qrcFiles
+/home/cylindr/player/build/.qt/rcc/qmake_AuroraPlayer.qrc
+/home/cylindr/player/build/.qt/rcc/AuroraPlayer_raw_qml_0.qrc
+/home/cylindr/player/build/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc

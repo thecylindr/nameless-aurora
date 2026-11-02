@@ -1,0 +1,31 @@
+module AuroraPlayer
+typeinfo AuroraPlayer.qmltypes
+prefer :/qt/qml/AuroraPlayer/
+Main 3.0 qml/Main.qml
+Theme 3.0 qml/Theme.qml
+AuroraButton 3.0 qml/common/AuroraButton.qml
+AuroraIcon 3.0 qml/common/AuroraIcon.qml
+AuroraCard 3.0 qml/common/AuroraCard.qml
+AuroraField 3.0 qml/common/AuroraField.qml
+AuroraSlider 3.0 qml/common/AuroraSlider.qml
+AuroraSwitch 3.0 qml/common/AuroraSwitch.qml
+AuroraSegmented 3.0 qml/common/AuroraSegmented.qml
+AuroraProgress 3.0 qml/common/AuroraProgress.qml
+AuroraDialog 3.0 qml/common/AuroraDialog.qml
+AuroraSection 3.0 qml/common/AuroraSection.qml
+AuroraScrollBar 3.0 qml/common/AuroraScrollBar.qml
+AuroraToast 3.0 qml/common/AuroraToast.qml
+NavigationPane 3.0 qml/components/NavigationPane.qml
+TrackList 3.0 qml/components/TrackList.qml
+TrackDelegate 3.0 qml/components/TrackDelegate.qml
+PlayerBar 3.0 qml/components/PlayerBar.qml
+NowPlayingPanel 3.0 qml/components/NowPlayingPanel.qml
+StorageSummary 3.0 qml/components/StorageSummary.qml
+DependencyCard 3.0 qml/components/DependencyCard.qml
+RecommendationCard 3.0 qml/components/RecommendationCard.qml
+HomePage 3.0 qml/pages/HomePage.qml
+LibraryPage 3.0 qml/pages/LibraryPage.qml
+ImportPage 3.0 qml/pages/ImportPage.qml
+SettingsPage 3.0 qml/pages/SettingsPage.qml
+depends QtQuick
+

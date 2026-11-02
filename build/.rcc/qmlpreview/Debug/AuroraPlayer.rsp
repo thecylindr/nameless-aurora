@@ -1,0 +1,8 @@
+--interactive
+--resource
+/home/cylindr/player/build/.qt/rcc/qmake_AuroraPlayer.qrc
+--resource
+/home/cylindr/player/build/.qt/rcc/AuroraPlayer_raw_qml_0.qrc
+--resource
+/home/cylindr/player/build/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
+/home/cylindr/player/build/AuroraPlayer

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/cylindr/player/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

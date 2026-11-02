@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="qml/Main.qml">/home/cylindr/player/qml/Main.qml</file>
+    <file alias="qml/Theme.qml">/home/cylindr/player/qml/Theme.qml</file>
+    <file alias="qml/GlassCard.qml">/home/cylindr/player/qml/GlassCard.qml</file>
+    <file alias="qml/GlassButton.qml">/home/cylindr/player/qml/GlassButton.qml</file>
+  </qresource>
+</RCC>
+
