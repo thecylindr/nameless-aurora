@@ -1,0 +1,26 @@
+[
+  {
+    "animated": false,
+    "cpu_seconds": 1.1704,
+    "wall_seconds": 8.822,
+    "exit": 0
+  },
+  {
+    "animated": true,
+    "cpu_seconds": 1.6788,
+    "wall_seconds": 9.008,
+    "exit": 0
+  },
+  {
+    "animated": false,
+    "cpu_seconds": 1.1836,
+    "wall_seconds": 8.996,
+    "exit": 0
+  },
+  {
+    "animated": true,
+    "cpu_seconds": 1.7805,
+    "wall_seconds": 9.005,
+    "exit": 0
+  }
+]

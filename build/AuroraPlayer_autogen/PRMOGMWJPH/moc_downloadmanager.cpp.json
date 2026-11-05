@@ -6,19 +6,47 @@
                 {
                     "isClass": false,
                     "isFlag": false,
-                    "lineNumber": 24,
+                    "lineNumber": 35,
                     "name": "Role",
                     "values": [
                         "JobIdRole",
                         "TitleRole",
                         "UrlRole",
                         "StatusRole",
-                        "ProgressRole"
+                        "ProgressRole",
+                        "ErrorRole",
+                        "ServiceRole",
+                        "TrackIdRole"
                     ]
                 }
             ],
-            "lineNumber": 14,
+            "lineNumber": 17,
             "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "urls",
+                            "type": "QStringList"
+                        },
+                        {
+                            "name": "quality",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "authorized",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "titles",
+                            "type": "QStringList"
+                        }
+                    ],
+                    "index": 7,
+                    "lineNumber": 95,
+                    "name": "enqueue",
+                    "returnType": "void"
+                },
                 {
                     "access": "public",
                     "arguments": [
@@ -35,8 +63,9 @@
                             "type": "bool"
                         }
                     ],
-                    "index": 5,
-                    "lineNumber": 48,
+                    "index": 8,
+                    "isCloned": true,
+                    "lineNumber": 95,
                     "name": "enqueue",
                     "returnType": "void"
                 },
@@ -52,10 +81,27 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 6,
+                    "index": 9,
                     "isCloned": true,
-                    "lineNumber": 48,
+                    "lineNumber": 95,
                     "name": "enqueue",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "tracks",
+                            "type": "QVariantList"
+                        },
+                        {
+                            "name": "quality",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 10,
+                    "lineNumber": 98,
+                    "name": "enqueueNative",
                     "returnType": "void"
                 },
                 {
@@ -66,8 +112,8 @@
                             "type": "int"
                         }
                     ],
-                    "index": 7,
-                    "lineNumber": 49,
+                    "index": 11,
+                    "lineNumber": 99,
                     "name": "cancelJob",
                     "returnType": "void"
                 },
@@ -79,17 +125,93 @@
                             "type": "int"
                         }
                     ],
-                    "index": 8,
-                    "lineNumber": 50,
+                    "index": 12,
+                    "lineNumber": 100,
                     "name": "retryJob",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 9,
-                    "lineNumber": 51,
+                    "index": 13,
+                    "lineNumber": 101,
                     "name": "clearFinished",
                     "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 14,
+                    "lineNumber": 102,
+                    "name": "cancelAll",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 15,
+                    "lineNumber": 103,
+                    "name": "retryFailed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 16,
+                    "lineNumber": 104,
+                    "name": "openDiagnostics",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "trackId",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 17,
+                    "isConst": true,
+                    "lineNumber": 105,
+                    "name": "trackState",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "trackId",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 18,
+                    "lineNumber": 106,
+                    "name": "downloadTrack",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 19,
+                    "lineNumber": 108,
+                    "name": "downloadMissing",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "trackId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "candidate",
+                            "type": "QVariantMap"
+                        },
+                        {
+                            "name": "quality",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 20,
+                    "lineNumber": 110,
+                    "name": "enqueueAlternative",
+                    "returnType": "bool"
                 },
                 {
                     "access": "public",
@@ -99,9 +221,9 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 10,
+                    "index": 21,
                     "isConst": true,
-                    "lineNumber": 52,
+                    "lineNumber": 112,
                     "name": "serviceForUrl",
                     "returnType": "QString"
                 }
@@ -113,7 +235,7 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "lineNumber": 17,
+                    "lineNumber": 20,
                     "name": "busy",
                     "notify": "busyChanged",
                     "override": false,
@@ -130,7 +252,7 @@
                     "designable": true,
                     "final": false,
                     "index": 1,
-                    "lineNumber": 18,
+                    "lineNumber": 21,
                     "name": "progress",
                     "notify": "progressChanged",
                     "override": false,
@@ -147,7 +269,7 @@
                     "designable": true,
                     "final": false,
                     "index": 2,
-                    "lineNumber": 19,
+                    "lineNumber": 22,
                     "name": "statusText",
                     "notify": "statusTextChanged",
                     "override": false,
@@ -164,7 +286,7 @@
                     "designable": true,
                     "final": false,
                     "index": 3,
-                    "lineNumber": 20,
+                    "lineNumber": 23,
                     "name": "lastError",
                     "notify": "lastErrorChanged",
                     "override": false,
@@ -181,11 +303,147 @@
                     "designable": true,
                     "final": false,
                     "index": 4,
-                    "lineNumber": 21,
+                    "lineNumber": 24,
                     "name": "activeCount",
                     "notify": "activeCountChanged",
                     "override": false,
                     "read": "activeCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "lineNumber": 25,
+                    "name": "totalCount",
+                    "notify": "summaryChanged",
+                    "override": false,
+                    "read": "totalCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "lineNumber": 26,
+                    "name": "fileTotal",
+                    "notify": "summaryChanged",
+                    "override": false,
+                    "read": "fileTotal",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "lineNumber": 27,
+                    "name": "filesReady",
+                    "notify": "summaryChanged",
+                    "override": false,
+                    "read": "filesReady",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "lineNumber": 28,
+                    "name": "failedCount",
+                    "notify": "summaryChanged",
+                    "override": false,
+                    "read": "failedCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 9,
+                    "lineNumber": 29,
+                    "name": "succeededCount",
+                    "notify": "summaryChanged",
+                    "override": false,
+                    "read": "succeededCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 10,
+                    "lineNumber": 30,
+                    "name": "currentTitle",
+                    "notify": "summaryChanged",
+                    "override": false,
+                    "read": "currentTitle",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 11,
+                    "lineNumber": 31,
+                    "name": "currentService",
+                    "notify": "summaryChanged",
+                    "override": false,
+                    "read": "currentService",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 12,
+                    "lineNumber": 32,
+                    "name": "firstFailedTrack",
+                    "notify": "summaryChanged",
+                    "override": false,
+                    "read": "firstFailedTrack",
                     "required": false,
                     "scriptable": true,
                     "stored": true,
@@ -199,36 +457,68 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 55,
+                    "lineNumber": 115,
                     "name": "busyChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 1,
-                    "lineNumber": 56,
+                    "lineNumber": 116,
                     "name": "progressChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "lineNumber": 57,
+                    "lineNumber": 117,
                     "name": "statusTextChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 3,
-                    "lineNumber": 58,
+                    "lineNumber": 118,
                     "name": "lastErrorChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 4,
-                    "lineNumber": 59,
+                    "lineNumber": 119,
                     "name": "activeCountChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "lineNumber": 120,
+                    "name": "summaryChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "trackId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "success",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "source",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "lineNumber": 121,
+                    "name": "trackTransferFinished",
                     "returnType": "void"
                 }
             ],

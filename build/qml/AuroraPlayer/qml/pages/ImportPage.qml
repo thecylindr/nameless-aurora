@@ -1,5 +1,7 @@
+// Страница импорта: перенос из Яндекса/VK, локальные файлы и загрузка по ссылке или поиску YouTube.
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Dialogs
 import QtQuick.Layouts
 import "../common" as Common
 import "../components" as Components
@@ -7,219 +9,376 @@ import "../components" as Components
 Item {
     id: root
     property bool compact: false
-    property bool authorizedMode: false
-    property string authService: "Яндекс Музыка"
+    property bool searchMode: false
+    property var selected: ({})
+    property int selectedCount: 0
+    property bool pendingNative: false
     property bool pendingInspect: false
-    Theme { id: theme }
-
-    function selectedQuality() {
-        return ["original", "balanced", "compact"][qualitySegment.currentIndex]
-    }
-
-    function toolReady() {
-        return downloadManager.serviceForUrl(urlField.text) === "Spotify"
-                ? downloadDependencies.spotdlAvailable : downloadDependencies.ytDlpAvailable
-    }
-
-    function inspect() {
-        if (!urlField.text.length) {
-            toast.show("Вставьте ссылку на трек, плейлист или раздел библиотеки")
-            return
+    // Список профилей браузера: первым пунктом — автоопределение, затем найденные локальные профили.
+    property var localProfiles: [
+        {
+            id: "",
+            label: "Автоматически · найти существующий вход"
         }
-        if (authorizedMode && !browserAuth.sessionGranted) {
-            consentDialog.open()
-            return
-        }
-        pendingInspect = true
-        if (!toolReady()) {
-            downloadDependencies.installOrUpdate()
-            return
-        }
-        pendingInspect = false
-        importPreviewer.inspect(urlField.text, selectedQuality(), authorizedMode)
+    ].concat(webLogin.localBrowserProfiles())
+    Theme {
+        id: theme
     }
-
-    function requestDownload() {
-        if (importPreviewer.selectedCount === 0)
-            return
-        if (importPreviewer.selectedBytes > 0 && !storageManager.canFit(importPreviewer.selectedBytes)) {
-            toast.show("Недостаточно места с учётом резерва. Выберите меньше треков или другую папку.")
-            return
-        }
-        if (settingsStore.confirmBulkDownload && importPreviewer.selectedCount > 1)
-            confirmDialog.open()
-        else
-            importPreviewer.startSelected()
+    function quality() {
+        return settingsStore.quality;
     }
-
-    Connections {
-        target: downloadDependencies
-        function onRuntimeReadyChanged() {
-            if (root.pendingInspect && downloadDependencies.runtimeReady) {
-                root.pendingInspect = false
-                importPreviewer.inspect(urlField.text, root.selectedQuality(), root.authorizedMode)
+    function profileId() {
+        return localProfiles[localProfile.currentIndex]?.id || "";
+    }
+    function downloadable(track) {
+        return !track.downloaded && downloadManager.serviceForUrl(track.url || "").length > 0;
+    }
+    function chooseAll(value) {
+        let next = {}, count = 0;
+        for (let i = 0; i < libraryExchange.importedTracks.length; i++) {
+            const track = libraryExchange.importedTracks[i];
+            if (value && downloadable(track)) {
+                next[i] = true;
+                count++;
             }
         }
+        selected = next;
+        selectedCount = count;
+    }
+    function toggle(index) {
+        let next = Object.assign({}, selected);
+        if (next[index]) {
+            delete next[index];
+            selectedCount--;
+        } else {
+            next[index] = true;
+            selectedCount++;
+        }
+        selected = next;
+    }
+    // Разделяет выбранные треки на «нативные» (VK/Яндекс через браузер) и обычные ссылки, и ставит их в очередь.
+    function startNative() {
+        let tracks = [], urls = [], titles = [];
+        for (let i = 0; i < libraryExchange.importedTracks.length; i++)
+            if (selected[i]) {
+                const track = libraryExchange.importedTracks[i], service = downloadManager.serviceForUrl(track.url);
+                if (service === "VK" || service === "Яндекс Музыка")
+                    tracks.push(track);
+                else {
+                    urls.push(track.url);
+                    titles.push(track.artist + " — " + track.title);
+                }
+            }
+        if (tracks.length)
+            downloadManager.enqueueNative(tracks, quality());
+        if (urls.length)
+            downloadManager.enqueue(urls, quality(), false, titles);
+        chooseAll(false);
+    }
+    // Определяет, куда вести запрос: в перенос из браузера, в поиск YouTube или в разбор ссылки.
+    function inspect() {
+        if (!audioUrl.text.trim().length) {
+            toast.show("Вставь ссылку или название трека");
+            return;
+        }
+        const service = downloadManager.serviceForUrl(audioUrl.text);
+        if (!searchMode && (service === "VK" || service === "Яндекс Музыка")) {
+            libraryExchange.importFromBrowser(audioUrl.text, profileId());
+            return;
+        }
+        const available = !searchMode && service === "Spotify" ? downloadDependencies.spotdlAvailable : downloadDependencies.ytDlpAvailable;
+        if (!available) {
+            pendingInspect = true;
+            downloadDependencies.installOrUpdate();
+            return;
+        }
+        pendingInspect = false;
+        if (searchMode)
+            importPreviewer.searchYoutube(audioUrl.text, quality());
+        else
+            importPreviewer.inspect(audioUrl.text, quality(), false);
+    }
+    // Проверяет место и подтверждение перед массовой загрузкой, затем запускает её.
+    function requestDownload(native) {
+        pendingNative = native;
+        const count = native ? selectedCount : importPreviewer.selectedCount;
+        if (!count)
+            return;
+        if (!native && importPreviewer.selectedBytes > 0 && !storageManager.canFit(importPreviewer.selectedBytes)) {
+            toast.show("Недостаточно места. Выбери меньше треков или другую папку.");
+            return;
+        }
+        if (settingsStore.confirmBulkDownload && count > 1)
+            confirmDialog.open();
+        else if (native)
+            startNative();
+        else
+            importPreviewer.startSelected();
+    }
+    Connections {
+        target: libraryExchange
+        function onCompleted(id) {
+            root.chooseAll(true);
+        }
+        function onAudioImportRequested(tracks) {
+            root.chooseAll(false);
+        }
+    }
+    // После установки недостающих инструментов автоматически повторяем отложенный разбор.
+    Connections {
+        target: downloadDependencies
+        function onBusyChanged() {
+            if (root.pendingInspect && !downloadDependencies.busy)
+                Qt.callLater(function () {
+                    if (!root.pendingInspect || downloadDependencies.busy)
+                        return;
+                    root.pendingInspect = false;
+                    const ready = !root.searchMode && downloadManager.serviceForUrl(audioUrl.text) === "Spotify" ? downloadDependencies.spotdlAvailable : downloadDependencies.ytDlpAvailable;
+                    if (ready)
+                        root.inspect();
+                    else
+                        toast.show(downloadDependencies.lastError || downloadDependencies.statusText);
+                });
+        }
         function onLastErrorChanged() {
-            if (downloadDependencies.lastError.length)
-                toast.show(downloadDependencies.lastError)
+            if (downloadDependencies.lastError.length) {
+                root.pendingInspect = false;
+                toast.show(downloadDependencies.lastError);
+            }
         }
     }
     Connections {
-        target: importPreviewer
-        function onLastErrorChanged() {
-            if (importPreviewer.lastError.length)
-                toast.show(importPreviewer.lastError)
+        target: webLogin
+        function onLoginDone(service, ok, message) {
+            toast.show(message);
         }
     }
-
     ScrollView {
         id: scroll
         anchors.fill: parent
         clip: true
         contentWidth: availableWidth
-        background: Item {}
-        ScrollBar.vertical: Common.AuroraScrollBar { uiTheme: theme; x: scroll.width - width; height: scroll.height }
-
+        ScrollBar.vertical: Common.AuroraScrollBar {
+            uiTheme: theme
+            x: scroll.width - width
+            height: scroll.height
+        }
         ColumnLayout {
-            width: Math.min(900, Math.max(280, scroll.availableWidth - (compact ? 32 : 56)))
-            x: Math.max(compact ? 16 : 28, (scroll.availableWidth - width) / 2)
-            spacing: 18
-
-            Item { implicitHeight: compact ? 16 : 28 }
-            ColumnLayout {
-                Layout.fillWidth: true
-                spacing: 3
-                Text { text: "Импорт музыки"; color: theme.text; font.pixelSize: compact ? 24 : 30; font.weight: Font.DemiBold }
-                Text { text: "Сначала содержимое и объём — потом загрузка"; color: theme.subtext; font.pixelSize: theme.bodySize }
+            width: Math.min(920, scroll.availableWidth - (compact ? 32 : 64))
+            x: (scroll.availableWidth - width) / 2
+            spacing: 20
+            Item {
+                implicitHeight: compact ? 12 : 24
             }
-
-            Common.AuroraSegmented {
-                uiTheme: theme
+            Text {
+                text: "Собери свою музыку"
+                color: theme.text
+                font.pixelSize: compact ? 26 : 32
+                font.weight: Font.DemiBold
                 Layout.fillWidth: true
-                model: ["По ссылке", "Моя музыка"]
-                currentIndex: authorizedMode ? 1 : 0
-                onOptionSelected: index => authorizedMode = index === 1
+                wrapMode: Text.WordWrap
             }
-
-            Common.AuroraCard {
-                uiTheme: theme
+            Text {
+                text: "Любимые плейлисты и локальные файлы — в одной коллекции."
+                color: theme.subtext
+                font.pixelSize: 14
                 Layout.fillWidth: true
-                padding: 18
-                implicitHeight: inputContent.implicitHeight + padding * 2
+                wrapMode: Text.WordWrap
+            }
+            Rectangle {
+                Layout.fillWidth: true
+                implicitHeight: connectContent.implicitHeight + 40
+                color: theme.surface
+                radius: 22
+                border.color: theme.line
                 ColumnLayout {
-                    id: inputContent
+                    id: connectContent
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.top: parent.top
-                    anchors.margins: 18
-                    spacing: 14
-
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        visible: authorizedMode
-                        spacing: 10
-                        Text {
-                            Layout.fillWidth: true
-                            text: "Войдите в свой аккаунт в системном браузере. Aurora не получает и не сохраняет пароль; разрешение действует только для выбранной операции."
-                            color: theme.subtext
-                            font.pixelSize: theme.captionSize
-                            wrapMode: Text.WordWrap
-                        }
-                        Common.AuroraSegmented {
-                            uiTheme: theme
-                            Layout.fillWidth: true
-                            model: ["Яндекс Музыка", "VK"]
-                            currentIndex: authService === "VK" ? 1 : 0
-                            onOptionSelected: index => {
-                                authService = index === 1 ? "VK" : "Яндекс Музыка"
-                                browserAuth.revokeSessionAccess()
-                            }
-                        }
-                        RowLayout {
-                            Layout.fillWidth: true
-                            Common.AuroraButton {
-                                uiTheme: theme
-                                iconName: "link"
-                                text: browserAuth.sessionGranted ? "Браузер разрешён" : "Открыть браузер"
-                                onClicked: {
-                                    browserAuth.openService(authService)
-                                    consentDialog.open()
-                                }
-                            }
-                            Common.AuroraButton {
-                                uiTheme: theme
-                                visible: browserAuth.sessionGranted
-                                text: "Отозвать"
-                                onClicked: browserAuth.revokeSessionAccess()
-                            }
-                        }
-                    }
-
-                    Common.AuroraField {
-                        id: urlField
-                        uiTheme: theme
-                        Layout.fillWidth: true
-                        placeholderText: authorizedMode ? "Ссылка на плейлист или раздел вашей библиотеки" : "https://youtube.com/... или ссылка на другой сервис"
-                        iconName: "link"
-                        enabled: !importPreviewer.busy
+                    anchors.margins: 20
+                    spacing: 16
+                    Text {
+                        text: "Из Яндекса и VK"
+                        color: theme.text
+                        font.pixelSize: 22
+                        font.weight: Font.DemiBold
                     }
                     Text {
                         Layout.fillWidth: true
-                        text: downloadManager.serviceForUrl(urlField.text).length
-                              ? downloadManager.serviceForUrl(urlField.text) + (authorizedMode ? " · авторизованный режим" : "")
-                              : "YouTube · Яндекс Музыка · VK · Spotify"
+                        text: "Aurora использует сохранённый вход выбранного браузера, переносит список музыки и ставит аудио на загрузку. Если сервис не отдаст файл, в панели загрузок можно выбрать другой источник."
                         color: theme.subtext
-                        font.pixelSize: theme.captionSize
+                        font.pixelSize: 13
+                        wrapMode: Text.WordWrap
+                        lineHeight: 1.4
                     }
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: 7
-                        Text { text: "Формат и размер"; color: theme.subtext; font.pixelSize: theme.captionSize }
-                        Common.AuroraSegmented {
-                            id: qualitySegment
-                            uiTheme: theme
-                            Layout.fillWidth: true
-                            model: ["Оригинал", "192 kbps", "128 kbps"]
-                            currentIndex: ["original", "balanced", "compact"].indexOf(settingsStore.quality)
-                            onOptionSelected: index => settingsStore.quality = ["original", "balanced", "compact"][index]
-                        }
-                    }
-                    Common.AuroraButton {
+                    Common.AuroraCombo {
+                        id: localProfile
                         uiTheme: theme
                         Layout.fillWidth: true
-                        primary: true
-                        iconName: "search"
-                        text: importPreviewer.busy ? "Получаем список…" : downloadDependencies.busy ? "Устанавливаем компоненты…" : "Показать содержимое"
-                        enabled: !importPreviewer.busy && !downloadDependencies.busy
-                        onClicked: root.inspect()
+                        model: root.localProfiles
+                        textRole: "label"
+                        enabled: !libraryExchange.busy && !webLogin.busy
+                    }
+                    Flow {
+                        Layout.fillWidth: true
+                        spacing: 8
+                        Repeater {
+                            model: ["Яндекс Музыка", "VK"]
+                            delegate: Common.AuroraButton {
+                                required property string modelData
+                                uiTheme: theme
+                                text: "Забрать из " + (modelData === "VK" ? "VK" : "Яндекса")
+                                iconName: "download"
+                                primary: true
+                                enabled: !webLogin.busy && !libraryExchange.busy
+                                onClicked: libraryExchange.importMyMusic(modelData, root.profileId())
+                            }
+                        }
+                    }
+                    Common.AuroraField {
+                        id: playlistUrl
+                        uiTheme: theme
+                        Layout.fillWidth: true
+                        iconName: "link"
+                        placeholderText: "Или ссылка на отдельный плейлист / альбом"
+                        onAccepted: libraryExchange.importFromBrowser(text, root.profileId())
+                    }
+                    RowLayout {
+                        Layout.fillWidth: true
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            Layout.fillWidth: true
+                            text: libraryExchange.busy ? "Переносим музыку…" : "Перенести плейлист в плеер"
+                            primary: true
+                            iconName: "download"
+                            enabled: !libraryExchange.busy && !webLogin.busy && playlistUrl.text.trim().length > 0
+                            onClicked: libraryExchange.importFromBrowser(playlistUrl.text, root.profileId())
+                        }
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            text: "Отмена"
+                            visible: libraryExchange.busy
+                            onClicked: libraryExchange.cancel()
+                        }
                     }
                     Common.AuroraProgress {
                         uiTheme: theme
                         Layout.fillWidth: true
-                        visible: importPreviewer.busy || downloadDependencies.busy
+                        visible: libraryExchange.busy
                         indeterminate: true
                     }
                     Text {
                         Layout.fillWidth: true
                         visible: text.length > 0
-                        text: importPreviewer.lastError.length ? importPreviewer.lastError
-                              : downloadDependencies.busy ? downloadDependencies.statusText : importPreviewer.statusText
-                        color: importPreviewer.lastError.length ? theme.danger : theme.subtext
-                        font.pixelSize: theme.captionSize
+                        text: libraryExchange.busy ? webLogin.status : libraryExchange.status
+                        color: theme.accent
+                        font.pixelSize: 12
                         wrapMode: Text.WordWrap
+                    }
+                    Common.AuroraButton {
+                        uiTheme: theme
+                        text: "Открыть отчёт импорта"
+                        visible: webLogin.importReport.length > 0
+                        implicitHeight: 32
+                        onClicked: webLogin.openImportReport()
+                    }
+                    Text {
+                        Layout.fillWidth: true
+                        text: "Сохраняется аудио, доступное твоему аккаунту. Если сервис отдаёт только фрагмент, Aurora сообщит об этом."
+                        color: theme.textMuted
+                        font.pixelSize: 11
+                        wrapMode: Text.WordWrap
+                    }
+                    Common.AuroraButton {
+                        uiTheme: theme
+                        text: extras.visible ? "Скрыть дополнительные способы" : "Отдельный вход / сбросить сессию Aurora"
+                        implicitHeight: 32
+                        onClicked: extras.visible = !extras.visible
+                    }
+                    ColumnLayout {
+                        id: extras
+                        visible: false
+                        Layout.fillWidth: true
+                        spacing: 8
+                        Text {
+                            Layout.fillWidth: true
+                            text: "Запасной вариант, если сохранённый вход недоступен. Эти кнопки открывают отдельное окно; основной перенос выше использует существующий профиль без окна."
+                            color: theme.subtext
+                            font.pixelSize: 12
+                            wrapMode: Text.WordWrap
+                        }
+                        Common.AuroraCombo {
+                            id: externalBrowser
+                            uiTheme: theme
+                            Layout.fillWidth: true
+                            model: webLogin.availableBrowsers()
+                        }
+                        Flow {
+                            Layout.fillWidth: true
+                            spacing: 8
+                            Common.AuroraButton {
+                                uiTheme: theme
+                                text: "Яндекс · Внешний вход"
+                                enabled: !webLogin.busy && externalBrowser.count > 0
+                                onClicked: webLogin.startLogin("Яндекс Музыка", externalBrowser.currentIndex)
+                            }
+                            Common.AuroraButton {
+                                uiTheme: theme
+                                text: "VK · Внешний вход"
+                                enabled: !webLogin.busy && externalBrowser.count > 0
+                                onClicked: webLogin.startLogin("VK", externalBrowser.currentIndex)
+                            }
+                            Common.AuroraButton {
+                                uiTheme: theme
+                                text: "Отключить Яндекс"
+                                enabled: webLogin.yandexLoggedIn && !webLogin.busy
+                                onClicked: {
+                                    webLogin.logout("yandex");
+                                    accounts.logout("Яндекс Музыка");
+                                }
+                            }
+                            Common.AuroraButton {
+                                uiTheme: theme
+                                text: "Отключить VK"
+                                enabled: webLogin.vkLoggedIn && !webLogin.busy
+                                onClicked: {
+                                    webLogin.logout("vk");
+                                    accounts.logout("VK");
+                                }
+                            }
+                        }
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            text: "Прочитать ссылку через отдельный вход"
+                            enabled: !webLogin.busy && !libraryExchange.busy && playlistUrl.text.trim().length > 0
+                            onClicked: libraryExchange.importUrl(playlistUrl.text)
+                        }
+                        Text {
+                            Layout.fillWidth: true
+                            text: webLogin.status
+                            color: theme.subtext
+                            wrapMode: Text.WordWrap
+                            font.pixelSize: 12
+                        }
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            text: "Отменить вход"
+                            visible: webLogin.busy
+                            onClicked: webLogin.cancel()
+                        }
                     }
                 }
             }
-
-            Common.AuroraCard {
-                uiTheme: theme
+            Rectangle {
+                visible: libraryExchange.importedTracks.length > 0
                 Layout.fillWidth: true
-                visible: previewList.count > 0
-                padding: 16
-                implicitHeight: previewColumn.implicitHeight + padding * 2
+                implicitHeight: nativeContent.implicitHeight + 32
+                color: theme.surface
+                radius: 20
+                border.color: theme.line
                 ColumnLayout {
-                    id: previewColumn
+                    id: nativeContent
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.top: parent.top
@@ -229,234 +388,314 @@ Item {
                         Layout.fillWidth: true
                         Text {
                             Layout.fillWidth: true
-                            text: importPreviewer.selectedCount + " из " + previewList.count + " выбрано"
+                            text: root.selectedCount + " / " + libraryExchange.importedTracks.length + " выбрано"
                             color: theme.text
-                            font.pixelSize: theme.bodySize
+                            font.pixelSize: 16
                             font.weight: Font.Medium
                         }
                         Common.AuroraButton {
                             uiTheme: theme
-                            text: importPreviewer.selectedCount === previewList.count ? "Снять выбор" : "Выбрать все"
-                            implicitHeight: 38
-                            onClicked: importPreviewer.selectAll(importPreviewer.selectedCount !== previewList.count)
+                            text: root.selectedCount ? "Снять выбор" : "Выбрать все"
+                            implicitHeight: 36
+                            onClicked: root.chooseAll(root.selectedCount === 0)
                         }
                     }
                     ListView {
-                        id: previewList
+                        id: nativeList
                         Layout.fillWidth: true
-                        implicitHeight: Math.min(320, contentHeight)
-                        model: importPreviewer
+                        implicitHeight: Math.min(360, contentHeight)
                         clip: true
-                        spacing: 4
-                        interactive: contentHeight > height
-                        delegate: Rectangle {
+                        model: libraryExchange.importedTracks
+                        boundsBehavior: Flickable.StopAtBounds
+                        delegate: Item {
+                            required property var modelData
                             required property int index
-                            required property string title
-                            required property string artist
-                            required property var duration
-                            required property var size
-                            required property bool selected
-                            width: previewList.width
-                            height: 56
-                            radius: theme.radiusSmall
-                            color: selected ? theme.selected : theme.surfaceHigh
+                            width: nativeList.width
+                            height: 58
                             RowLayout {
                                 anchors.fill: parent
-                                anchors.leftMargin: 8
-                                anchors.rightMargin: 12
-                                spacing: 10
-                                Common.AuroraButton {
-                                    uiTheme: theme
-                                    iconOnly: true
-                                    iconName: selected ? "check" : "plus"
-                                    implicitWidth: 36
-                                    implicitHeight: 36
-                                    primary: selected
-                                    onClicked: importPreviewer.toggle(index)
+                                spacing: 12
+                                CheckBox {
+                                    checked: !!root.selected[index]
+                                    enabled: root.downloadable(modelData)
+                                    onClicked: root.toggle(index)
+                                    palette.highlight: theme.accent
+                                    palette.window: theme.surfaceHigh
                                 }
                                 ColumnLayout {
                                     Layout.fillWidth: true
-                                    spacing: 2
-                                    Text { Layout.fillWidth: true; text: title; color: theme.text; font.pixelSize: theme.bodySize; elide: Text.ElideRight }
-                                    Text { Layout.fillWidth: true; text: artist; color: theme.subtext; font.pixelSize: theme.captionSize; elide: Text.ElideRight }
+                                    spacing: 4
+                                    Text {
+                                        Layout.fillWidth: true
+                                        text: modelData.title
+                                        color: theme.text
+                                        font.pixelSize: 13
+                                        elide: Text.ElideRight
+                                    }
+                                    Text {
+                                        Layout.fillWidth: true
+                                        text: modelData.artist || "Неизвестный исполнитель"
+                                        color: theme.subtext
+                                        font.pixelSize: 11
+                                        elide: Text.ElideRight
+                                    }
                                 }
                                 Text {
-                                    text: duration > 0 ? Math.floor(duration / 60) + ":" + String(Math.floor(duration % 60)).padStart(2, "0") : "—"
+                                    text: modelData.downloaded ? "В плеере" : modelData.durationMs > 0 ? Math.floor(modelData.durationMs / 60000) + ":" + String(Math.floor(modelData.durationMs / 1000) % 60).padStart(2, "0") : ""
                                     color: theme.subtext
-                                    font.pixelSize: theme.captionSize
+                                    font.pixelSize: 11
                                 }
                             }
                         }
                     }
-                    Text {
+                    Common.AuroraSegmented {
+                        uiTheme: theme
                         Layout.fillWidth: true
-                        text: "Примерный объём: " + storageManager.formatBytes(importPreviewer.selectedBytes)
-                              + (importPreviewer.unknownSizes > 0 ? " · размер " + importPreviewer.unknownSizes + " элементов неизвестен" : "")
-                        color: theme.subtext
-                        font.pixelSize: theme.captionSize
-                        wrapMode: Text.WordWrap
+                        model: ["Оригинал", "192 kbps", "128 kbps"]
+                        currentIndex: ["original", "balanced", "compact"].indexOf(settingsStore.quality)
+                        onOptionSelected: index => settingsStore.quality = ["original", "balanced", "compact"][index]
                     }
-                    Components.StorageSummary { Layout.fillWidth: true; requiredBytes: importPreviewer.selectedBytes }
                     Common.AuroraButton {
                         uiTheme: theme
                         Layout.fillWidth: true
                         primary: true
+                        text: "Скачать в плеер · " + root.selectedCount
                         iconName: "download"
-                        text: "Загрузить выбранное · " + storageManager.formatBytes(importPreviewer.selectedBytes)
-                        enabled: importPreviewer.selectedCount > 0
-                        onClicked: root.requestDownload()
+                        enabled: root.selectedCount > 0
+                        onClicked: root.requestDownload(true)
                     }
                 }
             }
-
-            Common.AuroraCard {
-                uiTheme: theme
+            Rectangle {
                 Layout.fillWidth: true
-                visible: queueList.count > 0
-                padding: 16
-                implicitHeight: queueColumn.implicitHeight + padding * 2
+                implicitHeight: fileContent.implicitHeight + 32
+                color: theme.surface
+                radius: 20
+                border.color: theme.line
                 ColumnLayout {
-                    id: queueColumn
+                    id: fileContent
                     anchors.left: parent.left
                     anchors.right: parent.right
                     anchors.top: parent.top
                     anchors.margins: 16
                     spacing: 12
-                    RowLayout {
-                        Layout.fillWidth: true
-                        Text { Layout.fillWidth: true; text: "Очередь · " + downloadManager.activeCount + " активных"; color: theme.text; font.pixelSize: theme.bodySize; font.weight: Font.Medium }
-                        Common.AuroraButton { uiTheme: theme; text: "Очистить"; implicitHeight: 36; onClicked: downloadManager.clearFinished() }
+                    Text {
+                        text: "С устройства"
+                        color: theme.text
+                        font.pixelSize: 18
+                        font.weight: Font.Medium
                     }
-                    Common.AuroraProgress { uiTheme: theme; Layout.fillWidth: true; from: 0; to: 1; value: downloadManager.progress }
-                    ListView {
-                        id: queueList
+                    Flow {
                         Layout.fillWidth: true
-                        implicitHeight: Math.min(280, contentHeight)
-                        model: downloadManager
-                        clip: true
-                        interactive: contentHeight > height
-                        delegate: Rectangle {
-                            required property int jobId
-                            required property string title
-                            required property string url
-                            required property string status
-                            required property double progress
-                            width: queueList.width
-                            height: 64
-                            color: "transparent"
-                            RowLayout {
-                                anchors.fill: parent
-                                spacing: 10
-                                ColumnLayout {
-                                    Layout.fillWidth: true
-                                    spacing: 4
-                                    Text { Layout.fillWidth: true; text: title.length ? title : url; color: theme.text; font.pixelSize: theme.captionSize; elide: Text.ElideMiddle }
-                                    Common.AuroraProgress { uiTheme: theme; Layout.fillWidth: true; from: 0; to: 1; value: progress; visible: status === "downloading" || status === "importing" }
-                                    Text { Layout.fillWidth: true; text: status; color: status === "failed" ? theme.danger : theme.subtext; font.pixelSize: 10; elide: Text.ElideRight }
-                                }
-                                Common.AuroraButton {
-                                    uiTheme: theme
-                                    iconOnly: true
-                                    iconName: status === "failed" || status === "cancelled" ? "refresh" : "close"
-                                    implicitWidth: 36
-                                    implicitHeight: 36
-                                    visible: status !== "succeeded"
-                                    onClicked: status === "failed" || status === "cancelled" ? downloadManager.retryJob(jobId) : downloadManager.cancelJob(jobId)
-                                }
+                        spacing: 8
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            text: "Аудиофайлы"
+                            iconName: "plus"
+                            onClicked: audioFiles.open()
+                        }
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            text: "TXT / CSV / JSON"
+                            iconName: "folder"
+                            enabled: !libraryExchange.busy
+                            onClicked: listFile.open()
+                        }
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            text: "Медиатека Aurora"
+                            iconName: "library"
+                            enabled: !libraryExchange.busy
+                            onClicked: bundleFile.open()
+                        }
+                    }
+                }
+            }
+            Text {
+                text: "YouTube и другие ссылки"
+                color: theme.text
+                font.pixelSize: 22
+                font.weight: Font.DemiBold
+            }
+            Common.AuroraSegmented {
+                uiTheme: theme
+                Layout.fillWidth: true
+                model: ["По ссылке", "Поиск YouTube"]
+                onOptionSelected: index => root.searchMode = index === 1
+            }
+            Common.AuroraField {
+                id: audioUrl
+                uiTheme: theme
+                Layout.fillWidth: true
+                iconName: searchMode ? "search" : "link"
+                placeholderText: searchMode ? "Исполнитель или название" : "Ссылка на трек или плейлист"
+                onAccepted: root.inspect()
+            }
+            Common.AuroraSegmented {
+                uiTheme: theme
+                Layout.fillWidth: true
+                model: ["Оригинал", "192 kbps", "128 kbps"]
+                currentIndex: ["original", "balanced", "compact"].indexOf(settingsStore.quality)
+                onOptionSelected: index => settingsStore.quality = ["original", "balanced", "compact"][index]
+            }
+            Common.AuroraButton {
+                uiTheme: theme
+                Layout.fillWidth: true
+                primary: true
+                text: searchMode ? "Найти музыку" : "Показать содержимое"
+                iconName: "search"
+                enabled: !importPreviewer.busy && !downloadDependencies.busy && !libraryExchange.busy
+                onClicked: root.inspect()
+            }
+            Common.AuroraProgress {
+                uiTheme: theme
+                Layout.fillWidth: true
+                visible: importPreviewer.busy || downloadDependencies.busy
+                indeterminate: true
+            }
+            Common.AuroraButton {
+                uiTheme: theme
+                text: "Отменить получение списка"
+                visible: importPreviewer.busy
+                onClicked: importPreviewer.cancel()
+            }
+            Text {
+                Layout.fillWidth: true
+                text: importPreviewer.lastError || (downloadDependencies.busy ? downloadDependencies.statusText : importPreviewer.statusText)
+                visible: text.length > 0
+                color: importPreviewer.lastError ? theme.danger : theme.subtext
+                font.pixelSize: 12
+                wrapMode: Text.WordWrap
+            }
+            ListView {
+                id: previewList
+                Layout.fillWidth: true
+                implicitHeight: Math.min(340, contentHeight)
+                visible: count > 0
+                model: importPreviewer
+                clip: true
+                delegate: Item {
+                    required property int index
+                    required property string title
+                    required property string artist
+                    required property bool selected
+                    width: previewList.width
+                    height: 58
+                    RowLayout {
+                        anchors.fill: parent
+                        CheckBox {
+                            checked: selected
+                            onClicked: importPreviewer.toggle(index)
+                            palette.highlight: theme.accent
+                        }
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            Text {
+                                text: title
+                                Layout.fillWidth: true
+                                elide: Text.ElideRight
+                                color: theme.text
+                                font.pixelSize: 13
+                            }
+                            Text {
+                                text: artist
+                                Layout.fillWidth: true
+                                elide: Text.ElideRight
+                                color: theme.subtext
+                                font.pixelSize: 11
                             }
                         }
                     }
                 }
             }
-            Item { implicitHeight: 28 }
-        }
-    }
-
-    Common.AuroraDialog {
-        id: consentDialog
-        uiTheme: theme
-        title: "Доступ к браузерной сессии"
-        modal: true
-        width: Math.min(root.width - 32, 500)
-        contentItem: ColumnLayout {
-            spacing: 16
-            Text {
+            Flow {
                 Layout.fillWidth: true
-                text: browserAuth.consentText(authService)
-                color: theme.text
-                font.pixelSize: theme.bodySize
-                wrapMode: Text.WordWrap
-            }
-            Text {
-                Layout.fillWidth: true
-                text: "После входа выберите плейлист или раздел библиотеки. DRM, защищённый кэш и ограничения сервиса не обходятся."
-                color: theme.subtext
-                font.pixelSize: theme.captionSize
-                wrapMode: Text.WordWrap
-            }
-            RowLayout {
-                Layout.fillWidth: true
-                Common.AuroraButton { uiTheme: theme; Layout.fillWidth: true; text: "Отмена"; onClicked: consentDialog.close() }
+                spacing: 8
+                visible: previewList.count > 0
+                Common.AuroraButton {
+                    uiTheme: theme
+                    text: "Выбрать все"
+                    onClicked: importPreviewer.selectAll(true)
+                }
                 Common.AuroraButton {
                     uiTheme: theme
                     primary: true
-                    Layout.fillWidth: true
-                    text: "Разрешить один раз"
-                    onClicked: {
-                        browserAuth.grantSessionAccess()
-                        consentDialog.close()
-                    }
+                    text: "Скачать выбранное · " + importPreviewer.selectedCount
+                    enabled: importPreviewer.selectedCount > 0
+                    onClicked: root.requestDownload(false)
                 }
+            }
+            Components.DependencyCard {
+                Layout.fillWidth: true
+            }
+            Components.StorageSummary {
+                Layout.fillWidth: true
+            }
+            Text {
+                Layout.fillWidth: true
+                text: "Прогресс и ошибки доступны в панели загрузок над плеером на любом экране."
+                color: theme.textMuted
+                font.pixelSize: 12
+                wrapMode: Text.WordWrap
+                visible: downloadManager.totalCount > 0
+            }
+            Item {
+                implicitHeight: 24
             }
         }
     }
-
+    FileDialog {
+        id: audioFiles
+        fileMode: FileDialog.OpenFiles
+        nameFilters: ["Музыка (*.mp3 *.flac *.wav *.ogg *.opus *.m4a *.aac *.webm *.mka)"]
+        onAccepted: importManager.importFiles(selectedFiles)
+    }
+    FileDialog {
+        id: listFile
+        nameFilters: ["Плейлист (*.txt *.csv *.json)"]
+        onAccepted: libraryExchange.importList(selectedFile, "Другой сервис")
+    }
+    FileDialog {
+        id: bundleFile
+        nameFilters: ["Медиатека Aurora (aurora-library.json)"]
+        onAccepted: libraryExchange.importList(selectedFile, "Aurora")
+    }
     Common.AuroraDialog {
         id: confirmDialog
         uiTheme: theme
-        title: "Подтвердите загрузку"
-        modal: true
-        width: Math.min(root.width - 32, 500)
+        title: "Скачать в плеер?"
+        width: Math.min(root.width - 32, 440)
         contentItem: ColumnLayout {
-            spacing: 16
+            spacing: 18
             Text {
                 Layout.fillWidth: true
-                text: importPreviewer.selectedCount + " треков · примерно " + storageManager.formatBytes(importPreviewer.selectedBytes)
+                text: "Выбрано треков: " + (root.pendingNative ? root.selectedCount : importPreviewer.selectedCount) + ". Файлы сохранятся в папке музыки и появятся в библиотеке."
                 color: theme.text
-                font.pixelSize: 20
-                font.weight: Font.DemiBold
-            }
-            Text {
-                Layout.fillWidth: true
-                text: "Свободно: " + storageManager.formatBytes(storageManager.freeBytes)
-                      + (importPreviewer.unknownSizes ? "\nДля части элементов объём будет известен только во время загрузки." : "")
-                color: theme.subtext
-                font.pixelSize: theme.bodySize
                 wrapMode: Text.WordWrap
+                font.pixelSize: 14
             }
             RowLayout {
                 Layout.fillWidth: true
-                Common.AuroraButton { uiTheme: theme; Layout.fillWidth: true; text: "Отмена"; onClicked: confirmDialog.close() }
                 Common.AuroraButton {
                     uiTheme: theme
-                    primary: true
                     Layout.fillWidth: true
-                    text: "Загрузить"
+                    text: "Отмена"
+                    onClicked: confirmDialog.close()
+                }
+                Common.AuroraButton {
+                    uiTheme: theme
+                    Layout.fillWidth: true
+                    primary: true
+                    text: "Скачать"
                     onClicked: {
-                        confirmDialog.close()
-                        importPreviewer.startSelected()
+                        confirmDialog.close();
+                        if (root.pendingNative)
+                            root.startNative();
+                        else
+                            importPreviewer.startSelected();
                     }
                 }
             }
         }
-    }
-
-    Common.AuroraToast {
-        id: toast
-        uiTheme: theme
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 20
-        width: Math.min(parent.width - 32, 520)
     }
 }

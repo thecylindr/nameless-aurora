@@ -7,13 +7,19 @@
 #include <QProcess>
 #include <QRegularExpression>
 #include <QStandardPaths>
+#include <QTimer>
+#include <QFutureWatcher>
+#include <QtConcurrent/QtConcurrentRun>
+#include <QMutex>
+#include <QMutexLocker>
+#include <QDateTime>
 
-namespace {
+// Реализация менеджера зависимостей: определение путей к инструментам, создание venv,
+// установка пакетов через pip и перенос FFmpeg/ffprobe в управляемый каталог.
+namespace
+{
 
-constexpr auto kYtDlpVersion = "2025.10.22";
-constexpr auto kSpotdlVersion = "4.4.3";
-
-QString executableName(const QString &name)
+QString executableName(const QString& name)
 {
 #ifdef Q_OS_WIN
     return name + QStringLiteral(".exe");
@@ -22,13 +28,13 @@ QString executableName(const QString &name)
 #endif
 }
 
-QString existingExecutable(const QString &path)
+QString existingExecutable(const QString& path)
 {
     const QFileInfo info(path);
     return info.isFile() && info.isExecutable() ? info.absoluteFilePath() : QString();
 }
 
-QString findExecutable(const QString &configured, const QStringList &fallbackNames)
+QString findExecutable(const QString& configured, const QStringList& fallbackNames)
 {
     if (!configured.trimmed().isEmpty()) {
         const QString found = QStandardPaths::findExecutable(configured.trimmed());
@@ -40,7 +46,7 @@ QString findExecutable(const QString &configured, const QStringList &fallbackNam
             return direct;
         }
     }
-    for (const QString &name : fallbackNames) {
+    for (const QString& name : fallbackNames) {
         const QString found = QStandardPaths::findExecutable(name);
         if (!found.isEmpty()) {
             return found;
@@ -49,21 +55,46 @@ QString findExecutable(const QString &configured, const QStringList &fallbackNam
     return {};
 }
 
-QString programVersion(const QString &program, const QStringList &arguments = {QStringLiteral("--version")})
+QString programVersion(const QString& program, const QStringList& arguments = {QStringLiteral("--version")})
 {
     if (program.isEmpty()) {
         return {};
     }
+    // Кэшируем версии на 60 секунд; ключ учитывает путь, аргументы, размер и время изменения файла.
+    struct Cached
+    {
+        QString value;
+        qint64 utc;
+    };
+    static QMutex mutex;
+    static QHash<QString, Cached> cache;
+    const QFileInfo info(program);
+    const QString key = program + '\n' + arguments.join('\n') + '\n' + QString::number(info.size()) + '\n' +
+                        QString::number(info.lastModified().toMSecsSinceEpoch());
+    {
+        QMutexLocker lock(&mutex);
+        const auto found = cache.constFind(key);
+        if (found != cache.cend() && QDateTime::currentMSecsSinceEpoch() - found->utc < 60000)
+            return found->value;
+    }
     QProcess process;
     process.setProcessChannelMode(QProcess::MergedChannels);
     process.start(program, arguments, QIODevice::ReadOnly);
-    if (!process.waitForFinished(5000) || process.exitStatus() != QProcess::NormalExit
-        || process.exitCode() != 0) {
+    if (!process.waitForFinished(5000) || process.exitStatus() != QProcess::NormalExit || process.exitCode() != 0) {
         process.kill();
         process.waitForFinished(1000);
+        QMutexLocker lock(&mutex);
+        cache[key] = {{}, QDateTime::currentMSecsSinceEpoch()};
         return {};
     }
-    return QString::fromLocal8Bit(process.readAll()).trimmed().section(QRegularExpression(QStringLiteral("[\\r\\n]")), 0, 0);
+    const auto value = QString::fromLocal8Bit(process.readAll())
+                           .trimmed()
+                           .section(QRegularExpression(QStringLiteral("[\\r\\n]")), 0, 0);
+    {
+        QMutexLocker lock(&mutex);
+        cache[key] = {value, QDateTime::currentMSecsSinceEpoch()};
+    }
+    return value;
 }
 
 QString outputTail(QString output)
@@ -72,14 +103,40 @@ QString outputTail(QString output)
     return lines.isEmpty() ? QString() : lines.constLast().trimmed();
 }
 
-}
+} // namespace
 
-DependencyManager::DependencyManager(SettingsStore *settings, QObject *parent)
-    : QObject(parent)
-    , m_settings(settings)
-    , m_toolsDir(QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath(QStringLiteral("tools")))
+DependencyManager::DependencyManager(SettingsStore* settings, QObject* parent, bool deferChecks)
+    : QObject(parent), m_settings(settings),
+      m_toolsDir(
+          QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath(QStringLiteral("tools")))
 {
-    refresh();
+    if (!deferChecks) {
+        refresh();
+        return;
+    }
+    setBusy(true);
+    setStatusText("Проверяем инструменты в фоне…");
+    const QStringList programs{ytDlpExecutable(),
+                               spotdlExecutable(),
+                               ffmpegExecutable(),
+                               ffprobeExecutable(),
+                               findExecutable({}, {"node"}),
+                               findExecutable({}, {"deno"}),
+                               existingExecutable(QDir(managedBinDir()).filePath(executableName("node")))};
+    auto* watcher = new QFutureWatcher<void>(this);
+    connect(watcher, &QFutureWatcher<void>::finished, this, [this, watcher] {
+        watcher->deleteLater();
+        setBusy(false);
+        refresh();
+        if (m_prepareRequested) {
+            m_prepareRequested = false;
+            ensureReady();
+        }
+    });
+    watcher->setFuture(QtConcurrent::run([programs] {
+        for (int i = 0; i < programs.size(); ++i)
+            programVersion(programs[i], {i == 2 || i == 3 ? QStringLiteral("-version") : QStringLiteral("--version")});
+    }));
 }
 
 DependencyManager::~DependencyManager()
@@ -127,7 +184,11 @@ QString DependencyManager::ytDlpExecutable() const
 #ifdef Q_OS_ANDROID
     return {};
 #else
-    const QString managed = existingExecutable(QDir(managedBinDir()).filePath(executableName(QStringLiteral("yt-dlp"))));
+    const QString configured = findExecutable(m_settings ? m_settings->ytDlpPath() : QString(), {});
+    if (!configured.isEmpty())
+        return configured;
+    const QString managed =
+        existingExecutable(QDir(managedBinDir()).filePath(executableName(QStringLiteral("yt-dlp"))));
     if (!managed.isEmpty()) {
         return managed;
     }
@@ -140,7 +201,11 @@ QString DependencyManager::spotdlExecutable() const
 #ifdef Q_OS_ANDROID
     return {};
 #else
-    const QString managed = existingExecutable(QDir(managedBinDir()).filePath(executableName(QStringLiteral("spotdl"))));
+    const QString configured = findExecutable(m_settings ? m_settings->spotdlPath() : QString(), {});
+    if (!configured.isEmpty())
+        return configured;
+    const QString managed =
+        existingExecutable(QDir(managedBinDir()).filePath(executableName(QStringLiteral("spotdl"))));
     if (!managed.isEmpty()) {
         return managed;
     }
@@ -153,9 +218,46 @@ QString DependencyManager::ffmpegExecutable() const
 #ifdef Q_OS_ANDROID
     return {};
 #else
-    const QString managed = existingExecutable(QDir(managedBinDir()).filePath(executableName(QStringLiteral("ffmpeg"))));
-    return managed.isEmpty() ? findExecutable({}, {QStringLiteral("ffmpeg")}) : managed;
+    const QString managed =
+        existingExecutable(QDir(managedBinDir()).filePath(executableName(QStringLiteral("ffmpeg"))));
+    const auto system = findExecutable({}, {QStringLiteral("ffmpeg")});
+    return !managed.isEmpty() ? managed : system;
 #endif
+}
+QString DependencyManager::ffprobeExecutable() const
+{
+    const auto managed = existingExecutable(QDir(managedBinDir()).filePath(executableName("ffprobe")));
+    const auto system = findExecutable({}, {"ffprobe"});
+    return !managed.isEmpty() ? managed : system;
+}
+QStringList DependencyManager::discoverJsRuntime() const
+{
+    // yt-dlp требует JS-рантайм для некоторых сайтов; используем deno или node нужной версии.
+    const auto deno = findExecutable({}, {"deno"});
+    if (!deno.isEmpty()) {
+        const auto version = programVersion(deno).section(' ', 1, 1).split('.');
+        if (!version.isEmpty() &&
+            (version[0].toInt() > 2 || (version[0].toInt() == 2 && version.value(1).toInt() >= 3)))
+            return {"--js-runtimes", "deno:" + deno};
+    }
+    const auto managed = existingExecutable(QDir(managedBinDir()).filePath(executableName("node")));
+    const auto node = managed.isEmpty() ? findExecutable({}, {"node"}) : managed;
+    const auto major = programVersion(node).remove('v').section('.', 0, 0).toInt();
+    return node.isEmpty() || major < 22 ? QStringList{} : QStringList{"--js-runtimes", "node:" + node};
+}
+void DependencyManager::ensureReady()
+{
+    if (m_busy) {
+        m_prepareRequested = true;
+        return;
+    }
+    if (m_runtimeReady) {
+        QTimer::singleShot(0, this, [this] {
+            emit preparationFinished(true);
+        });
+        return;
+    }
+    installOrUpdate();
 }
 
 void DependencyManager::refresh()
@@ -185,13 +287,15 @@ void DependencyManager::refresh()
     emit ffmpegVersionChanged();
 #else
     const bool pythonAvailable = !managedPythonExecutable().isEmpty() || !systemPythonExecutable().isEmpty();
-    const bool ytDlpAvailable = !ytDlpExecutable().isEmpty();
-    const bool spotdlAvailable = !spotdlExecutable().isEmpty();
-    const bool ffmpegAvailable = !ffmpegExecutable().isEmpty();
-    const bool runtimeReady = ytDlpAvailable && spotdlAvailable && ffmpegAvailable;
     const QString ytDlpVersion = programVersion(ytDlpExecutable());
     const QString spotdlVersion = programVersion(spotdlExecutable());
-    const QString ffmpegVersion = programVersion(ffmpegExecutable());
+    const QString ffmpegVersion = programVersion(ffmpegExecutable(), {QStringLiteral("-version")});
+    const QString ffprobeVersion = programVersion(ffprobeExecutable(), {QStringLiteral("-version")});
+    const bool ytDlpAvailable = !ytDlpVersion.isEmpty();
+    const bool spotdlAvailable = !spotdlVersion.isEmpty();
+    const bool ffmpegAvailable = !ffmpegVersion.isEmpty() && !ffprobeVersion.isEmpty();
+    m_jsRuntime = discoverJsRuntime();
+    const bool runtimeReady = ytDlpAvailable && ffmpegAvailable && !m_jsRuntime.isEmpty();
 
     if (m_pythonAvailable != pythonAvailable) {
         m_pythonAvailable = pythonAvailable;
@@ -227,11 +331,11 @@ void DependencyManager::refresh()
     }
 
     if (runtimeReady) {
-        setStatusText(tr("Загрузчики готовы к работе."));
+        setStatusText(tr("Инструменты поиска и обработки аудио готовы."));
     } else if (!pythonAvailable) {
         setStatusText(tr("Python не найден. Установите Python 3 для управляемых загрузчиков."));
     } else if (!ffmpegAvailable) {
-        setStatusText(tr("FFmpeg не найден. Установите FFmpeg и добавьте его в PATH."));
+        setStatusText(tr("FFmpeg или ffprobe не запускается. Установите пакет FFmpeg и проверьте PATH."));
     } else {
         setStatusText(tr("Некоторые загрузчики не установлены. Можно установить их локально."));
     }
@@ -251,12 +355,15 @@ void DependencyManager::installOrUpdate()
 #else
     const QString python = systemPythonExecutable();
     if (python.isEmpty()) {
-        setLastError(tr("Python 3 не найден. Установите Python и добавьте его в PATH; глобальные пакеты Aurora не изменяет."));
+        setLastError(
+            tr("Python 3 не найден. Установите Python и добавьте его в PATH; глобальные пакеты Aurora не изменяет."));
         setStatusText(tr("Невозможно установить загрузчики без Python."));
+        emit preparationFinished(false);
         return;
     }
     if (!QDir().mkpath(m_toolsDir)) {
         setLastError(tr("Не удалось создать каталог инструментов: %1").arg(m_toolsDir));
+        emit preparationFinished(false);
         return;
     }
 
@@ -275,6 +382,15 @@ void DependencyManager::startStage(InstallStage stage)
     m_outputTail.clear();
     m_process = new QProcess(this);
     m_process->setProcessChannelMode(QProcess::SeparateChannels);
+    auto* stageProcess = m_process;
+    QTimer::singleShot(5 * 60 * 1000, stageProcess, [this, stageProcess] {
+        if (m_process != stageProcess || stageProcess->state() == QProcess::NotRunning)
+            return;
+        disconnect(stageProcess, nullptr, this, nullptr);
+        stageProcess->kill();
+        stageProcess->waitForFinished(1000);
+        finishInstall(false, "Подготовка инструментов не завершилась за 5 минут. Проверь соединение и повтори.");
+    });
 
     connect(m_process, &QProcess::readyReadStandardOutput, this, [this] {
         if (m_process) {
@@ -296,23 +412,26 @@ void DependencyManager::startStage(InstallStage stage)
         if (!m_process) {
             return;
         }
-        m_outputTail = (m_outputTail + QString::fromLocal8Bit(m_process->readAllStandardOutput())
-                        + QString::fromLocal8Bit(m_process->readAllStandardError())).right(8192);
+        m_outputTail = (m_outputTail + QString::fromLocal8Bit(m_process->readAllStandardOutput()) +
+                        QString::fromLocal8Bit(m_process->readAllStandardError()))
+                           .right(8192);
         const InstallStage completedStage = m_stage;
         m_process->deleteLater();
         m_process = nullptr;
         m_stage = InstallStage::None;
 
         if (m_cancelRequested) {
+            m_prepareRequested = false;
             setBusy(false);
             setStatusText(tr("Установка отменена."));
             refresh();
+            emit preparationFinished(false);
             return;
         }
         if (exitStatus != QProcess::NormalExit || exitCode != 0) {
             QString message = completedStage == InstallStage::CreateVenv
-                ? tr("Не удалось создать виртуальное окружение Python (код %1).").arg(exitCode)
-                : tr("Не удалось установить yt-dlp и spotdl (код %1).").arg(exitCode);
+                                  ? tr("Не удалось создать виртуальное окружение Python (код %1).").arg(exitCode)
+                                  : tr("Не удалось подготовить загрузчики (код %1).").arg(exitCode);
             const QString details = outputTail(m_outputTail);
             if (!details.isEmpty()) {
                 message += QStringLiteral(" ") + details;
@@ -322,41 +441,63 @@ void DependencyManager::startStage(InstallStage stage)
         }
         if (completedStage == InstallStage::CreateVenv) {
             startStage(InstallStage::InstallPackages);
+        } else if (completedStage == InstallStage::InstallPackages) {
+            startStage(InstallStage::PrepareBinaries);
         } else {
+            m_prepareRequested = false;
             setBusy(false);
             setLastError({});
             refresh();
+            emit preparationFinished(m_runtimeReady);
         }
     });
 
     if (stage == InstallStage::CreateVenv) {
         setStatusText(tr("Создание локального виртуального окружения Python…"));
-        m_process->start(systemPythonExecutable(),
-                         {QStringLiteral("-m"), QStringLiteral("venv"),
-                          QDir(m_toolsDir).filePath(QStringLiteral("venv"))}, QIODevice::ReadWrite);
-    } else {
+        m_process->start(
+            systemPythonExecutable(),
+            {QStringLiteral("-m"), QStringLiteral("venv"), QDir(m_toolsDir).filePath(QStringLiteral("venv"))},
+            QIODevice::ReadWrite);
+    } else if (stage == InstallStage::InstallPackages) {
         const QString python = managedPythonExecutable();
         if (python.isEmpty()) {
             finishInstall(false, tr("Виртуальное окружение создано, но его Python не найден."));
             return;
         }
-        setStatusText(tr("Локальная установка yt-dlp и spotdl…"));
+        setStatusText(tr("Подготавливаем поиск и загрузку музыки…"));
+        QStringList packages{"yt-dlp[default]", "secretstorage", "pycryptodome", "keyring"};
+        // Если системного FFmpeg нет, ставим переносимую сборку через static-ffmpeg.
+        if (!m_ffmpegAvailable)
+            packages << "static-ffmpeg>=3,<4";
+        // Если JS-рантайма нет в системе, ставим node из wheel-пакета.
+        if (jsRuntimeArguments().isEmpty())
+            packages << "nodejs-wheel>=22,<26";
         m_process->start(python,
-                         {QStringLiteral("-m"), QStringLiteral("pip"), QStringLiteral("install"),
-                          QStringLiteral("--disable-pip-version-check"),
-                          QStringLiteral("yt-dlp==") + QString::fromLatin1(kYtDlpVersion),
-                          QStringLiteral("spotdl==") + QString::fromLatin1(kSpotdlVersion)}, QIODevice::ReadWrite);
+                         QStringList{QStringLiteral("-m"), QStringLiteral("pip"), QStringLiteral("install"),
+                                     QStringLiteral("--disable-pip-version-check"), QStringLiteral("--upgrade")} +
+                             packages,
+                         QIODevice::ReadWrite);
+    } else {
+        setStatusText(tr("Проверяем обработку аудио…"));
+        // Скрипт static_ffmpeg копирует нужные бинарники FFmpeg/ffprobe в управляемый каталог.
+        const QString bootstrap =
+            "from static_ffmpeg import run; import pathlib, shutil, sys; "
+            "paths=run.get_or_fetch_platform_executables_else_raise(); target=pathlib.Path(sys.argv[1]); "
+            "[(shutil.copy2(src,target/pathlib.Path(src).name)) for src in paths]";
+        m_process->start(managedPythonExecutable(),
+                         {"-c", m_ffmpegAvailable ? "print('Audio tools ready')" : bootstrap, managedBinDir()});
     }
 #endif
 }
 
-void DependencyManager::finishInstall(bool success, const QString &message)
+void DependencyManager::finishInstall(bool success, const QString& message)
 {
     if (m_process) {
         m_process->deleteLater();
         m_process = nullptr;
     }
     m_stage = InstallStage::None;
+    m_prepareRequested = false;
     setBusy(false);
     if (success) {
         setLastError({});
@@ -364,6 +505,7 @@ void DependencyManager::finishInstall(bool success, const QString &message)
     } else {
         setStatusText(tr("Установка загрузчиков не завершена."));
         setLastError(message);
+        emit preparationFinished(false);
     }
 }
 
@@ -386,7 +528,7 @@ void DependencyManager::setBusy(bool busy)
     emit busyChanged();
 }
 
-void DependencyManager::setStatusText(const QString &statusText)
+void DependencyManager::setStatusText(const QString& statusText)
 {
     if (m_statusText == statusText) {
         return;
@@ -395,7 +537,7 @@ void DependencyManager::setStatusText(const QString &statusText)
     emit statusTextChanged();
 }
 
-void DependencyManager::setLastError(const QString &lastError)
+void DependencyManager::setLastError(const QString& lastError)
 {
     if (m_lastError == lastError) {
         return;

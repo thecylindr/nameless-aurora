@@ -1,0 +1,93 @@
+{
+  "build": "passed",
+  "qml_lint": "passed, with unqualified context access warnings disabled",
+  "animation_suites": [
+    "aurora_animations: passed",
+    "aurora_animations_null: passed; software sphere case skipped"
+  ],
+  "full_cpp_suite": {
+    "passed": 60,
+    "failed": [
+      "publicSourceSearchDownloadsIntoExistingTrack(Hitmo)",
+      "publicSourceSearchDownloadsIntoExistingTrack(Zaycev)"
+    ]
+  },
+  "web_scripts": "passed",
+  "browser_cookies": "passed",
+  "shader_package": "qsb compilation for SPIR-V, GLSL, HLSL, MSL passed",
+  "null_application_shader": "Uncompiled, empty log; smoke assertion failed at 1x and 2x; real GPU remains unverified",
+  "scenes": [
+    {
+      "scene": "orb",
+      "compact": false,
+      "motion": true,
+      "intensity": 0.85,
+      "density": 0.8,
+      "nullRhi": false,
+      "exit": 0
+    },
+    {
+      "scene": "prisms",
+      "compact": true,
+      "motion": true,
+      "intensity": 0.85,
+      "density": 1,
+      "nullRhi": false,
+      "exit": 0
+    },
+    {
+      "scene": "bubbles",
+      "compact": true,
+      "motion": true,
+      "intensity": 0.85,
+      "density": 1,
+      "nullRhi": false,
+      "exit": 0
+    },
+    {
+      "scene": "bonsai",
+      "compact": false,
+      "motion": true,
+      "intensity": 0.85,
+      "density": 0.8,
+      "nullRhi": false,
+      "exit": 0
+    },
+    {
+      "scene": "meteors",
+      "compact": true,
+      "motion": false,
+      "intensity": 0.85,
+      "density": 1,
+      "nullRhi": false,
+      "exit": 0
+    },
+    {
+      "scene": "cosmos",
+      "compact": false,
+      "motion": true,
+      "intensity": 0,
+      "density": 1,
+      "nullRhi": false,
+      "exit": 0
+    },
+    {
+      "scene": "meteors",
+      "compact": false,
+      "motion": true,
+      "intensity": 0.85,
+      "density": 0,
+      "nullRhi": false,
+      "exit": 0
+    },
+    {
+      "scene": "cosmos",
+      "compact": false,
+      "motion": true,
+      "intensity": 0.85,
+      "density": 0.8,
+      "nullRhi": true,
+      "exit": 1
+    }
+  ]
+}

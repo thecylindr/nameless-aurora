@@ -2,7 +2,7 @@
     "classes": [
         {
             "className": "ImportManager",
-            "lineNumber": 9,
+            "lineNumber": 10,
             "methods": [
                 {
                     "access": "public",
@@ -13,7 +13,7 @@
                         }
                     ],
                     "index": 4,
-                    "lineNumber": 23,
+                    "lineNumber": 38,
                     "name": "importFiles",
                     "returnType": "void"
                 },
@@ -26,8 +26,25 @@
                         }
                     ],
                     "index": 5,
-                    "lineNumber": 24,
+                    "lineNumber": 40,
                     "name": "importPaths",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "trackId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "fileUrl",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 6,
+                    "lineNumber": 42,
+                    "name": "attachFile",
                     "returnType": "void"
                 },
                 {
@@ -38,8 +55,8 @@
                             "type": "QUrl"
                         }
                     ],
-                    "index": 6,
-                    "lineNumber": 25,
+                    "index": 7,
+                    "lineNumber": 44,
                     "name": "importFolder",
                     "returnType": "void"
                 }
@@ -51,7 +68,7 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "lineNumber": 11,
+                    "lineNumber": 13,
                     "name": "busy",
                     "notify": "busyChanged",
                     "override": false,
@@ -68,7 +85,7 @@
                     "designable": true,
                     "final": false,
                     "index": 1,
-                    "lineNumber": 12,
+                    "lineNumber": 14,
                     "name": "statusText",
                     "notify": "statusTextChanged",
                     "override": false,
@@ -85,7 +102,7 @@
                     "designable": true,
                     "final": false,
                     "index": 2,
-                    "lineNumber": 13,
+                    "lineNumber": 15,
                     "name": "lastError",
                     "notify": "lastErrorChanged",
                     "override": false,
@@ -103,21 +120,21 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 28,
+                    "lineNumber": 47,
                     "name": "busyChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 1,
-                    "lineNumber": 29,
+                    "lineNumber": 48,
                     "name": "statusTextChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "lineNumber": 30,
+                    "lineNumber": 49,
                     "name": "lastErrorChanged",
                     "returnType": "void"
                 },
@@ -134,7 +151,7 @@
                         }
                     ],
                     "index": 3,
-                    "lineNumber": 31,
+                    "lineNumber": 50,
                     "name": "importCompleted",
                     "returnType": "void"
                 }

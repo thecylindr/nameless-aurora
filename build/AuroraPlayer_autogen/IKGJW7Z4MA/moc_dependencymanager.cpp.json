@@ -2,26 +2,33 @@
     "classes": [
         {
             "className": "DependencyManager",
-            "lineNumber": 9,
+            "lineNumber": 12,
             "methods": [
                 {
                     "access": "public",
-                    "index": 12,
-                    "lineNumber": 46,
-                    "name": "refresh",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
                     "index": 13,
-                    "lineNumber": 47,
-                    "name": "installOrUpdate",
+                    "lineNumber": 91,
+                    "name": "ensureReady",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 14,
-                    "lineNumber": 48,
+                    "lineNumber": 94,
+                    "name": "refresh",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 15,
+                    "lineNumber": 96,
+                    "name": "installOrUpdate",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 16,
+                    "lineNumber": 98,
                     "name": "cancel",
                     "returnType": "void"
                 }
@@ -33,7 +40,7 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "lineNumber": 12,
+                    "lineNumber": 15,
                     "name": "busy",
                     "notify": "busyChanged",
                     "override": false,
@@ -50,7 +57,7 @@
                     "designable": true,
                     "final": false,
                     "index": 1,
-                    "lineNumber": 13,
+                    "lineNumber": 16,
                     "name": "statusText",
                     "notify": "statusTextChanged",
                     "override": false,
@@ -67,7 +74,7 @@
                     "designable": true,
                     "final": false,
                     "index": 2,
-                    "lineNumber": 14,
+                    "lineNumber": 17,
                     "name": "lastError",
                     "notify": "lastErrorChanged",
                     "override": false,
@@ -84,7 +91,7 @@
                     "designable": true,
                     "final": false,
                     "index": 3,
-                    "lineNumber": 15,
+                    "lineNumber": 18,
                     "name": "pythonAvailable",
                     "notify": "pythonAvailableChanged",
                     "override": false,
@@ -101,7 +108,7 @@
                     "designable": true,
                     "final": false,
                     "index": 4,
-                    "lineNumber": 16,
+                    "lineNumber": 19,
                     "name": "ffmpegAvailable",
                     "notify": "ffmpegAvailableChanged",
                     "override": false,
@@ -118,7 +125,7 @@
                     "designable": true,
                     "final": false,
                     "index": 5,
-                    "lineNumber": 17,
+                    "lineNumber": 20,
                     "name": "ytDlpAvailable",
                     "notify": "ytDlpAvailableChanged",
                     "override": false,
@@ -135,7 +142,7 @@
                     "designable": true,
                     "final": false,
                     "index": 6,
-                    "lineNumber": 18,
+                    "lineNumber": 21,
                     "name": "spotdlAvailable",
                     "notify": "spotdlAvailableChanged",
                     "override": false,
@@ -152,7 +159,7 @@
                     "designable": true,
                     "final": false,
                     "index": 7,
-                    "lineNumber": 19,
+                    "lineNumber": 22,
                     "name": "runtimeReady",
                     "notify": "runtimeReadyChanged",
                     "override": false,
@@ -169,7 +176,7 @@
                     "designable": true,
                     "final": false,
                     "index": 8,
-                    "lineNumber": 20,
+                    "lineNumber": 23,
                     "name": "toolsDir",
                     "notify": "toolsDirChanged",
                     "override": false,
@@ -186,7 +193,7 @@
                     "designable": true,
                     "final": false,
                     "index": 9,
-                    "lineNumber": 21,
+                    "lineNumber": 24,
                     "name": "ytDlpVersion",
                     "notify": "ytDlpVersionChanged",
                     "override": false,
@@ -203,7 +210,7 @@
                     "designable": true,
                     "final": false,
                     "index": 10,
-                    "lineNumber": 22,
+                    "lineNumber": 25,
                     "name": "spotdlVersion",
                     "notify": "spotdlVersionChanged",
                     "override": false,
@@ -220,7 +227,7 @@
                     "designable": true,
                     "final": false,
                     "index": 11,
-                    "lineNumber": 23,
+                    "lineNumber": 26,
                     "name": "ffmpegVersion",
                     "notify": "ffmpegVersionChanged",
                     "override": false,
@@ -238,85 +245,98 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 51,
+                    "lineNumber": 101,
                     "name": "busyChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 1,
-                    "lineNumber": 52,
+                    "lineNumber": 102,
                     "name": "statusTextChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "lineNumber": 53,
+                    "lineNumber": 103,
                     "name": "lastErrorChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 3,
-                    "lineNumber": 54,
+                    "lineNumber": 104,
                     "name": "pythonAvailableChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 4,
-                    "lineNumber": 55,
+                    "lineNumber": 105,
                     "name": "ffmpegAvailableChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 5,
-                    "lineNumber": 56,
+                    "lineNumber": 106,
                     "name": "ytDlpAvailableChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 6,
-                    "lineNumber": 57,
+                    "lineNumber": 107,
                     "name": "spotdlAvailableChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 7,
-                    "lineNumber": 58,
+                    "lineNumber": 108,
                     "name": "runtimeReadyChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 8,
-                    "lineNumber": 59,
+                    "lineNumber": 109,
                     "name": "toolsDirChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 9,
-                    "lineNumber": 60,
+                    "lineNumber": 110,
                     "name": "ytDlpVersionChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 10,
-                    "lineNumber": 61,
+                    "lineNumber": 111,
                     "name": "spotdlVersionChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 11,
-                    "lineNumber": 62,
+                    "lineNumber": 112,
                     "name": "ffmpegVersionChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "success",
+                            "type": "bool"
+                        }
+                    ],
+                    "index": 12,
+                    "lineNumber": 113,
+                    "name": "preparationFinished",
                     "returnType": "void"
                 }
             ],

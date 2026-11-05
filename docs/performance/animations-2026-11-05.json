@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-05",
+  "qt": "6.12.0",
+  "platform": "offscreen",
+  "renderer": "software",
+  "mode": "listening",
+  "smoke_ms": 4500,
+  "density": 0.8,
+  "intensity": 0.85,
+  "fixture": "8-second mono PCM 44100Hz WAV, 75Hz kicks every 0.5 seconds; volume 0",
+  "sizes": {
+    "desktop": [
+      1440,
+      900
+    ],
+    "compact": [
+      390,
+      760
+    ]
+  },
+  "cpu_includes": "Process startup, audio import/decode, animation and screenshot; user + system CPU time of child processes",
+  "samples_per_case": 1,
+  "baseline": [
+    {
+      "scene": "cosmos",
+      "compact": false,
+      "cpu_seconds": 9.2841,
+      "wall_seconds": 5.742,
+      "exit": 0
+    },
+    {
+      "scene": "cosmos",
+      "compact": true,
+      "cpu_seconds": 8.5061,
+      "wall_seconds": 5.858,
+      "exit": 0
+    },
+    {
+      "scene": "meteors",
+      "compact": false,
+      "cpu_seconds": 8.6636,
+      "wall_seconds": 5.531,
+      "exit": 0
+    },
+    {
+      "scene": "meteors",
+      "compact": true,
+      "cpu_seconds": 5.9419,
+      "wall_seconds": 5.449,
+      "exit": 0
+    },
+    {
+      "scene": "ribbons",
+      "compact": false,
+      "cpu_seconds": 8.769,
+      "wall_seconds": 5.586,
+      "exit": 0
+    },
+    {
+      "scene": "ribbons",
+      "compact": true,
+      "cpu_seconds": 7.6912,
+      "wall_seconds": 5.908,
+      "exit": 0
+    },
+    {
+      "scene": "off",
+      "compact": false,
+      "cpu_seconds": 8.6761,
+      "wall_seconds": 5.55,
+      "exit": 0
+    },
+    {
+      "scene": "off",
+      "compact": true,
+      "cpu_seconds": 5.6533,
+      "wall_seconds": 5.448,
+      "exit": 0
+    }
+  ],
+  "optimized": [
+    {
+      "scene": "cosmos",
+      "compact": false,
+      "cpu_seconds": 4.5527,
+      "wall_seconds": 5.036,
+      "exit": 0
+    },
+    {
+      "scene": "cosmos",
+      "compact": true,
+      "cpu_seconds": 2.6976,
+      "wall_seconds": 4.937,
+      "exit": 0
+    },
+    {
+      "scene": "meteors",
+      "compact": false,
+      "cpu_seconds": 3.0311,
+      "wall_seconds": 5.028,
+      "exit": 0
+    },
+    {
+      "scene": "meteors",
+      "compact": true,
+      "cpu_seconds": 1.6254,
+      "wall_seconds": 4.96,
+      "exit": 0
+    },
+    {
+      "scene": "ribbons",
+      "compact": false,
+      "cpu_seconds": 3.8763,
+      "wall_seconds": 5.031,
+      "exit": 0
+    },
+    {
+      "scene": "ribbons",
+      "compact": true,
+      "cpu_seconds": 2.1246,
+      "wall_seconds": 4.975,
+      "exit": 0
+    },
+    {
+      "scene": "off",
+      "compact": false,
+      "cpu_seconds": 0.7385,
+      "wall_seconds": 5.014,
+      "exit": 0
+    },
+    {
+      "scene": "off",
+      "compact": true,
+      "cpu_seconds": 0.7238,
+      "wall_seconds": 4.975,
+      "exit": 0
+    }
+  ]
+}

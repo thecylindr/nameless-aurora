@@ -1,5 +1,5 @@
-/home/cylindr/player/build/Desktop_Debug/AuroraPlayer_autogen/PRMOGMWJPH/moc_importmanager.cpp: /home/cylindr/player/src/core/importmanager.h \
-  /home/cylindr/player/build/Desktop_Debug/AuroraPlayer_autogen/moc_predefs.h \
+/home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/PRMOGMWJPH/moc_importmanager.cpp: /home/cylindr/nameless-aurora/src/core/importmanager.h \
+  /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

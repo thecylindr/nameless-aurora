@@ -10,7 +10,7 @@
                             "column": 14,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 8,
+                            "line": 12,
                             "message": ""
                         },
                         {
@@ -18,23 +18,23 @@
                             "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 10,
+                            "line": 14,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 28,
+                            "column": 5,
                             "durationMicroseconds": 0,
-                            "functionName": "onCompleted",
-                            "line": 11,
-                            "message": "Cannot access value for name downloadDependencies"
+                            "functionName": "version",
+                            "line": 16,
+                            "message": "Functions without type annotations won't be compiled"
                         },
                         {
                             "codegenResult": 0,
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "left",
-                            "line": 15,
+                            "line": 24,
                             "message": ""
                         },
                         {
@@ -42,7 +42,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "right",
-                            "line": 16,
+                            "line": 25,
                             "message": ""
                         },
                         {
@@ -50,111 +50,151 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "top",
-                            "line": 17,
+                            "line": 26,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "margins",
-                            "line": 18,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 51,
+                            "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 25,
+                            "line": 35,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 79,
+                            "column": 28,
                             "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 25,
+                            "functionName": "color",
+                            "line": 40,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 108,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "centerIn",
+                            "line": 37,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 48,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 25,
+                            "line": 50,
                             "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 26,
-                            "message": "Cannot access value for name downloadDependencies"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 145,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 26,
-                            "message": "Cannot access value for name downloadDependencies"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 225,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 26,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 29,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "primary",
-                            "line": 30,
-                            "message": "Cannot access value for name downloadDependencies"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 31,
-                            "message": "Could not find property \"text\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 27,
                             "durationMicroseconds": 0,
-                            "functionName": "iconName",
-                            "line": 32,
+                            "functionName": "text",
+                            "line": 54,
                             "message": "Cannot access value for name downloadDependencies"
                         },
                         {
                             "codegenResult": 2,
                             "column": 28,
                             "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 33,
-                            "message": "Could not find signal \"clicked\"."
+                            "functionName": "color",
+                            "line": 55,
+                            "message": "Cannot access value for name downloadDependencies"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 57,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "columns",
+                            "line": 63,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 67,
+                            "message": "Cannot access value for name downloadDependencies"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 89,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 91,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 95,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 96,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 101,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 102,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "elide",
+                            "line": 104,
+                            "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 37,
+                            "line": 111,
                             "message": ""
                         },
                         {
@@ -162,7 +202,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 39,
+                            "line": 113,
                             "message": "Could not find property \"visible\"."
                         },
                         {
@@ -170,7 +210,7 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 44,
+                            "line": 118,
                             "message": "Cannot access value for name downloadDependencies"
                         },
                         {
@@ -178,7 +218,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 45,
+                            "line": 119,
                             "message": "Cannot access value for name downloadDependencies"
                         },
                         {
@@ -186,15 +226,111 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 47,
+                            "line": 121,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 29,
+                            "column": 22,
                             "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 46,
+                            "functionName": "visible",
+                            "line": 123,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 129,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "primary",
+                            "line": 130,
+                            "message": "Cannot access value for name downloadDependencies"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 131,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "iconName",
+                            "line": 132,
+                            "message": "Cannot access value for name downloadDependencies"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 133,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 136,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 139,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 140,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 143,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 144,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 145,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 150,
                             "message": ""
                         },
                         {
@@ -202,7 +338,7 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 51,
+                            "line": 151,
                             "message": "Cannot access value for name downloadDependencies"
                         },
                         {
@@ -210,7 +346,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 52,
+                            "line": 152,
                             "message": ""
                         },
                         {
@@ -218,35 +354,11 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 54,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 19,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 58,
-                            "message": "Cannot access value for name downloadDependencies"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 20,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 59,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 20,
-                            "durationMicroseconds": 0,
-                            "functionName": "elide",
-                            "line": 61,
+                            "line": 154,
                             "message": ""
                         }
                     ],
-                    "filePath": "/home/cylindr/player/qml/components/DependencyCard.qml"
+                    "filePath": "/home/cylindr/nameless-aurora/qml/components/DependencyCard.qml"
                 }
             ],
             "moduleId": "AuroraPlayer(AuroraPlayer)"

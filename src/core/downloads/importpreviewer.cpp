@@ -3,6 +3,7 @@
 #include "auth/browserauthmanager.h"
 #include "dependencymanager.h"
 #include "downloadmanager.h"
+#include "errormapper.h"
 #include "settingsstore.h"
 
 #include <QJsonArray>
@@ -10,11 +11,15 @@
 #include <QJsonObject>
 #include <QJsonParseError>
 #include <QProcess>
+#include <QTimer>
+#include <QStandardPaths>
+#include <QUrl>
 #include <QRegularExpression>
 
 #include <limits>
 #include <utility>
 
+// Реализация предпросмотра импорта: запуск yt-dlp для метаданных, парсинг ответа и оценка размера.
 struct ImportPreviewer::Item
 {
     QString title;
@@ -25,21 +30,24 @@ struct ImportPreviewer::Item
     bool selected = true;
 };
 
-namespace {
+namespace
+{
 
-qint64 estimateBytes(qint64 durationMs, const QString &quality)
+// Оценка размера файла по длительности и битрейту (128/192/320 кбит/с → байты).
+qint64 estimateBytes(qint64 durationMs, const QString& quality)
 {
     if (durationMs <= 0) {
         return -1;
     }
-    const qint64 bitrate = quality == QStringLiteral("compact") ? 128
-        : quality == QStringLiteral("balanced") ? 192 : 320;
+    const qint64 bitrate = quality == QStringLiteral("compact")    ? 128
+                           : quality == QStringLiteral("balanced") ? 192
+                                                                   : 320;
     const long double estimate = static_cast<long double>(durationMs) * bitrate / 8.0L;
-    return estimate >= std::numeric_limits<qint64>::max()
-        ? std::numeric_limits<qint64>::max() : static_cast<qint64>(estimate);
+    return estimate >= std::numeric_limits<qint64>::max() ? std::numeric_limits<qint64>::max()
+                                                          : static_cast<qint64>(estimate);
 }
 
-qint64 jsonInteger(const QJsonObject &object, const QString &key)
+qint64 jsonInteger(const QJsonObject& object, const QString& key)
 {
     const QJsonValue value = object.value(key);
     if (!value.isDouble()) {
@@ -49,24 +57,13 @@ qint64 jsonInteger(const QJsonObject &object, const QString &key)
     return number >= 0.0 ? static_cast<qint64>(number) : -1;
 }
 
-QString lastOutputLine(const QString &output)
-{
-    const QStringList lines = output.split(QRegularExpression(QStringLiteral("[\\r\\n]+")), Qt::SkipEmptyParts);
-    return lines.isEmpty() ? QString() : lines.constLast().trimmed();
-}
+} // namespace
 
-}
-
-ImportPreviewer::ImportPreviewer(SettingsStore *settings, DependencyManager *dependencies,
-                                 BrowserAuthManager *auth, DownloadManager *downloads, QObject *parent)
-    : QAbstractListModel(parent)
-    , m_settings(settings)
-    , m_dependencies(dependencies)
-    , m_auth(auth)
-    , m_downloads(downloads)
-    , m_statusText(tr("Введите ссылку для предпросмотра"))
-{
-}
+ImportPreviewer::ImportPreviewer(SettingsStore* settings, DependencyManager* dependencies, BrowserAuthManager* auth,
+                                 DownloadManager* downloads, QObject* parent)
+    : QAbstractListModel(parent), m_settings(settings), m_dependencies(dependencies), m_auth(auth),
+      m_downloads(downloads), m_statusText(tr("Введите ссылку для предпросмотра"))
+{}
 
 ImportPreviewer::~ImportPreviewer()
 {
@@ -79,17 +76,17 @@ ImportPreviewer::~ImportPreviewer()
     }
 }
 
-int ImportPreviewer::rowCount(const QModelIndex &parent) const
+int ImportPreviewer::rowCount(const QModelIndex& parent) const
 {
     return parent.isValid() ? 0 : m_items.size();
 }
 
-QVariant ImportPreviewer::data(const QModelIndex &index, int role) const
+QVariant ImportPreviewer::data(const QModelIndex& index, int role) const
 {
     if (!index.isValid() || index.row() < 0 || index.row() >= m_items.size()) {
         return {};
     }
-    const Item &item = m_items.at(index.row());
+    const Item& item = m_items.at(index.row());
     switch (role) {
     case Qt::DisplayRole:
     case TitleRole:
@@ -111,30 +108,38 @@ QVariant ImportPreviewer::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> ImportPreviewer::roleNames() const
 {
-    return {
-        {TitleRole, "title"},
-        {ArtistRole, "artist"},
-        {UrlRole, "url"},
-        {DurationRole, "duration"},
-        {SizeRole, "size"},
-        {SelectedRole, "selected"}
-    };
+    return {{TitleRole, "title"},       {ArtistRole, "artist"}, {UrlRole, "url"},
+            {DurationRole, "duration"}, {SizeRole, "size"},     {SelectedRole, "selected"}};
 }
 
-void ImportPreviewer::inspect(const QString &url, const QString &quality, bool authorized)
+void ImportPreviewer::inspect(const QString& url, const QString& quality, bool authorized)
+{
+    startPreview(url, quality, authorized, false);
+}
+void ImportPreviewer::searchYoutube(const QString& query, const QString& quality)
+{
+    if (query.trimmed().isEmpty() || query.size() > 200) {
+        setLastError(tr("Введите исполнителя или название, до 200 символов."));
+        return;
+    }
+    startPreview("ytsearch10:" + query.trimmed(), quality, false, true);
+}
+void ImportPreviewer::startPreview(const QString& url, const QString& quality, bool authorized, bool searching)
 {
     if (m_busy) {
         setLastError(tr("Дождитесь завершения текущего предпросмотра."));
         return;
     }
     const QString normalizedQuality = quality.trimmed().toLower();
-    if (normalizedQuality != QStringLiteral("original") && normalizedQuality != QStringLiteral("balanced")
-        && normalizedQuality != QStringLiteral("compact")) {
+    if (normalizedQuality != QStringLiteral("original") && normalizedQuality != QStringLiteral("balanced") &&
+        normalizedQuality != QStringLiteral("compact")) {
         setLastError(tr("Некорректное качество. Используйте original, balanced или compact."));
         return;
     }
     const QString source = url.trimmed();
-    const QString service = m_downloads ? m_downloads->serviceForUrl(source) : QString();
+    const QString service = searching     ? QStringLiteral("YouTube")
+                            : m_downloads ? m_downloads->serviceForUrl(source)
+                                          : QString();
     if (service.isEmpty()) {
         setLastError(tr("Введите корректный HTTP(S) URL YouTube, Яндекс Музыки, VK или Spotify."));
         return;
@@ -142,7 +147,10 @@ void ImportPreviewer::inspect(const QString &url, const QString &quality, bool a
 
     m_quality = normalizedQuality;
     m_authorized = authorized;
-    setSourceUrl(source);
+    m_searching = searching;
+    setSourceUrl(searching ? "https://www.youtube.com/results?search_query=" +
+                                 QString::fromLatin1(QUrl::toPercentEncoding(source.mid(11)))
+                           : source);
     setLastError({});
     beginResetModel();
     m_items.clear();
@@ -162,14 +170,29 @@ void ImportPreviewer::inspect(const QString &url, const QString &quality, bool a
 
     m_stdout.clear();
     m_stderr.clear();
+    m_stopReason.clear();
     setBusy(true);
     setStatusText(tr("Получение метаданных и списка треков…"));
 
     m_process = new QProcess(this);
     m_process->setProcessChannelMode(QProcess::SeparateChannels);
+    // Общий таймаут 90 секунд на получение метаданных.
+    auto* timeout = new QTimer(m_process);
+    timeout->setSingleShot(true);
+    timeout->start(90000);
+    connect(timeout, &QTimer::timeout, this, [this] {
+        m_stopReason = tr("Сервис не ответил за 90 секунд. Проверь доступность ссылки и соединение.");
+        if (m_process)
+            m_process->kill();
+    });
     connect(m_process, &QProcess::readyReadStandardOutput, this, [this] {
         if (m_process) {
             m_stdout.append(m_process->readAllStandardOutput());
+            // Огромные списки обрезаем, чтобы не раздувать память.
+            if (m_stdout.size() > 20 * 1024 * 1024) {
+                m_stopReason = tr("Список слишком большой. Открой отдельный плейлист.");
+                m_process->kill();
+            }
         }
     });
     connect(m_process, &QProcess::readyReadStandardError, this, [this] {
@@ -191,11 +214,17 @@ void ImportPreviewer::inspect(const QString &url, const QString &quality, bool a
         m_stderr = (m_stderr + QString::fromLocal8Bit(m_process->readAllStandardError())).right(8192);
         m_process->deleteLater();
         m_process = nullptr;
+        if (!m_stopReason.isEmpty()) {
+            finishError(m_stopReason);
+            return;
+        }
         if (exitStatus != QProcess::NormalExit || exitCode != 0) {
-            QString message = exitStatus == QProcess::CrashExit
-                ? tr("yt-dlp аварийно завершён при получении метаданных.")
-                : tr("yt-dlp завершился с кодом %1.").arg(exitCode);
-            const QString details = lastOutputLine(m_stderr);
+            QString message =
+                exitStatus == QProcess::CrashExit
+                    ? tr("Процесс yt-dlp остановился (сигнал %1). Проверь загрузчик кнопкой «Проверить».").arg(exitCode)
+                    : tr("yt-dlp завершился с кодом %1.").arg(exitCode);
+            const QString details =
+                DownloaderErrors::humanizeDownloaderError(m_stderr, m_settings ? m_settings->browser() : QString());
             if (!details.isEmpty()) {
                 message += QStringLiteral(" ") + details;
             }
@@ -205,10 +234,23 @@ void ImportPreviewer::inspect(const QString &url, const QString &quality, bool a
         parseMetadata(m_stdout);
     });
 
-    QStringList arguments = {
-        QStringLiteral("--dump-single-json"), QStringLiteral("--skip-download"),
-        QStringLiteral("--no-warnings"), QStringLiteral("--format"), QStringLiteral("bestaudio/best")
-    };
+    QStringList arguments = {QStringLiteral("--ignore-config"),
+                             QStringLiteral("--socket-timeout"),
+                             QStringLiteral("10"),
+                             QStringLiteral("--retries"),
+                             QStringLiteral("1"),
+                             QStringLiteral("--extractor-retries"),
+                             QStringLiteral("1"),
+                             QStringLiteral("--playlist-end"),
+                             QStringLiteral("10000"),
+                             QStringLiteral("--dump-single-json"),
+                             QStringLiteral("--skip-download"),
+                             QStringLiteral("--no-warnings"),
+                             QStringLiteral("--format"),
+                             QStringLiteral("bestaudio/best")};
+    if (!QStandardPaths::findExecutable(QStringLiteral("node")).isEmpty())
+        arguments << QStringLiteral("--js-runtimes") << QStringLiteral("node");
+    arguments.append(QStringLiteral("--flat-playlist"));
     if (m_auth) {
         arguments.append(m_auth->sessionArguments(service, authorized));
     }
@@ -216,7 +258,7 @@ void ImportPreviewer::inspect(const QString &url, const QString &quality, bool a
     m_process->start(program, arguments, QIODevice::ReadOnly);
 }
 
-void ImportPreviewer::inspectSpotify(const QString &url)
+void ImportPreviewer::inspectSpotify(const QString& url)
 {
     beginResetModel();
     Item item;
@@ -229,7 +271,7 @@ void ImportPreviewer::inspectSpotify(const QString &url)
     setStatusText(tr("Spotify будет загружен через spotdl; длительность и размер до загрузки неизвестны."));
 }
 
-void ImportPreviewer::parseMetadata(const QByteArray &json)
+void ImportPreviewer::parseMetadata(const QByteArray& json)
 {
     QJsonParseError parseError{};
     const QJsonDocument document = QJsonDocument::fromJson(json, &parseError);
@@ -243,7 +285,7 @@ void ImportPreviewer::parseMetadata(const QByteArray &json)
     const QJsonValue entries = root.value(QStringLiteral("entries"));
     if (entries.isArray()) {
         const QJsonArray array = entries.toArray();
-        for (const QJsonValue &value : array) {
+        for (const QJsonValue& value : array) {
             if (value.isObject()) {
                 objects.append(value.toObject());
             }
@@ -257,8 +299,9 @@ void ImportPreviewer::parseMetadata(const QByteArray &json)
     }
 
     QVector<Item> parsedItems;
-    for (const QJsonObject &object : std::as_const(objects)) {
+    for (const QJsonObject& object : std::as_const(objects)) {
         Item item;
+        item.selected = !m_searching;
         const QString id = object.value(QStringLiteral("id")).toVariant().toString();
         item.title = object.value(QStringLiteral("title")).toString();
         if (item.title.isEmpty()) {
@@ -269,12 +312,19 @@ void ImportPreviewer::parseMetadata(const QByteArray &json)
             item.artist = object.value(QStringLiteral("uploader")).toString();
         }
         item.url = object.value(QStringLiteral("webpage_url")).toString();
-        if (item.url.isEmpty()) {
+        if (item.url.isEmpty())
+            item.url = object.value(QStringLiteral("url")).toString();
+        if (m_downloads->serviceForUrl(item.url).isEmpty())
             item.url = object.value(QStringLiteral("original_url")).toString();
-        }
-        if (item.url.isEmpty() && !id.isEmpty()
-            && m_downloads->serviceForUrl(m_sourceUrl) == QStringLiteral("YouTube")) {
+        if (item.url.isEmpty() && !id.isEmpty() &&
+            m_downloads->serviceForUrl(m_sourceUrl) == QStringLiteral("YouTube")) {
             item.url = QStringLiteral("https://www.youtube.com/watch?v=%1").arg(id);
+        }
+        // Если прямой ссылки нет, ищем тот же трек на YouTube по исполнителю и названию.
+        if (m_downloads->serviceForUrl(item.url).isEmpty()) {
+            if (!item.artist.isEmpty() && !item.title.isEmpty()) {
+                item.url = QStringLiteral("ytsearch1:") + item.artist + QStringLiteral(" - ") + item.title;
+            }
         }
         if (m_downloads->serviceForUrl(item.url).isEmpty()) {
             continue;
@@ -312,7 +362,7 @@ void ImportPreviewer::toggle(int index)
     if (index < 0 || index >= m_items.size()) {
         return;
     }
-    Item &item = m_items[index];
+    Item& item = m_items[index];
     item.selected = !item.selected;
     emit dataChanged(this->index(index), this->index(index), {SelectedRole});
     updateSummary();
@@ -323,7 +373,7 @@ void ImportPreviewer::selectAll(bool selected)
     if (m_items.isEmpty()) {
         return;
     }
-    for (Item &item : m_items) {
+    for (Item& item : m_items) {
         item.selected = selected;
     }
     emit dataChanged(index(0), index(m_items.size() - 1), {SelectedRole});
@@ -341,9 +391,11 @@ void ImportPreviewer::startSelected()
         return;
     }
     QStringList urls;
-    for (const Item &item : std::as_const(m_items)) {
+    QStringList titles;
+    for (const Item& item : std::as_const(m_items)) {
         if (item.selected) {
             urls.append(item.url);
+            titles.append(item.artist.isEmpty() ? item.title : item.artist + QStringLiteral(" - ") + item.title);
         }
     }
     if (urls.isEmpty()) {
@@ -351,7 +403,7 @@ void ImportPreviewer::startSelected()
         return;
     }
     setLastError({});
-    m_downloads->enqueue(urls, m_quality, m_authorized);
+    m_downloads->enqueue(urls, m_quality, m_authorized, titles);
     setStatusText(tr("Выбранные ссылки переданы в очередь загрузок: %1.").arg(urls.size()));
 }
 
@@ -361,7 +413,7 @@ void ImportPreviewer::updateSummary()
     qint64 selectedBytes = 0;
     int selectedCount = 0;
     int unknownSizes = 0;
-    for (const Item &item : std::as_const(m_items)) {
+    for (const Item& item : std::as_const(m_items)) {
         if (item.duration > 0 && totalDuration <= std::numeric_limits<qint64>::max() - item.duration) {
             totalDuration += item.duration;
         }
@@ -393,7 +445,7 @@ void ImportPreviewer::updateSummary()
     }
 }
 
-void ImportPreviewer::finishError(const QString &message)
+void ImportPreviewer::finishError(const QString& message)
 {
     if (m_process) {
         disconnect(m_process, nullptr, this, nullptr);
@@ -414,7 +466,7 @@ void ImportPreviewer::setBusy(bool busy)
     emit busyChanged();
 }
 
-void ImportPreviewer::setStatusText(const QString &statusText)
+void ImportPreviewer::setStatusText(const QString& statusText)
 {
     if (m_statusText == statusText) {
         return;
@@ -423,7 +475,7 @@ void ImportPreviewer::setStatusText(const QString &statusText)
     emit statusTextChanged();
 }
 
-void ImportPreviewer::setLastError(const QString &lastError)
+void ImportPreviewer::setLastError(const QString& lastError)
 {
     if (m_lastError == lastError) {
         return;
@@ -432,11 +484,19 @@ void ImportPreviewer::setLastError(const QString &lastError)
     emit lastErrorChanged();
 }
 
-void ImportPreviewer::setSourceUrl(const QString &sourceUrl)
+void ImportPreviewer::setSourceUrl(const QString& sourceUrl)
 {
     if (m_sourceUrl == sourceUrl) {
         return;
     }
     m_sourceUrl = sourceUrl;
     emit sourceUrlChanged();
+}
+
+void ImportPreviewer::cancel()
+{
+    if (!m_process)
+        return;
+    m_stopReason = tr("Получение списка отменено.");
+    m_process->kill();
 }

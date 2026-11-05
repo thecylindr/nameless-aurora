@@ -6,51 +6,123 @@
                 {
                     "entries": [
                         {
-                            "codegenResult": 2,
-                            "column": 5,
+                            "codegenResult": 0,
+                            "column": 28,
                             "durationMicroseconds": 0,
-                            "functionName": "selectedQuality",
-                            "line": 15,
-                            "message": "function without return type annotation returns conversion to QVariant. This may prevent proper compilation to Cpp."
+                            "functionName": "selected",
+                            "line": 13,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 33,
+                            "durationMicroseconds": 0,
+                            "functionName": "localProfiles",
+                            "line": 18,
+                            "message": "Cannot access value for name webLogin"
                         },
                         {
                             "codegenResult": 2,
                             "column": 5,
                             "durationMicroseconds": 0,
-                            "functionName": "toolReady",
-                            "line": 19,
-                            "message": "Cannot access value for name downloadManager"
+                            "functionName": "quality",
+                            "line": 27,
+                            "message": "Cannot access value for name settingsStore"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 5,
+                            "durationMicroseconds": 0,
+                            "functionName": "profileId",
+                            "line": 30,
+                            "message": "Cannot retrieve a non-object type by ID: localProfile"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 5,
+                            "durationMicroseconds": 0,
+                            "functionName": "downloadable",
+                            "line": 33,
+                            "message": "Functions without type annotations won't be compiled"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 5,
+                            "durationMicroseconds": 0,
+                            "functionName": "chooseAll",
+                            "line": 36,
+                            "message": "Functions without type annotations won't be compiled"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 5,
+                            "durationMicroseconds": 0,
+                            "functionName": "toggle",
+                            "line": 48,
+                            "message": "Functions without type annotations won't be compiled"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 5,
+                            "durationMicroseconds": 1000,
+                            "functionName": "startNative",
+                            "line": 60,
+                            "message": "Cannot access value for name libraryExchange"
                         },
                         {
                             "codegenResult": 2,
                             "column": 5,
                             "durationMicroseconds": 0,
                             "functionName": "inspect",
-                            "line": 24,
-                            "message": "Cannot retrieve a non-object type by ID: urlField"
+                            "line": 79,
+                            "message": "Cannot retrieve a non-object type by ID: audioUrl"
                         },
                         {
                             "codegenResult": 2,
                             "column": 5,
                             "durationMicroseconds": 0,
                             "functionName": "requestDownload",
-                            "line": 42,
-                            "message": "Cannot access value for name importPreviewer"
+                            "line": 102,
+                            "message": "Functions without type annotations won't be compiled"
                         },
                         {
                             "codegenResult": 2,
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "target",
-                            "line": 56,
+                            "line": 119,
+                            "message": "Cannot access value for name libraryExchange"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 9,
+                            "durationMicroseconds": 0,
+                            "functionName": "onCompleted",
+                            "line": 120,
+                            "message": "Functions without type annotations won't be compiled"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 9,
+                            "durationMicroseconds": 0,
+                            "functionName": "onAudioImportRequested",
+                            "line": 123,
+                            "message": "Functions without type annotations won't be compiled"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 17,
+                            "durationMicroseconds": 0,
+                            "functionName": "target",
+                            "line": 129,
                             "message": "Cannot access value for name downloadDependencies"
                         },
                         {
                             "codegenResult": 2,
                             "column": 9,
                             "durationMicroseconds": 0,
-                            "functionName": "onRuntimeReadyChanged",
-                            "line": 57,
+                            "functionName": "onBusyChanged",
+                            "line": 130,
                             "message": "Cannot access value for name downloadDependencies"
                         },
                         {
@@ -58,7 +130,7 @@
                             "column": 9,
                             "durationMicroseconds": 0,
                             "functionName": "onLastErrorChanged",
-                            "line": 63,
+                            "line": 143,
                             "message": "Cannot access value for name downloadDependencies"
                         },
                         {
@@ -66,23 +138,23 @@
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "target",
-                            "line": 69,
-                            "message": "Cannot access value for name importPreviewer"
+                            "line": 151,
+                            "message": "Cannot access value for name webLogin"
                         },
                         {
                             "codegenResult": 2,
                             "column": 9,
                             "durationMicroseconds": 0,
-                            "functionName": "onLastErrorChanged",
-                            "line": 70,
-                            "message": "Cannot access value for name importPreviewer"
+                            "functionName": "onLoginDone",
+                            "line": 152,
+                            "message": "Functions without type annotations won't be compiled"
                         },
                         {
                             "codegenResult": 2,
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "contentWidth",
-                            "line": 80,
+                            "line": 160,
                             "message": "Could not find property \"contentWidth\"."
                         },
                         {
@@ -90,31 +162,31 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 78,
+                            "line": 158,
                             "message": "Could not find property \"fill\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 63,
+                            "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 82,
+                            "line": 162,
                             "message": "Cannot access value for name theme"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 73,
+                            "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "x",
-                            "line": 82,
+                            "line": 163,
                             "message": "Could not find property \"x\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 103,
+                            "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 82,
+                            "line": 164,
                             "message": "Could not find property \"height\"."
                         },
                         {
@@ -122,7 +194,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 85,
+                            "line": 167,
                             "message": "Cannot retrieve a non-object type by ID: scroll"
                         },
                         {
@@ -130,103 +202,63 @@
                             "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "x",
-                            "line": 86,
-                            "message": "Cannot access value for name compact"
+                            "line": 168,
+                            "message": "Cannot retrieve a non-object type by ID: scroll"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 36,
+                            "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 89,
+                            "line": 171,
                             "message": "Cannot access value for name compact"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 54,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 93,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 82,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 93,
-                            "message": "Cannot access value for name compact"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 114,
-                            "durationMicroseconds": 0,
-                            "functionName": "weight",
-                            "line": 93,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 84,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 94,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 115,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 94,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 98,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
                             "column": 24,
                             "durationMicroseconds": 0,
-                            "functionName": "model",
-                            "line": 100,
-                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "currentIndex",
-                            "line": 101,
-                            "message": "Cannot access value for name authorizedMode"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 102,
-                            "message": "Cannot find name authorizedMode"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 102,
+                            "functionName": "color",
+                            "line": 175,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 26,
+                            "column": 27,
                             "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 106,
+                            "functionName": "wrapMode",
+                            "line": 179,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 33,
+                            "durationMicroseconds": 0,
+                            "functionName": "pixelSize",
+                            "line": 176,
+                            "message": "Cannot access value for name compact"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 177,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 183,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 186,
                             "message": ""
                         },
                         {
@@ -234,15 +266,31 @@
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 109,
+                            "line": 190,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 191,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 193,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 35,
-                            "durationMicroseconds": 0,
+                            "durationMicroseconds": 1000,
                             "functionName": "left",
-                            "line": 112,
+                            "line": 196,
                             "message": ""
                         },
                         {
@@ -250,7 +298,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "right",
-                            "line": 113,
+                            "line": 197,
                             "message": ""
                         },
                         {
@@ -258,367 +306,127 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "top",
-                            "line": 114,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 120,
-                            "message": "Cannot access value for name authorizedMode"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 125,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 39,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 127,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 45,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 126,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 130,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "model",
-                            "line": 132,
-                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "currentIndex",
-                            "line": 133,
-                            "message": "Cannot access value for name authService"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 134,
-                            "message": "Cannot find name authService"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 134,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 42,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 142,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 144,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 44,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 145,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 42,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 151,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 42,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 152,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 44,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 154,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 161,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 42,
-                            "durationMicroseconds": 0,
-                            "functionName": "placeholderText",
-                            "line": 163,
-                            "message": "Could not find property \"placeholderText\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 165,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 169,
-                            "message": "Cannot access value for name downloadManager"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 172,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 41,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 173,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 64,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 178,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 95,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 178,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 38,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 181,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "model",
-                            "line": 183,
-                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "currentIndex",
-                            "line": 184,
-                            "message": "Cannot access value for name settingsStore"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 185,
-                            "message": "Cannot access value for name settingsStore"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 185,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 189,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 193,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 194,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 195,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
                             "line": 198,
                             "message": ""
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 34,
+                            "codegenResult": 0,
+                            "column": 32,
                             "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 200,
-                            "message": "Could not find property \"visible\"."
+                            "functionName": "color",
+                            "line": 203,
+                            "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 34,
+                            "column": 38,
                             "durationMicroseconds": 0,
-                            "functionName": "visible",
+                            "functionName": "weight",
                             "line": 205,
                             "message": ""
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 206,
-                            "message": "Cannot access value for name importPreviewer"
-                        },
-                        {
-                            "codegenResult": 2,
+                            "codegenResult": 0,
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 208,
-                            "message": "Cannot access value for name importPreviewer"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
                             "line": 210,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 41,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 209,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 216,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 218,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 33,
-                            "durationMicroseconds": 0,
-                            "functionName": "implicitHeight",
-                            "line": 220,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
                             "column": 35,
                             "durationMicroseconds": 0,
-                            "functionName": "left",
-                            "line": 223,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "right",
-                            "line": 224,
+                            "functionName": "wrapMode",
+                            "line": 212,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 34,
                             "durationMicroseconds": 0,
-                            "functionName": "top",
-                            "line": 225,
+                            "functionName": "uiTheme",
+                            "line": 217,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 219,
+                            "message": "Could not find property \"model\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 221,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 227,
+                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 230,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 231,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 234,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 235,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 241,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 37,
+                            "durationMicroseconds": 0,
+                            "functionName": "onAccepted",
+                            "line": 245,
+                            "message": "Could not find signal \"accepted\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 250,
                             "message": ""
                         },
                         {
@@ -626,31 +434,175 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 232,
-                            "message": "Cannot access value for name importPreviewer"
+                            "line": 252,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 255,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 256,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 259,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 261,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 262,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 266,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 268,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 273,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 274,
+                            "message": "Cannot access value for name libraryExchange"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 275,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 277,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 280,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 282,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 284,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 289,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 291,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 294,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 295,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 297,
+                            "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 233,
+                            "line": 307,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 45,
+                            "column": 39,
                             "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 234,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 42,
-                            "durationMicroseconds": 0,
-                            "functionName": "weight",
-                            "line": 235,
+                            "functionName": "wrapMode",
+                            "line": 309,
                             "message": ""
                         },
                         {
@@ -658,7 +610,239 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 238,
+                            "line": 313,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 315,
+                            "message": "Could not find property \"model\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 321,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 323,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 324,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 327,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 329,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 330,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 333,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 335,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 336,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 342,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 344,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 44,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 345,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 352,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 354,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 355,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 359,
+                            "message": "Cannot access value for name webLogin"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 360,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 361,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 365,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 367,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 368,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 374,
+                            "message": "Cannot access value for name libraryExchange"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 33,
+                            "durationMicroseconds": 0,
+                            "functionName": "implicitHeight",
+                            "line": 376,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 377,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 379,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "left",
+                            "line": 382,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "right",
+                            "line": 383,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "top",
+                            "line": 384,
                             "message": ""
                         },
                         {
@@ -666,7 +850,39 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 239,
+                            "line": 391,
+                            "message": "Cannot access value for name libraryExchange"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 392,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 42,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 394,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 397,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 398,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -674,7 +890,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 241,
+                            "line": 400,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -682,7 +898,7 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 247,
+                            "line": 406,
                             "message": ""
                         },
                         {
@@ -690,15 +906,15 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "model",
-                            "line": 248,
-                            "message": "Cannot access value for name importPreviewer"
+                            "line": 408,
+                            "message": "Cannot access value for name libraryExchange"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 38,
+                            "column": 41,
                             "durationMicroseconds": 0,
-                            "functionName": "interactive",
-                            "line": 251,
+                            "functionName": "boundsBehavior",
+                            "line": 409,
                             "message": ""
                         },
                         {
@@ -706,199 +922,167 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 259,
-                            "message": "Cannot access value for name previewList"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 37,
-                            "durationMicroseconds": 0,
-                            "functionName": "radius",
-                            "line": 261,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 262,
-                            "message": "Cannot access value for name theme"
+                            "line": 413,
+                            "message": "Cannot access value for name nativeList"
                         },
                         {
                             "codegenResult": 0,
                             "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 264,
+                            "line": 416,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
                             "column": 46,
                             "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 269,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "iconName",
-                            "line": 271,
-                            "message": "Cannot access value for name selected"
+                            "functionName": "checked",
+                            "line": 419,
+                            "message": "Could not find property \"checked\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 46,
                             "durationMicroseconds": 0,
-                            "functionName": "primary",
-                            "line": 274,
-                            "message": "Cannot access value for name selected"
+                            "functionName": "enabled",
+                            "line": 420,
+                            "message": "Could not find property \"enabled\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 48,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 275,
+                            "line": 421,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 74,
+                            "column": 56,
                             "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 280,
-                            "message": "Cannot access value for name title"
+                            "functionName": "highlight",
+                            "line": 422,
+                            "message": "Could not find property \"highlight\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 88,
+                            "column": 53,
+                            "durationMicroseconds": 0,
+                            "functionName": "window",
+                            "line": 423,
+                            "message": "Could not find property \"window\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 47,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 430,
+                            "message": "Cannot access value for name modelData"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 48,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 280,
+                            "line": 431,
                             "message": "Cannot access value for name theme"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 139,
+                            "column": 48,
                             "durationMicroseconds": 0,
                             "functionName": "elide",
-                            "line": 280,
+                            "line": 433,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 116,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 280,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 74,
+                            "column": 47,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 281,
-                            "message": "Cannot access value for name artist"
+                            "line": 437,
+                            "message": "Cannot access value for name modelData"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 89,
+                            "column": 48,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 281,
+                            "line": 438,
                             "message": "Cannot access value for name theme"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 146,
+                            "column": 48,
                             "durationMicroseconds": 0,
                             "functionName": "elide",
-                            "line": 281,
+                            "line": 440,
                             "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 120,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 281,
-                            "message": "Cannot access value for name theme"
                         },
                         {
                             "codegenResult": 2,
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 284,
-                            "message": "Cannot access value for name duration"
+                            "line": 444,
+                            "message": "Cannot access value for name modelData"
                         },
                         {
                             "codegenResult": 2,
                             "column": 44,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 285,
+                            "line": 445,
                             "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 53,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 286,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 293,
-                            "message": "Cannot access value for name storageManager"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 295,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 297,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 41,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 296,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 88,
-                            "durationMicroseconds": 0,
-                            "functionName": "requiredBytes",
-                            "line": 299,
-                            "message": "Cannot access value for name importPreviewer"
                         },
                         {
                             "codegenResult": 0,
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 301,
+                            "line": 452,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 454,
+                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "currentIndex",
+                            "line": 455,
+                            "message": "Cannot access value for name settingsStore"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 43,
+                            "durationMicroseconds": 0,
+                            "functionName": "onOptionSelected",
+                            "line": 456,
+                            "message": "Cannot access value for name settingsStore"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 43,
+                            "durationMicroseconds": 0,
+                            "functionName": "onOptionSelected",
+                            "line": 456,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 459,
                             "message": ""
                         },
                         {
@@ -906,7 +1090,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 305,
+                            "line": 462,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -914,7 +1098,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 306,
+                            "line": 464,
                             "message": "Could not find property \"enabled\"."
                         },
                         {
@@ -922,31 +1106,31 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 307,
+                            "line": 465,
                             "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 313,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 315,
-                            "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 317,
+                            "line": 471,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 472,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 474,
                             "message": ""
                         },
                         {
@@ -954,7 +1138,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "left",
-                            "line": 320,
+                            "line": 477,
                             "message": ""
                         },
                         {
@@ -962,7 +1146,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "right",
-                            "line": 321,
+                            "line": 478,
                             "message": ""
                         },
                         {
@@ -970,467 +1154,635 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "top",
-                            "line": 322,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 62,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 327,
-                            "message": "Cannot access value for name downloadManager"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 127,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 327,
+                            "line": 479,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 155,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 327,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 184,
-                            "durationMicroseconds": 0,
-                            "functionName": "weight",
-                            "line": 327,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 56,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 328,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 112,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 328,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 54,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 330,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 108,
-                            "durationMicroseconds": 0,
-                            "functionName": "value",
-                            "line": 330,
-                            "message": "Could not find property \"value\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 41,
-                            "durationMicroseconds": 0,
-                            "functionName": "implicitHeight",
-                            "line": 334,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
                             "column": 32,
                             "durationMicroseconds": 0,
-                            "functionName": "model",
-                            "line": 335,
-                            "message": "Cannot access value for name downloadManager"
+                            "functionName": "color",
+                            "line": 484,
+                            "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 38,
                             "durationMicroseconds": 0,
-                            "functionName": "interactive",
-                            "line": 337,
+                            "functionName": "weight",
+                            "line": 486,
                             "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 344,
-                            "message": "Cannot access value for name queueList"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "fill",
-                            "line": 348,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 74,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 353,
-                            "message": "Cannot access value for name title"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 109,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 353,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 163,
-                            "durationMicroseconds": 0,
-                            "functionName": "elide",
-                            "line": 353,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 137,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 353,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 70,
+                            "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 354,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 124,
-                            "durationMicroseconds": 0,
-                            "functionName": "value",
-                            "line": 354,
-                            "message": "Could not find property \"value\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 143,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 354,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 74,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 355,
-                            "message": "Cannot access value for name status"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 89,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 355,
-                            "message": "Cannot access value for name status"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 168,
-                            "durationMicroseconds": 0,
-                            "functionName": "elide",
-                            "line": 355,
+                            "line": 492,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 46,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 358,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "iconName",
-                            "line": 360,
-                            "message": "Cannot access value for name status"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 46,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 363,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 48,
+                            "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 364,
+                            "line": 495,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
-                            "column": 18,
+                            "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 377,
+                            "line": 498,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 16,
+                            "column": 38,
                             "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 380,
-                            "message": "Could not find property \"width\"."
+                            "functionName": "enabled",
+                            "line": 501,
+                            "message": "Could not find property \"enabled\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 385,
-                            "message": "Cannot access value for name browserAuth"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 386,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 388,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 33,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 387,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 393,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 395,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 33,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 394,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 48,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 399,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 106,
+                            "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 399,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 401,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 405,
+                            "line": 502,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
-                            "column": 18,
+                            "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 416,
+                            "line": 505,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 16,
+                            "column": 38,
                             "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 419,
-                            "message": "Could not find property \"width\"."
+                            "functionName": "enabled",
+                            "line": 508,
+                            "message": "Could not find property \"enabled\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 23,
+                            "column": 40,
                             "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 424,
-                            "message": "Cannot access value for name importPreviewer"
+                            "functionName": "onClicked",
+                            "line": 509,
+                            "message": "Could not find signal \"clicked\"."
                         },
                         {
-                            "codegenResult": 2,
+                            "codegenResult": 0,
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 425,
-                            "message": "Cannot access value for name theme"
+                            "line": 516,
+                            "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 427,
+                            "line": 518,
                             "message": ""
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 23,
+                            "codegenResult": 0,
+                            "column": 26,
                             "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 431,
-                            "message": "Cannot access value for name storageManager"
+                            "functionName": "uiTheme",
+                            "line": 521,
+                            "message": ""
                         },
                         {
                             "codegenResult": 2,
                             "column": 24,
                             "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 433,
-                            "message": "Cannot access value for name theme"
+                            "functionName": "model",
+                            "line": 523,
+                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 27,
+                            "column": 35,
                             "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
-                            "line": 435,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 33,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 434,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 48,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 439,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 106,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 439,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 441,
-                            "message": "Cannot access value for name theme"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 445,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 18,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 456,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 16,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 460,
+                            "functionName": "onOptionSelected",
+                            "line": 524,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 35,
                             "durationMicroseconds": 0,
-                            "functionName": "horizontalCenter",
-                            "line": 457,
+                            "functionName": "onOptionSelected",
+                            "line": 524,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 25,
+                            "column": 26,
                             "durationMicroseconds": 0,
-                            "functionName": "bottom",
-                            "line": 458,
+                            "functionName": "uiTheme",
+                            "line": 528,
                             "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "iconName",
+                            "line": 530,
+                            "message": "Cannot access value for name searchMode"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "placeholderText",
+                            "line": 531,
+                            "message": "Could not find property \"placeholderText\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 29,
+                            "durationMicroseconds": 0,
+                            "functionName": "onAccepted",
+                            "line": 532,
+                            "message": "Could not find signal \"accepted\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 535,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 537,
+                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "currentIndex",
+                            "line": 538,
+                            "message": "Cannot access value for name settingsStore"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "onOptionSelected",
+                            "line": 539,
+                            "message": "Cannot access value for name settingsStore"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "onOptionSelected",
+                            "line": 539,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 542,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 545,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 547,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 548,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 551,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 553,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 557,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 559,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 560,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 564,
+                            "message": "Cannot access value for name importPreviewer"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 565,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 566,
+                            "message": "Cannot access value for name importPreviewer"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 568,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 33,
+                            "durationMicroseconds": 0,
+                            "functionName": "implicitHeight",
+                            "line": 573,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 574,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 575,
+                            "message": "Cannot access value for name importPreviewer"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 582,
+                            "message": "Cannot access value for name previewList"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 585,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "checked",
+                            "line": 587,
+                            "message": "Could not find property \"checked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 588,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 48,
+                            "durationMicroseconds": 0,
+                            "functionName": "highlight",
+                            "line": 589,
+                            "message": "Could not find property \"highlight\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 594,
+                            "message": "Cannot access value for name title"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "elide",
+                            "line": 596,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 597,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 601,
+                            "message": "Cannot access value for name artist"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "elide",
+                            "line": 603,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 604,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 614,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 616,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 618,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 621,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 623,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 624,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 625,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 637,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 639,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 640,
+                            "message": "Cannot access value for name downloadManager"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 19,
+                            "durationMicroseconds": 0,
+                            "functionName": "fileMode",
+                            "line": 649,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "nameFilters",
+                            "line": 650,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 0,
+                            "functionName": "onAccepted",
+                            "line": 651,
+                            "message": "Cannot access value for name importManager"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "nameFilters",
+                            "line": 655,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 0,
+                            "functionName": "onAccepted",
+                            "line": 656,
+                            "message": "Cannot access value for name libraryExchange"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "nameFilters",
+                            "line": 660,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 0,
+                            "functionName": "onAccepted",
+                            "line": 661,
+                            "message": "Cannot access value for name libraryExchange"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 18,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 665,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 16,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 667,
+                            "message": "Could not find property \"width\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 672,
+                            "message": "Cannot access value for name root"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 673,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 674,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 680,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 683,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 686,
+                            "message": "Cannot access value for name theme"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 690,
+                            "message": "Could not find signal \"clicked\"."
                         }
                     ],
-                    "filePath": "/home/cylindr/player/qml/pages/ImportPage.qml"
+                    "filePath": "/home/cylindr/nameless-aurora/qml/pages/ImportPage.qml"
                 }
             ],
             "moduleId": "AuroraPlayer(AuroraPlayer)"

@@ -1,0 +1,46 @@
+{
+    "classes": [
+        {
+            "className": "OpenCatalog",
+            "lineNumber": 10,
+            "object": true,
+            "qualifiedClassName": "OpenCatalog",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "tracks",
+                            "type": "QVariantList"
+                        }
+                    ],
+                    "index": 0,
+                    "lineNumber": 22,
+                    "name": "ready",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "message",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 23,
+                    "name": "failed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "opencatalog.h",
+    "outputRevision": 69
+}

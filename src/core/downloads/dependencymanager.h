@@ -2,7 +2,10 @@
 
 #include <QObject>
 #include <QString>
+#include <QStringList>
 
+// Управление инструментами загрузки: поиск/установка Python, yt-dlp, spotdl, FFmpeg
+// и JS-рантайма (node/deno) в локальное виртуальное окружение.
 class QProcess;
 class SettingsStore;
 
@@ -22,32 +25,79 @@ class DependencyManager : public QObject
     Q_PROPERTY(QString spotdlVersion READ spotdlVersion NOTIFY spotdlVersionChanged)
     Q_PROPERTY(QString ffmpegVersion READ ffmpegVersion NOTIFY ffmpegVersionChanged)
 
-public:
-    explicit DependencyManager(SettingsStore *settings, QObject *parent = nullptr);
+  public:
+    explicit DependencyManager(SettingsStore* settings, QObject* parent = nullptr, bool deferChecks = false);
     ~DependencyManager() override;
 
-    bool busy() const { return m_busy; }
-    QString statusText() const { return m_statusText; }
-    QString lastError() const { return m_lastError; }
-    bool pythonAvailable() const { return m_pythonAvailable; }
-    bool ffmpegAvailable() const { return m_ffmpegAvailable; }
-    bool ytDlpAvailable() const { return m_ytDlpAvailable; }
-    bool spotdlAvailable() const { return m_spotdlAvailable; }
-    bool runtimeReady() const { return m_runtimeReady; }
-    QString toolsDir() const { return m_toolsDir; }
-    QString ytDlpVersion() const { return m_ytDlpVersion; }
-    QString spotdlVersion() const { return m_spotdlVersion; }
-    QString ffmpegVersion() const { return m_ffmpegVersion; }
+    bool busy() const
+    {
+        return m_busy;
+    }
+    QString statusText() const
+    {
+        return m_statusText;
+    }
+    QString lastError() const
+    {
+        return m_lastError;
+    }
+    bool pythonAvailable() const
+    {
+        return m_pythonAvailable;
+    }
+    bool ffmpegAvailable() const
+    {
+        return m_ffmpegAvailable;
+    }
+    bool ytDlpAvailable() const
+    {
+        return m_ytDlpAvailable;
+    }
+    bool spotdlAvailable() const
+    {
+        return m_spotdlAvailable;
+    }
+    bool runtimeReady() const
+    {
+        return m_runtimeReady;
+    }
+    QString toolsDir() const
+    {
+        return m_toolsDir;
+    }
+    QString ytDlpVersion() const
+    {
+        return m_ytDlpVersion;
+    }
+    QString spotdlVersion() const
+    {
+        return m_spotdlVersion;
+    }
+    QString ffmpegVersion() const
+    {
+        return m_ffmpegVersion;
+    }
 
+    // Пути к нужным исполняемым файлам (пустая строка — не найдено).
     QString ytDlpExecutable() const;
     QString spotdlExecutable() const;
     QString ffmpegExecutable() const;
+    QString ffprobeExecutable() const;
+    QStringList jsRuntimeArguments() const
+    {
+        return m_jsRuntime;
+    }
+    // Проверяет готовность и при необходимости запускает установку (сигнал preparationFinished).
+    Q_INVOKABLE void ensureReady();
 
+    // Перечитывает доступность всех инструментов и их версии.
     Q_INVOKABLE void refresh();
+    // Устанавливает или обновляет загрузчики в локальное виртуальное окружение.
     Q_INVOKABLE void installOrUpdate();
+    // Отменяет идущую установку.
     Q_INVOKABLE void cancel();
 
-signals:
+  signals:
     void busyChanged();
     void statusTextChanged();
     void lastErrorChanged();
@@ -60,24 +110,28 @@ signals:
     void ytDlpVersionChanged();
     void spotdlVersionChanged();
     void ffmpegVersionChanged();
+    void preparationFinished(bool success);
 
-private:
-    enum class InstallStage {
+  private:
+    enum class InstallStage
+    {
         None,
         CreateVenv,
-        InstallPackages
+        InstallPackages,
+        PrepareBinaries
     };
 
     QString managedBinDir() const;
     QString managedPythonExecutable() const;
     QString systemPythonExecutable() const;
+    QStringList discoverJsRuntime() const;
     void startStage(InstallStage stage);
-    void finishInstall(bool success, const QString &message);
+    void finishInstall(bool success, const QString& message);
     void setBusy(bool busy);
-    void setStatusText(const QString &statusText);
-    void setLastError(const QString &lastError);
+    void setStatusText(const QString& statusText);
+    void setLastError(const QString& lastError);
 
-    SettingsStore *m_settings;
+    SettingsStore* m_settings;
     QString m_toolsDir;
     bool m_busy = false;
     QString m_statusText;
@@ -90,8 +144,10 @@ private:
     QString m_ytDlpVersion;
     QString m_spotdlVersion;
     QString m_ffmpegVersion;
-    QProcess *m_process = nullptr;
+    QProcess* m_process = nullptr;
     InstallStage m_stage = InstallStage::None;
     bool m_cancelRequested = false;
     QString m_outputTail;
+    QStringList m_jsRuntime;
+    bool m_prepareRequested = false;
 };

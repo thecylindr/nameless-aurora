@@ -47,6 +47,9 @@ template <> constexpr inline auto BrowserAuthManager::qt_create_metaobjectdata<q
         "grantSessionAccess",
         "revokeSessionAccess",
         "consentText",
+        "detectedBrowsers",
+        "suggestBrowser",
+        "suggestFirefoxProfile",
         "sessionGranted",
         "lastError"
     };
@@ -68,12 +71,18 @@ template <> constexpr inline auto BrowserAuthManager::qt_create_metaobjectdata<q
         QtMocHelpers::MethodData<QString(const QString &) const>(8, 2, QMC::AccessPublic, QMetaType::QString, {{
             { QMetaType::QString, 5 },
         }}),
+        // Method 'detectedBrowsers'
+        QtMocHelpers::MethodData<QStringList() const>(9, 2, QMC::AccessPublic, QMetaType::QStringList),
+        // Method 'suggestBrowser'
+        QtMocHelpers::MethodData<QString() const>(10, 2, QMC::AccessPublic, QMetaType::QString),
+        // Method 'suggestFirefoxProfile'
+        QtMocHelpers::MethodData<QString() const>(11, 2, QMC::AccessPublic, QMetaType::QString),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'sessionGranted'
-        QtMocHelpers::PropertyData<bool>(9, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(12, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
         // property 'lastError'
-        QtMocHelpers::PropertyData<QString>(10, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
+        QtMocHelpers::PropertyData<QString>(13, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -102,6 +111,12 @@ void BrowserAuthManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 3: _t->grantSessionAccess(); break;
         case 4: _t->revokeSessionAccess(); break;
         case 5: { QString _r = _t->consentText((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+            if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
+        case 6: { QStringList _r = _t->detectedBrowsers();
+            if (_a[0]) *reinterpret_cast<QStringList*>(_a[0]) = std::move(_r); }  break;
+        case 7: { QString _r = _t->suggestBrowser();
+            if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
+        case 8: { QString _r = _t->suggestFirefoxProfile();
             if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
@@ -141,14 +156,14 @@ int BrowserAuthManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 9;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

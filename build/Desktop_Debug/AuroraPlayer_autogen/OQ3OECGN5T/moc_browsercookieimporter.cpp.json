@@ -1,0 +1,58 @@
+{
+    "classes": [
+        {
+            "className": "BrowserCookieImporter",
+            "lineNumber": 11,
+            "object": true,
+            "qualifiedClassName": "BrowserCookieImporter",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "status",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "lineNumber": 30,
+                    "name": "statusChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "service",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "profileId",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "cookies",
+                            "type": "QJsonArray"
+                        },
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 32,
+                    "name": "finished",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "browsercookieimporter.h",
+    "outputRevision": 69
+}

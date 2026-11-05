@@ -1,0 +1,143 @@
+{
+    "classes": [
+        {
+            "className": "BrowserSession",
+            "lineNumber": 19,
+            "object": true,
+            "qualifiedClassName": "BrowserSession",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "url",
+                            "type": "QUrl"
+                        },
+                        {
+                            "name": "ok",
+                            "type": "bool"
+                        },
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "lineNumber": 60,
+                    "name": "loaded",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "requestId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "result",
+                            "type": "QVariant"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 62,
+                    "name": "evaluated",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "service",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "cookies",
+                            "type": "QJsonArray"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 64,
+                    "name": "cookiesReceived",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "url",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 66,
+                    "name": "audioRequested",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "url",
+                            "type": "QUrl"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "QJsonValue"
+                        }
+                    ],
+                    "index": 4,
+                    "lineNumber": 68,
+                    "name": "apiReceived",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "requestId",
+                            "type": "int"
+                        },
+                        {
+                            "name": "url",
+                            "type": "QUrl"
+                        },
+                        {
+                            "name": "payload",
+                            "type": "QJsonValue"
+                        },
+                        {
+                            "name": "status",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 70,
+                    "name": "apiFetched",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "lineNumber": 72,
+                    "name": "failed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "browsersession.h",
+    "outputRevision": 69
+}

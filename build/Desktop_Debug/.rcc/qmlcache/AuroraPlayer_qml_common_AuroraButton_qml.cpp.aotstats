@@ -10,7 +10,7 @@
                             "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 13,
+                            "line": 15,
                             "message": "Could not find property \"implicitHeight\"."
                         },
                         {
@@ -18,7 +18,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "implicitWidth",
-                            "line": 14,
+                            "line": 16,
                             "message": "Could not find property \"implicitWidth\"."
                         },
                         {
@@ -26,7 +26,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "leftPadding",
-                            "line": 15,
+                            "line": 17,
                             "message": "Could not find property \"leftPadding\"."
                         },
                         {
@@ -34,7 +34,7 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "rightPadding",
-                            "line": 16,
+                            "line": 18,
                             "message": "Could not find property \"rightPadding\"."
                         },
                         {
@@ -42,15 +42,15 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "focusPolicy",
-                            "line": 19,
+                            "line": 21,
                             "message": "Could not find property \"focusPolicy\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 41,
-                            "durationMicroseconds": 4000,
+                            "durationMicroseconds": 2000,
                             "functionName": "foreground",
-                            "line": 25,
+                            "line": 33,
                             "message": "Cannot access value for name enabled"
                         },
                         {
@@ -58,7 +58,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "baseColor",
-                            "line": 27,
+                            "line": 35,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: Theme::danger with type QColor (stored as QVariant) -> Theme::danger with type QColor (adjusted to QColor, stored as QVariant)"
                         },
                         {
@@ -66,7 +66,7 @@
                             "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "pixelSize",
-                            "line": 21,
+                            "line": 23,
                             "message": "Could not find property \"pixelSize\"."
                         },
                         {
@@ -74,7 +74,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 22,
+                            "line": 24,
                             "message": "Could not find property \"weight\"."
                         },
                         {
@@ -82,15 +82,31 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "name",
-                            "line": 23,
+                            "line": 25,
                             "message": "Cannot access value for name text"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 28,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 19,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 29,
+                            "message": "Could not find property \"text\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "implicitWidth",
-                            "line": 32,
+                            "line": 38,
                             "message": "Cannot access value for name row"
                         },
                         {
@@ -98,7 +114,7 @@
                             "column": 25,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 33,
+                            "line": 39,
                             "message": "Cannot access value for name row"
                         },
                         {
@@ -106,7 +122,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "spacing",
-                            "line": 39,
+                            "line": 46,
                             "message": "Cannot access value for name control"
                         },
                         {
@@ -114,7 +130,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 38,
+                            "line": 44,
                             "message": ""
                         },
                         {
@@ -122,7 +138,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 42,
+                            "line": 49,
                             "message": "Cannot access value for name control"
                         },
                         {
@@ -130,38 +146,6 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 43,
-                            "message": "Cannot access value for name control"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "name",
-                            "line": 44,
-                            "message": "Cannot access value for name control"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 45,
-                            "message": "Cannot access value for name control"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 41,
-                            "durationMicroseconds": 0,
-                            "functionName": "verticalCenter",
-                            "line": 47,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
                             "line": 50,
                             "message": "Cannot access value for name control"
                         },
@@ -169,7 +153,7 @@
                             "codegenResult": 2,
                             "column": 23,
                             "durationMicroseconds": 0,
-                            "functionName": "text",
+                            "functionName": "name",
                             "line": 51,
                             "message": "Cannot access value for name control"
                         },
@@ -182,11 +166,43 @@
                             "message": "Cannot access value for name control"
                         },
                         {
+                            "codegenResult": 0,
+                            "column": 41,
+                            "durationMicroseconds": 0,
+                            "functionName": "verticalCenter",
+                            "line": 54,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 57,
+                            "message": "Cannot access value for name control"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 58,
+                            "message": "Cannot access value for name control"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 59,
+                            "message": "Cannot access value for name control"
+                        },
+                        {
                             "codegenResult": 2,
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "font",
-                            "line": 53,
+                            "line": 60,
                             "message": "Cannot access value for name control"
                         },
                         {
@@ -194,7 +210,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 54,
+                            "line": 61,
                             "message": ""
                         },
                         {
@@ -202,7 +218,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "verticalAlignment",
-                            "line": 55,
+                            "line": 62,
                             "message": ""
                         },
                         {
@@ -210,7 +226,7 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "verticalCenter",
-                            "line": 56,
+                            "line": 63,
                             "message": ""
                         },
                         {
@@ -218,7 +234,7 @@
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "radius",
-                            "line": 62,
+                            "line": 69,
                             "message": ""
                         },
                         {
@@ -226,7 +242,7 @@
                             "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 63,
+                            "line": 71,
                             "message": "Cannot access value for name control"
                         },
                         {
@@ -234,7 +250,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 68,
+                            "line": 72,
                             "message": "Cannot access value for name control"
                         },
                         {
@@ -242,11 +258,19 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 69,
+                            "line": 73,
+                            "message": "Cannot access value for name control"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 75,
                             "message": "Cannot access value for name control"
                         }
                     ],
-                    "filePath": "/home/cylindr/player/qml/common/AuroraButton.qml"
+                    "filePath": "/home/cylindr/nameless-aurora/qml/common/AuroraButton.qml"
                 }
             ],
             "moduleId": "AuroraPlayer(AuroraPlayer)"

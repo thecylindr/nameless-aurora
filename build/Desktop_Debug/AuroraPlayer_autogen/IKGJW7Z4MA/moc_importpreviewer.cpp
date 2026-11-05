@@ -52,6 +52,9 @@ template <> constexpr inline auto ImportPreviewer::qt_create_metaobjectdata<qt_m
         "url",
         "quality",
         "authorized",
+        "searchYoutube",
+        "query",
+        "cancel",
         "toggle",
         "index",
         "selectAll",
@@ -99,44 +102,50 @@ template <> constexpr inline auto ImportPreviewer::qt_create_metaobjectdata<qt_m
         QtMocHelpers::MethodData<void(const QString &, const QString &)>(10, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
             { QMetaType::QString, 11 }, { QMetaType::QString, 12 },
         }}),
+        // Method 'searchYoutube'
+        QtMocHelpers::MethodData<void(const QString &, const QString &)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 15 }, { QMetaType::QString, 12 },
+        }}),
+        // Method 'cancel'
+        QtMocHelpers::MethodData<void()>(16, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'toggle'
-        QtMocHelpers::MethodData<void(int)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 15 },
+        QtMocHelpers::MethodData<void(int)>(17, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 18 },
         }}),
         // Method 'selectAll'
-        QtMocHelpers::MethodData<void(bool)>(16, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 17 },
+        QtMocHelpers::MethodData<void(bool)>(19, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 20 },
         }}),
         // Method 'startSelected'
-        QtMocHelpers::MethodData<void()>(18, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(21, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'busy'
-        QtMocHelpers::PropertyData<bool>(19, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(22, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
         // property 'statusText'
-        QtMocHelpers::PropertyData<QString>(20, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
+        QtMocHelpers::PropertyData<QString>(23, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
         // property 'lastError'
-        QtMocHelpers::PropertyData<QString>(21, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<QString>(24, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'totalDuration'
-        QtMocHelpers::PropertyData<qint64>(22, QMetaType::LongLong, QMC::DefaultPropertyFlags, 3),
+        QtMocHelpers::PropertyData<qint64>(25, QMetaType::LongLong, QMC::DefaultPropertyFlags, 3),
         // property 'selectedCount'
-        QtMocHelpers::PropertyData<int>(23, QMetaType::Int, QMC::DefaultPropertyFlags, 4),
+        QtMocHelpers::PropertyData<int>(26, QMetaType::Int, QMC::DefaultPropertyFlags, 4),
         // property 'selectedBytes'
-        QtMocHelpers::PropertyData<qint64>(24, QMetaType::LongLong, QMC::DefaultPropertyFlags, 5),
+        QtMocHelpers::PropertyData<qint64>(27, QMetaType::LongLong, QMC::DefaultPropertyFlags, 5),
         // property 'unknownSizes'
-        QtMocHelpers::PropertyData<int>(25, QMetaType::Int, QMC::DefaultPropertyFlags, 6),
+        QtMocHelpers::PropertyData<int>(28, QMetaType::Int, QMC::DefaultPropertyFlags, 6),
         // property 'sourceUrl'
-        QtMocHelpers::PropertyData<QString>(26, QMetaType::QString, QMC::DefaultPropertyFlags, 7),
+        QtMocHelpers::PropertyData<QString>(29, QMetaType::QString, QMC::DefaultPropertyFlags, 7),
     };
     QtMocHelpers::UintData qt_enums {
         // enum 'Role'
-        QtMocHelpers::EnumData<enum Role>(27, 27, QMC::EnumFlags{}).add({
-            {   28, Role::TitleRole },
-            {   29, Role::ArtistRole },
-            {   30, Role::UrlRole },
-            {   31, Role::DurationRole },
-            {   32, Role::SizeRole },
-            {   33, Role::SelectedRole },
+        QtMocHelpers::EnumData<enum Role>(30, 30, QMC::EnumFlags{}).add({
+            {   31, Role::TitleRole },
+            {   32, Role::ArtistRole },
+            {   33, Role::UrlRole },
+            {   34, Role::DurationRole },
+            {   35, Role::SizeRole },
+            {   36, Role::SelectedRole },
         }),
     };
     return QtMocHelpers::metaObjectData<ImportPreviewer, qt_meta_tag_ZN15ImportPreviewerE_t>(QMC::MetaObjectFlag{}, qt_stringData,
@@ -167,9 +176,11 @@ void ImportPreviewer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 7: _t->sourceUrlChanged(); break;
         case 8: _t->inspect((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[3]))); break;
         case 9: _t->inspect((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
-        case 10: _t->toggle((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 11: _t->selectAll((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 12: _t->startSelected(); break;
+        case 10: _t->searchYoutube((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
+        case 11: _t->cancel(); break;
+        case 12: _t->toggle((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 13: _t->selectAll((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 14: _t->startSelected(); break;
         default: ;
         }
     }
@@ -226,14 +237,14 @@ int ImportPreviewer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 15;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 15)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 13;
+        _id -= 15;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

@@ -1,9 +1,11 @@
+// Кнопка в «стеклянном» стиле: полупрозрачная, с вариантом основной (primary).
 import QtQuick
 import QtQuick.Controls
 
 Button {
     id: control
     property Theme uiTheme
+    // Основной (акцентный) вариант кнопки.
     property bool primary: false
 
     implicitHeight: 42
@@ -24,11 +26,8 @@ Button {
     }
     background: Rectangle {
         radius: height / 2
-        color: !control.enabled ? (control.uiTheme ? control.uiTheme.surface : "#121622")
-               : control.primary ? (control.down ? "#9c8eff" : control.hovered ? (control.uiTheme ? control.uiTheme.accentBright : "#aa9eff") : (control.uiTheme ? control.uiTheme.accent : "#8b7cff"))
-               : control.down ? (control.uiTheme ? control.uiTheme.outline : "#293146")
-               : control.hovered ? (control.uiTheme ? control.uiTheme.hover : "#20283a")
-               : (control.uiTheme ? control.uiTheme.surfaceHigh : "#1a2030")
+        // Цвет фона: отключена / основная (нажата, наведена, обычная) / обычная (нажата, наведена, обычная).
+        color: !control.enabled ? (control.uiTheme ? control.uiTheme.surface : "#121622") : control.primary ? (control.down ? "#9c8eff" : control.hovered ? (control.uiTheme ? control.uiTheme.accentBright : "#aa9eff") : (control.uiTheme ? control.uiTheme.accent : "#8b7cff")) : control.down ? (control.uiTheme ? control.uiTheme.outline : "#293146") : control.hovered ? (control.uiTheme ? control.uiTheme.hover : "#20283a") : (control.uiTheme ? control.uiTheme.surfaceHigh : "#1a2030")
         border.color: control.primary ? "transparent" : (control.uiTheme ? control.uiTheme.outline : "#293146")
         border.width: 1
     }

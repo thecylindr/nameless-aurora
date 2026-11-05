@@ -1,0 +1,21 @@
+{
+  "build": "Debug",
+  "platform": "offscreen",
+  "renderer": "software",
+  "coldStart": false,
+  "installedDownloadTools": true,
+  "timings": {
+    "browserReadyMs": 139,
+    "eventLoopMs": 379,
+    "firstFrameMs": 402,
+    "libraryReadyMs": 3,
+    "libraryTracks": 70,
+    "playbackReadyMs": 138,
+    "qmlReadyMs": 371,
+    "qtReadyMs": 1,
+    "servicesReadyMs": 139,
+    "settingsReadyMs": 1,
+    "storageScheduledMs": 139,
+    "toolsScheduledMs": 139
+  }
+}

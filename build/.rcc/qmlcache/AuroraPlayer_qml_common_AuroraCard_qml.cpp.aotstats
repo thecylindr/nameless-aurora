@@ -10,7 +10,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "implicitWidth",
-                            "line": 10,
+                            "line": 13,
                             "message": ""
                         },
                         {
@@ -18,15 +18,15 @@
                             "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 11,
+                            "line": 14,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
                             "column": 12,
-                            "durationMicroseconds": 2000,
+                            "durationMicroseconds": 5000,
                             "functionName": "color",
-                            "line": 12,
+                            "line": 15,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: Theme::surface with type QColor (stored as QVariant) -> Theme::surface with type QColor (adjusted to QColor, stored as QVariant)"
                         },
                         {
@@ -34,7 +34,7 @@
                             "column": 13,
                             "durationMicroseconds": 0,
                             "functionName": "radius",
-                            "line": 15,
+                            "line": 18,
                             "message": ""
                         },
                         {
@@ -42,7 +42,7 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 13,
+                            "line": 16,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: Theme::line with type QColor (stored as QVariant) -> Theme::line with type QColor (adjusted to QColor, stored as QVariant)"
                         },
                         {
@@ -50,7 +50,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 19,
+                            "line": 22,
                             "message": ""
                         },
                         {
@@ -58,11 +58,11 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "margins",
-                            "line": 20,
+                            "line": 23,
                             "message": ""
                         }
                     ],
-                    "filePath": "/home/cylindr/player/qml/common/AuroraCard.qml"
+                    "filePath": "/home/cylindr/nameless-aurora/qml/common/AuroraCard.qml"
                 }
             ],
             "moduleId": "AuroraPlayer(AuroraPlayer)"

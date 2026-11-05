@@ -52,6 +52,9 @@ template <> constexpr inline auto DependencyManager::qt_create_metaobjectdata<qt
         "ytDlpVersionChanged",
         "spotdlVersionChanged",
         "ffmpegVersionChanged",
+        "preparationFinished",
+        "success",
+        "ensureReady",
         "refresh",
         "installOrUpdate",
         "cancel",
@@ -94,38 +97,44 @@ template <> constexpr inline auto DependencyManager::qt_create_metaobjectdata<qt
         QtMocHelpers::SignalData<void()>(12, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'ffmpegVersionChanged'
         QtMocHelpers::SignalData<void()>(13, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'refresh'
-        QtMocHelpers::MethodData<void()>(14, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'installOrUpdate'
-        QtMocHelpers::MethodData<void()>(15, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'cancel'
+        // Signal 'preparationFinished'
+        QtMocHelpers::SignalData<void(bool)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 15 },
+        }}),
+        // Method 'ensureReady'
         QtMocHelpers::MethodData<void()>(16, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'refresh'
+        QtMocHelpers::MethodData<void()>(17, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'installOrUpdate'
+        QtMocHelpers::MethodData<void()>(18, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'cancel'
+        QtMocHelpers::MethodData<void()>(19, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'busy'
-        QtMocHelpers::PropertyData<bool>(17, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(20, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
         // property 'statusText'
-        QtMocHelpers::PropertyData<QString>(18, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
+        QtMocHelpers::PropertyData<QString>(21, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
         // property 'lastError'
-        QtMocHelpers::PropertyData<QString>(19, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<QString>(22, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'pythonAvailable'
-        QtMocHelpers::PropertyData<bool>(20, QMetaType::Bool, QMC::DefaultPropertyFlags, 3),
+        QtMocHelpers::PropertyData<bool>(23, QMetaType::Bool, QMC::DefaultPropertyFlags, 3),
         // property 'ffmpegAvailable'
-        QtMocHelpers::PropertyData<bool>(21, QMetaType::Bool, QMC::DefaultPropertyFlags, 4),
+        QtMocHelpers::PropertyData<bool>(24, QMetaType::Bool, QMC::DefaultPropertyFlags, 4),
         // property 'ytDlpAvailable'
-        QtMocHelpers::PropertyData<bool>(22, QMetaType::Bool, QMC::DefaultPropertyFlags, 5),
+        QtMocHelpers::PropertyData<bool>(25, QMetaType::Bool, QMC::DefaultPropertyFlags, 5),
         // property 'spotdlAvailable'
-        QtMocHelpers::PropertyData<bool>(23, QMetaType::Bool, QMC::DefaultPropertyFlags, 6),
+        QtMocHelpers::PropertyData<bool>(26, QMetaType::Bool, QMC::DefaultPropertyFlags, 6),
         // property 'runtimeReady'
-        QtMocHelpers::PropertyData<bool>(24, QMetaType::Bool, QMC::DefaultPropertyFlags, 7),
+        QtMocHelpers::PropertyData<bool>(27, QMetaType::Bool, QMC::DefaultPropertyFlags, 7),
         // property 'toolsDir'
-        QtMocHelpers::PropertyData<QString>(25, QMetaType::QString, QMC::DefaultPropertyFlags, 8),
+        QtMocHelpers::PropertyData<QString>(28, QMetaType::QString, QMC::DefaultPropertyFlags, 8),
         // property 'ytDlpVersion'
-        QtMocHelpers::PropertyData<QString>(26, QMetaType::QString, QMC::DefaultPropertyFlags, 9),
+        QtMocHelpers::PropertyData<QString>(29, QMetaType::QString, QMC::DefaultPropertyFlags, 9),
         // property 'spotdlVersion'
-        QtMocHelpers::PropertyData<QString>(27, QMetaType::QString, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<QString>(30, QMetaType::QString, QMC::DefaultPropertyFlags, 10),
         // property 'ffmpegVersion'
-        QtMocHelpers::PropertyData<QString>(28, QMetaType::QString, QMC::DefaultPropertyFlags, 11),
+        QtMocHelpers::PropertyData<QString>(31, QMetaType::QString, QMC::DefaultPropertyFlags, 11),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -159,9 +168,11 @@ void DependencyManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 9: _t->ytDlpVersionChanged(); break;
         case 10: _t->spotdlVersionChanged(); break;
         case 11: _t->ffmpegVersionChanged(); break;
-        case 12: _t->refresh(); break;
-        case 13: _t->installOrUpdate(); break;
-        case 14: _t->cancel(); break;
+        case 12: _t->preparationFinished((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 13: _t->ensureReady(); break;
+        case 14: _t->refresh(); break;
+        case 15: _t->installOrUpdate(); break;
+        case 16: _t->cancel(); break;
         default: ;
         }
     }
@@ -189,6 +200,8 @@ void DependencyManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         if (QtMocHelpers::indexOfMethod<void (DependencyManager::*)()>(_a, &DependencyManager::spotdlVersionChanged, 10))
             return;
         if (QtMocHelpers::indexOfMethod<void (DependencyManager::*)()>(_a, &DependencyManager::ffmpegVersionChanged, 11))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (DependencyManager::*)(bool )>(_a, &DependencyManager::preparationFinished, 12))
             return;
     }
     if (_c == QMetaObject::ReadProperty) {
@@ -230,14 +243,14 @@ int DependencyManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 17;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 17)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 15;
+        _id -= 17;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
@@ -318,5 +331,11 @@ void DependencyManager::spotdlVersionChanged()
 void DependencyManager::ffmpegVersionChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 11, nullptr);
+}
+
+// SIGNAL 12
+void DependencyManager::preparationFinished(bool _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 12, nullptr, _t1);
 }
 QT_WARNING_POP

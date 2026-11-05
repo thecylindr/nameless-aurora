@@ -1,0 +1,64 @@
+# Human-friendly formatting for the Aurora C++ codebase.
+# Based on the LLVM style, adjusted for a Qt project:
+#   * four-space indentation
+#   * braces on their own line for functions/classes (Qt convention)
+#   * control statements keep their brace on the same line
+#   * short statements are never crammed onto a single line
+BasedOnStyle: LLVM
+Language: Cpp
+Standard: c++17
+
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 4
+ColumnLimit: 120
+
+# Qt attaches '*' and '&' to the variable/type on the left, e.g. `QObject *parent`.
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+# Braces: functions, classes, structs, namespaces and enums open on a new line
+# (Qt convention); control statements keep the brace on the same line.
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: false
+  AfterClass: true
+  AfterControlStatement: Never
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  BeforeCatch: false
+  BeforeElse: false
+  IndentBraces: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+
+# Never compress bodies onto a single line.
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortLambdasOnASingleLine: Empty
+AllowShortCompoundRequirementOnASingleLine: false
+
+# Leave include order alone; the author grouped them by hand.
+SortIncludes: Never
+
+# Readability of conditions and template/ternary expressions.
+AlignOperands: Align
+BreakBeforeBinaryOperators: None
+BreakBeforeTernaryOperators: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowAllArgumentsOnNextLine: true
+BinPackArguments: true
+BinPackParameters: true
+SpaceBeforeParens: ControlStatements
+SpacesInAngles: Never
+
+MaxEmptyLinesToKeep: 1

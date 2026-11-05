@@ -2,7 +2,7 @@
     "classes": [
         {
             "className": "BrowserAuthManager",
-            "lineNumber": 9,
+            "lineNumber": 12,
             "methods": [
                 {
                     "access": "public",
@@ -13,21 +13,21 @@
                         }
                     ],
                     "index": 2,
-                    "lineNumber": 21,
+                    "lineNumber": 33,
                     "name": "openService",
                     "returnType": "bool"
                 },
                 {
                     "access": "public",
                     "index": 3,
-                    "lineNumber": 22,
+                    "lineNumber": 35,
                     "name": "grantSessionAccess",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 4,
-                    "lineNumber": 23,
+                    "lineNumber": 37,
                     "name": "revokeSessionAccess",
                     "returnType": "void"
                 },
@@ -41,8 +41,32 @@
                     ],
                     "index": 5,
                     "isConst": true,
-                    "lineNumber": 24,
+                    "lineNumber": 39,
                     "name": "consentText",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "isConst": true,
+                    "lineNumber": 41,
+                    "name": "detectedBrowsers",
+                    "returnType": "QStringList"
+                },
+                {
+                    "access": "public",
+                    "index": 7,
+                    "isConst": true,
+                    "lineNumber": 43,
+                    "name": "suggestBrowser",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "isConst": true,
+                    "lineNumber": 45,
+                    "name": "suggestFirefoxProfile",
                     "returnType": "QString"
                 }
             ],
@@ -53,7 +77,7 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "lineNumber": 12,
+                    "lineNumber": 15,
                     "name": "sessionGranted",
                     "notify": "sessionGrantedChanged",
                     "override": false,
@@ -70,7 +94,7 @@
                     "designable": true,
                     "final": false,
                     "index": 1,
-                    "lineNumber": 13,
+                    "lineNumber": 16,
                     "name": "lastError",
                     "notify": "lastErrorChanged",
                     "override": false,
@@ -88,14 +112,14 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 29,
+                    "lineNumber": 60,
                     "name": "sessionGrantedChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 1,
-                    "lineNumber": 30,
+                    "lineNumber": 61,
                     "name": "lastErrorChanged",
                     "returnType": "void"
                 }

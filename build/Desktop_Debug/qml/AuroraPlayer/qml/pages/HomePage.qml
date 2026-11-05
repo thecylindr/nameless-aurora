@@ -1,3 +1,4 @@
+// Главная страница: приветствие, «моя волна», быстрые карточки и лента рекомендаций.
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -7,227 +8,312 @@ import "../components" as Components
 Item {
     id: root
     property bool compact: false
-    property var recommendationModel: []
-    signal importRequested()
-    signal libraryRequested()
-    Theme { id: theme }
-
-    function reloadRecommendations() {
-        recommendationModel = libraryModel.recommendations(compact ? 10 : 14)
+    property var recommendations: []
+    signal importRequested
+    signal libraryRequested
+    signal filesRequested
+    signal searchRequested
+    signal discoveryRequested
+    Theme {
+        id: theme
     }
-    function greeting() {
-        const hour = new Date().getHours()
-        if (hour < 6) return "Доброй ночи"
-        if (hour < 12) return "Доброе утро"
-        if (hour < 18) return "Добрый день"
-        return "Добрый вечер"
+    // Запрашивает свежую подборку рекомендаций (до 14 треков).
+    function reload() {
+        recommendations = libraryModel.recommendations(14);
     }
-
-    Component.onCompleted: reloadRecommendations()
+    Component.onCompleted: reload()
     Connections {
         target: libraryModel
-        function onLibraryChanged() { root.reloadRecommendations() }
+        function onLibraryChanged() {
+            root.reload();
+        }
     }
-
     ScrollView {
         id: scroll
         anchors.fill: parent
         clip: true
         contentWidth: availableWidth
-        background: Item {}
-        ScrollBar.vertical: Common.AuroraScrollBar { uiTheme: theme; x: scroll.width - width; height: scroll.height }
-
+        ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
         ColumnLayout {
-            width: Math.min(1120, Math.max(280, scroll.availableWidth - (compact ? 32 : 56)))
-            x: Math.max(compact ? 16 : 28, (scroll.availableWidth - width) / 2)
-            spacing: 22
-
-            Item { implicitHeight: compact ? 16 : 28 }
+            width: scroll.availableWidth - (root.compact ? 32 : 64)
+            x: root.compact ? 16 : 32
+            spacing: 26
+            Item {
+                implicitHeight: 6
+            }
             RowLayout {
                 Layout.fillWidth: true
                 ColumnLayout {
                     Layout.fillWidth: true
-                    spacing: 3
-                    Text { text: greeting(); color: theme.text; font.pixelSize: compact ? 25 : 32; font.weight: Font.DemiBold }
-                    Text { text: "Ваше музыкальное пространство"; color: theme.subtext; font.pixelSize: theme.bodySize }
+                    spacing: 7
+                    Text {
+                        text: "ТВОЁ ЛИЧНОЕ ПРОСТРАНСТВО"
+                        color: theme.subtext
+                        font.pixelSize: 10
+                        font.letterSpacing: 2
+                    }
+                    Text {
+                        text: "Главная"
+                        color: theme.text
+                        font.pixelSize: 32
+                        font.weight: Font.DemiBold
+                    }
                 }
                 Common.AuroraButton {
                     uiTheme: theme
-                    iconOnly: true
-                    iconName: "refresh"
-                    implicitWidth: 42
-                    onClicked: root.reloadRecommendations()
+                    iconName: "plus"
+                    text: root.compact ? "" : "Добавить музыку"
+                    iconOnly: root.compact
+                    onClicked: root.filesRequested()
                 }
             }
-
-            Common.AuroraCard {
-                uiTheme: theme
+            Rectangle {
+                id: hero
+                visible: settingsStore.homeHeroVisible
                 Layout.fillWidth: true
-                implicitHeight: compact ? 218 : 190
-                padding: 0
+                implicitHeight: root.compact ? 300 : 292
+                radius: 24
                 clip: true
-                Rectangle {
+                color: theme.surfaceHigh
+                Components.AmbientBackdrop {
                     anchors.fill: parent
-                    gradient: Gradient {
-                        orientation: Gradient.Horizontal
-                        GradientStop { position: 0; color: theme.accent2 }
-                        GradientStop { position: 1; color: theme.surface }
-                    }
+                    animated: true
                 }
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.margins: compact ? 18 : 24
-                    spacing: 20
-                    Rectangle {
-                        Layout.preferredWidth: compact ? 92 : 138
-                        Layout.preferredHeight: compact ? 92 : 138
-                        Layout.alignment: Qt.AlignVCenter
-                        radius: theme.radius
-                        color: theme.surfaceHigh
-                        clip: true
-                        Image {
-                            anchors.fill: parent
-                            source: player.currentCoverPath ? encodeURI("file://" + player.currentCoverPath) : ""
-                            fillMode: Image.PreserveAspectCrop
-                            asynchronous: true
-                        }
-                        Common.AuroraIcon { anchors.centerIn: parent; name: "music"; color: theme.text; size: 42; visible: player.currentCoverPath.length === 0 }
-                    }
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        Layout.alignment: Qt.AlignVCenter
-                        spacing: 7
-                        Text { text: player.hasTrack ? "ПРОДОЛЖИТЬ" : "СОБЕРИТЕ СВОЙ МИР"; color: theme.text; font.pixelSize: 10; font.weight: Font.DemiBold }
-                        Text {
-                            Layout.fillWidth: true
-                            text: player.hasTrack ? player.currentTitle : "Музыка начинается локально"
-                            color: "white"
-                            font.pixelSize: compact ? 19 : 26
-                            font.weight: Font.DemiBold
-                            elide: Text.ElideRight
-                        }
-                        Text {
-                            Layout.fillWidth: true
-                            text: player.hasTrack ? player.currentArtist : "Импортируйте файлы или свои плейлисты — рекомендации появятся по мере прослушивания"
-                            color: theme.text
-                            opacity: 0.8
-                            font.pixelSize: theme.captionSize
-                            wrapMode: Text.WordWrap
-                            maximumLineCount: 2
-                            elide: Text.ElideRight
-                        }
-                        Common.AuroraButton {
-                            uiTheme: theme
-                            primary: true
-                            iconName: player.hasTrack ? "play" : "plus"
-                            text: player.hasTrack ? "Слушать" : "Добавить музыку"
-                            implicitHeight: 40
-                            onClicked: player.hasTrack ? player.toggle() : root.importRequested()
-                        }
-                    }
-                }
-            }
-
-            ColumnLayout {
-                Layout.fillWidth: true
-                visible: recommendationModel.length > 0
-                spacing: 12
-                RowLayout {
-                    Layout.fillWidth: true
-                    ColumnLayout {
-                        Layout.fillWidth: true
-                        spacing: 2
-                        Text { text: "Для вас"; color: theme.text; font.pixelSize: 22; font.weight: Font.DemiBold }
-                        Text { text: "Локальный вкусовой профиль · без облака"; color: theme.subtext; font.pixelSize: theme.captionSize }
-                    }
-                    Common.AuroraButton { uiTheme: theme; text: "Вся музыка"; implicitHeight: 38; onClicked: root.libraryRequested() }
-                }
-                ListView {
-                    Layout.fillWidth: true
-                    implicitHeight: 236
-                    orientation: ListView.Horizontal
-                    model: root.recommendationModel
-                    spacing: 12
-                    clip: true
-                    boundsBehavior: Flickable.StopAtBounds
-                    delegate: Components.RecommendationCard {
-                        required property var modelData
-                        trackData: modelData
-                        onClicked: player.playTrackId(modelData.trackId)
-                    }
-                }
-            }
-
-            Common.AuroraCard {
-                uiTheme: theme
-                Layout.fillWidth: true
-                visible: recommendationModel.length === 0
-                implicitHeight: emptyContent.implicitHeight + 36
-                padding: 18
-                ColumnLayout {
-                    id: emptyContent
-                    anchors.left: parent.left
+                Components.AtmosphereOrb {
+                    width: Math.min(parent.width * 0.72, 430)
+                    height: width
                     anchors.right: parent.right
+                    anchors.rightMargin: root.compact ? -100 : -6
                     anchors.verticalCenter: parent.verticalCenter
-                    anchors.margins: 18
-                    spacing: 10
-                    Common.AuroraIcon { name: "music"; color: theme.accent; size: 34 }
-                    Text { text: "Здесь появятся ваши подборки"; color: theme.text; font.pixelSize: 19; font.weight: Font.Medium }
+                    opacity: root.compact ? 0.65 : 1
+                }
+                Components.CornerCover {
+                    anchors.fill: parent
+                    radius: 24
+                    color: theme.base
+                    z: 5
+                }
+                ColumnLayout {
+                    anchors.left: parent.left
+                    anchors.top: parent.top
+                    anchors.bottom: parent.bottom
+                    anchors.margins: root.compact ? 24 : 32
+                    width: parent.width * (root.compact ? 0.85 : 0.62)
+                    spacing: 12
+                    Text {
+                        text: "НА ТВОЕЙ ЧАСТОТЕ"
+                        color: theme.accent
+                        font.pixelSize: 10
+                        font.letterSpacing: 2.4
+                    }
+                    Item {
+                        Layout.fillHeight: true
+                    }
+                    Text {
+                        text: "Моя волна"
+                        color: "#ffffff"
+                        font.pixelSize: root.compact ? 40 : 48
+                        font.weight: Font.DemiBold
+                        font.letterSpacing: -1.8
+                    }
                     Text {
                         Layout.fillWidth: true
-                        text: "Aurora учитывает только локальные оценки, прослушивания и пропуски. Ничего не отправляется на сервер."
+                        text: "Знакомые треки. Новое настроение.\nПодборка, которая слышит тебя."
                         color: theme.subtext
-                        font.pixelSize: theme.bodySize
+                        font.pixelSize: 14
+                        lineHeight: 1.4
                         wrapMode: Text.WordWrap
                     }
-                    Common.AuroraButton { uiTheme: theme; primary: true; text: "Открыть импорт"; iconName: "download"; onClicked: root.importRequested() }
+                    Item {
+                        implicitHeight: 5
+                    }
+                    Common.AuroraButton {
+                        uiTheme: theme
+                        primary: true
+                        iconName: "play"
+                        text: libraryModel.totalCount ? "Включить волну" : "Добавить первые треки"
+                        implicitHeight: 46
+                        onClicked: libraryModel.totalCount ? player.playMix() : root.filesRequested()
+                    }
                 }
             }
-
-            ColumnLayout {
+            RowLayout {
                 Layout.fillWidth: true
-                visible: recommendationModel.length > 0
-                spacing: 12
-                Text { text: "Быстрый выбор"; color: theme.text; font.pixelSize: 22; font.weight: Font.DemiBold }
-                GridLayout {
+                spacing: 8
+                Common.AuroraButton {
+                    uiTheme: theme
                     Layout.fillWidth: true
-                    columns: compact ? 1 : 2
-                    columnSpacing: 12
-                    rowSpacing: 10
-                    Repeater {
-                        model: root.recommendationModel.slice(0, compact ? 4 : 6)
-                        delegate: Common.AuroraCard {
-                            required property var modelData
-                            uiTheme: theme
-                            Layout.fillWidth: true
-                            implicitHeight: 68
-                            padding: 6
-                            RowLayout {
-                                anchors.fill: parent
-                                anchors.margins: 6
-                                spacing: 10
-                                Rectangle {
-                                    Layout.preferredWidth: 50
-                                    Layout.preferredHeight: 50
-                                    radius: 10
-                                    color: theme.accent2
-                                    clip: true
-                                    Image { anchors.fill: parent; source: modelData.coverPath ? encodeURI("file://" + modelData.coverPath) : ""; fillMode: Image.PreserveAspectCrop; asynchronous: true }
-                                    Common.AuroraIcon { anchors.centerIn: parent; name: "music"; color: theme.text; size: 20; visible: !modelData.coverPath }
+                    text: "Найти музыку"
+                    iconName: "search"
+                    outlined: true
+                    onClicked: root.searchRequested()
+                }
+                Common.AuroraButton {
+                    uiTheme: theme
+                    Layout.fillWidth: true
+                    text: "По моему вкусу"
+                    iconName: "shuffle"
+                    onClicked: root.discoveryRequested()
+                }
+            }
+            RowLayout {
+                Layout.fillWidth: true
+                spacing: 12
+                Repeater {
+                    model: [
+                        {
+                            name: "Мне нравится",
+                            sub: "Любимое рядом",
+                            icon: "heart",
+                            tint: "#67529a"
+                        },
+                        {
+                            name: "Моя коллекция",
+                            sub: "Вся музыка с собой",
+                            icon: "library",
+                            tint: "#386d69"
+                        }
+                    ]
+                    delegate: Rectangle {
+                        required property var modelData
+                        required property int index
+                        Layout.fillWidth: true
+                        implicitHeight: root.compact ? 88 : 84
+                        radius: 14
+                        color: tileHover.containsMouse ? theme.hover : theme.surface
+                        border.color: theme.line
+                        RowLayout {
+                            anchors.fill: parent
+                            anchors.margins: 14
+                            spacing: 14
+                            Rectangle {
+                                Layout.preferredWidth: 48
+                                Layout.preferredHeight: 48
+                                radius: 12
+                                color: modelData.tint
+                                visible: !root.compact
+                                Common.AuroraIcon {
+                                    anchors.centerIn: parent
+                                    name: modelData.icon
+                                    size: 22
+                                    color: "#f6edff"
                                 }
-                                ColumnLayout {
+                            }
+                            ColumnLayout {
+                                Layout.fillWidth: true
+                                spacing: 6
+                                Text {
                                     Layout.fillWidth: true
-                                    spacing: 2
-                                    Text { Layout.fillWidth: true; text: modelData.title; color: theme.text; font.pixelSize: theme.bodySize; elide: Text.ElideRight }
-                                    Text { Layout.fillWidth: true; text: modelData.artist; color: theme.subtext; font.pixelSize: theme.captionSize; elide: Text.ElideRight }
+                                    text: modelData.name
+                                    color: theme.text
+                                    font.pixelSize: root.compact ? 13 : 15
+                                    font.weight: Font.Medium
+                                    elide: Text.ElideRight
                                 }
-                                Common.AuroraButton { uiTheme: theme; iconOnly: true; iconName: "play"; implicitWidth: 38; implicitHeight: 38; onClicked: player.playTrackId(modelData.trackId) }
+                                Text {
+                                    Layout.fillWidth: true
+                                    text: modelData.sub
+                                    color: theme.subtext
+                                    font.pixelSize: 11
+                                    elide: Text.ElideRight
+                                }
+                            }
+                        }
+                        MouseArea {
+                            id: tileHover
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            cursorShape: Qt.PointingHandCursor
+                            // Первая карточка ведёт в «Мне нравится» (-1), вторая — во всю коллекцию (0).
+                            onClicked: {
+                                libraryModel.playlistFilter = index === 0 ? -1 : 0;
+                                root.libraryRequested();
                             }
                         }
                     }
                 }
             }
-            Item { implicitHeight: 28 }
+            RowLayout {
+                Layout.fillWidth: true
+                Text {
+                    text: root.recommendations.length ? "В твоём ритме" : "Вся музыка — в одном месте"
+                    color: theme.text
+                    font.pixelSize: 22
+                    font.weight: Font.DemiBold
+                    Layout.fillWidth: true
+                    wrapMode: Text.WordWrap
+                }
+                Common.AuroraButton {
+                    uiTheme: theme
+                    text: "Открыть всё"
+                    visible: root.recommendations.length > 0
+                    implicitHeight: 34
+                    onClicked: {
+                        libraryModel.playlistFilter = 0;
+                        root.libraryRequested();
+                    }
+                }
+            }
+            ListView {
+                Layout.fillWidth: true
+                implicitHeight: 232
+                visible: root.recommendations.length > 0
+                orientation: ListView.Horizontal
+                model: root.recommendations
+                spacing: 16
+                clip: true
+                boundsBehavior: Flickable.StopAtBounds
+                delegate: Components.RecommendationCard {
+                    required property var modelData
+                    trackData: modelData
+                    onClicked: player.playTrackId(modelData.trackId)
+                }
+            }
+            Rectangle {
+                Layout.fillWidth: true
+                implicitHeight: emptyContent.implicitHeight + 40
+                visible: root.recommendations.length === 0
+                color: theme.surface
+                radius: 16
+                border.color: theme.line
+                ColumnLayout {
+                    id: emptyContent
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.top: parent.top
+                    anchors.margins: 20
+                    spacing: 16
+                    Text {
+                        Layout.fillWidth: true
+                        text: "Перенеси свои плейлисты или добавь музыку с устройства. Aurora сохранит коллекцию, а волна подстроится под твои оценки и прослушивания."
+                        color: theme.subtext
+                        font.pixelSize: 14
+                        wrapMode: Text.WordWrap
+                        lineHeight: 1.4
+                    }
+                    Flow {
+                        Layout.fillWidth: true
+                        spacing: 8
+                        Repeater {
+                            model: ["Яндекс Музыка", "VK Музыка", "YouTube"]
+                            delegate: Common.AuroraButton {
+                                required property string modelData
+                                uiTheme: theme
+                                text: modelData
+                                implicitHeight: 38
+                                onClicked: root.importRequested()
+                            }
+                        }
+                    }
+                }
+            }
+            Text {
+                text: "ТВОЯ МУЗЫКА. ТВОИ ПРАВИЛА.  /  NAMELESS AURORA"
+                color: theme.textMuted
+                font.pixelSize: 9
+                font.letterSpacing: 1.5
+                Layout.bottomMargin: 24
+            }
         }
     }
 }

@@ -10,7 +10,7 @@
                             "column": 25,
                             "durationMicroseconds": 0,
                             "functionName": "model",
-                            "line": 10,
+                            "line": 12,
                             "message": "Cannot generate efficient code for storing an array in a non-sequence type"
                         },
                         {
@@ -18,15 +18,15 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "implicitWidth",
-                            "line": 16,
+                            "line": 21,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 21,
-                            "durationMicroseconds": 4000,
+                            "durationMicroseconds": 2000,
                             "functionName": "implicitHeight",
-                            "line": 17,
+                            "line": 22,
                             "message": ""
                         },
                         {
@@ -34,7 +34,7 @@
                             "column": 5,
                             "durationMicroseconds": 0,
                             "functionName": "optionText",
-                            "line": 19,
+                            "line": 25,
                             "message": "Functions without type annotations won't be compiled"
                         },
                         {
@@ -42,7 +42,7 @@
                             "column": 5,
                             "durationMicroseconds": 0,
                             "functionName": "optionValue",
-                            "line": 33,
+                            "line": 40,
                             "message": "Functions without type annotations won't be compiled"
                         },
                         {
@@ -50,7 +50,7 @@
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "radius",
-                            "line": 41,
+                            "line": 48,
                             "message": ""
                         },
                         {
@@ -58,7 +58,7 @@
                             "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 42,
+                            "line": 49,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: Theme::surface with type QColor (stored as QVariant) -> Theme::surface with type QColor (adjusted to QColor, stored as QVariant)"
                         },
                         {
@@ -66,7 +66,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 40,
+                            "line": 47,
                             "message": ""
                         },
                         {
@@ -74,7 +74,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 44,
+                            "line": 51,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: Theme::line with type QColor (stored as QVariant) -> Theme::line with type QColor (adjusted to QColor, stored as QVariant)"
                         },
                         {
@@ -82,7 +82,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 48,
+                            "line": 55,
                             "message": ""
                         },
                         {
@@ -90,7 +90,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "model",
-                            "line": 54,
+                            "line": 61,
                             "message": ""
                         },
                         {
@@ -98,7 +98,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "focusPolicy",
-                            "line": 67,
+                            "line": 74,
                             "message": "Could not find property \"focusPolicy\"."
                         },
                         {
@@ -106,7 +106,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 69,
+                            "line": 76,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -114,7 +114,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 74,
+                            "line": 81,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -122,7 +122,7 @@
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "pixelSize",
-                            "line": 70,
+                            "line": 77,
                             "message": "Could not find property \"pixelSize\"."
                         },
                         {
@@ -130,7 +130,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 71,
+                            "line": 78,
                             "message": "Could not find property \"weight\"."
                         },
                         {
@@ -138,7 +138,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "role",
-                            "line": 72,
+                            "line": 79,
                             "message": ""
                         },
                         {
@@ -146,7 +146,7 @@
                             "column": 37,
                             "durationMicroseconds": 0,
                             "functionName": "checked",
-                            "line": 73,
+                            "line": 80,
                             "message": ""
                         },
                         {
@@ -154,7 +154,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 80,
+                            "line": 87,
                             "message": "Cannot access value for name optionButton"
                         },
                         {
@@ -162,7 +162,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "font",
-                            "line": 81,
+                            "line": 88,
                             "message": "Cannot access value for name optionButton"
                         },
                         {
@@ -170,7 +170,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 82,
+                            "line": 89,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -178,7 +178,7 @@
                             "column": 42,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 84,
+                            "line": 90,
                             "message": ""
                         },
                         {
@@ -186,7 +186,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "verticalAlignment",
-                            "line": 85,
+                            "line": 91,
                             "message": ""
                         },
                         {
@@ -194,7 +194,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "elide",
-                            "line": 86,
+                            "line": 92,
                             "message": ""
                         },
                         {
@@ -202,7 +202,7 @@
                             "column": 29,
                             "durationMicroseconds": 0,
                             "functionName": "radius",
-                            "line": 89,
+                            "line": 95,
                             "message": ""
                         },
                         {
@@ -210,7 +210,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 90,
+                            "line": 97,
                             "message": "Cannot access value for name optionButton"
                         },
                         {
@@ -218,7 +218,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 94,
+                            "line": 98,
                             "message": "Cannot access value for name optionButton"
                         },
                         {
@@ -226,11 +226,11 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 95,
+                            "line": 99,
                             "message": "Cannot access value for name root"
                         }
                     ],
-                    "filePath": "/home/cylindr/player/qml/common/AuroraSegmented.qml"
+                    "filePath": "/home/cylindr/nameless-aurora/qml/common/AuroraSegmented.qml"
                 }
             ],
             "moduleId": "AuroraPlayer(AuroraPlayer)"

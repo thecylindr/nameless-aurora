@@ -1,9 +1,10 @@
 <RCC>
   <qresource prefix="/qt/qml/AuroraPlayer/">
-    <file alias="qml/qmldir">/home/cylindr/player/build/qml/AuroraPlayer/qml/qmldir</file>
-    <file alias="qml/common/qmldir">/home/cylindr/player/build/qml/AuroraPlayer/qml/common/qmldir</file>
-    <file alias="qml/components/qmldir">/home/cylindr/player/build/qml/AuroraPlayer/qml/components/qmldir</file>
-    <file alias="qml/pages/qmldir">/home/cylindr/player/build/qml/AuroraPlayer/qml/pages/qmldir</file>
+    <file alias="qml/web/qmldir">/home/cylindr/nameless-aurora/build/qml/AuroraPlayer/qml/web/qmldir</file>
+    <file alias="qml/qmldir">/home/cylindr/nameless-aurora/build/qml/AuroraPlayer/qml/qmldir</file>
+    <file alias="qml/common/qmldir">/home/cylindr/nameless-aurora/build/qml/AuroraPlayer/qml/common/qmldir</file>
+    <file alias="qml/components/qmldir">/home/cylindr/nameless-aurora/build/qml/AuroraPlayer/qml/components/qmldir</file>
+    <file alias="qml/pages/qmldir">/home/cylindr/nameless-aurora/build/qml/AuroraPlayer/qml/pages/qmldir</file>
   </qresource>
 </RCC>
 

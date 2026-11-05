@@ -10,7 +10,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "closePolicy",
-                            "line": 15,
+                            "line": 18,
                             "message": "Could not find property \"closePolicy\"."
                         },
                         {
@@ -18,7 +18,7 @@
                             "column": 12,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 16,
+                            "line": 20,
                             "message": "Could not find property \"width\"."
                         },
                         {
@@ -26,7 +26,7 @@
                             "column": 13,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 17,
+                            "line": 21,
                             "message": "Could not find property \"height\"."
                         },
                         {
@@ -34,7 +34,7 @@
                             "column": 8,
                             "durationMicroseconds": 0,
                             "functionName": "x",
-                            "line": 18,
+                            "line": 23,
                             "message": "Could not find property \"x\"."
                         },
                         {
@@ -42,47 +42,95 @@
                             "column": 8,
                             "durationMicroseconds": 0,
                             "functionName": "y",
-                            "line": 19,
+                            "line": 24,
                             "message": "Could not find property \"y\"."
                         },
                         {
-                            "codegenResult": 0,
-                            "column": 24,
+                            "codegenResult": 2,
+                            "column": 15,
                             "durationMicroseconds": 0,
-                            "functionName": "implicitWidth",
-                            "line": 27,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 25,
-                            "durationMicroseconds": 0,
-                            "functionName": "implicitHeight",
-                            "line": 28,
-                            "message": ""
+                            "functionName": "onOpened",
+                            "line": 86,
+                            "message": "Could not find signal \"opened\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 25,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 32,
-                            "message": "Cannot access value for name dialog"
+                            "line": 33,
+                            "message": "Could not find property \"implicitHeight\"."
                         },
                         {
-                            "codegenResult": 0,
-                            "column": 20,
+                            "codegenResult": 2,
+                            "column": 23,
                             "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 36,
-                            "message": ""
+                            "functionName": "contentWidth",
+                            "line": 34,
+                            "message": "Could not find property \"contentWidth\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "contentHeight",
+                            "line": 35,
+                            "message": "Could not find property \"contentHeight\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 22,
                             "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 37,
+                            "functionName": "uiTheme",
+                            "line": 38,
+                            "message": "Cannot access value for name dialog"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 16,
+                            "durationMicroseconds": 0,
+                            "functionName": "x",
+                            "line": 39,
+                            "message": "Could not find property \"x\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 0,
+                            "functionName": "height",
+                            "line": 40,
+                            "message": "Could not find property \"height\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 44,
+                            "message": "Cannot access value for name scroll"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 21,
+                            "durationMicroseconds": 0,
+                            "functionName": "height",
+                            "line": 45,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 29,
+                            "durationMicroseconds": 0,
+                            "functionName": "implicitHeight",
+                            "line": 46,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 25,
+                            "durationMicroseconds": 0,
+                            "functionName": "implicitHeight",
+                            "line": 51,
                             "message": "Cannot access value for name dialog"
                         },
                         {
@@ -90,7 +138,7 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 38,
+                            "line": 59,
                             "message": "Cannot access value for name dialog"
                         },
                         {
@@ -98,7 +146,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 39,
+                            "line": 60,
                             "message": "Cannot access value for name dialog"
                         },
                         {
@@ -106,7 +154,31 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 42,
+                            "line": 63,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "left",
+                            "line": 54,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "right",
+                            "line": 55,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 37,
+                            "durationMicroseconds": 0,
+                            "functionName": "verticalCenter",
+                            "line": 56,
                             "message": ""
                         },
                         {
@@ -114,7 +186,7 @@
                             "column": 29,
                             "durationMicroseconds": 0,
                             "functionName": "pixelSize",
-                            "line": 40,
+                            "line": 61,
                             "message": "Cannot access value for name dialog"
                         },
                         {
@@ -122,15 +194,71 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 41,
+                            "line": 62,
                             "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "standardButtons",
+                            "line": 68,
+                            "message": "Could not find property \"standardButtons\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 18,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 69,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "alignment",
+                            "line": 70,
+                            "message": "Could not find property \"alignment\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 0,
+                            "functionName": "onAccepted",
+                            "line": 82,
+                            "message": "Could not find signal \"accepted\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 0,
+                            "functionName": "onRejected",
+                            "line": 83,
+                            "message": "Could not find signal \"rejected\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 78,
+                            "message": "Cannot access value for name dialog"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "primary",
+                            "line": 80,
+                            "message": "Cannot access value for name DialogButtonBox"
                         },
                         {
                             "codegenResult": 2,
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "radius",
-                            "line": 47,
+                            "line": 102,
                             "message": "Cannot access value for name dialog"
                         },
                         {
@@ -138,7 +266,7 @@
                             "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 48,
+                            "line": 103,
                             "message": "Cannot access value for name dialog"
                         },
                         {
@@ -146,11 +274,11 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 50,
+                            "line": 105,
                             "message": "Cannot access value for name dialog"
                         }
                     ],
-                    "filePath": "/home/cylindr/player/qml/common/AuroraDialog.qml"
+                    "filePath": "/home/cylindr/nameless-aurora/qml/common/AuroraDialog.qml"
                 }
             ],
             "moduleId": "AuroraPlayer(AuroraPlayer)"

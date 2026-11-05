@@ -52,8 +52,11 @@ template <> constexpr inline auto ImportManager::qt_create_metaobjectdata<qt_met
         "fileUrls",
         "importPaths",
         "paths",
-        "importFolder",
+        "attachFile",
+        "trackId",
         "QUrl",
+        "fileUrl",
+        "importFolder",
         "folderUrl",
         "busy",
         "statusText",
@@ -79,18 +82,22 @@ template <> constexpr inline auto ImportManager::qt_create_metaobjectdata<qt_met
         QtMocHelpers::MethodData<void(const QStringList &)>(11, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QStringList, 12 },
         }}),
+        // Method 'attachFile'
+        QtMocHelpers::MethodData<void(int, const QUrl &)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 14 }, { 0x80000000 | 15, 16 },
+        }}),
         // Method 'importFolder'
-        QtMocHelpers::MethodData<void(const QUrl &)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 14, 15 },
+        QtMocHelpers::MethodData<void(const QUrl &)>(17, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 15, 18 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'busy'
-        QtMocHelpers::PropertyData<bool>(16, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(19, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
         // property 'statusText'
-        QtMocHelpers::PropertyData<QString>(17, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
+        QtMocHelpers::PropertyData<QString>(20, QMetaType::QString, QMC::DefaultPropertyFlags, 1),
         // property 'lastError'
-        QtMocHelpers::PropertyData<QString>(18, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<QString>(21, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -118,7 +125,8 @@ void ImportManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 3: _t->importCompleted((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2]))); break;
         case 4: _t->importFiles((*reinterpret_cast<std::add_pointer_t<QList<QUrl>>>(_a[1]))); break;
         case 5: _t->importPaths((*reinterpret_cast<std::add_pointer_t<QStringList>>(_a[1]))); break;
-        case 6: _t->importFolder((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1]))); break;
+        case 6: _t->attachFile((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[2]))); break;
+        case 7: _t->importFolder((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1]))); break;
         default: ;
         }
     }
@@ -162,14 +170,14 @@ int ImportManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 8;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty

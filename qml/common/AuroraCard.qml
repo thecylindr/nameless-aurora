@@ -1,10 +1,13 @@
+// Карточка-контейнер с внутренним отступом, принимающая произвольный контент.
 import QtQuick
 import ".."
 
 Rectangle {
     id: root
     property Theme uiTheme
+    // Внутренний отступ вокруг вложенного содержимого.
     property real padding: 16
+    // Контент карточки, вставляемый в контейнер с отступами.
     default property alias content: container.data
 
     implicitWidth: container.childrenRect.width + 2 * padding

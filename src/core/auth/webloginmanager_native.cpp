@@ -1,0 +1,880 @@
+#include "../web/mediasniffer.h"
+#include "../web/vktext.h"
+#include "../web/servicepayload.h"
+#include "browsersession.h"
+#include "webloginmanager.h"
+#include <QDateTime>
+#include <QDesktopServices>
+#include <QDir>
+#include <QFile>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QLocalServer>
+#include <QSet>
+#include <QSaveFile>
+#include <QRegularExpression>
+#include <QUrlQuery>
+#include <QStandardPaths>
+#include <QTimer>
+#include <QWebEngineCookieStore>
+
+// Нативная часть WebLoginManager: запуск браузера/профиля, инжекция скриптов,
+// сбор плейлистов, поиск VK, получение аудио и сохранение отчётов об импорте.
+
+QString WebLoginManager::serviceForHost(const QString& input)
+{
+    // Сопоставляем хост с известными доменами VK и Яндекса.
+    const QString host = input.toLower();
+    for (const auto& domain : QStringList{"vk.com", "vk.ru", "vk.me", "vk.id"})
+        if (host == domain || host.endsWith('.' + domain))
+            return "vk";
+    for (const auto& domain : QStringList{"yandex.ru", "yandex.com", "yandex.by", "yandex.kz", "yandex.uz"})
+        if (host == domain || host.endsWith('.' + domain))
+            return "yandex";
+    return {};
+}
+bool WebLoginManager::ensureNative(const QString& slug)
+{
+    if (m_selectedBrowser.isEmpty() || !QFileInfo(m_selectedBrowser).isExecutable()) {
+        const auto browsers = detectBrowserExecutables();
+        if (!browsers.isEmpty())
+            m_selectedBrowser = browsers.first();
+    }
+    m_externalMode = !m_selectedBrowser.isEmpty();
+    if (m_backgroundMode && !m_externalMode) {
+        setStatus("Для фонового импорта нужен установленный Brave, Chromium, Chrome или Яндекс Браузер.");
+        return false;
+    }
+    if (m_externalMode) {
+        m_nativeProfile = nullptr;
+        m_nativeSlug = slug;
+        if (!m_nativeTimer) {
+            m_nativeTimer = new QTimer(this);
+            m_nativeTimer->setInterval(900);
+            connect(m_nativeTimer, &QTimer::timeout, this, &WebLoginManager::nativeTick);
+        }
+        if (!m_external) {
+            m_external = m_browserFactory ? m_browserFactory(this) : new BrowserSession(this);
+            connect(m_external, &BrowserSession::loaded, this, &WebLoginManager::pageLoaded);
+            connect(m_external, &BrowserSession::evaluated, this, &WebLoginManager::submitScriptResult);
+            connect(m_external, &BrowserSession::apiReceived, this, &WebLoginManager::consumeApiPayload);
+            connect(m_external, &BrowserSession::apiFetched, this,
+                    [this](int id, const QUrl& url, const QJsonValue& payload, int status) {
+                        if (!m_apiRequests.remove(id) || m_nativeTask != Collect)
+                            return;
+                        m_apiHttpStatus = status;
+                        if (status >= 200 && status < 300)
+                            consumeApiPayload(url, payload);
+                        else if (status == 401 || status == 403)
+                            finishNative("API Яндекс Музыки не принял перенесённую сессию (HTTP " +
+                                         QString::number(status) + "). Подробности — в отчёте импорта.");
+                        if (m_nativeTask == Collect) {
+                            dispatchYandex();
+                            finishApiCollection();
+                        }
+                    });
+            connect(m_external, &BrowserSession::failed, this, [this](const QString& error) {
+                if (m_nativeTask != Idle)
+                    finishNative(error);
+            });
+            connect(m_external, &BrowserSession::cookiesReceived, this,
+                    [this](const QString& service, const QJsonArray& values) {
+                        QList<StoredCookie> relevant;
+                        for (const auto& cookie : decodeCookies(values))
+                            if (serviceForHost(cookie.domain.startsWith('.') ? cookie.domain.mid(1) : cookie.domain) ==
+                                service)
+                                relevant.append(cookie);
+                        saveCookies(service, relevant);
+                        emit sessionsChanged();
+                    });
+            connect(m_external, &BrowserSession::audioRequested, this, [this](const QUrl& url) {
+                if (m_nativeTask != Resolve || !m_mediaArmed)
+                    return;
+                const int id = m_mediaId;
+                finishNative();
+                emit mediaReady(id, url, {});
+            });
+        }
+        return true;
+    }
+    if (!m_profiles.contains(slug)) {
+        // Chromium требует локальный IPC; проверяем заранее, до фатального
+        // запуска в песочнице в ограниченных сессиях.
+        QTemporaryDir probeDirectory;
+        QLocalServer probe;
+        if (!probeDirectory.isValid() || !probe.listen(probeDirectory.filePath("browser-ipc"))) {
+            setStatus("Встроенный браузер недоступен: среда запрещает локальный обмен данными. Открой Aurora "
+                      "в обычной сессии рабочего стола.");
+            return false;
+        }
+        probe.close();
+        auto* profile = new QQuickWebEngineProfile("Aurora-" + slug, this);
+        const QString root = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/webprofiles/" + slug;
+        QDir().mkpath(root);
+        QFile::setPermissions(root, QFileDevice::ReadOwner | QFileDevice::WriteOwner | QFileDevice::ExeOwner);
+        profile->setPersistentStoragePath(root);
+        profile->setCachePath(root + "/cache");
+        profile->setPersistentCookiesPolicy(QQuickWebEngineProfile::ForcePersistentCookies);
+        profile->setHttpAcceptLanguage("ru-RU,ru;q=0.9,en;q=0.7");
+        // Перехватываем сетевые запросы профиля, чтобы ловить аудио-ссылки.
+        auto* sniffer = new MediaSniffer(slug, profile);
+        profile->setUrlRequestInterceptor(sniffer);
+        connect(
+            sniffer, &MediaSniffer::audioRequested, this,
+            [this, slug](const QUrl& url) {
+                if (m_nativeTask != Resolve || slug != m_nativeSlug || !m_mediaArmed)
+                    return;
+                const int id = m_mediaId;
+                m_nativeVisible = false;
+                finishNative();
+                emit nativeBrowserChanged();
+                emit mediaReady(id, url, {});
+            },
+            Qt::QueuedConnection);
+        auto* store = profile->cookieStore();
+        // Держим cookies встроенного профиля в QSettings для использования yt-dlp.
+        connect(store, &QWebEngineCookieStore::cookieAdded, this, [this, slug](const QNetworkCookie& cookie) {
+            const QString domain = cookie.domain().startsWith('.') ? cookie.domain().mid(1) : cookie.domain();
+            if (serviceForHost(domain) != slug)
+                return;
+            auto cookies = storedCookies(slug);
+            StoredCookie value{QString::fromUtf8(cookie.name()),
+                               QString::fromUtf8(cookie.value()),
+                               cookie.domain(),
+                               cookie.path(),
+                               cookie.isSessionCookie() ? 0 : cookie.expirationDate().toSecsSinceEpoch(),
+                               cookie.isSecure(),
+                               cookie.isHttpOnly()};
+            for (qsizetype i = cookies.size(); i > 0; --i)
+                if (cookies[i - 1].name == value.name && cookies[i - 1].domain == value.domain &&
+                    cookies[i - 1].path == value.path)
+                    cookies.removeAt(i - 1);
+            cookies.append(value);
+            saveCookies(slug, cookies);
+            emit sessionsChanged();
+        });
+        connect(store, &QWebEngineCookieStore::cookieRemoved, this, [this, slug](const QNetworkCookie& cookie) {
+            auto cookies = storedCookies(slug);
+            for (qsizetype i = cookies.size(); i > 0; --i)
+                if (cookies[i - 1].name == QString::fromUtf8(cookie.name()) &&
+                    cookies[i - 1].domain == cookie.domain() && cookies[i - 1].path == cookie.path())
+                    cookies.removeAt(i - 1);
+            saveCookies(slug, cookies);
+            emit sessionsChanged();
+        });
+        for (const auto& cookie : cookiesFor(slug))
+            store->setCookie(cookie);
+        store->loadAllCookies();
+        m_profiles[slug] = profile;
+    }
+    m_nativeProfile = m_profiles.value(slug);
+    m_nativeSlug = slug;
+    for (const auto& cookie : cookiesFor(slug))
+        m_nativeProfile->cookieStore()->setCookie(cookie);
+    if (!m_nativeTimer) {
+        m_nativeTimer = new QTimer(this);
+        m_nativeTimer->setInterval(900);
+        connect(m_nativeTimer, &QTimer::timeout, this, &WebLoginManager::nativeTick);
+    }
+    return true;
+}
+void WebLoginManager::openNative(const QString& service)
+{
+    if (m_busy)
+        return;
+    const QString slug = normalizeService(service);
+    if (slug.isEmpty())
+        return;
+    m_backgroundMode = false;
+    // Сбрасываем привязку к локальному профилю: вход выполняет сам пользователь.
+    m_store.remove("weblogin-local/" + slug);
+    if (!ensureNative(slug)) {
+        emit loginDone(service, false, m_status);
+        return;
+    }
+    m_nativeTask = Login;
+    m_nativeElapsed.start();
+    m_pageError.clear();
+    m_loadedUrl.clear();
+    m_nativeUrl = QUrl(slug == "vk" ? "https://vk.ru/audio" : "https://music.yandex.ru/");
+    m_nativeVisible = true;
+    setBusy(true);
+    setStatus(m_externalMode ? "Войди в аккаунт в открывшемся окне. Aurora определит вход автоматически."
+                             : "Войди в аккаунт в окне Aurora, затем нажми «Я вошёл».");
+    emit nativeBrowserChanged();
+    m_nativeTimer->start();
+    navigateNative(m_nativeUrl);
+}
+void WebLoginManager::setBrowserVisible(bool visible)
+{
+    m_nativeVisible = visible;
+    emit nativeBrowserChanged();
+    if (!visible && m_nativeTask != Idle)
+        finishNative("Окно сервиса закрыто. Операция отменена.");
+}
+void WebLoginManager::pageLoaded(const QUrl& url, bool ok, const QString& error)
+{
+    m_loadedUrl = url;
+    if (!ok) {
+        m_pageError = error.isEmpty()
+                          ? QStringLiteral("Не удалось открыть сервис. Проверь соединение и попробуй ещё раз.")
+                          : error;
+        emit nativeBrowserChanged();
+        if (m_nativeTask != Idle)
+            finishNative(m_pageError);
+        return;
+    }
+    m_pageError.clear();
+    emit nativeBrowserChanged();
+}
+void WebLoginManager::confirmNativeLogin()
+{
+    if (!m_externalMode) {
+        if (m_nativeProfile)
+            m_nativeProfile->cookieStore()->loadAllCookies();
+        else
+            return;
+    }
+    QTimer::singleShot(250, this, [this] {
+        // Если во время сбора сервис попросил вход — возвращаемся к исходной странице.
+        if (m_nativeTask == Collect && m_collectLogin) {
+            m_collectLogin = false;
+            m_loadedUrl.clear();
+            emit nativeBrowserChanged();
+            navigateNative(m_nativeUrl);
+            return;
+        }
+        if (m_nativeTask != Login)
+            return;
+        if (!hasSession(m_nativeSlug)) {
+            setStatus("Вход ещё не завершён. Заверши его на сайте и нажми «Я вошёл».");
+            return;
+        }
+        const QString service = nativeService();
+        finishNative();
+        m_nativeVisible = false;
+        emit nativeBrowserChanged();
+        emit sessionsChanged();
+        emit loginDone(service, true, service + " подключён.");
+    });
+}
+QString WebLoginManager::nativeScript(const QString& name) const
+{
+    QFile file(":/native/scripts/" + name);
+    return file.open(QIODevice::ReadOnly) ? QString::fromUtf8(file.readAll()) : QString();
+}
+void WebLoginManager::collectPlaylist(const QUrl& url)
+{
+    m_backgroundMode = false;
+    startCollection(url);
+}
+void WebLoginManager::startCollection(const QUrl& url, bool search)
+{
+    if (m_busy) {
+        if (search)
+            emit searchReady({}, "Дождись завершения операции VK.");
+        else
+            emit collectionReady({}, {}, "Сначала заверши текущую операцию входа или импорта.");
+        return;
+    }
+    const QString slug = serviceForHost(url.host());
+    if (slug.isEmpty() || (url.scheme() != "https" && url.scheme() != "http")) {
+        if (search)
+            emit searchReady({}, "Неизвестный источник поиска.");
+        else
+            emit collectionReady({}, {}, "Нужна ссылка Яндекс Музыки или VK Музыки.");
+        return;
+    }
+    if (!ensureNative(slug)) {
+        if (search)
+            emit searchReady({}, m_status);
+        else
+            emit collectionReady({}, {}, m_status);
+        return;
+    }
+    m_nativeTask = search ? Search : Collect;
+    m_collectLogin = false;
+    m_nativeElapsed.start();
+    m_harvest.clear();
+    m_harvestOrder.clear();
+    m_harvestDiagnostic = {};
+    m_harvestPage = QUrl();
+    m_expectedTracks = 0;
+    m_importReport.clear();
+    m_vkEntryRedirected = false;
+    m_apiPlaylist.clear();
+    m_apiOrder.clear();
+    m_apiRequests.clear();
+    m_apiQueue.clear();
+    m_apiRequested.clear();
+    m_apiResponses = 0;
+    m_apiHttpStatus = 0;
+    m_stableTicks = 0;
+    m_scriptPending = false;
+    m_pageError.clear();
+    m_collectionName.clear();
+    m_nativeUrl = url;
+    // Ссылку «/collection/tracks» приводим к общей коллекции, а плейлист запоминаем по id.
+    if (slug == "yandex" && m_nativeUrl.path() == "/collection/tracks")
+        m_nativeUrl.setPath("/collection");
+    if (slug == "yandex") {
+        const auto match = QRegularExpression("^/playlists/([A-Za-z0-9_.-]{1,100})/?$").match(m_nativeUrl.path());
+        if (match.hasMatch())
+            m_apiPlaylist = match.captured(1);
+    }
+    m_loadedUrl.clear();
+    m_nativeVisible = true;
+    setBusy(true);
+    setStatus(m_backgroundMode ? "Читаем музыку с существующей сессией браузера…" : "Открываем плейлист в Aurora…");
+    emit nativeBrowserChanged();
+    m_nativeTimer->start();
+    navigateNative(m_nativeUrl);
+}
+void WebLoginManager::requestYandex(const QUrl& url, const QJsonArray& ids)
+{
+    if (!m_externalMode || !m_external || m_nativeTask != Collect)
+        return;
+    const auto key = url.toString() + QString::fromUtf8(QJsonDocument(ids).toJson(QJsonDocument::Compact));
+    if (m_apiRequested.contains(key))
+        return;
+    m_apiRequested.insert(key);
+    m_apiQueue.enqueue({url, ids});
+    dispatchYandex();
+}
+void WebLoginManager::dispatchYandex()
+{
+    if (m_nativeTask != Collect || !m_external || !m_apiRequests.isEmpty() || m_apiQueue.isEmpty())
+        return;
+    const auto request = m_apiQueue.dequeue();
+    const int id = ++m_apiNextId;
+    m_apiRequests[id] = request.first;
+    m_external->fetchJson(id, request.first, request.second);
+}
+void WebLoginManager::consumeApiPayload(const QUrl& url, const QJsonValue& payload)
+{
+    if (m_nativeTask != Collect || m_nativeSlug != "yandex" || !BrowserSession::isCollectionApi(url))
+        return;
+    const bool preview = url.path() == "/landing-blocks/collection/playlist-with-likes";
+    const bool playlist = url.path().startsWith("/playlist/");
+    const bool collection = m_nativeUrl.path() == "/collection" || m_nativeUrl.path() == "/collection/";
+    const auto data = ServicePayload::yandex(payload);
+    if (preview) {
+        if (!collection || data.playlistUuid.isEmpty())
+            return;
+        m_apiPlaylist = data.playlistUuid;
+    } else if (playlist) {
+        if (m_apiPlaylist.isEmpty() || url.path() != "/playlist/" + m_apiPlaylist)
+            return;
+    } else if (m_apiPlaylist.isEmpty())
+        return;
+    ++m_apiResponses;
+    if (preview || playlist) {
+        if (data.fullPlaylist)
+            m_expectedTracks = data.total;
+        else
+            m_expectedTracks = qMax(m_expectedTracks, data.total);
+        if (m_expectedTracks > 10000) {
+            finishNative("За один импорт можно получить до 10 000 треков.");
+            return;
+        }
+        if (!data.title.isEmpty())
+            m_collectionName = data.title;
+    }
+    if (playlist && data.fullPlaylist && data.total == 0 && data.order.isEmpty()) {
+        finishNative("Сервис сообщает, что этот список музыки пуст.");
+        return;
+    }
+    for (const auto& track : data.tracks) {
+        m_harvest[track.sourceUrl] = track;
+        if (!m_harvestOrder.contains(track.sourceUrl))
+            m_harvestOrder.append(track.sourceUrl);
+    }
+    if (playlist && data.fullPlaylist) {
+        for (const auto& key : data.order)
+            if (!m_apiOrder.contains(key))
+                m_apiOrder.append(key);
+        // Некоторые аккаунты получают только id треков, хотя запрошены richTracks.
+        QJsonArray missing;
+        const auto flush = [&] {
+            if (!missing.isEmpty()) {
+                requestYandex(QUrl("https://api.music.yandex.ru/tracks"), missing);
+                missing = {};
+            }
+        };
+        for (const auto& key : m_apiOrder)
+            if (!m_harvest.contains(key)) {
+                missing.append(QUrl(key).path().section('/', -1));
+                if (missing.size() == 200)
+                    flush();
+            }
+        flush();
+        if (!data.order.isEmpty() && m_apiOrder.size() < m_expectedTracks) {
+            const int page = QUrlQuery(url).queryItemValue("page").toInt() + 1;
+            if (page <= 50)
+                requestYandex(QUrl("https://api.music.yandex.ru/playlist/" + m_apiPlaylist +
+                                   "?resumeStream=false&richTracks=true&pageSize=200&page=" + QString::number(page)));
+        }
+    }
+    if (preview && !m_apiPlaylist.isEmpty())
+        requestYandex(QUrl("https://api.music.yandex.ru/playlist/" + m_apiPlaylist +
+                           "?resumeStream=false&richTracks=true&pageSize=200&page=0"));
+    setStatus(QString("Получено из API Яндекса: %1 / %2…").arg(m_harvest.size()).arg(m_expectedTracks));
+    finishApiCollection();
+}
+bool WebLoginManager::finishApiCollection()
+{
+    if (m_nativeTask != Collect || m_apiOrder.isEmpty() || !m_apiRequests.isEmpty() || !m_apiQueue.isEmpty() ||
+        m_apiOrder.size() < m_expectedTracks)
+        return false;
+    QVector<Track> tracks;
+    for (const auto& key : m_apiOrder) {
+        if (!m_harvest.contains(key))
+            return false;
+        tracks.append(m_harvest.value(key));
+    }
+    const auto name = m_collectionName;
+    finishNative();
+    m_nativeVisible = false;
+    emit nativeBrowserChanged();
+    emit collectionReady(tracks, name, {});
+    return true;
+}
+void WebLoginManager::resolveMedia(int requestId, const QVariantMap& track)
+{
+    const QUrl direct(track.value("mediaUrl").toString());
+    if (MediaSniffer::isAudioUrl(direct)) {
+        QTimer::singleShot(0, this, [this, requestId, direct] {
+            emit mediaReady(requestId, direct, {});
+        });
+        return;
+    }
+    if (requestId < 0)
+        m_mediaQueue.prepend({requestId, track});
+    else
+        m_mediaQueue.enqueue({requestId, track});
+    nextMedia();
+}
+void WebLoginManager::nextMedia()
+{
+    if (m_busy || m_mediaQueue.isEmpty())
+        return;
+    const auto task = m_mediaQueue.dequeue();
+    m_mediaId = task.first;
+    m_requestedTrack = task.second;
+    const QUrl url(m_requestedTrack.value("url").toString());
+    const QString slug = serviceForHost(url.host());
+    if (slug.isEmpty()) {
+        emit mediaReady(m_mediaId, {}, "Неизвестный музыкальный сервис.");
+        QTimer::singleShot(0, this, &WebLoginManager::nextMedia);
+        return;
+    }
+    m_backgroundMode = !m_store.value("weblogin-local/" + slug).toString().isEmpty();
+    if (!ensureNative(slug)) {
+        emit mediaReady(m_mediaId, {}, m_status);
+        QTimer::singleShot(0, this, &WebLoginManager::nextMedia);
+        return;
+    }
+    m_nativeTask = Resolve;
+    m_mediaArmed = false;
+    m_nativeElapsed.start();
+    m_scriptPending = false;
+    m_nativeVisible = true;
+    m_nativeUrl = url;
+    m_loadedUrl.clear();
+    m_pageError.clear();
+    setBusy(true);
+    setStatus("Получаем аудио: " + m_requestedTrack.value("title").toString());
+    emit nativeBrowserChanged();
+    m_nativeTimer->start();
+    navigateNative(m_nativeUrl);
+}
+void WebLoginManager::cancelMedia(int requestId)
+{
+    for (qsizetype i = m_mediaQueue.size(); i > 0; --i)
+        if (m_mediaQueue[i - 1].first == requestId)
+            m_mediaQueue.removeAt(i - 1);
+    if (m_nativeTask == Resolve && m_mediaId == requestId)
+        finishNative("Загрузка отменена.");
+}
+void WebLoginManager::nativeTick()
+{
+    if (m_nativeTask == Idle)
+        return;
+    m_nativeTimer->setInterval(m_nativeTask == Collect ? 500 : 900);
+    // Свой лимит ожидания для каждой операции.
+    const int limit = m_nativeTask == Login     ? 180000
+                      : m_nativeTask == Resolve ? 25000
+                      : m_nativeTask == Search  ? 35000
+                                                : 240000;
+    if (m_nativeElapsed.elapsed() > limit) {
+        finishNative(
+            m_nativeTask == Collect ? "Сервис не завершил выдачу списка. Попробуй открыть сам плейлист вместо страницы "
+                                      "всей музыки."
+            : m_nativeTask == Search ? "Поиск VK не завершился за 35 секунд. Повтори запрос или выбери другой источник."
+                                     : "Время ожидания истекло. Повтори операцию или заверши вход в окне сервиса.");
+        return;
+    }
+    if (m_loadedUrl.isEmpty() || m_scriptPending)
+        return;
+    if (serviceForHost(m_loadedUrl.host()) != m_nativeSlug)
+        return;
+    if (m_nativeTask == Collect && m_nativeSlug == "yandex" && m_externalMode && m_apiResponses == 0 &&
+        m_nativeElapsed.elapsed() > 5000) {
+        if (!m_apiPlaylist.isEmpty())
+            requestYandex(QUrl("https://api.music.yandex.ru/playlist/" + m_apiPlaylist +
+                               "?resumeStream=false&richTracks=true&pageSize=200&page=0"));
+        else if (m_nativeUrl.path() == "/collection" || m_nativeUrl.path() == "/collection/")
+            requestYandex(QUrl("https://api.music.yandex.ru/landing-blocks/collection/playlist-with-likes?count=8"));
+    }
+    QString script = nativeScript(m_nativeTask == Login                               ? "login.js"
+                                  : m_nativeTask == Collect || m_nativeTask == Search ? "harvest.js"
+                                                                                      : "activate.js");
+    if (m_nativeTask == Collect && m_nativeSlug == "vk")
+        script = "window.__auroraCatalogSearch=false;\n" + nativeScript("vk-library.js") + ";\n" + script;
+    if (m_nativeTask == Search)
+        script = "window.__auroraCatalogSearch=true;window.__auroraVkLibrary=null;\n" + script;
+    if (m_nativeTask == Resolve)
+        script.replace(
+            "__TRACK__",
+            QString::fromUtf8(
+                QJsonDocument(QJsonObject::fromVariantMap(m_requestedTrack)).toJson(QJsonDocument::Compact)));
+    if (script.isEmpty()) {
+        finishNative("Не удалось загрузить модуль импорта.");
+        return;
+    }
+    m_scriptPending = true;
+    ++m_scriptId;
+    if (m_externalMode && m_external)
+        m_external->evaluate(m_scriptId, script, m_nativeTask == Resolve);
+    else
+        emit scriptRequested(m_scriptId, script);
+    const int id = m_scriptId;
+    QTimer::singleShot(7000, this, [this, id] {
+        if (m_scriptPending && id == m_scriptId) {
+            m_scriptPending = false;
+            finishNative("Страница сервиса не отвечает. Обнови её и повтори импорт.");
+        }
+    });
+}
+QVector<Track> WebLoginManager::parseHarvest(const QByteArray& json, const QString& service)
+{
+    QVector<Track> tracks;
+    QSet<QString> seen;
+    const auto root = QJsonDocument::fromJson(json).object();
+    for (const auto& entry : root.value("tracks").toArray()) {
+        const auto object = entry.toObject();
+        const QUrl url(object.value("url").toString());
+        if (serviceForHost(url.host()) != normalizeService(service) || url.scheme() != "https")
+            continue;
+        Track t;
+        t.title = VkText::clean(object.value("title").toString().trimmed());
+        t.artist = VkText::clean(object.value("artist").toString().trimmed());
+        t.source = normalizeService(service) == "vk" ? "VK" : "Яндекс Музыка";
+        t.sourceUrl = url.toString();
+        t.album = VkText::clean(object.value("album").toString());
+        const QUrl cover(object.value("coverUrl").toString());
+        if (cover.scheme() == "https")
+            t.coverUrl = cover.toString();
+        t.duration = qMax<qint64>(0, object.value("durationMs").toVariant().toLongLong());
+        const QUrl media(object.value("mediaUrl").toString());
+        if (MediaSniffer::isAudioUrl(media) ||
+            (object.value("mediaVerified").toBool() && media.scheme() == "https" && media.userInfo().isEmpty()))
+            t.mediaUrl = media.toString();
+        t.webData = object.toVariantMap();
+        if (t.title.isEmpty() || seen.contains(t.sourceUrl))
+            continue;
+        seen.insert(t.sourceUrl);
+        tracks.append(t);
+    }
+    return tracks;
+}
+void WebLoginManager::submitScriptResult(int id, const QVariant& result)
+{
+    if (id != m_scriptId || !m_scriptPending || m_nativeTask == Idle)
+        return;
+    m_scriptPending = false;
+    if (!result.isValid())
+        return; // Браузер ушёл с навигацией во время evaluate; nativeTick повторит в пределах таймаута.
+    if (m_nativeTask == Login) {
+        const auto state = QJsonDocument::fromJson(result.toString().toUtf8()).object();
+        if (state.value("authenticated").toBool() && hasSession(m_nativeSlug))
+            confirmNativeLogin();
+        return;
+    }
+    if (m_nativeTask == Resolve) {
+        const auto state = QJsonDocument::fromJson(result.toString().toUtf8()).object();
+        m_mediaArmed = m_mediaArmed || state.value("activated").toBool();
+        const QUrl url(state.value("mediaUrl").toString());
+        if (MediaSniffer::isAudioUrl(url)) {
+            const int request = m_mediaId;
+            m_nativeVisible = false;
+            finishNative();
+            emit nativeBrowserChanged();
+            emit mediaReady(request, url, {});
+        }
+        return;
+    }
+    const QByteArray bytes = result.toString().toUtf8();
+    const auto root = QJsonDocument::fromJson(bytes).object();
+    if (m_nativeTask == Search) {
+        if (root.value("challenge").toBool() || root.value("loginRequired").toBool()) {
+            finishNative("VK не принял сессию или показал проверку доступа. Выбери профиль браузера в импорте.");
+            return;
+        }
+        const auto tracks = parseHarvest(bytes, "vk");
+        for (const auto& track : tracks)
+            if (!m_harvest.contains(track.sourceUrl)) {
+                m_harvest.insert(track.sourceUrl, track);
+                m_harvestOrder.append(track.sourceUrl);
+            }
+        if (!m_harvest.isEmpty() && (m_harvest.size() >= 24 || m_nativeElapsed.elapsed() > 7000)) {
+            QVector<Track> found;
+            for (const auto& key : m_harvestOrder) {
+                found.append(m_harvest.value(key));
+                if (found.size() >= 36)
+                    break;
+            }
+            finishNative();
+            emit searchReady(found, {});
+            return;
+        }
+        if (m_nativeElapsed.elapsed() > 22000 && !root.value("loading").toBool())
+            finishNative("VK не вернул музыкальных записей. Попробуй другой запрос или источник.");
+        return;
+    }
+    if (root.isEmpty()) {
+        finishNative("Не удалось прочитать страницу сервиса. Открой плейлист и повтори импорт.");
+        return;
+    }
+    m_harvestDiagnostic = root.value("diagnostics").toObject();
+    m_harvestPage = QUrl(root.value("url").toString());
+    const QUrl entry(root.value("entryUrl").toString());
+    if (m_nativeSlug == "vk" && !m_vkEntryRedirected &&
+        QRegularExpression("^/audio/?$").match(m_nativeUrl.path()).hasMatch() && entry.scheme() == "https" &&
+        entry.host() == m_nativeUrl.host() && entry.userInfo().isEmpty() &&
+        (entry.port() == -1 || entry.port() == 443) &&
+        QRegularExpression("^/audios[1-9][0-9]*$").match(entry.path()).hasMatch()) {
+        m_vkEntryRedirected = true;
+        m_nativeUrl = entry;
+        m_loadedUrl.clear();
+        m_stableTicks = 0;
+        m_harvest.clear();
+        m_harvestOrder.clear();
+        setStatus("Открываем полную коллекцию VK…");
+        navigateNative(m_nativeUrl);
+        return;
+    }
+    m_expectedTracks = qMax(m_expectedTracks, qBound(0, root.value("expectedCount").toInt(), 100000));
+    if (root.value("challenge").toBool()) {
+        finishNative(nativeService() + " показал проверку безопасности вместо списка музыки. Список не прочитан; "
+                                       "подробности доступны в отчёте импорта.");
+        return;
+    }
+    if (root.value("loginRequired").toBool()) {
+        if (m_backgroundMode) {
+            finishNative("Сервис не принял сохранённую сессию. Выбери профиль браузера, где музыка сейчас открывается "
+                         "под твоим аккаунтом, и повтори перенос.");
+            return;
+        }
+        m_collectLogin = true;
+        emit nativeBrowserChanged();
+        setStatus(m_externalMode
+                      ? "Войди в аккаунт на странице сервиса. Импорт продолжится автоматически."
+                      : "Войди в аккаунт на странице сервиса и нажми «Я вошёл». Импорт продолжится автоматически.");
+        return;
+    }
+    if (m_collectLogin) {
+        m_collectLogin = false;
+        m_loadedUrl.clear();
+        emit nativeBrowserChanged();
+        navigateNative(m_nativeUrl);
+        return;
+    }
+    // Порядок плейлиста определяет пагинация API; не завершаем по восьми
+    // строкам превью и не затираем метаданные текстом из DOM.
+    if (!m_apiOrder.isEmpty() || !m_apiRequests.isEmpty() || !m_apiQueue.isEmpty()) {
+        if (!finishApiCollection() && m_nativeElapsed.elapsed() > 30000 && m_apiRequests.isEmpty())
+            finishNative(QString("API Яндекса вернул список, но не все метаданные треков (%1 / %2). Неполный список не "
+                                 "сохранён; открой отчёт импорта.")
+                             .arg(m_harvest.size())
+                             .arg(m_expectedTracks));
+        return;
+    }
+    const auto tracks = parseHarvest(bytes, m_nativeSlug);
+    const int before = m_harvest.size();
+    if (root.value("complete").toBool() && root.value("playlistOrdered").toBool() &&
+        tracks.size() == m_expectedTracks) {
+        // Виртуальный список может сначала показать середину плейлиста; после
+        // загрузки полной модели заменяем порядок обнаружения на точный.
+        m_harvest.clear();
+        m_harvestOrder.clear();
+    }
+    for (const auto& t : tracks) {
+        if (!m_harvest.contains(t.sourceUrl))
+            m_harvestOrder.append(t.sourceUrl);
+        m_harvest[t.sourceUrl] = t;
+    }
+    if (!root.value("title").toString().isEmpty())
+        m_collectionName = root.value("title").toString();
+    if (m_harvest.size() > 10000) {
+        finishNative("За один импорт можно получить до 10 000 треков.");
+        return;
+    }
+    if (m_harvest.size() == before && root.value("atBottom").toBool() && !root.value("loading").toBool())
+        ++m_stableTicks;
+    else
+        m_stableTicks = 0;
+    if (m_harvest.isEmpty()) {
+        const int rows =
+            m_harvestDiagnostic.value("modernRows").toInt() + m_harvestDiagnostic.value("legacyRows").toInt();
+        setStatus(root.value("loading").toBool()
+                      ? nativeService() + " загружает список музыки…"
+                      : QString("Читаем список %1 · элементов на странице: %2…").arg(nativeService()).arg(rows));
+        if (m_nativeElapsed.elapsed() > 30000) {
+            finishNative("Страница сервиса открылась, но список музыки не удалось прочитать. Диагностика сохранена; "
+                         "открой отчёт импорта.");
+            return;
+        }
+    } else
+        setStatus(
+            m_expectedTracks > 0
+                ? QString("Получено треков: %1 / %2 · загружаем список…").arg(m_harvest.size()).arg(m_expectedTracks)
+                : QString("Получено треков: %1 · прокручиваем плейлист…").arg(m_harvest.size()));
+    const auto apiCode = m_harvestDiagnostic.value("apiCode").toString();
+    if (m_nativeSlug == "vk" && apiCode == "rate-limited" && !m_harvestDiagnostic.value("apiFailed").toBool()) {
+        setStatus(QString("VK просит паузу · получено %1 / %2 · повтор через %3 с…")
+                      .arg(m_harvest.size())
+                      .arg(m_expectedTracks)
+                      .arg(qMax(1, (m_harvestDiagnostic.value("apiWaitMs").toInt() + 999) / 1000)));
+        return;
+    }
+    if (m_stableTicks < 4 || m_nativeElapsed.elapsed() < 8000)
+        return;
+    if (m_harvest.isEmpty() && m_nativeElapsed.elapsed() < 20000)
+        return;
+    if (m_nativeSlug == "vk" && !m_harvest.isEmpty() && m_expectedTracks <= m_harvest.size() &&
+        !root.value("complete").toBool()) {
+        if (m_nativeElapsed.elapsed() < 20000)
+            return;
+        finishNative(QString("Прочитано %1 треков, но VK не подтвердил полный размер списка. Это может быть только "
+                             "первая часть коллекции. Полный импорт не завершён; открой отчёт импорта.")
+                         .arg(m_harvest.size()));
+        return;
+    }
+    QVector<Track> collection;
+    for (const auto& key : m_harvestOrder)
+        collection.append(m_harvest.value(key));
+    const QString name = m_collectionName;
+    if (collection.isEmpty()) {
+        finishNative(root.value("knownEmpty").toBool() ? "Сервис сообщает, что этот список музыки пуст."
+                                                       : "Страница открылась, но Aurora не распознала её список "
+                                                         "музыки. Сохранён отчёт импорта с данными о странице.");
+        return;
+    }
+    if (m_expectedTracks > collection.size()) {
+        finishNative(
+            QString("Сервис показал %1 из %2 треков. Неполный список не сохранён; подробности — в отчёте импорта.")
+                .arg(collection.size())
+                .arg(m_expectedTracks));
+        return;
+    }
+    finishNative();
+    m_nativeVisible = false;
+    emit nativeBrowserChanged();
+    emit collectionReady(
+        collection, name,
+        collection.isEmpty()
+            ? "На этой странице не найдено треков. Открой музыкальный плейлист или раздел «Моя музыка»."
+            : QString());
+}
+void WebLoginManager::finishNative(const QString& error)
+{
+    // Сохраняем тип задачи и id медиа до сброса, чтобы корректно отдать результат.
+    const auto task = m_nativeTask;
+    const int media = m_mediaId;
+    const QString service = nativeService();
+    if (task == Collect && !error.isEmpty())
+        saveImportReport(error);
+    m_nativeTask = Idle;
+    m_apiRequests.clear();
+    m_apiQueue.clear();
+    m_collectLogin = false;
+    m_scriptPending = false;
+    ++m_scriptId;
+    if (m_nativeTimer)
+        m_nativeTimer->stop();
+    setBusy(false);
+    if (m_externalMode && m_external)
+        m_external->hide();
+    emit nativeBrowserChanged();
+    if (!error.isEmpty()) {
+        setStatus(error);
+        if (task == Login)
+            emit loginDone(service, false, error);
+        else if (task == Search || task == ReadSearchSession)
+            emit searchReady({}, error);
+        else if (task == Collect || task == ReadLocalSession)
+            emit collectionReady({}, {}, error);
+        else if (task == Resolve)
+            emit mediaReady(media, {}, error);
+    }
+    QTimer::singleShot(0, this, &WebLoginManager::nextMedia);
+}
+void WebLoginManager::saveImportReport(const QString& error)
+{
+    // Собираем только числовые/логические диагностики и известные коды API.
+    QJsonObject stats;
+    for (const auto& key :
+         QStringList{"version",     "legacyRows",         "modernRows",      "fullIdRows",   "stateLists",
+                     "stateTracks", "recognized",         "expectedCount",   "frames",       "modernModels",
+                     "fiberNodes",  "playlistCandidates", "modelReadErrors", "modelDepth",   "apiPages",
+                     "apiTracks",   "apiRetries",         "apiWaitMs",       "scrollHeight", "viewportHeight"})
+        stats.insert(key, qBound(0, m_harvestDiagnostic.value(key).toInt(), 100000));
+    for (const auto& key :
+         QStringList{"loginRequired", "challenge", "loading", "knownEmpty", "apiPending", "apiFailed"})
+        stats.insert(key, m_harvestDiagnostic.value(key).toBool());
+    const auto apiCode = m_harvestDiagnostic.value("apiCode").toString();
+    if (QStringList{"idle", "loading", "complete", "unsupported", "denied", "incomplete", "stalled", "rate-limited",
+                    "timeout", "network", "wrong-owner", "wrong-playlist", "size-limit", "response-size"}
+            .contains(apiCode))
+        stats["apiCode"] = apiCode;
+    const auto ready = m_harvestDiagnostic.value("readyState").toString();
+    if (QStringList{"loading", "interactive", "complete"}.contains(ready))
+        stats.insert("readyState", ready);
+    const QUrl page = serviceForHost(m_harvestPage.host()) == m_nativeSlug ? m_harvestPage : m_nativeUrl;
+    const QString folder = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/diagnostics";
+    if (!QDir().mkpath(folder))
+        return;
+    QFile::setPermissions(folder, QFileDevice::ReadOwner | QFileDevice::WriteOwner | QFileDevice::ExeOwner);
+    const auto path = folder + "/import-" + m_nativeSlug + ".json";
+    QSaveFile file(path);
+    if (!file.open(QIODevice::WriteOnly))
+        return;
+    file.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner);
+    const auto bytes =
+        QJsonDocument(
+            QJsonObject{
+                {"service", m_nativeSlug},
+                {"utc", QDateTime::currentDateTimeUtc().toString(Qt::ISODate)},
+                {"page", page.adjusted(QUrl::RemoveQuery | QUrl::RemoveFragment | QUrl::RemoveUserInfo).toString()},
+                {"background", m_backgroundMode},
+                {"collected", m_harvest.size()},
+                {"error", error},
+                {"pageStructure", stats},
+                {"api", QJsonObject{{"responses", m_apiResponses},
+                                    {"expected", m_expectedTracks},
+                                    {"ordered", m_apiOrder.size()},
+                                    {"pending", m_apiRequests.size()},
+                                    {"queued", m_apiQueue.size()},
+                                    {"httpStatus", m_apiHttpStatus}}},
+                {"browserProtocol", m_external ? m_external->protocolDiagnostic() : QJsonObject{}}})
+            .toJson(QJsonDocument::Indented);
+    if (file.write(bytes) == bytes.size() && file.commit())
+        m_importReport = path;
+}
+void WebLoginManager::openImportReport()
+{
+    if (!m_importReport.isEmpty() && QFileInfo::exists(m_importReport))
+        QDesktopServices::openUrl(QUrl::fromLocalFile(m_importReport));
+}

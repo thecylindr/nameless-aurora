@@ -6,7 +6,7 @@
                 {
                     "isClass": false,
                     "isFlag": false,
-                    "lineNumber": 32,
+                    "lineNumber": 27,
                     "name": "Role",
                     "values": [
                         "IdRole",
@@ -24,12 +24,279 @@
                         "PlayCountRole",
                         "LastPlayedRole",
                         "SkipCountRole",
-                        "ListenMsRole"
+                        "ListenMsRole",
+                        "AvailableRole"
                     ]
                 }
             ],
-            "lineNumber": 25,
+            "lineNumber": 13,
             "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ids",
+                            "type": "QVariantList"
+                        }
+                    ],
+                    "index": 7,
+                    "isConst": true,
+                    "lineNumber": 97,
+                    "name": "queueDetails",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 8,
+                    "isConst": true,
+                    "lineNumber": 99,
+                    "name": "trackDetails",
+                    "returnType": "QVariantMap"
+                },
+                {
+                    "access": "public",
+                    "index": 9,
+                    "isConst": true,
+                    "lineNumber": 101,
+                    "name": "allTrackDetails",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        },
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "artist",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "album",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 10,
+                    "lineNumber": 103,
+                    "name": "updateMetadata",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        },
+                        {
+                            "name": "file",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 11,
+                    "lineNumber": 105,
+                    "name": "setTrackCover",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "previous",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "ids",
+                            "type": "QVariantList"
+                        },
+                        {
+                            "name": "cover",
+                            "type": "QUrl"
+                        }
+                    ],
+                    "index": 12,
+                    "lineNumber": 107,
+                    "name": "setAlbumTracks",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "previous",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "ids",
+                            "type": "QVariantList"
+                        }
+                    ],
+                    "index": 13,
+                    "isCloned": true,
+                    "lineNumber": 107,
+                    "name": "setAlbumTracks",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 14,
+                    "lineNumber": 111,
+                    "name": "requestEdit",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 15,
+                    "lineNumber": 115,
+                    "name": "requestAlbumEdit",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 16,
+                    "isCloned": true,
+                    "lineNumber": 115,
+                    "name": "requestAlbumEdit",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 17,
+                    "lineNumber": 120,
+                    "name": "createPlaylist",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        },
+                        {
+                            "name": "name",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 18,
+                    "lineNumber": 121,
+                    "name": "renamePlaylist",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 19,
+                    "lineNumber": 122,
+                    "name": "deletePlaylist",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "playlist",
+                            "type": "int"
+                        },
+                        {
+                            "name": "track",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 20,
+                    "lineNumber": 123,
+                    "name": "addToPlaylist",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "playlist",
+                            "type": "int"
+                        },
+                        {
+                            "name": "track",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 21,
+                    "lineNumber": 124,
+                    "name": "removeFromPlaylist",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        },
+                        {
+                            "name": "rating",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 22,
+                    "lineNumber": 147,
+                    "name": "setRating",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
+                    "index": 23,
+                    "lineNumber": 148,
+                    "name": "removeTrack",
+                    "returnType": "void"
+                },
                 {
                     "access": "public",
                     "arguments": [
@@ -38,20 +305,27 @@
                             "type": "int"
                         }
                     ],
-                    "index": 4,
+                    "index": 24,
                     "isConst": true,
-                    "lineNumber": 70,
+                    "lineNumber": 155,
                     "name": "recommendations",
                     "returnType": "QVariantList"
                 },
                 {
                     "access": "public",
-                    "index": 5,
+                    "index": 25,
                     "isCloned": true,
                     "isConst": true,
-                    "lineNumber": 70,
+                    "lineNumber": 155,
                     "name": "recommendations",
                     "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "index": 26,
+                    "lineNumber": 157,
+                    "name": "refresh",
+                    "returnType": "void"
                 }
             ],
             "object": true,
@@ -61,7 +335,7 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "lineNumber": 27,
+                    "lineNumber": 16,
                     "name": "count",
                     "notify": "countChanged",
                     "override": false,
@@ -78,7 +352,111 @@
                     "designable": true,
                     "final": false,
                     "index": 1,
-                    "lineNumber": 28,
+                    "lineNumber": 17,
+                    "name": "totalCount",
+                    "notify": "libraryChanged",
+                    "override": false,
+                    "read": "totalCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 18,
+                    "name": "downloadedCount",
+                    "notify": "libraryChanged",
+                    "override": false,
+                    "read": "downloadedCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "lineNumber": 19,
+                    "name": "missingCount",
+                    "notify": "libraryChanged",
+                    "override": false,
+                    "read": "missingCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "lineNumber": 20,
+                    "name": "playlistFilter",
+                    "notify": "filterChanged",
+                    "override": false,
+                    "read": "playlistFilter",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false,
+                    "write": "setPlaylistFilter"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "lineNumber": 21,
+                    "name": "sortOrder",
+                    "notify": "filterChanged",
+                    "override": false,
+                    "read": "sortOrder",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "virtual": false,
+                    "write": "setSortOrder"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "lineNumber": 22,
+                    "name": "playlists",
+                    "notify": "libraryChanged",
+                    "override": false,
+                    "read": "playlists",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "lineNumber": 23,
                     "name": "searchText",
                     "notify": "searchTextChanged",
                     "override": false,
@@ -95,8 +473,8 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 2,
-                    "lineNumber": 29,
+                    "index": 8,
+                    "lineNumber": 24,
                     "name": "lastError",
                     "notify": "lastErrorChanged",
                     "override": false,
@@ -113,29 +491,62 @@
             "signals": [
                 {
                     "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "int"
+                        }
+                    ],
                     "index": 0,
-                    "lineNumber": 74,
-                    "name": "countChanged",
+                    "lineNumber": 160,
+                    "name": "editRequested",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
+                    "arguments": [
+                        {
+                            "name": "title",
+                            "type": "QString"
+                        }
+                    ],
                     "index": 1,
-                    "lineNumber": 75,
-                    "name": "searchTextChanged",
+                    "lineNumber": 161,
+                    "name": "albumEditRequested",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "lineNumber": 76,
-                    "name": "lastErrorChanged",
+                    "lineNumber": 162,
+                    "name": "countChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 3,
-                    "lineNumber": 77,
+                    "lineNumber": 163,
+                    "name": "filterChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "lineNumber": 164,
+                    "name": "searchTextChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
+                    "lineNumber": 165,
+                    "name": "lastErrorChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 6,
+                    "lineNumber": 166,
                     "name": "libraryChanged",
                     "returnType": "void"
                 }

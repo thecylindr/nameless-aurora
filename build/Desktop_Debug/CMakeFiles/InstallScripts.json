@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/cylindr/player/build/Desktop_Debug/cmake_install.cmake"
+		"/home/cylindr/nameless-aurora/build/Desktop_Debug/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

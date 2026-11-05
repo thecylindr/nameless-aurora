@@ -10,7 +10,7 @@
                             "column": 12,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 15,
+                            "line": 18,
                             "message": ""
                         },
                         {
@@ -18,7 +18,7 @@
                             "column": 13,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 16,
+                            "line": 19,
                             "message": ""
                         },
                         {
@@ -26,7 +26,7 @@
                             "column": 14,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 19,
+                            "line": 23,
                             "message": ""
                         },
                         {
@@ -34,7 +34,7 @@
                             "column": 5,
                             "durationMicroseconds": 0,
                             "functionName": "show",
-                            "line": 24,
+                            "line": 29,
                             "message": "Functions without type annotations won't be compiled"
                         },
                         {
@@ -42,7 +42,7 @@
                             "column": 5,
                             "durationMicroseconds": 0,
                             "functionName": "hide",
-                            "line": 30,
+                            "line": 36,
                             "message": ""
                         },
                         {
@@ -50,7 +50,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalCenter",
-                            "line": 12,
+                            "line": 14,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: conversion to QVariant -> QQuickAnchorLine stored as QVariant"
                         },
                         {
@@ -58,7 +58,7 @@
                             "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "bottom",
-                            "line": 13,
+                            "line": 15,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: conversion to QVariant -> QQuickAnchorLine stored as QVariant"
                         },
                         {
@@ -66,7 +66,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "role",
-                            "line": 20,
+                            "line": 24,
                             "message": ""
                         },
                         {
@@ -74,7 +74,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "name",
-                            "line": 21,
+                            "line": 25,
                             "message": ""
                         },
                         {
@@ -82,7 +82,15 @@
                             "column": 25,
                             "durationMicroseconds": 0,
                             "functionName": "ignored",
-                            "line": 22,
+                            "line": 26,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 18,
+                            "durationMicroseconds": 2000,
+                            "functionName": "enabled",
+                            "line": 42,
                             "message": ""
                         },
                         {
@@ -90,7 +98,7 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "interval",
-                            "line": 38,
+                            "line": 49,
                             "message": ""
                         },
                         {
@@ -98,7 +106,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "onTriggered",
-                            "line": 39,
+                            "line": 51,
                             "message": ""
                         },
                         {
@@ -106,7 +114,7 @@
                             "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 44,
+                            "line": 56,
                             "message": ""
                         },
                         {
@@ -114,15 +122,15 @@
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 45,
+                            "line": 58,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 17,
-                            "durationMicroseconds": 5000,
+                            "durationMicroseconds": 0,
                             "functionName": "radius",
-                            "line": 46,
+                            "line": 59,
                             "message": ""
                         },
                         {
@@ -130,7 +138,7 @@
                             "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 47,
+                            "line": 60,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: Theme::surfaceHigh with type QColor (stored as QVariant) -> Theme::surfaceHigh with type QColor (adjusted to QColor, stored as QVariant)"
                         },
                         {
@@ -138,7 +146,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 49,
+                            "line": 62,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: Theme::line with type QColor (stored as QVariant) -> Theme::line with type QColor (adjusted to QColor, stored as QVariant)"
                         },
                         {
@@ -146,7 +154,7 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 59,
+                            "line": 72,
                             "message": ""
                         },
                         {
@@ -154,7 +162,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 60,
+                            "line": 73,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: Theme::text with type QColor (stored as QVariant) -> Theme::text with type QColor (adjusted to QColor, stored as QVariant)"
                         },
                         {
@@ -162,7 +170,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 62,
+                            "line": 75,
                             "message": ""
                         },
                         {
@@ -170,7 +178,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "wrapMode",
-                            "line": 63,
+                            "line": 76,
                             "message": ""
                         },
                         {
@@ -178,7 +186,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "left",
-                            "line": 53,
+                            "line": 66,
                             "message": ""
                         },
                         {
@@ -186,7 +194,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "right",
-                            "line": 54,
+                            "line": 67,
                             "message": ""
                         },
                         {
@@ -194,7 +202,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "top",
-                            "line": 55,
+                            "line": 68,
                             "message": ""
                         },
                         {
@@ -202,11 +210,11 @@
                             "column": 29,
                             "durationMicroseconds": 0,
                             "functionName": "pixelSize",
-                            "line": 61,
+                            "line": 74,
                             "message": ""
                         }
                     ],
-                    "filePath": "/home/cylindr/player/qml/common/AuroraToast.qml"
+                    "filePath": "/home/cylindr/nameless-aurora/qml/common/AuroraToast.qml"
                 }
             ],
             "moduleId": "AuroraPlayer(AuroraPlayer)"

@@ -1,5 +1,5 @@
-/home/cylindr/player/build/AuroraPlayer_autogen/7LWGG5KXSQ/moc_storagemanager.cpp: /home/cylindr/player/src/core/storage/storagemanager.h \
-  /home/cylindr/player/build/AuroraPlayer_autogen/moc_predefs.h \
+/home/cylindr/nameless-aurora/build/AuroraPlayer_autogen/7LWGG5KXSQ/moc_storagemanager.cpp: /home/cylindr/nameless-aurora/src/core/storage/storagemanager.h \
+  /home/cylindr/nameless-aurora/build/AuroraPlayer_autogen/moc_predefs.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

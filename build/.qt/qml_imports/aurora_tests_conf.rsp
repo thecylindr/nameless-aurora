@@ -1,0 +1,13 @@
+-rootPath
+/home/cylindr/nameless-aurora
+-cmake-output
+-output-file
+/home/cylindr/nameless-aurora/build/.qt/qml_imports/aurora_tests_conf.cmake
+-importPath
+/home/cylindr/nameless-aurora/build
+-importPath
+/home/cylindr/nameless-aurora/build/qml
+-importPath
+/usr/lib/qt6/qml
+-qrcFiles
+/home/cylindr/nameless-aurora/build/.qt/rcc/native_scripts_test.qrc

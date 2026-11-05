@@ -1,4 +1,4 @@
-# Install script for directory: /home/cylindr/player
+# Install script for directory: /home/cylindr/nameless-aurora
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,7 +49,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/AuroraPlayer"
          RPATH [[$ORIGIN/../lib]])
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/cylindr/player/build/AuroraPlayer")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/cylindr/nameless-aurora/build/AuroraPlayer")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/AuroraPlayer" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/AuroraPlayer")
     file(RPATH_CHANGE
@@ -64,14 +64,22 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(AURORA_BUNDLE_QT)
-include("/home/cylindr/player/build/.qt/deploy_qml_app_AuroraPlayer_da5c0f0bcb.cmake")
+include("/home/cylindr/nameless-aurora/build/.qt/deploy_qml_app_AuroraPlayer_da5c0f0bcb.cmake")
 endif()
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications" TYPE FILE FILES "/home/cylindr/nameless-aurora/packaging/org.nameless.Aurora.desktop")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps" TYPE FILE RENAME "org.nameless.Aurora.svg" FILES "/home/cylindr/nameless-aurora/packaging/aurora.svg")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/cylindr/player/build/install_local_manifest.txt"
+  file(WRITE "/home/cylindr/nameless-aurora/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -87,6 +95,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "/home/cylindr/player/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/home/cylindr/nameless-aurora/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

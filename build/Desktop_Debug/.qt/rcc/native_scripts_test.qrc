@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="/native/scripts">
+    <file alias="harvest.js">/home/cylindr/nameless-aurora/src/core/web/harvest.js</file>
+    <file alias="vk-library.js">/home/cylindr/nameless-aurora/src/core/web/vk-library.js</file>
+    <file alias="activate.js">/home/cylindr/nameless-aurora/src/core/web/activate.js</file>
+    <file alias="login.js">/home/cylindr/nameless-aurora/src/core/web/login.js</file>
+    <file alias="browser_cookies.py">/home/cylindr/nameless-aurora/src/core/web/browser_cookies.py</file>
+    <file alias="public-source.js">/home/cylindr/nameless-aurora/src/core/web/public-source.js</file>
+  </qresource>
+</RCC>
+

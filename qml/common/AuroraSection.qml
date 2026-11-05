@@ -1,3 +1,4 @@
+// Секция с заголовком, описанием и произвольным вложенным содержимым.
 import QtQuick
 import ".."
 
@@ -6,6 +7,7 @@ Item {
     property Theme uiTheme
     property string title: ""
     property string description: ""
+    // Вложенный контент секции.
     default property alias content: body.data
 
     implicitWidth: 320

@@ -1,24 +1,44 @@
 module AuroraPlayer
 typeinfo AuroraPlayer.qmltypes
 prefer :/qt/qml/AuroraPlayer/
+NativeBrowser 3.0 qml/web/NativeBrowser.qml
 Main 3.0 qml/Main.qml
 Theme 3.0 qml/Theme.qml
 AuroraButton 3.0 qml/common/AuroraButton.qml
 AuroraIcon 3.0 qml/common/AuroraIcon.qml
 AuroraCard 3.0 qml/common/AuroraCard.qml
+AuroraCombo 3.0 qml/common/AuroraCombo.qml
 AuroraField 3.0 qml/common/AuroraField.qml
 AuroraSlider 3.0 qml/common/AuroraSlider.qml
 AuroraSwitch 3.0 qml/common/AuroraSwitch.qml
 AuroraSegmented 3.0 qml/common/AuroraSegmented.qml
 AuroraProgress 3.0 qml/common/AuroraProgress.qml
 AuroraDialog 3.0 qml/common/AuroraDialog.qml
+AuroraMenu 3.0 qml/common/AuroraMenu.qml
+AuroraMenuItem 3.0 qml/common/AuroraMenuItem.qml
 AuroraSection 3.0 qml/common/AuroraSection.qml
 AuroraScrollBar 3.0 qml/common/AuroraScrollBar.qml
 AuroraToast 3.0 qml/common/AuroraToast.qml
 NavigationPane 3.0 qml/components/NavigationPane.qml
 TrackList 3.0 qml/components/TrackList.qml
 TrackDelegate 3.0 qml/components/TrackDelegate.qml
+ListeningView 3.0 qml/components/ListeningView.qml
+CornerCover 3.0 qml/components/CornerCover.qml
+ProgressRing 3.0 qml/common/ProgressRing.qml
+BonsaiScene 3.0 qml/components/BonsaiScene.qml
+AtmosphereOrb 3.0 qml/components/AtmosphereOrb.qml
+EffectSurface 3.0 qml/components/EffectSurface.qml
+AppearancePanel 3.0 qml/components/AppearancePanel.qml
+LibrarySettings 3.0 qml/components/LibrarySettings.qml
+EqualizerPanel 3.0 qml/components/EqualizerPanel.qml
+EqualizerDialog 3.0 qml/components/EqualizerDialog.qml
+AmbientBackdrop 3.0 qml/components/AmbientBackdrop.qml
+AlbumArt 3.0 qml/components/AlbumArt.qml
 PlayerBar 3.0 qml/components/PlayerBar.qml
+SourceDialog 3.0 qml/components/SourceDialog.qml
+DownloadDock 3.0 qml/components/DownloadDock.qml
+TrackEditor 3.0 qml/components/TrackEditor.qml
+AlbumEditor 3.0 qml/components/AlbumEditor.qml
 NowPlayingPanel 3.0 qml/components/NowPlayingPanel.qml
 StorageSummary 3.0 qml/components/StorageSummary.qml
 DependencyCard 3.0 qml/components/DependencyCard.qml
@@ -27,5 +47,7 @@ HomePage 3.0 qml/pages/HomePage.qml
 LibraryPage 3.0 qml/pages/LibraryPage.qml
 ImportPage 3.0 qml/pages/ImportPage.qml
 SettingsPage 3.0 qml/pages/SettingsPage.qml
+SearchPage 3.0 qml/pages/SearchPage.qml
+AtmosphereObjects 3.0 qml/components/AtmosphereObjects.qml
 depends QtQuick
 

@@ -1,60 +1,44 @@
+// Карточка рекомендации: обложка с кнопкой воспроизведения и подписи названия и исполнителя.
 import QtQuick
 import QtQuick.Layouts
 import "../common" as Common
 
-Common.AuroraCard {
+Item {
     id: root
     property var trackData
-    signal clicked()
-    Theme { id: theme }
-    uiTheme: theme
-    padding: 10
-    implicitWidth: 176
-    implicitHeight: 236
-
+    signal clicked
+    width: 172
+    height: 230
+    Theme {
+        id: theme
+    }
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: root.padding
-        spacing: 9
-        Rectangle {
+        spacing: 8
+        AlbumArt {
             Layout.fillWidth: true
-            Layout.preferredHeight: width
-            radius: theme.radiusSmall
-            color: theme.surfaceHigh
-            clip: true
-            gradient: Gradient {
-                GradientStop { position: 0; color: theme.accent2 }
-                GradientStop { position: 1; color: theme.accent }
-            }
-            Image {
-                id: coverImage
-                anchors.fill: parent
-                source: root.trackData.coverPath ? encodeURI("file://" + root.trackData.coverPath) : ""
-                fillMode: Image.PreserveAspectCrop
-                asynchronous: true
-                visible: status === Image.Ready
-            }
-            Common.AuroraIcon {
-                anchors.centerIn: parent
-                name: "music"
-                color: theme.text
-                size: 40
-                visible: !coverImage.visible
-            }
+            Layout.preferredHeight: 172
+            path: root.trackData.coverPath || ""
+            seed: root.trackData.album || root.trackData.title
             Common.AuroraButton {
                 uiTheme: theme
                 anchors.right: parent.right
                 anchors.bottom: parent.bottom
-                anchors.margins: 8
+                anchors.margins: 10
                 primary: true
                 iconOnly: true
                 iconName: "play"
+                text: "Слушать"
                 implicitWidth: 40
                 implicitHeight: 40
+                visible: hover.containsMouse || player.currentTrackId === root.trackData.trackId
                 onClicked: root.clicked()
             }
             MouseArea {
+                id: hover
                 anchors.fill: parent
+                hoverEnabled: true
+                cursorShape: Qt.PointingHandCursor
                 onClicked: root.clicked()
             }
         }
@@ -62,7 +46,7 @@ Common.AuroraCard {
             Layout.fillWidth: true
             text: root.trackData.title
             color: theme.text
-            font.pixelSize: theme.bodySize
+            font.pixelSize: 14
             font.weight: Font.Medium
             elide: Text.ElideRight
         }
@@ -70,7 +54,7 @@ Common.AuroraCard {
             Layout.fillWidth: true
             text: root.trackData.artist
             color: theme.subtext
-            font.pixelSize: theme.captionSize
+            font.pixelSize: 12
             elide: Text.ElideRight
         }
     }

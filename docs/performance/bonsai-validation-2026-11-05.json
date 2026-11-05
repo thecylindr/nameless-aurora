@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-05",
+  "linux_build": "passed; Qt 6.12.0",
+  "animation_suites": {
+    "software": "passed; 25 QtTest records including setup/cleanup",
+    "null_rhi": "passed; software sphere case skipped"
+  },
+  "qml_lint": "passed, unqualified context access warnings disabled",
+  "cover_metadata_test": "metadataAlbumAndCoverEditsPreserveIdentityAndFiles passed",
+  "cover_extraction": "real FLAC with attached PNG -> JPEG via ffmpeg -> real image shown in application",
+  "previews": [
+    {
+      "label": "desktop",
+      "exit": 0
+    },
+    {
+      "label": "mobile",
+      "exit": 0
+    },
+    {
+      "label": "mobile-still",
+      "exit": 0
+    }
+  ],
+  "windows_configure": {
+    "sdk": "Qt 6.11.1 MinGW x86_64",
+    "status": "blocked at find_package(Qt6 6.12)",
+    "webengine_package_in_target_sdk": false
+  },
+  "android_configure": {
+    "sdk": "Qt 6.11.1 arm64-v8a; NDK 27.2.12479018",
+    "status": "blocked at find_package(Qt6 6.12)",
+    "webengine_package_in_target_sdk": false
+  },
+  "real_windows_android_ios_run": "not performed"
+}

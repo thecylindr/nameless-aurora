@@ -1,20 +1,33 @@
 #include "browserauthmanager.h"
 
 #include "settingsstore.h"
+#include "webloginmanager.h"
 
 #include <QDesktopServices>
+#include <QDir>
+#include <QFileInfo>
+#include <QSettings>
 #include <QUrl>
 
-namespace {
+#include <utility>
 
-QString canonicalService(const QString &service)
+// Реализация BrowserAuthManager: определение сервиса, открытие входа,
+// поиск браузеров и профилей Firefox, формирование аргументов yt-dlp.
+
+namespace
+{
+
+// Приводит произвольное название сервиса к каноническому имени (или пустой строке).
+QString canonicalService(const QString& service)
 {
     const QString value = service.trimmed().toLower();
     if (value == QStringLiteral("youtube") || value == QStringLiteral("ютуб")) {
         return QStringLiteral("YouTube");
     }
-    if (value == QStringLiteral("yandex") || value == QStringLiteral("яндекс")
-        || value == QStringLiteral("яндекс музыка") || value == QStringLiteral("yandex music")) {
+    if (value == "soundcloud")
+        return "SoundCloud";
+    if (value == QStringLiteral("yandex") || value == QStringLiteral("яндекс") ||
+        value == QStringLiteral("яндекс музыка") || value == QStringLiteral("yandex music")) {
         return QStringLiteral("Яндекс Музыка");
     }
     if (value == QStringLiteral("vk") || value == QStringLiteral("вк")) {
@@ -26,20 +39,25 @@ QString canonicalService(const QString &service)
     return {};
 }
 
-}
+} // namespace
 
-BrowserAuthManager::BrowserAuthManager(SettingsStore *settings, QObject *parent)
-    : QObject(parent)
-    , m_settings(settings)
-{
-}
+BrowserAuthManager::BrowserAuthManager(SettingsStore* settings, WebLoginManager* webLogin, QObject* parent)
+    : QObject(parent), m_settings(settings), m_webLogin(webLogin)
+{}
 
-bool BrowserAuthManager::openService(const QString &service)
+bool BrowserAuthManager::openService(const QString& service)
 {
     const QString canonical = canonicalService(service);
+    // VK и Яндекс Музыку открываем через встроенный веб-логин, если он доступен.
+    if (m_webLogin && (canonical == "VK" || canonical == "Яндекс Музыка")) {
+        m_webLogin->openNative(canonical);
+        return true;
+    }
     QUrl url;
     if (canonical == QStringLiteral("YouTube")) {
         url = QUrl(QStringLiteral("https://www.youtube.com/"));
+    } else if (canonical == "SoundCloud") {
+        url = QUrl("https://soundcloud.com/");
     } else if (canonical == QStringLiteral("Яндекс Музыка")) {
         url = QUrl(QStringLiteral("https://music.yandex.ru/"));
     } else if (canonical == QStringLiteral("VK")) {
@@ -77,13 +95,28 @@ void BrowserAuthManager::revokeSessionAccess()
     setLastError({});
 }
 
-QStringList BrowserAuthManager::sessionArguments(const QString &service, bool authorized) const
+QStringList BrowserAuthManager::sessionArguments(const QString& service, bool authorized) const
 {
     const QString canonical = canonicalService(service);
     if (!authorized || !m_sessionGranted || canonical.isEmpty() || canonical == QStringLiteral("Spotify")) {
         return {};
     }
 
+    // Сначала пробуем отдать cookies в виде файла Netscape (VK/Яндекс).
+    if (m_webLogin) {
+        const QString slug = canonical == QStringLiteral("VK")              ? QStringLiteral("vk")
+                             : canonical == QStringLiteral("Яндекс Музыка") ? QStringLiteral("yandex")
+                                                                            : QString();
+        if (!slug.isEmpty() && m_webLogin->hasSession(slug)) {
+            const QString cookiesFile = m_webLogin->exportNetscape(slug);
+            if (!cookiesFile.isEmpty()) {
+                return {QStringLiteral("--cookies"), cookiesFile};
+            }
+        }
+    }
+
+    if (canonical == "VK" || canonical == "Яндекс Музыка")
+        return {};
     QString browser = m_settings ? m_settings->property("browser").toString().trimmed() : QString();
     if (browser.isEmpty()) {
         browser = QStringLiteral("firefox");
@@ -95,7 +128,89 @@ QStringList BrowserAuthManager::sessionArguments(const QString &service, bool au
     return {QStringLiteral("--cookies-from-browser"), browser};
 }
 
-QString BrowserAuthManager::consentText(const QString &service) const
+QStringList BrowserAuthManager::detectBrowsers(const QString& home)
+{
+    QStringList result;
+    const auto exists = [&home](const QString& relative) {
+        return QFileInfo::exists(home + QLatin1Char('/') + relative);
+    };
+
+    if (exists(QStringLiteral(".mozilla/firefox/profiles.ini")) ||
+        exists(QStringLiteral("snap/firefox/common/.mozilla/firefox/profiles.ini")) ||
+        exists(QStringLiteral(".var/app/org.mozilla.firefox/.mozilla/firefox/profiles.ini"))) {
+        result << QStringLiteral("firefox");
+    }
+    // Пары «имя браузера — путь к его конфигу» для Chromium-подобных браузеров.
+    const std::pair<const char*, const char*> probes[] = {
+        {"brave", ".config/BraveSoftware/Brave-Browser"},
+        {"chromium", ".config/chromium"},
+        {"chrome", ".config/google-chrome"},
+        {"opera", ".config/opera"},
+        {"vivaldi", ".config/vivaldi"},
+        {"edge", ".config/microsoft-edge"},
+    };
+    for (const auto& [name, relative] : probes) {
+        if (exists(QString::fromLatin1(relative))) {
+            result << QString::fromLatin1(name);
+        }
+    }
+    return result;
+}
+
+QString BrowserAuthManager::detectFirefoxProfile(const QString& home)
+{
+    // Читаем profiles.ini из всех возможных мест установки Firefox.
+    const QStringList roots = {
+        home + QStringLiteral("/.mozilla/firefox/profiles.ini"),
+        home + QStringLiteral("/snap/firefox/common/.mozilla/firefox/profiles.ini"),
+        home + QStringLiteral("/.var/app/org.mozilla.firefox/.mozilla/firefox/profiles.ini"),
+    };
+    QStringList names;
+    QString defaultName;
+    for (const QString& path : roots) {
+        if (!QFileInfo::exists(path)) {
+            continue;
+        }
+        QSettings ini(path, QSettings::IniFormat);
+        const QStringList groups = ini.childGroups();
+        for (const QString& group : groups) {
+            if (!group.startsWith(QStringLiteral("Profile"))) {
+                continue;
+            }
+            ini.beginGroup(group);
+            const QString name = ini.value(QStringLiteral("Name")).toString();
+            if (!name.isEmpty()) {
+                names << name;
+                if (ini.value(QStringLiteral("Default"), 0).toInt() == 1) {
+                    defaultName = name;
+                }
+            }
+            ini.endGroup();
+        }
+    }
+    if (!defaultName.isEmpty()) {
+        return defaultName;
+    }
+    return names.size() == 1 ? names.first() : QString();
+}
+
+QStringList BrowserAuthManager::detectedBrowsers() const
+{
+    return detectBrowsers(QDir::homePath());
+}
+
+QString BrowserAuthManager::suggestBrowser() const
+{
+    const QStringList found = detectedBrowsers();
+    return found.isEmpty() ? QString() : found.first();
+}
+
+QString BrowserAuthManager::suggestFirefoxProfile() const
+{
+    return detectFirefoxProfile(QDir::homePath());
+}
+
+QString BrowserAuthManager::consentText(const QString& service) const
 {
     const QString canonical = canonicalService(service);
     if (canonical == QStringLiteral("Spotify")) {
@@ -111,7 +226,7 @@ QString BrowserAuthManager::consentText(const QString &service) const
         .arg(canonical);
 }
 
-void BrowserAuthManager::setLastError(const QString &lastError)
+void BrowserAuthManager::setLastError(const QString& lastError)
 {
     if (m_lastError == lastError) {
         return;

@@ -1,28 +1,70 @@
 AuroraPlayer_autogen/timestamp: \
-	/home/cylindr/player/CMakeLists.txt \
-	/home/cylindr/player/build/.qt/qml_imports/AuroraPlayer_conf.cmake \
-	/home/cylindr/player/build/AuroraPlayer_autogen/moc_predefs.h \
-	/home/cylindr/player/build/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
-	/home/cylindr/player/build/CMakeFiles/4.4.4/CMakeSystem.cmake \
-	/home/cylindr/player/src/app/main.cpp \
-	/home/cylindr/player/src/core/auth/browserauthmanager.cpp \
-	/home/cylindr/player/src/core/auth/browserauthmanager.h \
-	/home/cylindr/player/src/core/downloadmanager.cpp \
-	/home/cylindr/player/src/core/downloadmanager.h \
-	/home/cylindr/player/src/core/downloads/dependencymanager.cpp \
-	/home/cylindr/player/src/core/downloads/dependencymanager.h \
-	/home/cylindr/player/src/core/downloads/importpreviewer.cpp \
-	/home/cylindr/player/src/core/downloads/importpreviewer.h \
-	/home/cylindr/player/src/core/importmanager.cpp \
-	/home/cylindr/player/src/core/importmanager.h \
-	/home/cylindr/player/src/core/librarymodel.cpp \
-	/home/cylindr/player/src/core/librarymodel.h \
-	/home/cylindr/player/src/core/playbackcontroller.cpp \
-	/home/cylindr/player/src/core/playbackcontroller.h \
-	/home/cylindr/player/src/core/settingsstore.cpp \
-	/home/cylindr/player/src/core/settingsstore.h \
-	/home/cylindr/player/src/core/storage/storagemanager.cpp \
-	/home/cylindr/player/src/core/storage/storagemanager.h \
+	/home/cylindr/nameless-aurora/CMakeLists.txt \
+	/home/cylindr/nameless-aurora/build/.qt/qml_imports/AuroraPlayer_conf.cmake \
+	/home/cylindr/nameless-aurora/build/.qt/qml_imports/aurora_tests_conf.cmake \
+	/home/cylindr/nameless-aurora/build/AuroraPlayer_autogen/moc_predefs.h \
+	/home/cylindr/nameless-aurora/build/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
+	/home/cylindr/nameless-aurora/build/CMakeFiles/4.4.4/CMakeSystem.cmake \
+	/home/cylindr/nameless-aurora/src/app/main.cpp \
+	/home/cylindr/nameless-aurora/src/core/artwork.cpp \
+	/home/cylindr/nameless-aurora/src/core/audioequalizer.cpp \
+	/home/cylindr/nameless-aurora/src/core/audioequalizer.h \
+	/home/cylindr/nameless-aurora/src/core/audioreactivity.cpp \
+	/home/cylindr/nameless-aurora/src/core/audioreactivity.h \
+	/home/cylindr/nameless-aurora/src/core/auth/browserauthmanager.cpp \
+	/home/cylindr/nameless-aurora/src/core/auth/browserauthmanager.h \
+	/home/cylindr/nameless-aurora/src/core/auth/browsercookieimporter.cpp \
+	/home/cylindr/nameless-aurora/src/core/auth/browsercookieimporter.h \
+	/home/cylindr/nameless-aurora/src/core/auth/browsersession.cpp \
+	/home/cylindr/nameless-aurora/src/core/auth/browsersession.h \
+	/home/cylindr/nameless-aurora/src/core/auth/cdpclient.cpp \
+	/home/cylindr/nameless-aurora/src/core/auth/cdpclient.h \
+	/home/cylindr/nameless-aurora/src/core/auth/oauthmanager.cpp \
+	/home/cylindr/nameless-aurora/src/core/auth/oauthmanager.h \
+	/home/cylindr/nameless-aurora/src/core/auth/webloginmanager.cpp \
+	/home/cylindr/nameless-aurora/src/core/auth/webloginmanager.h \
+	/home/cylindr/nameless-aurora/src/core/auth/webloginmanager_native.cpp \
+	/home/cylindr/nameless-aurora/src/core/data/libraryrepository.cpp \
+	/home/cylindr/nameless-aurora/src/core/data/libraryrepository.h \
+	/home/cylindr/nameless-aurora/src/core/downloadmanager.cpp \
+	/home/cylindr/nameless-aurora/src/core/downloadmanager.h \
+	/home/cylindr/nameless-aurora/src/core/downloads/audiosources.cpp \
+	/home/cylindr/nameless-aurora/src/core/downloads/audiosources.h \
+	/home/cylindr/nameless-aurora/src/core/downloads/dependencymanager.cpp \
+	/home/cylindr/nameless-aurora/src/core/downloads/dependencymanager.h \
+	/home/cylindr/nameless-aurora/src/core/downloads/importpreviewer.cpp \
+	/home/cylindr/nameless-aurora/src/core/downloads/importpreviewer.h \
+	/home/cylindr/nameless-aurora/src/core/downloads/musicsearch.cpp \
+	/home/cylindr/nameless-aurora/src/core/downloads/musicsearch.h \
+	/home/cylindr/nameless-aurora/src/core/downloads/nativedownload.cpp \
+	/home/cylindr/nameless-aurora/src/core/downloads/opencatalog.cpp \
+	/home/cylindr/nameless-aurora/src/core/downloads/opencatalog.h \
+	/home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.cpp \
+	/home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.h \
+	/home/cylindr/nameless-aurora/src/core/importmanager.cpp \
+	/home/cylindr/nameless-aurora/src/core/importmanager.h \
+	/home/cylindr/nameless-aurora/src/core/integration/mpris.cpp \
+	/home/cylindr/nameless-aurora/src/core/integration/mpris.h \
+	/home/cylindr/nameless-aurora/src/core/integration/namelessbridge.cpp \
+	/home/cylindr/nameless-aurora/src/core/integration/namelessbridge.h \
+	/home/cylindr/nameless-aurora/src/core/libraryexchange.cpp \
+	/home/cylindr/nameless-aurora/src/core/libraryexchange.h \
+	/home/cylindr/nameless-aurora/src/core/librarymodel.cpp \
+	/home/cylindr/nameless-aurora/src/core/librarymodel.h \
+	/home/cylindr/nameless-aurora/src/core/playbackcontroller.cpp \
+	/home/cylindr/nameless-aurora/src/core/playbackcontroller.h \
+	/home/cylindr/nameless-aurora/src/core/settingsstore.cpp \
+	/home/cylindr/nameless-aurora/src/core/settingsstore.h \
+	/home/cylindr/nameless-aurora/src/core/storage/storagemanager.cpp \
+	/home/cylindr/nameless-aurora/src/core/storage/storagemanager.h \
+	/home/cylindr/nameless-aurora/src/core/vkprovider.cpp \
+	/home/cylindr/nameless-aurora/src/core/vkprovider.h \
+	/home/cylindr/nameless-aurora/src/core/web/mediasniffer.cpp \
+	/home/cylindr/nameless-aurora/src/core/web/mediasniffer.h \
+	/home/cylindr/nameless-aurora/src/core/web/servicepayload.cpp \
+	/home/cylindr/nameless-aurora/src/core/web/servicepayload.h \
+	/home/cylindr/nameless-aurora/src/core/web/streamproxy.cpp \
+	/home/cylindr/nameless-aurora/src/core/web/streamproxy.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \
@@ -125,6 +167,7 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/c++/16/bits/charconv.h \
 	/usr/include/c++/16/bits/chrono.h \
 	/usr/include/c++/16/bits/chrono_io.h \
+	/usr/include/c++/16/bits/codecvt.h \
 	/usr/include/c++/16/bits/concept_check.h \
 	/usr/include/c++/16/bits/cpp_type_traits.h \
 	/usr/include/c++/16/bits/cxxabi_forced.h \
@@ -134,6 +177,7 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/c++/16/bits/exception.h \
 	/usr/include/c++/16/bits/exception_defines.h \
 	/usr/include/c++/16/bits/exception_ptr.h \
+	/usr/include/c++/16/bits/formatfwd.h \
 	/usr/include/c++/16/bits/functexcept.h \
 	/usr/include/c++/16/bits/functional_hash.h \
 	/usr/include/c++/16/bits/hash_bytes.h \
@@ -147,12 +191,16 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/c++/16/bits/list.tcc \
 	/usr/include/c++/16/bits/locale_classes.h \
 	/usr/include/c++/16/bits/locale_classes.tcc \
+	/usr/include/c++/16/bits/locale_conv.h \
 	/usr/include/c++/16/bits/locale_facets.h \
 	/usr/include/c++/16/bits/locale_facets.tcc \
+	/usr/include/c++/16/bits/locale_facets_nonio.h \
+	/usr/include/c++/16/bits/locale_facets_nonio.tcc \
 	/usr/include/c++/16/bits/localefwd.h \
 	/usr/include/c++/16/bits/max_size_type.h \
 	/usr/include/c++/16/bits/memory_resource.h \
 	/usr/include/c++/16/bits/memoryfwd.h \
+	/usr/include/c++/16/bits/monostate.h \
 	/usr/include/c++/16/bits/move.h \
 	/usr/include/c++/16/bits/nested_exception.h \
 	/usr/include/c++/16/bits/new_allocator.h \
@@ -213,6 +261,8 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/c++/16/bits/streambuf_iterator.h \
 	/usr/include/c++/16/bits/string_view.tcc \
 	/usr/include/c++/16/bits/stringfwd.h \
+	/usr/include/c++/16/bits/unicode-data.h \
+	/usr/include/c++/16/bits/unicode.h \
 	/usr/include/c++/16/bits/uniform_int_dist.h \
 	/usr/include/c++/16/bits/unique_ptr.h \
 	/usr/include/c++/16/bits/unordered_map.h \
@@ -250,6 +300,7 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/c++/16/ext/numeric_traits.h \
 	/usr/include/c++/16/ext/string_conversions.h \
 	/usr/include/c++/16/ext/type_traits.h \
+	/usr/include/c++/16/filesystem \
 	/usr/include/c++/16/format \
 	/usr/include/c++/16/functional \
 	/usr/include/c++/16/initializer_list \
@@ -259,17 +310,23 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/c++/16/iterator \
 	/usr/include/c++/16/limits \
 	/usr/include/c++/16/list \
+	/usr/include/c++/16/locale \
 	/usr/include/c++/16/map \
 	/usr/include/c++/16/memory \
 	/usr/include/c++/16/new \
+	/usr/include/c++/16/numbers \
 	/usr/include/c++/16/numeric \
 	/usr/include/c++/16/optional \
 	/usr/include/c++/16/ostream \
 	/usr/include/c++/16/pstl/execution_defs.h \
+	/usr/include/c++/16/pstl/glue_algorithm_defs.h \
+	/usr/include/c++/16/pstl/glue_memory_defs.h \
 	/usr/include/c++/16/pstl/glue_numeric_defs.h \
 	/usr/include/c++/16/pstl/pstl_config.h \
+	/usr/include/c++/16/ranges \
 	/usr/include/c++/16/ratio \
 	/usr/include/c++/16/set \
+	/usr/include/c++/16/span \
 	/usr/include/c++/16/sstream \
 	/usr/include/c++/16/stdexcept \
 	/usr/include/c++/16/streambuf \
@@ -307,7 +364,9 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/error_constants.h \
 	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h \
 	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h \
+	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h \
 	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h \
+	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h \
 	/usr/include/ctype.h \
 	/usr/include/endian.h \
 	/usr/include/errno.h \
@@ -315,6 +374,7 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/features.h \
 	/usr/include/gnu/stubs-64.h \
 	/usr/include/gnu/stubs.h \
+	/usr/include/libintl.h \
 	/usr/include/limits.h \
 	/usr/include/linux/errno.h \
 	/usr/include/linux/limits.h \
@@ -326,12 +386,31 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/pthread.h \
 	/usr/include/qt6/QtCore/QAbstractListModel \
 	/usr/include/qt6/QtCore/QByteArray \
+	/usr/include/qt6/QtCore/QElapsedTimer \
+	/usr/include/qt6/QtCore/QFileSystemWatcher \
+	/usr/include/qt6/QtCore/QFlags \
 	/usr/include/qt6/QtCore/QHash \
+	/usr/include/qt6/QtCore/QIODevice \
+	/usr/include/qt6/QtCore/QJsonArray \
+	/usr/include/qt6/QtCore/QJsonObject \
+	/usr/include/qt6/QtCore/QList \
+	/usr/include/qt6/QtCore/QMap \
+	/usr/include/qt6/QtCore/QMetaType \
 	/usr/include/qt6/QtCore/QObject \
+	/usr/include/qt6/QtCore/QPointer \
+	/usr/include/qt6/QtCore/QProcess \
+	/usr/include/qt6/QtCore/QQueue \
+	/usr/include/qt6/QtCore/QSet \
 	/usr/include/qt6/QtCore/QSettings \
+	/usr/include/qt6/QtCore/QSharedDataPointer \
 	/usr/include/qt6/QtCore/QString \
 	/usr/include/qt6/QtCore/QStringList \
+	/usr/include/qt6/QtCore/QTemporaryDir \
+	/usr/include/qt6/QtCore/QTimer \
 	/usr/include/qt6/QtCore/QUrl \
+	/usr/include/qt6/QtCore/QVariant \
+	/usr/include/qt6/QtCore/QVariantList \
+	/usr/include/qt6/QtCore/QVariantMap \
 	/usr/include/qt6/QtCore/QVector \
 	/usr/include/qt6/QtCore/q17memory.h \
 	/usr/include/qt6/QtCore/q20bit.h \
@@ -342,6 +421,8 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/qt6/QtCore/q20utility.h \
 	/usr/include/qt6/QtCore/q23type_traits.h \
 	/usr/include/qt6/QtCore/q23utility.h \
+	/usr/include/qt6/QtCore/q26numeric.h \
+	/usr/include/qt6/QtCore/qabstracteventdispatcher.h \
 	/usr/include/qt6/QtCore/qabstractitemmodel.h \
 	/usr/include/qt6/QtCore/qalgorithms.h \
 	/usr/include/qt6/QtCore/qalloc.h \
@@ -353,13 +434,18 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qatomic.h \
 	/usr/include/qt6/QtCore/qatomic_cxx11.h \
 	/usr/include/qt6/QtCore/qbasicatomic.h \
+	/usr/include/qt6/QtCore/qbasictimer.h \
 	/usr/include/qt6/QtCore/qbindingstorage.h \
 	/usr/include/qt6/QtCore/qbitarray.h \
 	/usr/include/qt6/QtCore/qbytearray.h \
 	/usr/include/qt6/QtCore/qbytearrayalgorithms.h \
 	/usr/include/qt6/QtCore/qbytearraylist.h \
 	/usr/include/qt6/QtCore/qbytearrayview.h \
+	/usr/include/qt6/QtCore/qcalendar.h \
+	/usr/include/qt6/QtCore/qcborcommon.h \
+	/usr/include/qt6/QtCore/qcborvalue.h \
 	/usr/include/qt6/QtCore/qchar.h \
+	/usr/include/qt6/QtCore/qcheckedint_impl.h \
 	/usr/include/qt6/QtCore/qcompare.h \
 	/usr/include/qt6/QtCore/qcompare_impl.h \
 	/usr/include/qt6/QtCore/qcomparehelpers.h \
@@ -370,10 +456,22 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qcontainerinfo.h \
 	/usr/include/qt6/QtCore/qcontainertools_impl.h \
 	/usr/include/qt6/QtCore/qcontiguouscache.h \
+	/usr/include/qt6/QtCore/qcryptographichash.h \
 	/usr/include/qt6/QtCore/qdarwinhelpers.h \
 	/usr/include/qt6/QtCore/qdatastream.h \
+	/usr/include/qt6/QtCore/qdatetime.h \
+	/usr/include/qt6/QtCore/qdeadlinetimer.h \
 	/usr/include/qt6/QtCore/qdebug.h \
+	/usr/include/qt6/QtCore/qdir.h \
+	/usr/include/qt6/QtCore/qdirlisting.h \
+	/usr/include/qt6/QtCore/qelapsedtimer.h \
+	/usr/include/qt6/QtCore/qendian.h \
+	/usr/include/qt6/QtCore/qeventloop.h \
 	/usr/include/qt6/QtCore/qexceptionhandling.h \
+	/usr/include/qt6/QtCore/qfile.h \
+	/usr/include/qt6/QtCore/qfiledevice.h \
+	/usr/include/qt6/QtCore/qfileinfo.h \
+	/usr/include/qt6/QtCore/qfilesystemwatcher.h \
 	/usr/include/qt6/QtCore/qflags.h \
 	/usr/include/qt6/QtCore/qfloat16.h \
 	/usr/include/qt6/QtCore/qforeach.h \
@@ -384,16 +482,26 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qglobalstatic.h \
 	/usr/include/qt6/QtCore/qhash.h \
 	/usr/include/qt6/QtCore/qhashfunctions.h \
+	/usr/include/qt6/QtCore/qiodevice.h \
 	/usr/include/qt6/QtCore/qiodevicebase.h \
 	/usr/include/qt6/QtCore/qiterable.h \
 	/usr/include/qt6/QtCore/qiterator.h \
+	/usr/include/qt6/QtCore/qjsonarray.h \
+	/usr/include/qt6/QtCore/qjsondocument.h \
+	/usr/include/qt6/QtCore/qjsonobject.h \
+	/usr/include/qt6/QtCore/qjsonparseerror.h \
+	/usr/include/qt6/QtCore/qjsonvalue.h \
 	/usr/include/qt6/QtCore/qlatin1stringview.h \
+	/usr/include/qt6/QtCore/qline.h \
 	/usr/include/qt6/QtCore/qlist.h \
+	/usr/include/qt6/QtCore/qlocale.h \
 	/usr/include/qt6/QtCore/qlogging.h \
 	/usr/include/qt6/QtCore/qmalloc.h \
 	/usr/include/qt6/QtCore/qmap.h \
+	/usr/include/qt6/QtCore/qmargins.h \
 	/usr/include/qt6/QtCore/qmath.h \
 	/usr/include/qt6/QtCore/qmetacontainer.h \
+	/usr/include/qt6/QtCore/qmetaobject.h \
 	/usr/include/qt6/QtCore/qmetatype.h \
 	/usr/include/qt6/QtCore/qminmax.h \
 	/usr/include/qt6/QtCore/qnamespace.h \
@@ -404,8 +512,14 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qobjectdefs_impl.h \
 	/usr/include/qt6/QtCore/qoverload.h \
 	/usr/include/qt6/QtCore/qpair.h \
+	/usr/include/qt6/QtCore/qpoint.h \
+	/usr/include/qt6/QtCore/qpointer.h \
+	/usr/include/qt6/QtCore/qprocess.h \
 	/usr/include/qt6/QtCore/qprocessordetection.h \
+	/usr/include/qt6/QtCore/qqueue.h \
+	/usr/include/qt6/QtCore/qrect.h \
 	/usr/include/qt6/QtCore/qrefcount.h \
+	/usr/include/qt6/QtCore/qregularexpression.h \
 	/usr/include/qt6/QtCore/qscopedpointer.h \
 	/usr/include/qt6/QtCore/qscopeguard.h \
 	/usr/include/qt6/QtCore/qset.h \
@@ -414,6 +528,7 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qshareddata_impl.h \
 	/usr/include/qt6/QtCore/qsharedpointer.h \
 	/usr/include/qt6/QtCore/qsharedpointer_impl.h \
+	/usr/include/qt6/QtCore/qsize.h \
 	/usr/include/qt6/QtCore/qspan.h \
 	/usr/include/qt6/QtCore/qstdlibdetection.h \
 	/usr/include/qt6/QtCore/qstring.h \
@@ -438,9 +553,12 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qtcoreglobal.h \
 	/usr/include/qt6/QtCore/qtdeprecationdefinitions.h \
 	/usr/include/qt6/QtCore/qtdeprecationmarkers.h \
+	/usr/include/qt6/QtCore/qtemporarydir.h \
 	/usr/include/qt6/QtCore/qtenvironmentvariables.h \
 	/usr/include/qt6/QtCore/qtextstream.h \
 	/usr/include/qt6/QtCore/qtformat_impl.h \
+	/usr/include/qt6/QtCore/qtimer.h \
+	/usr/include/qt6/QtCore/qtimezone.h \
 	/usr/include/qt6/QtCore/qtmetamacros.h \
 	/usr/include/qt6/QtCore/qtnoop.h \
 	/usr/include/qt6/QtCore/qtpreprocessorsupport.h \
@@ -453,24 +571,95 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qtypes.h \
 	/usr/include/qt6/QtCore/qurl.h \
 	/usr/include/qt6/QtCore/qutf8stringview.h \
+	/usr/include/qt6/QtCore/quuid.h \
 	/usr/include/qt6/QtCore/qvariant.h \
+	/usr/include/qt6/QtCore/qvariantlist.h \
+	/usr/include/qt6/QtCore/qvariantmap.h \
 	/usr/include/qt6/QtCore/qvarlengtharray.h \
 	/usr/include/qt6/QtCore/qvector.h \
 	/usr/include/qt6/QtCore/qversiontagging.h \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
+	/usr/include/qt6/QtDBus/QDBusAbstractAdaptor \
+	/usr/include/qt6/QtDBus/QDBusObjectPath \
+	/usr/include/qt6/QtDBus/qdbusabstractadaptor.h \
+	/usr/include/qt6/QtDBus/qdbusextratypes.h \
+	/usr/include/qt6/QtDBus/qtdbusexports.h \
+	/usr/include/qt6/QtDBus/qtdbusglobal.h \
+	/usr/include/qt6/QtGui/QColor \
+	/usr/include/qt6/QtGui/QImage \
+	/usr/include/qt6/QtGui/qcolor.h \
+	/usr/include/qt6/QtGui/qimage.h \
+	/usr/include/qt6/QtGui/qpaintdevice.h \
+	/usr/include/qt6/QtGui/qpixelformat.h \
+	/usr/include/qt6/QtGui/qpolygon.h \
+	/usr/include/qt6/QtGui/qregion.h \
+	/usr/include/qt6/QtGui/qrgb.h \
+	/usr/include/qt6/QtGui/qrgba64.h \
 	/usr/include/qt6/QtGui/qtgui-config.h \
 	/usr/include/qt6/QtGui/qtguiexports.h \
 	/usr/include/qt6/QtGui/qtguiglobal.h \
+	/usr/include/qt6/QtGui/qtransform.h \
+	/usr/include/qt6/QtGui/qwindowdefs.h \
+	/usr/include/qt6/QtMultimedia/QAudioBuffer \
+	/usr/include/qt6/QtMultimedia/QAudioBufferOutput \
 	/usr/include/qt6/QtMultimedia/QAudioOutput \
+	/usr/include/qt6/QtMultimedia/QAudioSink \
 	/usr/include/qt6/QtMultimedia/QMediaPlayer \
 	/usr/include/qt6/QtMultimedia/qaudio.h \
+	/usr/include/qt6/QtMultimedia/qaudiobuffer.h \
+	/usr/include/qt6/QtMultimedia/qaudiobufferoutput.h \
+	/usr/include/qt6/QtMultimedia/qaudiodevice.h \
+	/usr/include/qt6/QtMultimedia/qaudioformat.h \
 	/usr/include/qt6/QtMultimedia/qaudiooutput.h \
+	/usr/include/qt6/QtMultimedia/qaudiosink.h \
 	/usr/include/qt6/QtMultimedia/qmediaplayer.h \
 	/usr/include/qt6/QtMultimedia/qtaudio.h \
 	/usr/include/qt6/QtMultimedia/qtmultimedia-config.h \
 	/usr/include/qt6/QtMultimedia/qtmultimediaexports.h \
 	/usr/include/qt6/QtMultimedia/qtmultimediaglobal.h \
+	/usr/include/qt6/QtNetwork/QNetworkAccessManager \
+	/usr/include/qt6/QtNetwork/QNetworkCookie \
+	/usr/include/qt6/QtNetwork/QNetworkReply \
+	/usr/include/qt6/QtNetwork/QNetworkRequest \
+	/usr/include/qt6/QtNetwork/QSslConfiguration \
+	/usr/include/qt6/QtNetwork/QSslPreSharedKeyAuthenticator \
+	/usr/include/qt6/QtNetwork/QTcpServer \
+	/usr/include/qt6/QtNetwork/qabstractsocket.h \
+	/usr/include/qt6/QtNetwork/qhostaddress.h \
+	/usr/include/qt6/QtNetwork/qhttpheaders.h \
+	/usr/include/qt6/QtNetwork/qnetworkaccessmanager.h \
+	/usr/include/qt6/QtNetwork/qnetworkcookie.h \
+	/usr/include/qt6/QtNetwork/qnetworkreply.h \
+	/usr/include/qt6/QtNetwork/qnetworkrequest.h \
+	/usr/include/qt6/QtNetwork/qssl.h \
+	/usr/include/qt6/QtNetwork/qsslcertificate.h \
+	/usr/include/qt6/QtNetwork/qsslconfiguration.h \
+	/usr/include/qt6/QtNetwork/qsslerror.h \
+	/usr/include/qt6/QtNetwork/qsslpresharedkeyauthenticator.h \
+	/usr/include/qt6/QtNetwork/qsslsocket.h \
+	/usr/include/qt6/QtNetwork/qtcpserver.h \
+	/usr/include/qt6/QtNetwork/qtcpsocket.h \
+	/usr/include/qt6/QtNetwork/qtnetwork-config.h \
+	/usr/include/qt6/QtNetwork/qtnetworkexports.h \
+	/usr/include/qt6/QtNetwork/qtnetworkglobal.h \
+	/usr/include/qt6/QtQml/qqmlregistration.h \
+	/usr/include/qt6/QtQmlIntegration/qqmlintegration.h \
+	/usr/include/qt6/QtSql/QSqlDatabase \
+	/usr/include/qt6/QtSql/qsqldatabase.h \
+	/usr/include/qt6/QtSql/qtsql-config.h \
+	/usr/include/qt6/QtSql/qtsqlexports.h \
+	/usr/include/qt6/QtSql/qtsqlglobal.h \
+	/usr/include/qt6/QtWebEngineCore/QWebEngineUrlRequestInterceptor \
+	/usr/include/qt6/QtWebEngineCore/qtwebenginecore-config.h \
+	/usr/include/qt6/QtWebEngineCore/qtwebenginecoreglobal.h \
+	/usr/include/qt6/QtWebEngineCore/qwebenginepermission.h \
+	/usr/include/qt6/QtWebEngineCore/qwebengineurlrequestinfo.h \
+	/usr/include/qt6/QtWebEngineCore/qwebengineurlrequestinterceptor.h \
+	/usr/include/qt6/QtWebEngineQuick/QQuickWebEngineProfile \
+	/usr/include/qt6/QtWebEngineQuick/qquickwebengineprofile.h \
+	/usr/include/qt6/QtWebEngineQuick/qtwebenginequick-config.h \
+	/usr/include/qt6/QtWebEngineQuick/qtwebenginequickglobal.h \
 	/usr/include/sched.h \
 	/usr/include/stdc-predef.h \
 	/usr/include/stdint.h \
@@ -915,6 +1104,31 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets.cmake \
 	/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargetsPrecheck.cmake \
 	/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningConfig.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningConfigVersion.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningDependencies.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningPlugins.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningTargets.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6PositioningVersionlessAliasTargets.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginConfig.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargets.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginConfig.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginTargets.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginConfig.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginTargets.cmake \
+	/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryPollPluginTargetsPrecheck.cmake \
 	/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginAdditionalTargetInfo.cmake \
 	/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginConfig.cmake \
 	/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginTargets-relwithdebinfo.cmake \
@@ -1672,6 +1886,25 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsTargetsPrecheck.cmake \
 	/usr/lib/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake \
 	/usr/lib/cmake/Qt6QuickTools/Qt6SvgToQmlMacros.cmake \
+	/usr/lib/cmake/Qt6ShaderTools/Qt6ShaderToolsAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6ShaderTools/Qt6ShaderToolsConfig.cmake \
+	/usr/lib/cmake/Qt6ShaderTools/Qt6ShaderToolsConfigVersion.cmake \
+	/usr/lib/cmake/Qt6ShaderTools/Qt6ShaderToolsConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6ShaderTools/Qt6ShaderToolsDependencies.cmake \
+	/usr/lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets.cmake \
+	/usr/lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6ShaderTools/Qt6ShaderToolsVersionlessAliasTargets.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsMacros.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsConfig.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsConfigVersion.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsDependencies.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsVersionlessTargets.cmake \
 	/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginAdditionalTargetInfo.cmake \
 	/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginConfig.cmake \
 	/usr/lib/cmake/Qt6Sql/Qt6QIBaseDriverPluginTargets-relwithdebinfo.cmake \
@@ -1707,6 +1940,64 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/lib/cmake/Qt6Sql/Qt6SqlTargets.cmake \
 	/usr/lib/cmake/Qt6Sql/Qt6SqlTargetsPrecheck.cmake \
 	/usr/lib/cmake/Qt6Sql/Qt6SqlVersionlessAliasTargets.cmake \
+	/usr/lib/cmake/Qt6Test/Qt6TestAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Test/Qt6TestConfig.cmake \
+	/usr/lib/cmake/Qt6Test/Qt6TestConfigVersion.cmake \
+	/usr/lib/cmake/Qt6Test/Qt6TestConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6Test/Qt6TestDependencies.cmake \
+	/usr/lib/cmake/Qt6Test/Qt6TestTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Test/Qt6TestTargets.cmake \
+	/usr/lib/cmake/Qt6Test/Qt6TestTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6Test/Qt6TestVersionlessAliasTargets.cmake \
+	/usr/lib/cmake/Qt6Test/QtTestProperties.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelConfig.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelConfigVersion.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelDependencies.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelExtras.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelTargets.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6WebChannel/Qt6WebChannelVersionlessAliasTargets.cmake \
+	/usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickConfig.cmake \
+	/usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickConfigVersion.cmake \
+	/usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickDependencies.cmake \
+	/usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickTargets.cmake \
+	/usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickVersionlessAliasTargets.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfig.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersion.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreDependencies.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreExtraProperties.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreMacros.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreVersionlessAliasTargets.cmake \
+	/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfig.cmake \
+	/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfigVersion.cmake \
+	/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsDependencies.cmake \
+	/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsTargets.cmake \
+	/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsVersionlessTargets.cmake \
+	/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickConfig.cmake \
+	/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickConfigVersion.cmake \
+	/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickDependencies.cmake \
+	/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickTargets.cmake \
+	/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickVersionlessAliasTargets.cmake \
 	/usr/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake \
 	/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake \
 	/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake \
@@ -1740,6 +2031,9 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/share/cmake/Modules/CMakeLanguageInformation.cmake \
 	/usr/share/cmake/Modules/CMakeSystemSpecificInformation.cmake \
 	/usr/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake \
+	/usr/share/cmake/Modules/CTest.cmake \
+	/usr/share/cmake/Modules/CTestTargets.cmake \
+	/usr/share/cmake/Modules/CTestUseLaunchers.cmake \
 	/usr/share/cmake/Modules/CheckCXXCompilerFlag.cmake \
 	/usr/share/cmake/Modules/CheckCXXSourceCompiles.cmake \
 	/usr/share/cmake/Modules/CheckIncludeFileCXX.cmake \
@@ -1747,6 +2041,7 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
 	/usr/share/cmake/Modules/Compiler/GNU-CXX.cmake \
 	/usr/share/cmake/Modules/Compiler/GNU.cmake \
+	/usr/share/cmake/Modules/DartConfiguration.tcl.in \
 	/usr/share/cmake/Modules/FindOpenGL.cmake \
 	/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake \
 	/usr/share/cmake/Modules/FindPackageMessage.cmake \
@@ -1770,4 +2065,5 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/share/cmake/Modules/Platform/Linux-Initialize.cmake \
 	/usr/share/cmake/Modules/Platform/Linux.cmake \
 	/usr/share/cmake/Modules/Platform/UnixPaths.cmake \
+	/usr/share/cmake/Templates/CTestScript.cmake.in \
 	/usr/bin/cmake

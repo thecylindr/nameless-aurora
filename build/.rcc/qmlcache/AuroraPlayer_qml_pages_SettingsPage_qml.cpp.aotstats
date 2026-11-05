@@ -7,18 +7,10 @@
                     "entries": [
                         {
                             "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "onCompleted",
-                            "line": 12,
-                            "message": "Cannot access value for name storageManager"
-                        },
-                        {
-                            "codegenResult": 2,
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "contentWidth",
-                            "line": 18,
+                            "line": 19,
                             "message": "Could not find property \"contentWidth\"."
                         },
                         {
@@ -26,31 +18,31 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 16,
+                            "line": 17,
                             "message": "Could not find property \"fill\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 63,
+                            "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 20,
+                            "line": 22,
                             "message": "Cannot access value for name theme"
                         },
                         {
                             "codegenResult": 2,
-                            "column": 73,
+                            "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "x",
-                            "line": 20,
+                            "line": 23,
                             "message": "Could not find property \"x\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 103,
+                            "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 20,
+                            "line": 24,
                             "message": "Could not find property \"height\"."
                         },
                         {
@@ -58,7 +50,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 23,
+                            "line": 27,
                             "message": "Cannot retrieve a non-object type by ID: scroll"
                         },
                         {
@@ -66,127 +58,95 @@
                             "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "x",
-                            "line": 24,
-                            "message": "Cannot access value for name compact"
+                            "line": 28,
+                            "message": "Cannot retrieve a non-object type by ID: scroll"
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 36,
+                            "codegenResult": 0,
+                            "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 27,
-                            "message": "Cannot access value for name compact"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 46,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 28,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 74,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 28,
-                            "message": "Cannot access value for name compact"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 106,
-                            "durationMicroseconds": 0,
-                            "functionName": "weight",
-                            "line": 28,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
                             "line": 31,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 28,
+                            "column": 24,
                             "durationMicroseconds": 0,
-                            "functionName": "width",
+                            "functionName": "color",
+                            "line": 35,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 33,
+                            "durationMicroseconds": 0,
+                            "functionName": "pixelSize",
                             "line": 36,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 65,
+                            "column": 30,
                             "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 44,
+                            "functionName": "weight",
+                            "line": 37,
                             "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 96,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 44,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 66,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 45,
-                            "message": "Cannot access value for name settingsStore"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 102,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 45,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 153,
-                            "durationMicroseconds": 0,
-                            "functionName": "elide",
-                            "line": 45,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 130,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 45,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 56,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 47,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 112,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 47,
-                            "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 54,
+                            "line": 40,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 42,
+                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "currentIndex",
+                            "line": 43,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "onOptionSelected",
+                            "line": 44,
+                            "message": "Cannot retrieve a non-object type by ID: scroll"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "onOptionSelected",
+                            "line": 44,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 50,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 52,
                             "message": ""
                         },
                         {
@@ -194,151 +154,87 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 59,
+                            "line": 56,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 70,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 64,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 101,
-                            "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 64,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 38,
+                            "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
+                            "line": 60,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 62,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "description",
+                            "line": 64,
+                            "message": "Cannot access value for name namelessBridge"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
                             "line": 66,
                             "message": ""
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "model",
-                            "line": 68,
-                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "currentIndex",
-                            "line": 69,
-                            "message": "Cannot access value for name settingsStore"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 70,
-                            "message": "Cannot access value for name settingsStore"
-                        },
-                        {
                             "codegenResult": 0,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 70,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 70,
+                            "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 76,
+                            "line": 71,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 101,
+                            "column": 35,
                             "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 76,
+                            "functionName": "wrapMode",
+                            "line": 73,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 38,
+                            "column": 32,
                             "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
+                            "functionName": "color",
                             "line": 78,
                             "message": ""
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "model",
-                            "line": 80,
-                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "currentIndex",
-                            "line": 81,
-                            "message": "Cannot access value for name settingsStore"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 47,
-                            "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 82,
-                            "message": "Cannot access value for name settingsStore"
-                        },
-                        {
                             "codegenResult": 0,
-                            "column": 47,
+                            "column": 35,
                             "durationMicroseconds": 0,
-                            "functionName": "onOptionSelected",
-                            "line": 82,
+                            "functionName": "wrapMode",
+                            "line": 80,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 34,
+                            "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
                             "line": 86,
                             "message": ""
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "checked",
-                            "line": 90,
-                            "message": "Could not find property \"checked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "onToggled",
-                            "line": 91,
-                            "message": "Could not find signal \"toggled\"."
-                        },
-                        {
                             "codegenResult": 0,
                             "column": 26,
                             "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 97,
+                            "functionName": "visible",
+                            "line": 88,
                             "message": ""
                         },
                         {
@@ -346,32 +242,64 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 102,
+                            "line": 90,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 34,
+                            "column": 25,
                             "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 105,
+                            "functionName": "active",
+                            "line": 96,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 97,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 31,
+                            "column": 41,
                             "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 108,
-                            "message": "Could not find property \"text\"."
+                            "functionName": "preferredHeight",
+                            "line": 95,
+                            "message": "Cannot load property implicitHeight from (component in /home/cylindr/nameless-aurora/qml/pages/SettingsPage.qml)::item with type QObject."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 44,
+                            "column": 30,
                             "durationMicroseconds": 0,
-                            "functionName": "onEditingFinished",
+                            "functionName": "compact",
+                            "line": 99,
+                            "message": "Cannot access value for name root"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 103,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 105,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "width",
                             "line": 109,
-                            "message": "Could not find signal \"editingFinished\"."
+                            "message": ""
                         },
                         {
                             "codegenResult": 0,
@@ -386,7 +314,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 115,
+                            "line": 114,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -398,39 +326,71 @@
                             "message": "Could not find signal \"editingFinished\"."
                         },
                         {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 119,
+                            "message": "Cannot generate efficient code for storing an array in a non-sequence type"
+                        },
+                        {
                             "codegenResult": 0,
-                            "column": 26,
+                            "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 124,
+                            "line": 122,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 28,
+                            "column": 35,
                             "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 128,
-                            "message": "Could not find signal \"clicked\"."
+                            "functionName": "text",
+                            "line": 124,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "subtext",
+                            "line": 125,
+                            "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 24,
+                            "column": 38,
                             "durationMicroseconds": 0,
-                            "functionName": "currentFolder",
-                            "line": 137,
-                            "message": "Cannot access value for name settingsStore"
+                            "functionName": "checked",
+                            "line": 126,
+                            "message": "Could not find property \"checked\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 21,
+                            "column": 40,
                             "durationMicroseconds": 0,
-                            "functionName": "onAccepted",
-                            "line": 138,
-                            "message": "Cannot access value for name settingsStore"
+                            "functionName": "onToggled",
+                            "line": 127,
+                            "message": "Could not find signal \"toggled\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 141,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 143,
+                            "message": ""
                         }
                     ],
-                    "filePath": "/home/cylindr/player/qml/pages/SettingsPage.qml"
+                    "filePath": "/home/cylindr/nameless-aurora/qml/pages/SettingsPage.qml"
                 }
             ],
             "moduleId": "AuroraPlayer(AuroraPlayer)"

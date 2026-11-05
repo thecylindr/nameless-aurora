@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Aurora
+GenericName=Music Player
+GenericName[ru]=Музыкальный плеер
+Comment=Your music, your atmosphere
+Comment[ru]=Твоя музыка. Твоя атмосфера.
+Exec=AuroraPlayer
+Icon=org.nameless.Aurora
+Terminal=false
+Categories=Audio;Music;Player;AudioVideo;
+StartupWMClass=AuroraPlayer
+StartupNotify=true

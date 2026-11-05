@@ -1,0 +1,59 @@
+Start testing: Nov 04 20:13 MSK
+----------------------------------------------------------
+1/1 Testing: aurora_library
+1/1 Test: aurora_library
+Command: "/home/cylindr/nameless-aurora/build/aurora_tests"
+Directory: /home/cylindr/nameless-aurora/build
+"aurora_library" start time: Nov 04 20:13 MSK
+Output:
+----------------------------------------------------------
+********* Start testing of LibraryTests *********
+Config: Using QtTest library 6.12.0, Qt 6.12.0 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), arch unknown
+PASS   : LibraryTests::initTestCase()
+PASS   : LibraryTests::relationalLibraryAndCascade()
+PASS   : LibraryTests::legacyMigrationPreservesIdsAndStatistics()
+PASS   : LibraryTests::failedMigrationRollsBack()
+PASS   : LibraryTests::parsersPreserveNamesAndRejectMalformedInput()
+PASS   : LibraryTests::localImportDuplicateAndFilenameCollision()
+QINFO  : LibraryTests::queueSurvivesFilterAndTracksRealTime() qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version n9.0.2 GPL version 3 or later
+Input #0, wav, from '/tmp/Library-GvzcWz/A.wav':
+  Duration: 00:00:12.00, bitrate: 705 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 1 channels, s16, 705 kb/s
+Input #0, wav, from '/tmp/Library-GvzcWz/B.wav':
+  Duration: 00:00:12.00, bitrate: 705 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 1 channels, s16, 705 kb/s
+[wav @ 0x7ff3a0064e00] Could not find codec parameters for stream 0 (Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 1 channels, 705 kb/s): unspecified sample format
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+Input #0, wav, from '/tmp/Library-GvzcWz/A.wav':
+  Duration: 00:00:12.00, bitrate: 705 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, 1 channels, 705 kb/s
+PASS   : LibraryTests::queueSurvivesFilterAndTracksRealTime()
+PASS   : LibraryTests::youtubeSearchUsesArgumentsAndRequiresSelection()
+PASS   : LibraryTests::sourceAttachmentKeepsPlaylistIdentity()
+PASS   : LibraryTests::invalidAudioIsNotAdded()
+PASS   : LibraryTests::namelessThemeUpdatesWithoutRestart()
+PASS   : LibraryTests::portableRoundTripAndPathTraversal()
+PASS   : LibraryTests::downloaderErrorsAreHumanized()
+PASS   : LibraryTests::browserDetectionScansHomeAndReadsFirefoxProfile()
+PASS   : LibraryTests::oauthAuthorizeUrlsAndRedirectParsing()
+PASS   : LibraryTests::oauthTokenJsonAppliesToSettings()
+PASS   : LibraryTests::vkAudioParsingAndApiErrors()
+FAIL!  : LibraryTests::cdpFramePackingAndParsing() Compared values are not the same
+   Actual   (rest.size()): 0
+   Expected (1)          : 1
+   Loc: [/home/cylindr/nameless-aurora/tests/tst_library.cpp(279)]
+PASS   : LibraryTests::webLoginCookieHelpersAndNetscapeExport()
+PASS   : LibraryTests::vkWebParsingDataAudioAndLoadSection()
+PASS   : LibraryTests::downloadServiceRecognizesYtSearch()
+PASS   : LibraryTests::cleanupTestCase()
+Totals: 21 passed, 1 failed, 0 skipped, 0 blacklisted, 2040ms
+********* Finished testing of LibraryTests *********
+<end of output>
+Test time =   2.09 sec
+----------------------------------------------------------
+Test Failed.
+"aurora_library" end time: Nov 04 20:13 MSK
+"aurora_library" time elapsed: 00:00:02
+----------------------------------------------------------
+
+End testing: Nov 04 20:13 MSK

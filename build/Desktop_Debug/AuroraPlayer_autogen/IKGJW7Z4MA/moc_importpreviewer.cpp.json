@@ -6,7 +6,7 @@
                 {
                     "isClass": false,
                     "isFlag": false,
-                    "lineNumber": 27,
+                    "lineNumber": 29,
                     "name": "Role",
                     "values": [
                         "TitleRole",
@@ -18,7 +18,7 @@
                     ]
                 }
             ],
-            "lineNumber": 14,
+            "lineNumber": 16,
             "methods": [
                 {
                     "access": "public",
@@ -37,7 +37,7 @@
                         }
                     ],
                     "index": 8,
-                    "lineNumber": 55,
+                    "lineNumber": 82,
                     "name": "inspect",
                     "returnType": "void"
                 },
@@ -55,8 +55,32 @@
                     ],
                     "index": 9,
                     "isCloned": true,
-                    "lineNumber": 55,
+                    "lineNumber": 82,
                     "name": "inspect",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "query",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "quality",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 10,
+                    "lineNumber": 84,
+                    "name": "searchYoutube",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 11,
+                    "lineNumber": 86,
+                    "name": "cancel",
                     "returnType": "void"
                 },
                 {
@@ -67,8 +91,8 @@
                             "type": "int"
                         }
                     ],
-                    "index": 10,
-                    "lineNumber": 56,
+                    "index": 12,
+                    "lineNumber": 87,
                     "name": "toggle",
                     "returnType": "void"
                 },
@@ -80,15 +104,15 @@
                             "type": "bool"
                         }
                     ],
-                    "index": 11,
-                    "lineNumber": 57,
+                    "index": 13,
+                    "lineNumber": 88,
                     "name": "selectAll",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 12,
-                    "lineNumber": 58,
+                    "index": 14,
+                    "lineNumber": 90,
                     "name": "startSelected",
                     "returnType": "void"
                 }
@@ -100,7 +124,7 @@
                     "designable": true,
                     "final": false,
                     "index": 0,
-                    "lineNumber": 17,
+                    "lineNumber": 19,
                     "name": "busy",
                     "notify": "busyChanged",
                     "override": false,
@@ -117,7 +141,7 @@
                     "designable": true,
                     "final": false,
                     "index": 1,
-                    "lineNumber": 18,
+                    "lineNumber": 20,
                     "name": "statusText",
                     "notify": "statusTextChanged",
                     "override": false,
@@ -134,7 +158,7 @@
                     "designable": true,
                     "final": false,
                     "index": 2,
-                    "lineNumber": 19,
+                    "lineNumber": 21,
                     "name": "lastError",
                     "notify": "lastErrorChanged",
                     "override": false,
@@ -151,7 +175,7 @@
                     "designable": true,
                     "final": false,
                     "index": 3,
-                    "lineNumber": 20,
+                    "lineNumber": 22,
                     "name": "totalDuration",
                     "notify": "totalDurationChanged",
                     "override": false,
@@ -168,7 +192,7 @@
                     "designable": true,
                     "final": false,
                     "index": 4,
-                    "lineNumber": 21,
+                    "lineNumber": 23,
                     "name": "selectedCount",
                     "notify": "selectedCountChanged",
                     "override": false,
@@ -185,7 +209,7 @@
                     "designable": true,
                     "final": false,
                     "index": 5,
-                    "lineNumber": 22,
+                    "lineNumber": 24,
                     "name": "selectedBytes",
                     "notify": "selectedBytesChanged",
                     "override": false,
@@ -202,7 +226,7 @@
                     "designable": true,
                     "final": false,
                     "index": 6,
-                    "lineNumber": 23,
+                    "lineNumber": 25,
                     "name": "unknownSizes",
                     "notify": "unknownSizesChanged",
                     "override": false,
@@ -219,7 +243,7 @@
                     "designable": true,
                     "final": false,
                     "index": 7,
-                    "lineNumber": 24,
+                    "lineNumber": 26,
                     "name": "sourceUrl",
                     "notify": "sourceUrlChanged",
                     "override": false,
@@ -237,56 +261,56 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 61,
+                    "lineNumber": 93,
                     "name": "busyChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 1,
-                    "lineNumber": 62,
+                    "lineNumber": 94,
                     "name": "statusTextChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "lineNumber": 63,
+                    "lineNumber": 95,
                     "name": "lastErrorChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 3,
-                    "lineNumber": 64,
+                    "lineNumber": 96,
                     "name": "totalDurationChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 4,
-                    "lineNumber": 65,
+                    "lineNumber": 97,
                     "name": "selectedCountChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 5,
-                    "lineNumber": 66,
+                    "lineNumber": 98,
                     "name": "selectedBytesChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 6,
-                    "lineNumber": 67,
+                    "lineNumber": 99,
                     "name": "unknownSizesChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 7,
-                    "lineNumber": 68,
+                    "lineNumber": 100,
                     "name": "sourceUrlChanged",
                     "returnType": "void"
                 }

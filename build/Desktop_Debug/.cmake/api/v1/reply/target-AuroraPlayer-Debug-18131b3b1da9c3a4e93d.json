@@ -1,0 +1,4964 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "AuroraPlayer"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"_qt_internal_create_executable",
+			"qt6_add_executable",
+			"qt_add_executable",
+			"install",
+			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"set_property",
+			"__find_dependency_common",
+			"find_dependency",
+			"_qt_internal_find_third_party_dependencies",
+			"_qt_internal_find_qt_dependencies",
+			"qt6_add_qml_module",
+			"qt_add_qml_module",
+			"add_dependencies",
+			"_qt_internal_qml_copy_files_to_build_dir",
+			"_populate_qmlls_ini_file",
+			"_qt_internal_write_deferred_qmlls_ini_file",
+			"_qt_internal_write_deferred_qmlls_build_ini_file",
+			"_qt_internal_write_qmldir_part",
+			"_qt_internal_scan_qml_imports",
+			"_qt_internal_generate_deploy_qml_imports_script",
+			"cmake_language",
+			"_qt_internal_finalize_executable",
+			"qt6_finalize_target",
+			"_qt_internal_target_enable_qmlcachegen",
+			"qt6_target_qml_sources",
+			"add_custom_command",
+			"qt6_extract_metatypes",
+			"_qt_internal_qml_type_registration",
+			"_qt_internal_process_resource",
+			"qt6_add_resources",
+			"_qt_internal_add_shaders_impl",
+			"qt6_add_shaders",
+			"qt_add_shaders",
+			"_qt_internal_ensure_tooling_target",
+			"target_compile_definitions",
+			"target_include_directories",
+			"target_sources",
+			"__qt_propagate_generated_resource",
+			"qt_add_resources",
+			"_qt_internal_expose_deferred_files_to_ide"
+		],
+		"files" : 
+		[
+			"/usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"CMakeLists.txt",
+			"/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickTargets.cmake",
+			"/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickConfig.cmake",
+			"build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake",
+			"/usr/lib/cmake/Qt6Quick/Qt6QuickTargets.cmake",
+			"/usr/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake",
+			"/usr/share/cmake/Modules/FindOpenGL.cmake",
+			"/usr/lib/cmake/Qt6/FindWrapOpenGL.cmake",
+			"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+			"/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake",
+			"/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake",
+			"/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake",
+			"/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreTargets.cmake",
+			"/usr/lib/cmake/Qt6WebEngineCore/Qt6WebEngineCoreConfig.cmake",
+			"/usr/lib/cmake/Qt6WebEngineQuick/Qt6WebEngineQuickDependencies.cmake",
+			"/usr/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"/usr/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake:1174:EVAL",
+			"/usr/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake:1189:EVAL",
+			"/usr/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake:1246:EVAL",
+			"/usr/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:881:EVAL",
+			"/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsMacros.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 1115,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 687,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 780,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 144,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 123,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 9,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 235,
+				"parent" : 7
+			},
+			{
+				"file" : 3,
+				"parent" : 8
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 65,
+				"parent" : 9
+			},
+			{
+				"file" : 2,
+				"parent" : 10
+			},
+			{
+				"command" : 6,
+				"file" : 2,
+				"line" : 70,
+				"parent" : 11
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 235,
+				"parent" : 7
+			},
+			{
+				"file" : 6,
+				"parent" : 13
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 65,
+				"parent" : 14
+			},
+			{
+				"file" : 5,
+				"parent" : 15
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 70,
+				"parent" : 16
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 158,
+				"parent" : 0
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 235,
+				"parent" : 7
+			},
+			{
+				"file" : 12,
+				"parent" : 19
+			},
+			{
+				"command" : 7,
+				"file" : 12,
+				"line" : 50,
+				"parent" : 20
+			},
+			{
+				"file" : 11,
+				"parent" : 21
+			},
+			{
+				"command" : 12,
+				"file" : 11,
+				"line" : 38,
+				"parent" : 22
+			},
+			{
+				"command" : 11,
+				"file" : 10,
+				"line" : 36,
+				"parent" : 23
+			},
+			{
+				"command" : 10,
+				"file" : 9,
+				"line" : 125,
+				"parent" : 24
+			},
+			{
+				"command" : 8,
+				"file" : 9,
+				"line" : 93,
+				"parent" : 25
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 283,
+				"parent" : 26
+			},
+			{
+				"file" : 8,
+				"parent" : 27
+			},
+			{
+				"command" : 8,
+				"file" : 8,
+				"line" : 13,
+				"parent" : 28
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 283,
+				"parent" : 29
+			},
+			{
+				"file" : 7,
+				"parent" : 30
+			},
+			{
+				"command" : 9,
+				"file" : 7,
+				"line" : 835,
+				"parent" : 31
+			},
+			{
+				"command" : 6,
+				"file" : 7,
+				"line" : 833,
+				"parent" : 31
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 50,
+				"parent" : 9
+			},
+			{
+				"file" : 15,
+				"parent" : 34
+			},
+			{
+				"command" : 13,
+				"file" : 15,
+				"line" : 51,
+				"parent" : 35
+			},
+			{
+				"command" : 11,
+				"file" : 10,
+				"line" : 142,
+				"parent" : 36
+			},
+			{
+				"command" : 10,
+				"file" : 9,
+				"line" : 125,
+				"parent" : 37
+			},
+			{
+				"command" : 8,
+				"file" : 9,
+				"line" : 93,
+				"parent" : 38
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 254,
+				"parent" : 39
+			},
+			{
+				"file" : 14,
+				"parent" : 40
+			},
+			{
+				"command" : 7,
+				"file" : 14,
+				"line" : 65,
+				"parent" : 41
+			},
+			{
+				"file" : 13,
+				"parent" : 42
+			},
+			{
+				"command" : 6,
+				"file" : 13,
+				"line" : 70,
+				"parent" : 43
+			},
+			{
+				"command" : 15,
+				"file" : 1,
+				"line" : 67,
+				"parent" : 0
+			},
+			{
+				"command" : 14,
+				"file" : 16,
+				"line" : 1492,
+				"parent" : 45
+			},
+			{
+				"command" : 5,
+				"file" : 16,
+				"line" : 696,
+				"parent" : 46
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 688,
+				"parent" : 2
+			},
+			{
+				"command" : 17,
+				"file" : 16,
+				"line" : 1049,
+				"parent" : 46
+			},
+			{
+				"command" : 16,
+				"file" : 16,
+				"line" : 3335,
+				"parent" : 49
+			},
+			{
+				"command" : 17,
+				"file" : 16,
+				"line" : 1055,
+				"parent" : 46
+			},
+			{
+				"command" : 16,
+				"file" : 16,
+				"line" : 3335,
+				"parent" : 51
+			},
+			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 19,
+				"file" : 17,
+				"line" : 1,
+				"parent" : 53
+			},
+			{
+				"command" : 18,
+				"file" : 16,
+				"line" : 1484,
+				"parent" : 54
+			},
+			{
+				"command" : 16,
+				"file" : 16,
+				"line" : 1539,
+				"parent" : 55
+			},
+			{
+				"command" : 20,
+				"file" : 18,
+				"line" : 1,
+				"parent" : 53
+			},
+			{
+				"command" : 16,
+				"file" : 16,
+				"line" : 1474,
+				"parent" : 57
+			},
+			{
+				"command" : 21,
+				"file" : 19,
+				"line" : 2,
+				"parent" : 53
+			},
+			{
+				"command" : 16,
+				"file" : 16,
+				"line" : 312,
+				"parent" : 59
+			},
+			{
+				"command" : 26,
+				"file" : 20,
+				"line" : 1,
+				"parent" : 53
+			},
+			{
+				"command" : 25,
+				"file" : 0,
+				"line" : 915,
+				"parent" : 61
+			},
+			{
+				"command" : 24,
+				"file" : 0,
+				"line" : 832,
+				"parent" : 62
+			},
+			{
+				"command" : 23,
+				"file" : 0,
+				"line" : 832,
+				"parent" : 63
+			},
+			{
+				"command" : 22,
+				"file" : 16,
+				"line" : 5126,
+				"parent" : 64
+			},
+			{
+				"command" : 16,
+				"file" : 16,
+				"line" : 4911,
+				"parent" : 65
+			},
+			{
+				"command" : 28,
+				"file" : 16,
+				"line" : 1039,
+				"parent" : 46
+			},
+			{
+				"command" : 27,
+				"file" : 16,
+				"line" : 3952,
+				"parent" : 67
+			},
+			{
+				"command" : 5,
+				"file" : 16,
+				"line" : 2021,
+				"parent" : 68
+			},
+			{
+				"command" : 31,
+				"file" : 16,
+				"line" : 914,
+				"parent" : 46
+			},
+			{
+				"command" : 30,
+				"file" : 16,
+				"line" : 4294,
+				"parent" : 70
+			},
+			{
+				"command" : 29,
+				"file" : 0,
+				"line" : 1646,
+				"parent" : 71
+			},
+			{
+				"command" : 33,
+				"file" : 16,
+				"line" : 966,
+				"parent" : 46
+			},
+			{
+				"command" : 32,
+				"file" : 0,
+				"line" : 419,
+				"parent" : 73
+			},
+			{
+				"command" : 29,
+				"file" : 0,
+				"line" : 2688,
+				"parent" : 74
+			},
+			{
+				"command" : 29,
+				"file" : 0,
+				"line" : 1588,
+				"parent" : 71
+			},
+			{
+				"command" : 29,
+				"file" : 16,
+				"line" : 1997,
+				"parent" : 68
+			},
+			{
+				"command" : 29,
+				"file" : 16,
+				"line" : 4399,
+				"parent" : 70
+			},
+			{
+				"command" : 36,
+				"file" : 1,
+				"line" : 227,
+				"parent" : 0
+			},
+			{
+				"command" : 35,
+				"file" : 21,
+				"line" : 417,
+				"parent" : 79
+			},
+			{
+				"command" : 34,
+				"file" : 21,
+				"line" : 408,
+				"parent" : 80
+			},
+			{
+				"command" : 29,
+				"file" : 21,
+				"line" : 297,
+				"parent" : 81
+			},
+			{
+				"command" : 37,
+				"file" : 16,
+				"line" : 1035,
+				"parent" : 46
+			},
+			{
+				"command" : 16,
+				"file" : 16,
+				"line" : 3357,
+				"parent" : 83
+			},
+			{
+				"command" : 38,
+				"file" : 1,
+				"line" : 159,
+				"parent" : 0
+			},
+			{
+				"command" : 39,
+				"file" : 16,
+				"line" : 4469,
+				"parent" : 70
+			},
+			{
+				"command" : 39,
+				"file" : 1,
+				"line" : 122,
+				"parent" : 0
+			},
+			{
+				"command" : 39,
+				"file" : 16,
+				"line" : 4494,
+				"parent" : 70
+			},
+			{
+				"command" : 40,
+				"file" : 0,
+				"line" : 1696,
+				"parent" : 71
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4460,
+				"parent" : 70
+			},
+			{
+				"command" : 41,
+				"file" : 0,
+				"line" : 2749,
+				"parent" : 74
+			},
+			{
+				"command" : 40,
+				"file" : 0,
+				"line" : 2289,
+				"parent" : 91
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 2020,
+				"parent" : 68
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 3813,
+				"parent" : 67
+			},
+			{
+				"command" : 40,
+				"file" : 16,
+				"line" : 4005,
+				"parent" : 67
+			},
+			{
+				"command" : 33,
+				"file" : 16,
+				"line" : 4092,
+				"parent" : 67
+			},
+			{
+				"command" : 32,
+				"file" : 0,
+				"line" : 419,
+				"parent" : 192
+			},
+			{
+				"command" : 41,
+				"file" : 0,
+				"line" : 2749,
+				"parent" : 193
+			},
+			{
+				"command" : 40,
+				"file" : 0,
+				"line" : 2289,
+				"parent" : 194
+			},
+			{
+				"command" : 33,
+				"file" : 16,
+				"line" : 4146,
+				"parent" : 67
+			},
+			{
+				"command" : 32,
+				"file" : 0,
+				"line" : 419,
+				"parent" : 196
+			},
+			{
+				"command" : 41,
+				"file" : 0,
+				"line" : 2749,
+				"parent" : 197
+			},
+			{
+				"command" : 40,
+				"file" : 0,
+				"line" : 2289,
+				"parent" : 198
+			},
+			{
+				"command" : 40,
+				"file" : 1,
+				"line" : 157,
+				"parent" : 0
+			},
+			{
+				"command" : 42,
+				"file" : 1,
+				"line" : 222,
+				"parent" : 0
+			},
+			{
+				"command" : 33,
+				"file" : 0,
+				"line" : 499,
+				"parent" : 201
+			},
+			{
+				"command" : 32,
+				"file" : 0,
+				"line" : 419,
+				"parent" : 202
+			},
+			{
+				"command" : 41,
+				"file" : 0,
+				"line" : 2749,
+				"parent" : 203
+			},
+			{
+				"command" : 40,
+				"file" : 0,
+				"line" : 2289,
+				"parent" : 204
+			},
+			{
+				"command" : 33,
+				"file" : 21,
+				"line" : 392,
+				"parent" : 81
+			},
+			{
+				"command" : 32,
+				"file" : 0,
+				"line" : 419,
+				"parent" : 206
+			},
+			{
+				"command" : 41,
+				"file" : 0,
+				"line" : 2749,
+				"parent" : 207
+			},
+			{
+				"command" : 40,
+				"file" : 0,
+				"line" : 2289,
+				"parent" : 208
+			},
+			{
+				"command" : 43,
+				"file" : 0,
+				"line" : 906,
+				"parent" : 61
+			},
+			{
+				"command" : 40,
+				"file" : 0,
+				"line" : 2414,
+				"parent" : 210
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 11
+	},
+	"compileDependencies" : 
+	[
+		{
+			"backtrace" : 48,
+			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 47,
+			"id" : "Qt6::Qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 69,
+			"id" : "Qt6::Qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 69,
+			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Gui::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Widgets::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Quick::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Sql::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Multimedia::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::QuickControls2::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::QuickShapes::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Network::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Concurrent::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::WebEngineQuick::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 18,
+			"id" : "Qt6::DBus::@6890427a1f51a3e7e1df"
+		}
+	],
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++20 -fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 48,
+					"fragment" : "-mno-direct-extern-access"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 85,
+					"define" : "AURORA_MPRIS"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_CONCURRENT_LIB"
+				},
+				{
+					"backtrace" : 48,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 18,
+					"define" : "QT_DBUS_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_MULTIMEDIA_LIB"
+				},
+				{
+					"backtrace" : 47,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_OPENGL_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_POSITIONING_LIB"
+				},
+				{
+					"backtrace" : 47,
+					"define" : "QT_QMLINTEGRATION_LIB"
+				},
+				{
+					"backtrace" : 47,
+					"define" : "QT_QML_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICKCONTROLS2_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICKSHAPES_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QUICK_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_SQL_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_WEBCHANNELQUICK_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_WEBCHANNEL_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_WEBENGINECORE_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_WEBENGINEQUICK_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_WIDGETS_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "/home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/include"
+				},
+				{
+					"backtrace" : 86,
+					"path" : "/home/cylindr/nameless-aurora"
+				},
+				{
+					"backtrace" : 87,
+					"path" : "/home/cylindr/nameless-aurora/src/core"
+				},
+				{
+					"backtrace" : 88,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtQml"
+				},
+				{
+					"backtrace" : 88,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6"
+				},
+				{
+					"backtrace" : 88,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtCore"
+				},
+				{
+					"backtrace" : 88,
+					"isSystem" : true,
+					"path" : "/usr/lib/qt6/mkspecs/linux-g++"
+				},
+				{
+					"backtrace" : 88,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtQmlIntegration"
+				},
+				{
+					"backtrace" : 88,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtNetwork"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtGui"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtWidgets"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtQuick"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtOpenGL"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtSql"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtMultimedia"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtQuickControls2"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtQuickShapes"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtConcurrent"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtWebEngineQuick"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtWebEngineCore"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtWebChannel"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtPositioning"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtWebChannelQuick"
+				},
+				{
+					"backtrace" : 18,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtDBus"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					48,
+					48
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				4,
+				6,
+				8,
+				10,
+				11,
+				13,
+				15,
+				17,
+				19,
+				21,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				36,
+				38,
+				40,
+				42,
+				43,
+				45,
+				47,
+				49,
+				51,
+				53,
+				55,
+				57,
+				60,
+				61,
+				63,
+				64,
+				66,
+				68,
+				70,
+				72,
+				74,
+				76,
+				78,
+				80,
+				82,
+				84,
+				86,
+				88,
+				90,
+				92,
+				94,
+				96,
+				98,
+				100,
+				102,
+				104,
+				106,
+				108,
+				110,
+				112,
+				114,
+				116,
+				118,
+				120,
+				122,
+				124,
+				126,
+				128,
+				130,
+				132,
+				134,
+				136,
+				138,
+				140,
+				142,
+				144,
+				146,
+				148,
+				150,
+				152,
+				154,
+				156,
+				158,
+				160,
+				161,
+				162,
+				163,
+				165,
+				166
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 50,
+			"id" : "AuroraPlayer_copy_qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 52,
+			"id" : "AuroraPlayer_copy_res::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 56,
+			"id" : "AuroraPlayer_generate_qmlls_ini_file::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 58,
+			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 60,
+			"id" : "generate_finalqtconf_AuroraPlayer::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 66,
+			"id" : "AuroraPlayer_qmlimportscan::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "AuroraPlayer_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "AuroraPlayer_autogen::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "AuroraPlayer::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 5,
+				"path" : "bin"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/tmp"
+		}
+	},
+	"interfaceSources" : 
+	[
+		{
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/meta_types/qt6auroraplayer_metatypes.json",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,::::::::::::::",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6Widgets.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6Sql.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6Multimedia.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6QuickControls2.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6QuickShapes.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6Concurrent.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6WebEngineQuick.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "/usr/lib/libQt6WebEngineCore.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6Quick.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 17,
+				"fragment" : "/usr/lib/libQt6OpenGL.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6Gui.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 18,
+				"fragment" : "/usr/lib/libQt6DBus.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 32,
+				"fragment" : "/usr/lib/libGLX.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 33,
+				"fragment" : "/usr/lib/libOpenGL.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 44,
+				"fragment" : "/usr/lib/libQt6Positioning.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 12,
+				"fragment" : "/usr/lib/libQt6WebChannelQuick.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 44,
+				"fragment" : "/usr/lib/libQt6WebChannel.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 47,
+				"fragment" : "/usr/lib/libQt6Qml.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib/libQt6Network.so.6.12.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 48,
+				"fragment" : "/usr/lib/libQt6Core.so.6.12.0",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"linkLibraries" : 
+	[
+		{
+			"backtrace" : 48,
+			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 47,
+			"id" : "Qt6::Qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 69,
+			"id" : "Qt6::Qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 69,
+			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Core::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Gui::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Widgets::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Qml::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Quick::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Sql::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Multimedia::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::QuickControls2::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::QuickShapes::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Network::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::Concurrent::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "Qt6::WebEngineQuick::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 18,
+			"id" : "Qt6::DBus::@6890427a1f51a3e7e1df"
+		}
+	],
+	"name" : "AuroraPlayer",
+	"nameOnDisk" : "AuroraPlayer",
+	"orderDependencies" : 
+	[
+		{
+			"backtrace" : 72,
+			"id" : "Qt6::moc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 75,
+			"id" : "Qt6::rcc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 76,
+			"id" : "Qt6::cmake_automoc_parser::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "Qt6::uic::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 77,
+			"id" : "Qt6::qmlcachegen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 78,
+			"id" : "Qt6::qmltyperegistrar::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 82,
+			"id" : "Qt6::qsb::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 84,
+			"id" : "AuroraPlayer_tooling::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 56,
+			"id" : "AuroraPlayer_generate_qmlls_ini_file::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 58,
+			"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 60,
+			"id" : "generate_finalqtconf_AuroraPlayer::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 66,
+			"id" : "AuroraPlayer_qmlimportscan::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "AuroraPlayer_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "AuroraPlayer_autogen::@6890427a1f51a3e7e1df"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"interfaceSourceIndexes" : 
+			[
+				0
+			],
+			"name" : "Source Files\\Generated",
+			"sourceIndexes" : 
+			[
+				0,
+				59,
+				60,
+				61,
+				63,
+				64,
+				66,
+				68,
+				70,
+				72,
+				74,
+				76,
+				78,
+				80,
+				82,
+				84,
+				86,
+				88,
+				90,
+				92,
+				94,
+				96,
+				98,
+				100,
+				102,
+				104,
+				106,
+				108,
+				110,
+				112,
+				114,
+				116,
+				118,
+				120,
+				122,
+				124,
+				126,
+				128,
+				130,
+				132,
+				134,
+				136,
+				138,
+				140,
+				142,
+				144,
+				146,
+				148,
+				150,
+				152,
+				154,
+				156,
+				158,
+				160,
+				161,
+				162,
+				165,
+				166,
+				167,
+				169,
+				170,
+				176,
+				184,
+				186,
+				248,
+				249,
+				250,
+				251,
+				252,
+				253,
+				254,
+				255,
+				256,
+				257,
+				258,
+				259,
+				260,
+				261,
+				262,
+				263,
+				264,
+				265
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				4,
+				6,
+				8,
+				10,
+				11,
+				13,
+				15,
+				17,
+				19,
+				21,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				36,
+				38,
+				40,
+				42,
+				43,
+				45,
+				47,
+				49,
+				51,
+				53,
+				55,
+				57,
+				62,
+				65,
+				67,
+				69,
+				71,
+				73,
+				75,
+				77,
+				79,
+				81,
+				83,
+				85,
+				87,
+				89,
+				91,
+				93,
+				95,
+				97,
+				99,
+				101,
+				103,
+				105,
+				107,
+				109,
+				111,
+				113,
+				115,
+				117,
+				119,
+				121,
+				123,
+				125,
+				127,
+				129,
+				131,
+				133,
+				135,
+				137,
+				139,
+				141,
+				143,
+				145,
+				147,
+				149,
+				151,
+				153,
+				155,
+				157,
+				159,
+				163,
+				177,
+				178,
+				179,
+				180,
+				182
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				3,
+				5,
+				7,
+				9,
+				12,
+				14,
+				16,
+				18,
+				20,
+				23,
+				25,
+				27,
+				29,
+				31,
+				33,
+				35,
+				37,
+				39,
+				41,
+				44,
+				46,
+				48,
+				50,
+				52,
+				54,
+				56,
+				58,
+				164
+			]
+		},
+		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				168,
+				171,
+				172,
+				173,
+				174,
+				175,
+				181,
+				185
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				183
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				187,
+				188,
+				189,
+				190,
+				191,
+				192,
+				193,
+				194,
+				195,
+				196,
+				197,
+				198,
+				199,
+				200,
+				201,
+				202,
+				203,
+				204,
+				205,
+				206,
+				207,
+				208,
+				209,
+				210,
+				211,
+				212,
+				213,
+				214,
+				215,
+				216,
+				217,
+				218,
+				219,
+				220,
+				221,
+				222,
+				223,
+				224,
+				225,
+				226,
+				227,
+				228,
+				229,
+				230,
+				231,
+				232,
+				233,
+				234,
+				235,
+				236,
+				237,
+				238,
+				239,
+				240,
+				241,
+				242,
+				243,
+				244,
+				245,
+				246,
+				247
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/AuroraPlayer_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/app/main.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/integration/namelessbridge.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/integration/namelessbridge.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/data/libraryrepository.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/data/libraryrepository.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/libraryexchange.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/libraryexchange.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/librarymodel.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/librarymodel.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/artwork.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/playbackcontroller.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/playbackcontroller.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/web/streamproxy.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/web/streamproxy.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/audioreactivity.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/audioreactivity.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/audioequalizer.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/audioequalizer.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/importmanager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/importmanager.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/downloads/nativedownload.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/downloadmanager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/downloadmanager.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/downloads/audiosources.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/downloads/audiosources.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/downloads/musicsearch.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/downloads/musicsearch.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/downloads/opencatalog.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/downloads/opencatalog.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/downloads/zaycevcatalog.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/downloads/zaycevcatalog.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/settingsstore.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/settingsstore.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/downloads/dependencymanager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/downloads/dependencymanager.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/downloads/importpreviewer.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/downloads/importpreviewer.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/auth/browserauthmanager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/auth/browserauthmanager.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/auth/oauthmanager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/auth/oauthmanager.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/auth/webloginmanager_native.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/web/mediasniffer.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/web/mediasniffer.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/web/servicepayload.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/web/servicepayload.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/auth/browsersession.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/auth/browsersession.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/auth/browsercookieimporter.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/auth/browsercookieimporter.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/auth/cdpclient.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/auth/cdpclient.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/auth/webloginmanager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/auth/webloginmanager.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/vkprovider.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/vkprovider.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/storage/storagemanager.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"backtraces" : 
+			[
+				4
+			],
+			"path" : "src/core/storage/storagemanager.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 89,
+			"backtraces" : 
+			[
+				89
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/meta_types/qt6auroraplayer_metatypes.json.gen",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 90,
+			"backtraces" : 
+			[
+				90
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/auroraplayer_qmltyperegistrations.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 92,
+			"backtraces" : 
+			[
+				92
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 93,
+			"backtraces" : 
+			[
+				93
+			],
+			"path" : "qml/web/NativeBrowser.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 94,
+			"backtraces" : 
+			[
+				94
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 95,
+			"backtraces" : 
+			[
+				95
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 96,
+			"backtraces" : 
+			[
+				96
+			],
+			"path" : "qml/Main.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 97,
+			"backtraces" : 
+			[
+				97
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 98,
+			"backtraces" : 
+			[
+				98
+			],
+			"path" : "qml/Theme.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 99,
+			"backtraces" : 
+			[
+				99
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 100,
+			"backtraces" : 
+			[
+				100
+			],
+			"path" : "qml/common/AuroraButton.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 101,
+			"backtraces" : 
+			[
+				101
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 102,
+			"backtraces" : 
+			[
+				102
+			],
+			"path" : "qml/common/AuroraIcon.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 103,
+			"backtraces" : 
+			[
+				103
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 104,
+			"backtraces" : 
+			[
+				104
+			],
+			"path" : "qml/common/AuroraCard.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 105,
+			"backtraces" : 
+			[
+				105
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 106,
+			"backtraces" : 
+			[
+				106
+			],
+			"path" : "qml/common/AuroraCombo.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 107,
+			"backtraces" : 
+			[
+				107
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 108,
+			"backtraces" : 
+			[
+				108
+			],
+			"path" : "qml/common/AuroraField.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 109,
+			"backtraces" : 
+			[
+				109
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 110,
+			"backtraces" : 
+			[
+				110
+			],
+			"path" : "qml/common/AuroraSlider.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 111,
+			"backtraces" : 
+			[
+				111
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 112,
+			"backtraces" : 
+			[
+				112
+			],
+			"path" : "qml/common/AuroraSwitch.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 113,
+			"backtraces" : 
+			[
+				113
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 114,
+			"backtraces" : 
+			[
+				114
+			],
+			"path" : "qml/common/AuroraSegmented.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 115,
+			"backtraces" : 
+			[
+				115
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 116,
+			"backtraces" : 
+			[
+				116
+			],
+			"path" : "qml/common/AuroraProgress.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 117,
+			"backtraces" : 
+			[
+				117
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 118,
+			"backtraces" : 
+			[
+				118
+			],
+			"path" : "qml/common/AuroraDialog.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 119,
+			"backtraces" : 
+			[
+				119
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 120,
+			"backtraces" : 
+			[
+				120
+			],
+			"path" : "qml/common/AuroraMenu.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 121,
+			"backtraces" : 
+			[
+				121
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 122,
+			"backtraces" : 
+			[
+				122
+			],
+			"path" : "qml/common/AuroraMenuItem.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 123,
+			"backtraces" : 
+			[
+				123
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 124,
+			"backtraces" : 
+			[
+				124
+			],
+			"path" : "qml/common/AuroraSection.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 125,
+			"backtraces" : 
+			[
+				125
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 126,
+			"backtraces" : 
+			[
+				126
+			],
+			"path" : "qml/common/AuroraScrollBar.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 127,
+			"backtraces" : 
+			[
+				127
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 128,
+			"backtraces" : 
+			[
+				128
+			],
+			"path" : "qml/common/AuroraToast.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 129,
+			"backtraces" : 
+			[
+				129
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 130,
+			"backtraces" : 
+			[
+				130
+			],
+			"path" : "qml/components/NavigationPane.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 131,
+			"backtraces" : 
+			[
+				131
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 132,
+			"backtraces" : 
+			[
+				132
+			],
+			"path" : "qml/components/TrackList.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 133,
+			"backtraces" : 
+			[
+				133
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 134,
+			"backtraces" : 
+			[
+				134
+			],
+			"path" : "qml/components/TrackDelegate.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 135,
+			"backtraces" : 
+			[
+				135
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 136,
+			"backtraces" : 
+			[
+				136
+			],
+			"path" : "qml/components/ListeningView.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 137,
+			"backtraces" : 
+			[
+				137
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 138,
+			"backtraces" : 
+			[
+				138
+			],
+			"path" : "qml/components/CornerCover.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 139,
+			"backtraces" : 
+			[
+				139
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 140,
+			"backtraces" : 
+			[
+				140
+			],
+			"path" : "qml/common/ProgressRing.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 141,
+			"backtraces" : 
+			[
+				141
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 142,
+			"backtraces" : 
+			[
+				142
+			],
+			"path" : "qml/components/BonsaiScene.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 143,
+			"backtraces" : 
+			[
+				143
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 144,
+			"backtraces" : 
+			[
+				144
+			],
+			"path" : "qml/components/BonsaiRoot.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 145,
+			"backtraces" : 
+			[
+				145
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 146,
+			"backtraces" : 
+			[
+				146
+			],
+			"path" : "qml/components/AtmosphereOrb.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 147,
+			"backtraces" : 
+			[
+				147
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 148,
+			"backtraces" : 
+			[
+				148
+			],
+			"path" : "qml/components/EffectSurface.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 149,
+			"backtraces" : 
+			[
+				149
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 150,
+			"backtraces" : 
+			[
+				150
+			],
+			"path" : "qml/components/AppearancePanel.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 151,
+			"backtraces" : 
+			[
+				151
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 152,
+			"backtraces" : 
+			[
+				152
+			],
+			"path" : "qml/components/LibrarySettings.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 153,
+			"backtraces" : 
+			[
+				153
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 154,
+			"backtraces" : 
+			[
+				154
+			],
+			"path" : "qml/components/EqualizerPanel.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 155,
+			"backtraces" : 
+			[
+				155
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 156,
+			"backtraces" : 
+			[
+				156
+			],
+			"path" : "qml/components/EqualizerDialog.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 157,
+			"backtraces" : 
+			[
+				157
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 158,
+			"backtraces" : 
+			[
+				158
+			],
+			"path" : "qml/components/AmbientBackdrop.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 159,
+			"backtraces" : 
+			[
+				159
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 160,
+			"backtraces" : 
+			[
+				160
+			],
+			"path" : "qml/components/AlbumArt.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 161,
+			"backtraces" : 
+			[
+				161
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 162,
+			"backtraces" : 
+			[
+				162
+			],
+			"path" : "qml/components/PlayerBar.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 163,
+			"backtraces" : 
+			[
+				163
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 164,
+			"backtraces" : 
+			[
+				164
+			],
+			"path" : "qml/components/SourceDialog.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 165,
+			"backtraces" : 
+			[
+				165
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 166,
+			"backtraces" : 
+			[
+				166
+			],
+			"path" : "qml/components/DownloadDock.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 167,
+			"backtraces" : 
+			[
+				167
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 168,
+			"backtraces" : 
+			[
+				168
+			],
+			"path" : "qml/components/TrackEditor.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 169,
+			"backtraces" : 
+			[
+				169
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 170,
+			"backtraces" : 
+			[
+				170
+			],
+			"path" : "qml/components/AlbumEditor.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 171,
+			"backtraces" : 
+			[
+				171
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 172,
+			"backtraces" : 
+			[
+				172
+			],
+			"path" : "qml/components/NowPlayingPanel.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 173,
+			"backtraces" : 
+			[
+				173
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 174,
+			"backtraces" : 
+			[
+				174
+			],
+			"path" : "qml/components/StorageSummary.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 175,
+			"backtraces" : 
+			[
+				175
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 176,
+			"backtraces" : 
+			[
+				176
+			],
+			"path" : "qml/components/DependencyCard.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 177,
+			"backtraces" : 
+			[
+				177
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 178,
+			"backtraces" : 
+			[
+				178
+			],
+			"path" : "qml/components/RecommendationCard.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 179,
+			"backtraces" : 
+			[
+				179
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 180,
+			"backtraces" : 
+			[
+				180
+			],
+			"path" : "qml/pages/HomePage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 181,
+			"backtraces" : 
+			[
+				181
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 182,
+			"backtraces" : 
+			[
+				182
+			],
+			"path" : "qml/pages/LibraryPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 183,
+			"backtraces" : 
+			[
+				183
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 184,
+			"backtraces" : 
+			[
+				184
+			],
+			"path" : "qml/pages/ImportPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 185,
+			"backtraces" : 
+			[
+				185
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 186,
+			"backtraces" : 
+			[
+				186
+			],
+			"path" : "qml/pages/SettingsPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 187,
+			"backtraces" : 
+			[
+				187
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 188,
+			"backtraces" : 
+			[
+				188
+			],
+			"path" : "qml/pages/SearchPage.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 189,
+			"backtraces" : 
+			[
+				189
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 190,
+			"backtraces" : 
+			[
+				190
+			],
+			"path" : "qml/components/AtmosphereObjects.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 191,
+			"backtraces" : 
+			[
+				191
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 195,
+			"backtraces" : 
+			[
+				195
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 199,
+			"backtraces" : 
+			[
+				199
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 200,
+			"backtraces" : 
+			[
+				200
+			],
+			"compileGroupIndex" : 0,
+			"path" : "src/core/integration/mpris.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 200,
+			"backtraces" : 
+			[
+				200
+			],
+			"path" : "src/core/integration/mpris.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 205,
+			"backtraces" : 
+			[
+				205
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 209,
+			"backtraces" : 
+			[
+				209
+			],
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/qml/AuroraPlayer/qmldir",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/qml/AuroraPlayer/qml/web/qmldir",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/qml/AuroraPlayer/qml/qmldir",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/qml/AuroraPlayer/qml/common/qmldir",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/qml/AuroraPlayer/qml/components/qmldir",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/qml/AuroraPlayer/qml/pages/qmldir",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/native_scripts.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"path" : "src/core/web/harvest.js",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"path" : "src/core/web/vk-library.js",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"path" : "src/core/web/activate.js",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"path" : "src/core/web/login.js",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"path" : "src/core/web/browser_cookies.py",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"path" : "src/core/web/public-source.js",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"path" : "shaders/aurora-orb.frag",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/aurora_effects.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 211,
+			"backtraces" : 
+			[
+				211
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qsb/aurora-orb.frag.qsb",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/AuroraPlayer_autogen/timestamp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/meta_types/qt6auroraplayer_metatypes.json.gen.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/auroraplayer_qmltyperegistrations.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/.qsb/aurora-orb.frag.qsb.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/AuroraPlayer_autogen/timestamp.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/meta_types/AuroraPlayer_json_file_list.txt.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"backtraces" : 
+			[
+				0
+			],
+			"isGenerated" : true,
+			"path" : "build/Desktop_Debug/meta_types/qt6auroraplayer_metatypes.json.rule",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 48,
+			"backtraces" : 
+			[
+				48
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6core_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 47,
+			"backtraces" : 
+			[
+				47
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6qml_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 47,
+			"backtraces" : 
+			[
+				47
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6network_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6gui_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6widgets_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6quick_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6opengl_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6sql_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6multimedia_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6quickcontrols2_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6quickshapes_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6concurrent_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6webenginequick_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6webenginecore_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6webchannel_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6positioning_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"backtraces" : 
+			[
+				6
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6webchannelquick_metatypes.json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 18,
+			"backtraces" : 
+			[
+				18
+			],
+			"path" : "/usr/lib/qt6/metatypes/qt6dbus_metatypes.json",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}
