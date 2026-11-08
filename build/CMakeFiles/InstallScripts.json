@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/cylindr/nameless-aurora/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

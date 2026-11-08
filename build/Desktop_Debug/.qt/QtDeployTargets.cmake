@@ -1,5 +1,0 @@
-set(__QT_DEPLOY_TARGETS "AuroraPlayer;aurora_tests")
-set(__QT_DEPLOY_TARGET_AuroraPlayer_FILE /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer)
-set(__QT_DEPLOY_TARGET_AuroraPlayer_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_aurora_tests_FILE /home/cylindr/nameless-aurora/build/Desktop_Debug/aurora_tests)
-set(__QT_DEPLOY_TARGET_aurora_tests_TYPE EXECUTABLE)

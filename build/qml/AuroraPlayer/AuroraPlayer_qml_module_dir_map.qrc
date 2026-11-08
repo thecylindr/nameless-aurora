@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/qt/qml/AuroraPlayer">/home/cylindr/nameless-aurora/build/qml/AuroraPlayer</file>
-
-  </qresource>
-</RCC>

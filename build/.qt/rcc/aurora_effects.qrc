@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/aurora/shaders">
-    <file alias="aurora-orb.frag.qsb">/home/cylindr/nameless-aurora/build/.qsb/aurora-orb.frag.qsb</file>
-  </qresource>
-</RCC>
-
