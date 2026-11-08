@@ -155,7 +155,9 @@ PlaybackController::PlaybackController(LibraryModel* library, SettingsStore* set
                     if (m_repeat == 2 && seekable()) {
                         seek(0);
                         play();
-                    } else
+                    } else if (!m_streamQueue.isEmpty())
+                        advance(true);
+                    else
                         stop();
                     return;
                 }
@@ -301,6 +303,8 @@ bool PlaybackController::favorite() const
 }
 QVariantList PlaybackController::queue() const
 {
+    if (!m_streamQueue.isEmpty())
+        return m_streamQueue;
     QVariantList ids;
     for (int id : m_queue)
         ids.append(id);
@@ -396,13 +400,15 @@ void PlaybackController::updateAtmosphere(const QImage& cover)
         second >= 0 ? pigment(second) : QColor::fromHsvF(std::fmod(m_atmosphereColor.hsvHueF() + .16, 1.), .46, .82);
 }
 // Начинает воспроизведение трека, предварительно проверив наличие аудиофайла.
-bool PlaybackController::startTrack(int id)
+bool PlaybackController::startTrack(int id, bool preserveQueue)
 {
     const Track t = m_library->trackById(id);
     if (t.id == 0 || t.filePath.isEmpty() || !QFileInfo::exists(t.filePath)) {
         setError("У этого трека нет аудиофайла. Привяжите файл или загрузите его по исходной ссылке.");
         return false;
     }
+    if (!preserveQueue)
+        clearStreamQueue();
     commitListen(false);
     m_player.stop();
     flushEqualizedAudio();
@@ -436,6 +442,12 @@ void PlaybackController::playIndex(int index)
 }
 void PlaybackController::playStream(const QVariantMap& candidate)
 {
+    if (m_streamIndex < 0 || m_streamIndex >= m_streamQueue.size() ||
+        m_streamQueue[m_streamIndex].toMap().value("url") != candidate.value("url")) {
+        clearStreamQueue();
+        m_queue.clear();
+        m_history.clear();
+    }
     const QUrl remote(candidate.value("mediaUrl").toString());
     auto headers = candidate.value("streamHeaders").toMap();
     // Если поток не задал User-Agent, берём его из общих данных кандидата.
@@ -446,7 +458,8 @@ void PlaybackController::playStream(const QVariantMap& candidate)
     m_player.setSource({});
     flushEqualizedAudio();
     resetReactivity();
-    const auto source = m_streamProxy.open(remote, headers, candidate.value("url").toString());
+    const auto source =
+        m_streamProxy.open(remote, headers, candidate.value("streamReferer", candidate.value("url")).toString());
     if (source.isEmpty()) {
         m_streaming = false;
         m_streamCandidate.clear();
@@ -458,11 +471,14 @@ void PlaybackController::playStream(const QVariantMap& candidate)
     }
     m_streaming = true;
     m_streamCandidate = candidate;
-    m_currentTrackId = -1;
+    m_currentTrackId = candidate.value("queueId", -1).toInt();
     m_listened = 0;
     m_currentTitle = candidate.value("title").toString();
     m_currentArtist = candidate.value("artist").toString();
-    m_currentCoverPath = candidate.value("coverUrl").toString();
+    m_currentCoverPath = candidate.value("coverPath").toString();
+    if (m_currentCoverPath.isEmpty() ||
+        (!m_currentCoverPath.startsWith("https://") && !QFileInfo::exists(m_currentCoverPath)))
+        m_currentCoverPath = candidate.value("coverUrl").toString();
     m_currentFormat = candidate.value("source").toString() + " · онлайн";
     updateAtmosphere();
     setError({});
@@ -501,7 +517,7 @@ void PlaybackController::playStream(const QVariantMap& candidate)
 }
 void PlaybackController::playTrackId(int id)
 {
-    if (id == m_currentTrackId) {
+    if (id == m_currentTrackId && m_streamQueue.isEmpty()) {
         toggle();
         return;
     }
@@ -516,6 +532,18 @@ void PlaybackController::playTrackId(int id)
 }
 void PlaybackController::playQueueTrack(int id)
 {
+    if (!m_streamQueue.isEmpty()) {
+        for (int i = 0; i < m_streamQueue.size(); ++i) {
+            if (m_streamQueue[i].toMap().value("trackId").toInt() == id) {
+                if (id == m_currentTrackId)
+                    toggle();
+                else
+                    requestStream(i);
+                return;
+            }
+        }
+        return;
+    }
     if (id == m_currentTrackId) {
         toggle();
         return;
@@ -541,6 +569,75 @@ void PlaybackController::playMix()
         emit queueChanged();
     }
 }
+void PlaybackController::playSelection(const QVariantList& requested, int firstId)
+{
+    QVector<int> ids;
+    for (const auto& item : requested) {
+        const int id = item.toInt();
+        const auto track = m_library->trackById(id);
+        if (track.id && !track.filePath.isEmpty() && QFileInfo(track.filePath).isFile() && !ids.contains(id))
+            ids.append(id);
+    }
+    if (ids.isEmpty()) {
+        setError("В этой подборке пока нет аудиофайлов. Открой трек, чтобы выбрать источник.");
+        return;
+    }
+    if (!ids.contains(firstId))
+        firstId = ids.first();
+    if (startTrack(firstId)) {
+        m_queue = ids;
+        m_history.clear();
+        setShuffle(false);
+        setRepeatMode(0);
+        emit queueChanged();
+    }
+}
+
+void PlaybackController::playStreamQueue(const QVariantList& tracks, int index)
+{
+    if (index < 0 || index >= tracks.size())
+        return;
+    clearStreamQueue();
+    m_queue.clear();
+    m_history.clear();
+    for (int i = 0; i < tracks.size(); ++i) {
+        auto track = tracks[i].toMap();
+        const int localId = track.value("libraryId").toInt();
+        track["trackId"] = localId > 0 ? localId : -1000 - i;
+        track["queueId"] = track["trackId"];
+        m_streamQueue.append(track);
+    }
+    setShuffle(false);
+    setRepeatMode(0);
+    emit queueChanged();
+    requestStream(index);
+}
+
+void PlaybackController::clearStreamQueue()
+{
+    const bool hadQueue = !m_streamQueue.isEmpty();
+    m_streamQueue.clear();
+    m_streamIndex = -1;
+    emit streamRequested({});
+    if (hadQueue)
+        emit queueChanged();
+}
+
+void PlaybackController::requestStream(int index)
+{
+    if (index < 0 || index >= m_streamQueue.size())
+        return;
+    m_streamIndex = index;
+    const auto candidate = m_streamQueue[index].toMap();
+    const int localId = candidate.value("libraryId").toInt();
+    if (localId > 0) {
+        emit streamRequested({});
+        startTrack(localId, true);
+        return;
+    }
+    pause();
+    emit streamRequested(candidate);
+}
 void PlaybackController::play()
 {
     if (!hasTrack()) {
@@ -556,12 +653,17 @@ void PlaybackController::pause()
 }
 void PlaybackController::stop()
 {
+    clearStreamQueue();
     commitListen(false);
     m_player.stop();
     flushEqualizedAudio();
 }
 void PlaybackController::toggle()
 {
+    if (m_streamIndex >= 0 && m_streamIndex < m_streamQueue.size() &&
+        m_streamQueue[m_streamIndex].toMap().value("queueId").toInt() != m_currentTrackId) {
+        clearStreamQueue();
+    }
     if (playing())
         pause();
     else
@@ -570,6 +672,18 @@ void PlaybackController::toggle()
 // Переход к следующему треку с учётом перемешивания и режима повтора.
 void PlaybackController::advance(bool natural)
 {
+    if (!m_streamQueue.isEmpty()) {
+        int next = m_streamIndex + 1;
+        if (next >= m_streamQueue.size() && m_repeat == 1)
+            next = 0;
+        if (next < m_streamQueue.size())
+            requestStream(next);
+        else {
+            pause();
+            emit streamQueueExhausted();
+        }
+        return;
+    }
     QVector<int> valid;
     // Отбрасываем из очереди треки без доступного аудиофайла.
     for (int id : m_queue) {
@@ -627,6 +741,10 @@ void PlaybackController::previous()
         seek(0);
         return;
     }
+    if (!m_streamQueue.isEmpty()) {
+        requestStream(qMax(0, m_streamIndex - 1));
+        return;
+    }
     if (!m_history.isEmpty()) {
         startTrack(m_history.takeLast());
         return;
@@ -657,6 +775,18 @@ void PlaybackController::enqueue(int id)
 }
 void PlaybackController::removeFromQueue(int id)
 {
+    if (!m_streamQueue.isEmpty()) {
+        for (int i = 0; i < m_streamQueue.size(); ++i) {
+            if (m_streamQueue[i].toMap().value("trackId").toInt() != id || i == m_streamIndex)
+                continue;
+            m_streamQueue.removeAt(i);
+            if (i < m_streamIndex)
+                --m_streamIndex;
+            emit queueChanged();
+            return;
+        }
+        return;
+    }
     if (id != m_currentTrackId) {
         m_queue.removeAll(id);
         emit queueChanged();

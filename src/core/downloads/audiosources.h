@@ -96,6 +96,9 @@ class AudioSources : public QObject
     void downloadCandidate(const QVariantMap& candidate);
     // Разрешает поток аудио для прослушивания без скачивания.
     void previewCandidate(const QVariantMap& candidate);
+    AudioSources* createWorker(QObject* parent) const;
+    void searchMatches(const QVariantMap& target);
+    static bool automaticMatch(const QVariantMap& target, const QVariantMap& candidate);
     // Поиск в одном указанном источнике.
     Q_INVOKABLE void search(const QString& source, const QString& query = {});
     // Поиск сразу во всех включённых источниках (параллельно).

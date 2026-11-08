@@ -16564,3 +16564,569 @@ events:
         - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
         - "/usr/lib/cmake/Qt6/3rdparty/kwin"
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:283 (find_package)"
+      - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:235 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "Vulkan"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "/usr/share/cmake/Modules/FindVulkan.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/usr"
+      ENV{PATH}:
+        - "/home/cylindr/.local/bin"
+        - "/home/cylindr/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/tmp"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:235 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "WrapVulkanHeaders"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/usr"
+      ENV{PATH}:
+        - "/home/cylindr/.local/bin"
+        - "/home/cylindr/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/tmp"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:283 (find_package)"
+      - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:235 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "Vulkan"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "/usr/share/cmake/Modules/FindVulkan.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/usr"
+      ENV{PATH}:
+        - "/home/cylindr/.local/bin"
+        - "/home/cylindr/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/tmp"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:235 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "WrapVulkanHeaders"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/usr"
+      ENV{PATH}:
+        - "/home/cylindr/.local/bin"
+        - "/home/cylindr/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/tmp"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:283 (find_package)"
+      - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:235 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "Vulkan"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "/usr/share/cmake/Modules/FindVulkan.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/usr"
+      ENV{PATH}:
+        - "/home/cylindr/.bun/bin"
+        - "/home/cylindr/.codex/packages/app-server-daemon/releases/local-8f89a4f035a2d3de92715730853da4e5c5062ac0dfe2fc6018dd406081943dfd-x86_64-unknown-linux-gnu/codex-path"
+        - "/home/cylindr/.codex/tmp/arg0-linux/codex-arg0PbJat2"
+        - "/home/cylindr/.codex/tmp/arg0-linux/codex-arg01HVsUR"
+        - "/usr/lib/openai-codex/codex-path"
+        - "/home/cylindr/.npm-global/bin"
+        - "/home/cylindr/.local/bin"
+        - "/home/cylindr/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/cylindr/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/tmp"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:235 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "WrapVulkanHeaders"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/usr"
+      ENV{PATH}:
+        - "/home/cylindr/.bun/bin"
+        - "/home/cylindr/.codex/packages/app-server-daemon/releases/local-8f89a4f035a2d3de92715730853da4e5c5062ac0dfe2fc6018dd406081943dfd-x86_64-unknown-linux-gnu/codex-path"
+        - "/home/cylindr/.codex/tmp/arg0-linux/codex-arg0PbJat2"
+        - "/home/cylindr/.codex/tmp/arg0-linux/codex-arg01HVsUR"
+        - "/usr/lib/openai-codex/codex-path"
+        - "/home/cylindr/.npm-global/bin"
+        - "/home/cylindr/.local/bin"
+        - "/home/cylindr/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/cylindr/.lmstudio/bin"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/tmp"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:283 (find_package)"
+      - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:235 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "Vulkan"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "/usr/share/cmake/Modules/FindVulkan.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/usr"
+      ENV{PATH}:
+        - "/home/cylindr/.local/bin"
+        - "/home/cylindr/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/tmp"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
+      - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
+      - "build/Desktop_Debug/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:235 (find_package)"
+      - "CMakeLists.txt:9 (find_package)"
+    name: "WrapVulkanHeaders"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "/usr"
+      ENV{PATH}:
+        - "/home/cylindr/.local/bin"
+        - "/home/cylindr/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/tmp"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/tmp"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_MODULE_PATH:
+        - "/usr/lib/cmake/Qt6"
+        - "/usr/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "/usr/lib/cmake/Qt6/3rdparty/kwin"
+...

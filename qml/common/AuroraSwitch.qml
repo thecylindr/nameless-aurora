@@ -16,6 +16,8 @@ Switch {
     implicitHeight: Math.max(uiTheme ? uiTheme.touchHeight : 48, contentItem.implicitHeight + topPadding + bottomPadding)
 
     spacing: 12
+    leftPadding: mirrored ? indicator.width + spacing : 0
+    rightPadding: mirrored ? 0 : indicator.width + spacing
     focusPolicy: Qt.StrongFocus
     hoverEnabled: true
     opacity: enabled ? 1 : 0.45
@@ -45,7 +47,7 @@ Switch {
 
     indicator: Rectangle {
         // Индикатор прижимается к противоположному от текста краю (с учётом зеркалирования).
-        x: control.mirrored ? control.leftPadding : control.width - control.rightPadding - width
+        x: control.mirrored ? 0 : control.width - width
         y: control.topPadding + (control.availableHeight - height) / 2
         implicitWidth: 46
         implicitHeight: 26

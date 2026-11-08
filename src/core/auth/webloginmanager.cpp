@@ -423,3 +423,22 @@ void WebLoginManager::cancelSearch()
     } else if (m_nativeTask == Search)
         finishNative("Поиск отменён.");
 }
+void WebLoginManager::requestVkRecommendations()
+{
+    if (busy()) {
+        emit vkRecommendationsReady({}, "Сначала заверши текущую операцию сервиса.");
+        return;
+    }
+    if (!hasSession("vk")) {
+        emit vkRecommendationsReady({}, "Подключи VK Музыку, чтобы получать рекомендации своего аккаунта.");
+        return;
+    }
+    m_backgroundMode = !detectBrowserExecutables().isEmpty();
+    startCollection(QUrl("https://vk.ru/audio?section=explore"), true, true);
+}
+
+void WebLoginManager::cancelVkRecommendations()
+{
+    if (m_nativeTask == Recommend)
+        finishNative("Обновление рекомендаций VK отменено.");
+}

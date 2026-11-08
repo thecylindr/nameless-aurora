@@ -60,6 +60,10 @@
 /home/cylindr/nameless-aurora/qml/components/StorageSummary.qml
 /home/cylindr/nameless-aurora/qml/components/DependencyCard.qml
 /home/cylindr/nameless-aurora/qml/components/RecommendationCard.qml
+/home/cylindr/nameless-aurora/qml/components/HomeMixCard.qml
+/home/cylindr/nameless-aurora/qml/components/HomeProviderShelf.qml
+/home/cylindr/nameless-aurora/qml/components/ProviderPlaylistDialog.qml
+/home/cylindr/nameless-aurora/qml/components/HomeMusicPreferences.qml
 /home/cylindr/nameless-aurora/qml/pages/HomePage.qml
 /home/cylindr/nameless-aurora/qml/pages/LibraryPage.qml
 /home/cylindr/nameless-aurora/qml/pages/ImportPage.qml

@@ -61,6 +61,18 @@ bool WebLoginManager::ensureNative(const QString& slug)
             connect(m_external, &BrowserSession::apiReceived, this, &WebLoginManager::consumeApiPayload);
             connect(m_external, &BrowserSession::apiFetched, this,
                     [this](int id, const QUrl& url, const QJsonValue& payload, int status) {
+                        if (m_nativeTask == Wave && id == m_apiNextId && BrowserSession::isWaveApi(url)) {
+                            const auto tracks = ServicePayload::yandexWave(payload);
+                            if (status < 200 || status >= 300) {
+                                finishNative(status == 401 || status == 403
+                                                 ? "Яндекс отклонил сессию. Войди в аккаунт заново."
+                                                 : "Не удалось получить волну Яндекса. Повтори позже.");
+                            } else {
+                                finishNative();
+                                emit waveReady(tracks, {});
+                            }
+                            return;
+                        }
                         if (!m_apiRequests.remove(id) || m_nativeTask != Collect)
                             return;
                         m_apiHttpStatus = status;
@@ -269,10 +281,12 @@ void WebLoginManager::collectPlaylist(const QUrl& url)
     m_backgroundMode = false;
     startCollection(url);
 }
-void WebLoginManager::startCollection(const QUrl& url, bool search)
+void WebLoginManager::startCollection(const QUrl& url, bool search, bool recommendations)
 {
     if (m_busy) {
-        if (search)
+        if (recommendations)
+            emit vkRecommendationsReady({}, "Дождись завершения операции VK.");
+        else if (search)
             emit searchReady({}, "Дождись завершения операции VK.");
         else
             emit collectionReady({}, {}, "Сначала заверши текущую операцию входа или импорта.");
@@ -280,20 +294,24 @@ void WebLoginManager::startCollection(const QUrl& url, bool search)
     }
     const QString slug = serviceForHost(url.host());
     if (slug.isEmpty() || (url.scheme() != "https" && url.scheme() != "http")) {
-        if (search)
+        if (recommendations)
+            emit vkRecommendationsReady({}, "Неизвестный источник рекомендаций.");
+        else if (search)
             emit searchReady({}, "Неизвестный источник поиска.");
         else
             emit collectionReady({}, {}, "Нужна ссылка Яндекс Музыки или VK Музыки.");
         return;
     }
     if (!ensureNative(slug)) {
-        if (search)
+        if (recommendations)
+            emit vkRecommendationsReady({}, m_status);
+        else if (search)
             emit searchReady({}, m_status);
         else
             emit collectionReady({}, {}, m_status);
         return;
     }
-    m_nativeTask = search ? Search : Collect;
+    m_nativeTask = recommendations ? Recommend : search ? Search : Collect;
     m_collectLogin = false;
     m_nativeElapsed.start();
     m_harvest.clear();
@@ -353,6 +371,14 @@ void WebLoginManager::dispatchYandex()
 }
 void WebLoginManager::consumeApiPayload(const QUrl& url, const QJsonValue& payload)
 {
+    if (m_nativeTask == Wave && BrowserSession::isWaveApi(url)) {
+        const auto tracks = ServicePayload::yandexWave(payload);
+        if (!tracks.isEmpty()) {
+            finishNative();
+            emit waveReady(tracks, {});
+        }
+        return;
+    }
     if (m_nativeTask != Collect || m_nativeSlug != "yandex" || !BrowserSession::isCollectionApi(url))
         return;
     const bool preview = url.path() == "/landing-blocks/collection/playlist-with-likes";
@@ -481,6 +507,17 @@ void WebLoginManager::nextMedia()
     m_scriptPending = false;
     m_nativeVisible = true;
     m_nativeUrl = url;
+    if (slug == "vk" && m_requestedTrack.value("rawAudio").toList().isEmpty()) {
+        const auto query =
+            (m_requestedTrack.value("artist").toString() + " " + m_requestedTrack.value("title").toString()).trimmed();
+        if (!query.isEmpty()) {
+            m_nativeUrl = QUrl("https://vk.ru/audio");
+            QUrlQuery search;
+            search.addQueryItem("section", "search");
+            search.addQueryItem("q", query.left(250));
+            m_nativeUrl.setQuery(search);
+        }
+    }
     m_loadedUrl.clear();
     m_pageError.clear();
     setBusy(true);
@@ -497,16 +534,60 @@ void WebLoginManager::cancelMedia(int requestId)
     if (m_nativeTask == Resolve && m_mediaId == requestId)
         finishNative("Загрузка отменена.");
 }
+void WebLoginManager::requestWave(const QStringList& queue)
+{
+    if (m_nativeTask != Idle || busy()) {
+        emit waveReady({}, "Сначала заверши вход, импорт или поиск в сервисе.");
+        return;
+    }
+    if (!hasSession("yandex")) {
+        emit waveReady({}, "Войди в Яндекс Музыку, чтобы получить свою волну.");
+        return;
+    }
+    m_backgroundMode = false;
+    if (!ensureNative("yandex")) {
+        emit waveReady({}, m_status);
+        return;
+    }
+    m_backgroundMode = m_externalMode;
+    m_nativeTask = Wave;
+    m_waveQueue.clear();
+    for (const auto& id : queue) {
+        if (QRegularExpression("^[0-9]{1,20}$").match(id).hasMatch())
+            m_waveQueue.append(id);
+        if (m_waveQueue.size() >= 50)
+            break;
+    }
+    m_nativeElapsed.start();
+    m_apiResponses = 0;
+    m_scriptPending = false;
+    m_loadedUrl.clear();
+    m_pageError.clear();
+    m_nativeUrl = QUrl("https://music.yandex.ru/");
+    m_nativeVisible = !m_externalMode;
+    setBusy(true);
+    setStatus("Получаем «Мою волну» Яндекс Музыки…");
+    emit nativeBrowserChanged();
+    m_nativeTimer->start();
+    navigateNative(m_nativeUrl);
+}
+
+void WebLoginManager::cancelWave()
+{
+    if (m_nativeTask == Wave)
+        finishNative("Получение волны отменено.");
+}
+
 void WebLoginManager::nativeTick()
 {
     if (m_nativeTask == Idle)
         return;
     m_nativeTimer->setInterval(m_nativeTask == Collect ? 500 : 900);
     // Свой лимит ожидания для каждой операции.
-    const int limit = m_nativeTask == Login     ? 180000
-                      : m_nativeTask == Resolve ? 25000
-                      : m_nativeTask == Search  ? 35000
-                                                : 240000;
+    const int limit = m_nativeTask == Login                                                         ? 180000
+                      : m_nativeTask == Resolve                                                     ? 25000
+                      : m_nativeTask == Search || m_nativeTask == Wave || m_nativeTask == Recommend ? 35000
+                                                                                                    : 240000;
     if (m_nativeElapsed.elapsed() > limit) {
         finishNative(
             m_nativeTask == Collect ? "Сервис не завершил выдачу списка. Попробуй открыть сам плейлист вместо страницы "
@@ -519,6 +600,32 @@ void WebLoginManager::nativeTick()
         return;
     if (serviceForHost(m_loadedUrl.host()) != m_nativeSlug)
         return;
+    if (m_nativeTask == Wave) {
+        // Даём странице восстановить заголовки аккаунта из её обычных запросов.
+        if (m_nativeElapsed.elapsed() < 5000 || m_apiResponses)
+            return;
+        ++m_apiResponses;
+        QUrl endpoint("https://api.music.yandex.ru/rotor/station/user:onyourwave/tracks?settings2=true");
+        if (!m_waveQueue.isEmpty()) {
+            QUrlQuery query(endpoint);
+            query.addQueryItem("queue", m_waveQueue.join(','));
+            endpoint.setQuery(query);
+        }
+        if (m_externalMode && m_external) {
+            m_external->fetchJson(++m_apiNextId, endpoint);
+        } else {
+            m_scriptPending = true;
+            const QString script =
+                QStringLiteral("(async()=>{const c=new AbortController();const t=setTimeout(()=>c.abort(),12000);"
+                               "try{const r=await fetch('%1',{credentials:'include',signal:c.signal});"
+                               "const text=await r.text();return JSON.stringify({status:r.status,"
+                               "payload:text.length<=2097152?JSON.parse(text):{}});}"
+                               "catch(e){return JSON.stringify({status:0});}finally{clearTimeout(t);}})()")
+                    .arg(endpoint.toString());
+            emit scriptRequested(++m_scriptId, script);
+        }
+        return;
+    }
     if (m_nativeTask == Collect && m_nativeSlug == "yandex" && m_externalMode && m_apiResponses == 0 &&
         m_nativeElapsed.elapsed() > 5000) {
         if (!m_apiPlaylist.isEmpty())
@@ -527,13 +634,15 @@ void WebLoginManager::nativeTick()
         else if (m_nativeUrl.path() == "/collection" || m_nativeUrl.path() == "/collection/")
             requestYandex(QUrl("https://api.music.yandex.ru/landing-blocks/collection/playlist-with-likes?count=8"));
     }
-    QString script = nativeScript(m_nativeTask == Login                               ? "login.js"
-                                  : m_nativeTask == Collect || m_nativeTask == Search ? "harvest.js"
-                                                                                      : "activate.js");
+    QString script =
+        nativeScript(m_nativeTask == Login                                                            ? "login.js"
+                     : m_nativeTask == Collect || m_nativeTask == Search || m_nativeTask == Recommend ? "harvest.js"
+                                                                                                      : "activate.js");
     if (m_nativeTask == Collect && m_nativeSlug == "vk")
         script = "window.__auroraCatalogSearch=false;\n" + nativeScript("vk-library.js") + ";\n" + script;
-    if (m_nativeTask == Search)
-        script = "window.__auroraCatalogSearch=true;window.__auroraVkLibrary=null;\n" + script;
+    if (m_nativeTask == Search || m_nativeTask == Recommend)
+        script = "window.__auroraCatalogSearch=true;window.__auroraVkLibrary=null;window.__auroraRecommendations=" +
+                 QString(m_nativeTask == Recommend ? "true" : "false") + ";\n" + script;
     if (m_nativeTask == Resolve)
         script.replace(
             "__TRACK__",
@@ -596,6 +705,18 @@ void WebLoginManager::submitScriptResult(int id, const QVariant& result)
     m_scriptPending = false;
     if (!result.isValid())
         return; // Браузер ушёл с навигацией во время evaluate; nativeTick повторит в пределах таймаута.
+    if (m_nativeTask == Wave) {
+        const auto response = QJsonDocument::fromJson(result.toString().toUtf8()).object();
+        const int status = response.value("status").toInt();
+        if (status < 200 || status >= 300) {
+            finishNative("Не удалось получить волну Яндекса. Проверь вход в аккаунт и повтори.");
+        } else {
+            const auto tracks = ServicePayload::yandexWave(response.value("payload"));
+            finishNative();
+            emit waveReady(tracks, {});
+        }
+        return;
+    }
     if (m_nativeTask == Login) {
         const auto state = QJsonDocument::fromJson(result.toString().toUtf8()).object();
         if (state.value("authenticated").toBool() && hasSession(m_nativeSlug))
@@ -617,7 +738,7 @@ void WebLoginManager::submitScriptResult(int id, const QVariant& result)
     }
     const QByteArray bytes = result.toString().toUtf8();
     const auto root = QJsonDocument::fromJson(bytes).object();
-    if (m_nativeTask == Search) {
+    if (m_nativeTask == Search || m_nativeTask == Recommend) {
         if (root.value("challenge").toBool() || root.value("loginRequired").toBool()) {
             finishNative("VK не принял сессию или показал проверку доступа. Выбери профиль браузера в импорте.");
             return;
@@ -628,19 +749,29 @@ void WebLoginManager::submitScriptResult(int id, const QVariant& result)
                 m_harvest.insert(track.sourceUrl, track);
                 m_harvestOrder.append(track.sourceUrl);
             }
-        if (!m_harvest.isEmpty() && (m_harvest.size() >= 24 || m_nativeElapsed.elapsed() > 7000)) {
+        if (!m_harvest.isEmpty() &&
+            (m_nativeTask == Recommend ? (m_harvest.size() >= 200 || m_nativeElapsed.elapsed() > 28000 ||
+                                          (m_nativeElapsed.elapsed() > 12000 && !root.value("loading").toBool()))
+                                       : (m_harvest.size() >= 24 || m_nativeElapsed.elapsed() > 7000))) {
             QVector<Track> found;
             for (const auto& key : m_harvestOrder) {
                 found.append(m_harvest.value(key));
-                if (found.size() >= 36)
+                if (found.size() >= (m_nativeTask == Recommend ? 200 : 36))
                     break;
             }
+            const bool recommendations = m_nativeTask == Recommend;
             finishNative();
-            emit searchReady(found, {});
+            if (recommendations)
+                emit vkRecommendationsReady(found, {});
+            else
+                emit searchReady(found, {});
             return;
         }
         if (m_nativeElapsed.elapsed() > 22000 && !root.value("loading").toBool())
-            finishNative("VK не вернул музыкальных записей. Попробуй другой запрос или источник.");
+            finishNative(
+                m_nativeTask == Recommend
+                    ? "Не удалось прочитать рекомендации VK. Открой раздел «Для вас» в аккаунте и обнови подборку."
+                    : "VK не вернул музыкальных записей. Попробуй другой запрос или источник.");
         return;
     }
     if (root.isEmpty()) {
@@ -797,6 +928,8 @@ void WebLoginManager::finishNative(const QString& error)
     if (task == Collect && !error.isEmpty())
         saveImportReport(error);
     m_nativeTask = Idle;
+    if (task == Wave || task == Recommend)
+        m_nativeVisible = false;
     m_apiRequests.clear();
     m_apiQueue.clear();
     m_collectLogin = false;
@@ -818,6 +951,10 @@ void WebLoginManager::finishNative(const QString& error)
             emit collectionReady({}, {}, error);
         else if (task == Resolve)
             emit mediaReady(media, {}, error);
+        else if (task == Wave)
+            emit waveReady({}, error);
+        else if (task == Recommend)
+            emit vkRecommendationsReady({}, error);
     }
     QTimer::singleShot(0, this, &WebLoginManager::nextMedia);
 }

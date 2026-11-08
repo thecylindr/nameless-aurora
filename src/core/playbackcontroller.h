@@ -190,6 +190,9 @@ class PlaybackController : public QObject
     Q_INVOKABLE void playQueueTrack(int id);
     // Запускает подборку рекомендаций («волну»).
     Q_INVOKABLE void playMix();
+    // Очередь конкретной подборки; фильтр библиотеки на неё не влияет.
+    Q_INVOKABLE void playSelection(const QVariantList& ids, int firstId = 0);
+    void playStreamQueue(const QVariantList& tracks, int index = 0);
     // Переключает воспроизведение/паузу.
     Q_INVOKABLE void toggle();
     Q_INVOKABLE void play();
@@ -213,6 +216,8 @@ class PlaybackController : public QObject
     // Задаёт режим повтора (0 — нет, 1 — вся очередь, 2 — один трек).
     void setRepeatMode(int value);
   signals:
+    void streamRequested(const QVariantMap& candidate);
+    void streamQueueExhausted();
     void currentTrackChanged();
     void playingChanged();
     void streamLoadingChanged();
@@ -243,7 +248,7 @@ class PlaybackController : public QObject
     // Накапливает время прослушивания текущего трека.
     void accountListen();
     // Запускает трек по ID: проверяет файл, настраивает плеер и метаданные.
-    bool startTrack(int id);
+    bool startTrack(int id, bool preserveQueue = false);
     // Переходит к следующему треку с учётом перемешивания и повтора.
     void advance(bool natural);
     LibraryModel* m_library;
@@ -273,6 +278,10 @@ class PlaybackController : public QObject
     QColor m_atmosphereSecondary{"#83dbc7"};
     double m_atmosphereShape = 0.5;
     QVector<int> m_queue, m_history;
+    QVariantList m_streamQueue;
+    int m_streamIndex = -1;
+    void requestStream(int index);
+    void clearStreamQueue();
     bool m_shuffle = false;
     int m_repeat = 0;
     QElapsedTimer m_elapsed;

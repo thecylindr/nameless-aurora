@@ -112,6 +112,10 @@ CMakeFiles/AuroraPlayer_copy_qml: .qt/AuroraPlayer_qml.txt
 .qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/components/StorageSummary.qml
 .qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/components/DependencyCard.qml
 .qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/components/RecommendationCard.qml
+.qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/components/HomeMixCard.qml
+.qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/components/HomeProviderShelf.qml
+.qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/components/ProviderPlaylistDialog.qml
+.qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/components/HomeMusicPreferences.qml
 .qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/pages/HomePage.qml
 .qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/pages/LibraryPage.qml
 .qt/AuroraPlayer_qml.txt: /home/cylindr/nameless-aurora/qml/pages/ImportPage.qml

@@ -7,10 +7,18 @@
                     "entries": [
                         {
                             "codegenResult": 2,
+                            "column": 41,
+                            "durationMicroseconds": 0,
+                            "functionName": "bonsaiScene",
+                            "line": 12,
+                            "message": "Cannot access value for name settingsStore"
+                        },
+                        {
+                            "codegenResult": 2,
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "intensity",
-                            "line": 19,
+                            "line": 25,
                             "message": "Cannot access value for name settingsStore"
                         },
                         {
@@ -18,7 +26,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 18,
+                            "line": 24,
                             "message": ""
                         },
                         {
@@ -26,7 +34,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 23,
+                            "line": 30,
                             "message": ""
                         },
                         {
@@ -34,7 +42,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "orientation",
-                            "line": 25,
+                            "line": 33,
                             "message": ""
                         },
                         {
@@ -42,7 +50,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 28,
+                            "line": 37,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant"
                         },
                         {
@@ -50,7 +58,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 36,
+                            "line": 47,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant"
                         },
                         {
@@ -58,7 +66,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 41,
+                            "line": 55,
                             "message": ""
                         },
                         {
@@ -66,7 +74,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "margins",
-                            "line": 42,
+                            "line": 56,
                             "message": ""
                         },
                         {
@@ -74,7 +82,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "minimumWidth",
-                            "line": 46,
+                            "line": 61,
                             "message": ""
                         },
                         {
@@ -82,7 +90,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 52,
+                            "line": 69,
                             "message": ""
                         },
                         {
@@ -90,7 +98,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 57,
+                            "line": 75,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -98,7 +106,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 58,
+                            "line": 76,
                             "message": ""
                         },
                         {
@@ -106,7 +114,7 @@
                             "column": 37,
                             "durationMicroseconds": 0,
                             "functionName": "pixelSize",
-                            "line": 59,
+                            "line": 77,
                             "message": ""
                         },
                         {
@@ -114,7 +122,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 60,
+                            "line": 78,
                             "message": ""
                         },
                         {
@@ -122,7 +130,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "preferredWidth",
-                            "line": 64,
+                            "line": 84,
                             "message": ""
                         },
                         {
@@ -130,7 +138,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 74,
+                            "line": 96,
                             "message": ""
                         },
                         {
@@ -138,7 +146,15 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "alignment",
-                            "line": 72,
+                            "line": 94,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 55,
+                            "durationMicroseconds": 0,
+                            "functionName": "coverSize",
+                            "line": 107,
                             "message": ""
                         },
                         {
@@ -146,7 +162,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 87,
+                            "line": 116,
                             "message": ""
                         },
                         {
@@ -154,7 +170,7 @@
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 88,
+                            "line": 117,
                             "message": ""
                         },
                         {
@@ -162,7 +178,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 89,
+                            "line": 118,
                             "message": ""
                         },
                         {
@@ -170,7 +186,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 94,
+                            "line": 125,
                             "message": ""
                         },
                         {
@@ -178,7 +194,7 @@
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 95,
+                            "line": 126,
                             "message": ""
                         },
                         {
@@ -186,7 +202,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 100,
+                            "line": 131,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant"
                         },
                         {
@@ -194,7 +210,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalCenter",
-                            "line": 97,
+                            "line": 128,
                             "message": ""
                         },
                         {
@@ -202,166 +218,46 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "top",
-                            "line": 98,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 103,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 33,
-                            "durationMicroseconds": 0,
-                            "functionName": "height",
-                            "line": 104,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 107,
-                            "message": "Cannot access value for name player"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "centerIn",
-                            "line": 106,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 39,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 108,
-                            "message": "Cannot access value for name player"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "width",
-                            "line": 112,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 33,
-                            "durationMicroseconds": 0,
-                            "functionName": "height",
-                            "line": 113,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "path",
-                            "line": 116,
-                            "message": "Cannot access value for name player"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "seed",
-                            "line": 117,
-                            "message": "Cannot access value for name player"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "scale",
-                            "line": 119,
-                            "message": "Cannot access value for name settingsStore"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 43,
-                            "durationMicroseconds": 0,
-                            "functionName": "centerIn",
-                            "line": 114,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 39,
-                            "durationMicroseconds": 0,
-                            "functionName": "alignment",
-                            "line": 125,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 31,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
                             "line": 129,
-                            "message": "Cannot access value for name player"
+                            "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 32,
                             "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 130,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 46,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
-                            "line": 133,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 35,
-                            "durationMicroseconds": 0,
-                            "functionName": "wrapMode",
+                            "functionName": "width",
                             "line": 135,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 32,
+                            "column": 33,
                             "durationMicroseconds": 0,
-                            "functionName": "elide",
+                            "functionName": "height",
                             "line": 136,
                             "message": ""
                         },
                         {
-                            "codegenResult": 0,
-                            "column": 41,
+                            "codegenResult": 2,
+                            "column": 32,
                             "durationMicroseconds": 0,
-                            "functionName": "pixelSize",
-                            "line": 131,
-                            "message": ""
+                            "functionName": "color",
+                            "line": 139,
+                            "message": "Cannot access value for name player"
                         },
                         {
                             "codegenResult": 0,
-                            "column": 38,
+                            "column": 43,
                             "durationMicroseconds": 0,
-                            "functionName": "weight",
-                            "line": 132,
+                            "functionName": "centerIn",
+                            "line": 138,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 31,
+                            "column": 39,
                             "durationMicroseconds": 0,
-                            "functionName": "text",
+                            "functionName": "color",
                             "line": 140,
                             "message": "Cannot access value for name player"
                         },
@@ -369,8 +265,200 @@
                             "codegenResult": 0,
                             "column": 32,
                             "durationMicroseconds": 0,
+                            "functionName": "width",
+                            "line": 146,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 33,
+                            "durationMicroseconds": 0,
+                            "functionName": "height",
+                            "line": 147,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "x",
+                            "line": 148,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 28,
+                            "durationMicroseconds": 0,
+                            "functionName": "y",
+                            "line": 149,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "path",
+                            "line": 151,
+                            "message": "Cannot access value for name player"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "seed",
+                            "line": 152,
+                            "message": "Cannot access value for name player"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "scale",
+                            "line": 154,
+                            "message": "Cannot access value for name settingsStore"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 33,
+                            "durationMicroseconds": 0,
+                            "functionName": "active",
+                            "line": 162,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "fill",
+                            "line": 161,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "coverRect",
+                            "line": 166,
+                            "message": "Cannot access value for name art"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "primary",
+                            "line": 167,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "secondary",
+                            "line": 168,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "signature",
+                            "line": 169,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "phase",
+                            "line": 170,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 37,
+                            "durationMicroseconds": 0,
+                            "functionName": "energy",
+                            "line": 171,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "bass",
+                            "line": 172,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 36,
+                            "durationMicroseconds": 0,
+                            "functionName": "pulse",
+                            "line": 173,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 40,
+                            "durationMicroseconds": 0,
+                            "functionName": "intensity",
+                            "line": 174,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 37,
+                            "durationMicroseconds": 0,
+                            "functionName": "detail",
+                            "line": 175,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "animated",
+                            "line": 176,
+                            "message": "Cannot access value for name atmosphere"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 25,
+                            "durationMicroseconds": 0,
+                            "functionName": "onTick",
+                            "line": 182,
+                            "message": "Functions without type annotations won't be compiled"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 33,
+                            "durationMicroseconds": 0,
+                            "functionName": "target",
+                            "line": 189,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "alignment",
+                            "line": 197,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 202,
+                            "message": "Cannot access value for name player"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 141,
+                            "line": 203,
                             "message": ""
                         },
                         {
@@ -378,7 +466,15 @@
                             "column": 46,
                             "durationMicroseconds": 0,
                             "functionName": "horizontalAlignment",
-                            "line": 143,
+                            "line": 206,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 35,
+                            "durationMicroseconds": 0,
+                            "functionName": "wrapMode",
+                            "line": 208,
                             "message": ""
                         },
                         {
@@ -386,7 +482,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "elide",
-                            "line": 144,
+                            "line": 209,
                             "message": ""
                         },
                         {
@@ -394,7 +490,55 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "pixelSize",
-                            "line": 142,
+                            "line": 204,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 38,
+                            "durationMicroseconds": 0,
+                            "functionName": "weight",
+                            "line": 205,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 214,
+                            "message": "Cannot access value for name player"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 215,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 46,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 217,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "elide",
+                            "line": 218,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 41,
+                            "durationMicroseconds": 0,
+                            "functionName": "pixelSize",
+                            "line": 216,
                             "message": ""
                         },
                         {
@@ -402,7 +546,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "alignment",
-                            "line": 148,
+                            "line": 224,
                             "message": ""
                         },
                         {
@@ -410,7 +554,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 151,
+                            "line": 228,
                             "message": ""
                         },
                         {
@@ -418,7 +562,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "primary",
-                            "line": 155,
+                            "line": 232,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -426,7 +570,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 156,
+                            "line": 233,
                             "message": "Could not find property \"enabled\"."
                         },
                         {
@@ -434,7 +578,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 157,
+                            "line": 234,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -442,7 +586,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 160,
+                            "line": 238,
                             "message": ""
                         },
                         {
@@ -450,7 +594,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "primary",
-                            "line": 164,
+                            "line": 242,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -458,7 +602,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 165,
+                            "line": 243,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -466,7 +610,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 168,
+                            "line": 247,
                             "message": ""
                         },
                         {
@@ -474,7 +618,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "primary",
-                            "line": 172,
+                            "line": 251,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -482,7 +626,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 173,
+                            "line": 252,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -490,7 +634,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 176,
+                            "line": 256,
                             "message": ""
                         },
                         {
@@ -498,7 +642,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 180,
+                            "line": 260,
                             "message": "Could not find property \"enabled\"."
                         },
                         {
@@ -506,7 +650,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 181,
+                            "line": 261,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -514,7 +658,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 186,
+                            "line": 268,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -522,7 +666,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 187,
+                            "line": 269,
                             "message": ""
                         },
                         {
@@ -530,7 +674,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "alignment",
-                            "line": 185,
+                            "line": 267,
                             "message": ""
                         },
                         {
@@ -538,7 +682,7 @@
                             "column": 45,
                             "durationMicroseconds": 0,
                             "functionName": "preferredHeight",
-                            "line": 192,
+                            "line": 275,
                             "message": ""
                         },
                         {
@@ -546,7 +690,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 196,
+                            "line": 281,
                             "message": "Cannot access value for name settingsStore"
                         },
                         {
@@ -554,7 +698,7 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "preferredHeight",
-                            "line": 199,
+                            "line": 284,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -562,7 +706,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "alignment",
-                            "line": 200,
+                            "line": 285,
                             "message": ""
                         },
                         {
@@ -570,7 +714,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 204,
+                            "line": 291,
                             "message": ""
                         },
                         {
@@ -578,7 +722,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 213,
+                            "line": 303,
                             "message": ""
                         },
                         {
@@ -586,7 +730,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 222,
+                            "line": 312,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -594,7 +738,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "top",
-                            "line": 217,
+                            "line": 307,
                             "message": "Could not find property \"top\"."
                         },
                         {
@@ -602,7 +746,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "right",
-                            "line": 218,
+                            "line": 308,
                             "message": "Could not find property \"right\"."
                         },
                         {
@@ -610,7 +754,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "margins",
-                            "line": 219,
+                            "line": 309,
                             "message": "Could not find property \"margins\"."
                         },
                         {
@@ -618,7 +762,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 226,
+                            "line": 317,
                             "message": ""
                         },
                         {
@@ -626,7 +770,7 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "iconName",
-                            "line": 227,
+                            "line": 318,
                             "message": ""
                         },
                         {
@@ -634,7 +778,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 230,
+                            "line": 321,
                             "message": "Could not find property \"visible\"."
                         },
                         {
@@ -642,7 +786,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 234,
+                            "line": 325,
                             "message": "Could not find signal \"clicked\"."
                         },
                         {
@@ -650,7 +794,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "right",
-                            "line": 231,
+                            "line": 322,
                             "message": "Could not find property \"right\"."
                         },
                         {
@@ -658,7 +802,7 @@
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "verticalCenter",
-                            "line": 233,
+                            "line": 324,
                             "message": "Could not find property \"verticalCenter\"."
                         }
                     ],

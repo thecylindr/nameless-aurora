@@ -44,6 +44,8 @@ AuroraPlayer_autogen/timestamp: \
 	/home/cylindr/nameless-aurora/src/core/downloads/opencatalog.h \
 	/home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.cpp \
 	/home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.h \
+	/home/cylindr/nameless-aurora/src/core/homefeed.cpp \
+	/home/cylindr/nameless-aurora/src/core/homefeed.h \
 	/home/cylindr/nameless-aurora/src/core/importmanager.cpp \
 	/home/cylindr/nameless-aurora/src/core/importmanager.h \
 	/home/cylindr/nameless-aurora/src/core/integration/mpris.cpp \
@@ -389,6 +391,7 @@ AuroraPlayer_autogen/timestamp: \
 	/usr/include/pthread.h \
 	/usr/include/qt6/QtCore/QAbstractListModel \
 	/usr/include/qt6/QtCore/QByteArray \
+	/usr/include/qt6/QtCore/QDate \
 	/usr/include/qt6/QtCore/QElapsedTimer \
 	/usr/include/qt6/QtCore/QFileSystemWatcher \
 	/usr/include/qt6/QtCore/QFlags \

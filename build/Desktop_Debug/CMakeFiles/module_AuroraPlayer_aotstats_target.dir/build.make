@@ -111,6 +111,10 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.aotstats
 .rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.aotstats
 .rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.aotstats
+.rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.aotstats
+.rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.aotstats
+.rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.aotstats
+.rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.aotstats
 .rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.aotstats
 .rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.aotstats
 .rcc/qmlcache/module_AuroraPlayer.aotstats: .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.aotstats
@@ -633,6 +637,54 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.aotstats
 
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: /usr/lib/qt6/qmlcachegen
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: /home/cylindr/nameless-aurora/qml/components/HomeMixCard.qml
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/native_scripts.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/aurora_effects.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: qml/AuroraPlayer/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
+	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/HomeMixCard.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp /home/cylindr/nameless-aurora/qml/components/HomeMixCard.qml
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.aotstats
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: /usr/lib/qt6/qmlcachegen
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: /home/cylindr/nameless-aurora/qml/components/HomeMusicPreferences.qml
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/native_scripts.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/aurora_effects.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: qml/AuroraPlayer/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
+	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/HomeMusicPreferences.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp /home/cylindr/nameless-aurora/qml/components/HomeMusicPreferences.qml
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.aotstats
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: /usr/lib/qt6/qmlcachegen
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: /home/cylindr/nameless-aurora/qml/components/HomeProviderShelf.qml
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/native_scripts.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/aurora_effects.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: qml/AuroraPlayer/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
+	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/HomeProviderShelf.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp /home/cylindr/nameless-aurora/qml/components/HomeProviderShelf.qml
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.aotstats
+
 .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp: /usr/lib/qt6/qmlcachegen
 .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp: /home/cylindr/nameless-aurora/qml/components/LibrarySettings.qml
 .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
@@ -642,7 +694,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/LibrarySettings.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp /home/cylindr/nameless-aurora/qml/components/LibrarySettings.qml
 
@@ -658,7 +710,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/ListeningView.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp /home/cylindr/nameless-aurora/qml/components/ListeningView.qml
 
@@ -674,7 +726,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/NavigationPane.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp /home/cylindr/nameless-aurora/qml/components/NavigationPane.qml
 
@@ -690,7 +742,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/NowPlayingPanel.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp /home/cylindr/nameless-aurora/qml/components/NowPlayingPanel.qml
 
@@ -706,12 +758,28 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/PlayerBar.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp /home/cylindr/nameless-aurora/qml/components/PlayerBar.qml
 
 .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.aotstats
+
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: /usr/lib/qt6/qmlcachegen
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: /home/cylindr/nameless-aurora/qml/components/ProviderPlaylistDialog.qml
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/native_scripts.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/aurora_effects.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: qml/AuroraPlayer/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
+	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/ProviderPlaylistDialog.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp /home/cylindr/nameless-aurora/qml/components/ProviderPlaylistDialog.qml
+
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.aotstats
 
 .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp: /usr/lib/qt6/qmlcachegen
 .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp: /home/cylindr/nameless-aurora/qml/components/RecommendationCard.qml
@@ -722,7 +790,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/RecommendationCard.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp /home/cylindr/nameless-aurora/qml/components/RecommendationCard.qml
 
@@ -738,7 +806,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/SourceDialog.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp /home/cylindr/nameless-aurora/qml/components/SourceDialog.qml
 
@@ -754,7 +822,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/StorageSummary.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp /home/cylindr/nameless-aurora/qml/components/StorageSummary.qml
 
@@ -770,7 +838,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/TrackDelegate.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp /home/cylindr/nameless-aurora/qml/components/TrackDelegate.qml
 
@@ -786,7 +854,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/TrackEditor.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp /home/cylindr/nameless-aurora/qml/components/TrackEditor.qml
 
@@ -802,7 +870,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/TrackList.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp /home/cylindr/nameless-aurora/qml/components/TrackList.qml
 
@@ -818,7 +886,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/HomePage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/HomePage.qml
 
@@ -834,7 +902,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/ImportPage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/ImportPage.qml
 
@@ -850,7 +918,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/LibraryPage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/LibraryPage.qml
 
@@ -866,7 +934,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/SearchPage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/SearchPage.qml
 
@@ -882,7 +950,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/SettingsPage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/SettingsPage.qml
 
@@ -898,7 +966,7 @@ CMakeFiles/module_AuroraPlayer_aotstats_target: .rcc/qmlcache/module_AuroraPlaye
 .rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating .rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating .rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/web/NativeBrowser.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp /home/cylindr/nameless-aurora/qml/web/NativeBrowser.qml
 
@@ -972,6 +1040,12 @@ module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_E
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.aotstats
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.aotstats
+module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp
+module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.aotstats
+module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp
+module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.aotstats
+module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp
+module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.aotstats
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.aotstats
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp
@@ -982,6 +1056,8 @@ module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_N
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.aotstats
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.aotstats
+module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp
+module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.aotstats
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.aotstats
 module_AuroraPlayer_aotstats_target: .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp

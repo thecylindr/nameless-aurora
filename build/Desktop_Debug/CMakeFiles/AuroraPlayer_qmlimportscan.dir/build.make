@@ -117,6 +117,10 @@ CMakeFiles/AuroraPlayer_qmlimportscan: .qt/qml_imports/AuroraPlayer_build.cmake
 .qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/components/StorageSummary.qml
 .qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/components/DependencyCard.qml
 .qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/components/RecommendationCard.qml
+.qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/components/HomeMixCard.qml
+.qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/components/HomeProviderShelf.qml
+.qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/components/ProviderPlaylistDialog.qml
+.qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/components/HomeMusicPreferences.qml
 .qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/pages/HomePage.qml
 .qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/pages/LibraryPage.qml
 .qt/qml_imports/AuroraPlayer_build.cmake: /home/cylindr/nameless-aurora/qml/pages/ImportPage.qml

@@ -19,6 +19,7 @@ qt_add_executable(AuroraPlayer
     src/core/libraryexchange.h
     src/core/librarymodel.cpp
     src/core/librarymodel.h
+    src/core/homefeed.cpp src/core/homefeed.h
     src/core/artwork.cpp
     src/core/playbackcontroller.cpp
     src/core/playbackcontroller.h
@@ -111,6 +112,10 @@ qt_add_qml_module(AuroraPlayer
         qml/components/StorageSummary.qml
         qml/components/DependencyCard.qml
         qml/components/RecommendationCard.qml
+        qml/components/HomeMixCard.qml
+        qml/components/HomeProviderShelf.qml
+        qml/components/ProviderPlaylistDialog.qml
+        qml/components/HomeMusicPreferences.qml
         qml/pages/HomePage.qml
         qml/pages/LibraryPage.qml
         qml/pages/ImportPage.qml
@@ -167,6 +172,7 @@ if(BUILD_TESTING AND NOT ANDROID)
         src/core/integration/namelessbridge.cpp src/core/integration/namelessbridge.h
         src/core/data/libraryrepository.cpp src/core/data/libraryrepository.h
         src/core/librarymodel.cpp src/core/librarymodel.h
+        src/core/homefeed.cpp src/core/homefeed.h
         src/core/artwork.cpp
         src/core/libraryexchange.cpp src/core/libraryexchange.h
         src/core/settingsstore.cpp src/core/settingsstore.h

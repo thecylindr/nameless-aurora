@@ -55,6 +55,8 @@ template <> constexpr inline auto WebLoginManager::qt_create_metaobjectdata<qt_m
         "name",
         "error",
         "searchReady",
+        "vkRecommendationsReady",
+        "waveReady",
         "mediaReady",
         "requestId",
         "busyChanged",
@@ -114,86 +116,94 @@ template <> constexpr inline auto WebLoginManager::qt_create_metaobjectdata<qt_m
         QtMocHelpers::SignalData<void(const QVector<Track> &, const QString &)>(14, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 10, 11 }, { QMetaType::QString, 13 },
         }}),
+        // Signal 'vkRecommendationsReady'
+        QtMocHelpers::SignalData<void(const QVector<Track> &, const QString &)>(15, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 10, 11 }, { QMetaType::QString, 13 },
+        }}),
+        // Signal 'waveReady'
+        QtMocHelpers::SignalData<void(const QVector<Track> &, const QString &)>(16, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 10, 11 }, { QMetaType::QString, 13 },
+        }}),
         // Signal 'mediaReady'
-        QtMocHelpers::SignalData<void(int, const QUrl &, const QString &)>(15, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 16 }, { 0x80000000 | 4, 5 }, { QMetaType::QString, 13 },
+        QtMocHelpers::SignalData<void(int, const QUrl &, const QString &)>(17, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 18 }, { 0x80000000 | 4, 5 }, { QMetaType::QString, 13 },
         }}),
         // Signal 'busyChanged'
-        QtMocHelpers::SignalData<void()>(17, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'statusChanged'
-        QtMocHelpers::SignalData<void()>(18, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'sessionsChanged'
         QtMocHelpers::SignalData<void()>(19, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'statusChanged'
+        QtMocHelpers::SignalData<void()>(20, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'sessionsChanged'
+        QtMocHelpers::SignalData<void()>(21, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'loginDone'
-        QtMocHelpers::SignalData<void(const QString &, bool, const QString &)>(20, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 21 }, { QMetaType::Bool, 22 }, { QMetaType::QString, 23 },
+        QtMocHelpers::SignalData<void(const QString &, bool, const QString &)>(22, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 23 }, { QMetaType::Bool, 24 }, { QMetaType::QString, 25 },
         }}),
         // Method 'openImportReport'
-        QtMocHelpers::MethodData<void()>(24, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(26, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'openNative'
-        QtMocHelpers::MethodData<void(const QString &)>(25, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 21 },
+        QtMocHelpers::MethodData<void(const QString &)>(27, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 23 },
         }}),
         // Method 'setBrowserVisible'
-        QtMocHelpers::MethodData<void(bool)>(26, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 27 },
+        QtMocHelpers::MethodData<void(bool)>(28, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 29 },
         }}),
         // Method 'pageLoaded'
-        QtMocHelpers::MethodData<void(const QUrl &, bool, const QString &)>(28, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 4, 5 }, { QMetaType::Bool, 22 }, { QMetaType::QString, 13 },
+        QtMocHelpers::MethodData<void(const QUrl &, bool, const QString &)>(30, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 4, 5 }, { QMetaType::Bool, 24 }, { QMetaType::QString, 13 },
         }}),
         // Method 'pageLoaded'
-        QtMocHelpers::MethodData<void(const QUrl &, bool)>(28, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
-            { 0x80000000 | 4, 5 }, { QMetaType::Bool, 22 },
+        QtMocHelpers::MethodData<void(const QUrl &, bool)>(30, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
+            { 0x80000000 | 4, 5 }, { QMetaType::Bool, 24 },
         }}),
         // Method 'confirmNativeLogin'
-        QtMocHelpers::MethodData<void()>(29, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(31, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'submitScriptResult'
-        QtMocHelpers::MethodData<void(int, const QVariant &)>(30, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 7 }, { 0x80000000 | 31, 32 },
+        QtMocHelpers::MethodData<void(int, const QVariant &)>(32, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 7 }, { 0x80000000 | 33, 34 },
         }}),
         // Method 'localBrowserProfiles'
-        QtMocHelpers::MethodData<QVariantList() const>(33, 2, QMC::AccessPublic, 0x80000000 | 34),
+        QtMocHelpers::MethodData<QVariantList() const>(35, 2, QMC::AccessPublic, 0x80000000 | 36),
         // Method 'availableBrowsers'
-        QtMocHelpers::MethodData<QStringList()>(35, 2, QMC::AccessPublic, QMetaType::QStringList),
+        QtMocHelpers::MethodData<QStringList()>(37, 2, QMC::AccessPublic, QMetaType::QStringList),
         // Method 'startLogin'
-        QtMocHelpers::MethodData<void(QString, int)>(36, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 21 }, { QMetaType::Int, 37 },
+        QtMocHelpers::MethodData<void(QString, int)>(38, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 23 }, { QMetaType::Int, 39 },
         }}),
         // Method 'cancel'
-        QtMocHelpers::MethodData<void()>(38, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(40, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'logout'
-        QtMocHelpers::MethodData<void(QString)>(39, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 21 },
+        QtMocHelpers::MethodData<void(QString)>(41, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 23 },
         }}),
         // Method 'hasSession'
-        QtMocHelpers::MethodData<bool(QString) const>(40, 2, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 21 },
+        QtMocHelpers::MethodData<bool(QString) const>(42, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 23 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'awaitingLogin'
-        QtMocHelpers::PropertyData<bool>(41, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(43, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
         // property 'nativeProfile'
-        QtMocHelpers::PropertyData<QQuickWebEngineProfile*>(42, 0x80000000 | 43, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 0),
+        QtMocHelpers::PropertyData<QQuickWebEngineProfile*>(44, 0x80000000 | 45, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 0),
         // property 'browserVisible'
-        QtMocHelpers::PropertyData<bool>(44, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(46, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
         // property 'pageUrl'
-        QtMocHelpers::PropertyData<QUrl>(45, 0x80000000 | 4, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 0),
+        QtMocHelpers::PropertyData<QUrl>(47, 0x80000000 | 4, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 0),
         // property 'pageError'
-        QtMocHelpers::PropertyData<QString>(46, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(48, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'nativeService'
-        QtMocHelpers::PropertyData<QString>(47, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(49, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'busy'
-        QtMocHelpers::PropertyData<bool>(48, QMetaType::Bool, QMC::DefaultPropertyFlags, 6),
+        QtMocHelpers::PropertyData<bool>(50, QMetaType::Bool, QMC::DefaultPropertyFlags, 8),
         // property 'status'
-        QtMocHelpers::PropertyData<QString>(49, QMetaType::QString, QMC::DefaultPropertyFlags, 7),
+        QtMocHelpers::PropertyData<QString>(51, QMetaType::QString, QMC::DefaultPropertyFlags, 9),
         // property 'importReport'
-        QtMocHelpers::PropertyData<QString>(50, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(52, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'vkLoggedIn'
-        QtMocHelpers::PropertyData<bool>(51, QMetaType::Bool, QMC::DefaultPropertyFlags, 8),
+        QtMocHelpers::PropertyData<bool>(53, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
         // property 'yandexLoggedIn'
-        QtMocHelpers::PropertyData<bool>(52, QMetaType::Bool, QMC::DefaultPropertyFlags, 8),
+        QtMocHelpers::PropertyData<bool>(54, QMetaType::Bool, QMC::DefaultPropertyFlags, 10),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -220,26 +230,28 @@ void WebLoginManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
         case 2: _t->scriptRequested((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
         case 3: _t->collectionReady((*reinterpret_cast<std::add_pointer_t<QList<Track>>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
         case 4: _t->searchReady((*reinterpret_cast<std::add_pointer_t<QList<Track>>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
-        case 5: _t->mediaReady((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
-        case 6: _t->busyChanged(); break;
-        case 7: _t->statusChanged(); break;
-        case 8: _t->sessionsChanged(); break;
-        case 9: _t->loginDone((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
-        case 10: _t->openImportReport(); break;
-        case 11: _t->openNative((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 12: _t->setBrowserVisible((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 13: _t->pageLoaded((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
-        case 14: _t->pageLoaded((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2]))); break;
-        case 15: _t->confirmNativeLogin(); break;
-        case 16: _t->submitScriptResult((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QVariant>>(_a[2]))); break;
-        case 17: { QVariantList _r = _t->localBrowserProfiles();
+        case 5: _t->vkRecommendationsReady((*reinterpret_cast<std::add_pointer_t<QList<Track>>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
+        case 6: _t->waveReady((*reinterpret_cast<std::add_pointer_t<QList<Track>>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2]))); break;
+        case 7: _t->mediaReady((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
+        case 8: _t->busyChanged(); break;
+        case 9: _t->statusChanged(); break;
+        case 10: _t->sessionsChanged(); break;
+        case 11: _t->loginDone((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
+        case 12: _t->openImportReport(); break;
+        case 13: _t->openNative((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 14: _t->setBrowserVisible((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 15: _t->pageLoaded((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[3]))); break;
+        case 16: _t->pageLoaded((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2]))); break;
+        case 17: _t->confirmNativeLogin(); break;
+        case 18: _t->submitScriptResult((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QVariant>>(_a[2]))); break;
+        case 19: { QVariantList _r = _t->localBrowserProfiles();
             if (_a[0]) *reinterpret_cast<QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 18: { QStringList _r = _t->availableBrowsers();
+        case 20: { QStringList _r = _t->availableBrowsers();
             if (_a[0]) *reinterpret_cast<QStringList*>(_a[0]) = std::move(_r); }  break;
-        case 19: _t->startLogin((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2]))); break;
-        case 20: _t->cancel(); break;
-        case 21: _t->logout((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 22: { bool _r = _t->hasSession((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
+        case 21: _t->startLogin((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2]))); break;
+        case 22: _t->cancel(); break;
+        case 23: _t->logout((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 24: { bool _r = _t->hasSession((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
@@ -255,15 +267,19 @@ void WebLoginManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
             return;
         if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)(const QVector<Track> & , const QString & )>(_a, &WebLoginManager::searchReady, 4))
             return;
-        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)(int , const QUrl & , const QString & )>(_a, &WebLoginManager::mediaReady, 5))
+        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)(const QVector<Track> & , const QString & )>(_a, &WebLoginManager::vkRecommendationsReady, 5))
             return;
-        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)()>(_a, &WebLoginManager::busyChanged, 6))
+        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)(const QVector<Track> & , const QString & )>(_a, &WebLoginManager::waveReady, 6))
             return;
-        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)()>(_a, &WebLoginManager::statusChanged, 7))
+        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)(int , const QUrl & , const QString & )>(_a, &WebLoginManager::mediaReady, 7))
             return;
-        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)()>(_a, &WebLoginManager::sessionsChanged, 8))
+        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)()>(_a, &WebLoginManager::busyChanged, 8))
             return;
-        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)(const QString & , bool , const QString & )>(_a, &WebLoginManager::loginDone, 9))
+        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)()>(_a, &WebLoginManager::statusChanged, 9))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)()>(_a, &WebLoginManager::sessionsChanged, 10))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (WebLoginManager::*)(const QString & , bool , const QString & )>(_a, &WebLoginManager::loginDone, 11))
             return;
     }
     if (_c == QMetaObject::RegisterPropertyMetaType) {
@@ -311,14 +327,14 @@ int WebLoginManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 25)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 25;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 23)
+        if (_id < 25)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 23;
+        _id -= 25;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
@@ -360,32 +376,44 @@ void WebLoginManager::searchReady(const QVector<Track> & _t1, const QString & _t
 }
 
 // SIGNAL 5
-void WebLoginManager::mediaReady(int _t1, const QUrl & _t2, const QString & _t3)
+void WebLoginManager::vkRecommendationsReady(const QVector<Track> & _t1, const QString & _t2)
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 5, nullptr, _t1, _t2, _t3);
+    QMetaObject::activate<void>(this, &staticMetaObject, 5, nullptr, _t1, _t2);
 }
 
 // SIGNAL 6
-void WebLoginManager::busyChanged()
+void WebLoginManager::waveReady(const QVector<Track> & _t1, const QString & _t2)
 {
-    QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 6, nullptr, _t1, _t2);
 }
 
 // SIGNAL 7
-void WebLoginManager::statusChanged()
+void WebLoginManager::mediaReady(int _t1, const QUrl & _t2, const QString & _t3)
 {
-    QMetaObject::activate(this, &staticMetaObject, 7, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 7, nullptr, _t1, _t2, _t3);
 }
 
 // SIGNAL 8
-void WebLoginManager::sessionsChanged()
+void WebLoginManager::busyChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 8, nullptr);
 }
 
 // SIGNAL 9
+void WebLoginManager::statusChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 9, nullptr);
+}
+
+// SIGNAL 10
+void WebLoginManager::sessionsChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 10, nullptr);
+}
+
+// SIGNAL 11
 void WebLoginManager::loginDone(const QString & _t1, bool _t2, const QString & _t3)
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 9, nullptr, _t1, _t2, _t3);
+    QMetaObject::activate<void>(this, &staticMetaObject, 11, nullptr, _t1, _t2, _t3);
 }
 QT_WARNING_POP

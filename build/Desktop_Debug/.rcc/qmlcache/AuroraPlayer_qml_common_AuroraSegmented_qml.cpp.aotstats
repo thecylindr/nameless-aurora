@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 0,
                             "column": 21,
-                            "durationMicroseconds": 2000,
+                            "durationMicroseconds": 3000,
                             "functionName": "implicitHeight",
                             "line": 22,
                             "message": ""

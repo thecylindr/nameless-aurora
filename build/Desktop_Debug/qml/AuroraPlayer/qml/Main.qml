@@ -29,6 +29,39 @@ ApplicationWindow {
     font.family: Qt.fontFamilies().indexOf("Inter") >= 0 ? "Inter" : "Noto Sans"
     // Выполняет действие по строковому коду (используется внешними тестами/голосом).
     function exerciseAction(action) {
+        if (action === "home-settings") {
+            root.currentPage = 0;
+            homePage.openPreferences();
+            return true;
+        }
+        if (action === "home-providers") {
+            root.currentPage = 0;
+            homePage.showProviders();
+            return true;
+        }
+        if (action === "home-track") {
+            root.currentPage = 0;
+            for (const mix of homePage.mixes) {
+                const track = mix.tracks.find(item => item.downloaded && item.trackId !== player.currentTrackId);
+                if (track) {
+                    homeFeed.playTrack(track.trackId);
+                    return player.currentTrackId === track.trackId;
+                }
+            }
+            return false;
+        }
+        if (action.indexOf("home-period:") === 0) {
+            root.currentPage = 0;
+            homePage.period = Number(action.slice(12));
+            return homePage.mixes.length > 0;
+        }
+        if (action === "home-mix") {
+            root.currentPage = 0;
+            if (!homePage.mixes.length)
+                return false;
+            homePage.openMix(homePage.mixes[0]);
+            return true;
+        }
         if (action.indexOf("wide-") === 0) {
             root.width = 2048;
             root.height = 1100;
@@ -235,9 +268,14 @@ ApplicationWindow {
                 currentIndex: root.currentPage
 
                 Pages.HomePage {
+                    id: homePage
                     compact: root.compact
                     onImportRequested: root.currentPage = 2
                     onLibraryRequested: root.currentPage = 1
+                    onPlaylistsRequested: {
+                        root.currentPage = 1;
+                        libraryPage.openCollections();
+                    }
                     onFilesRequested: addFiles.open()
                     onSearchRequested: {
                         root.currentPage = 4;

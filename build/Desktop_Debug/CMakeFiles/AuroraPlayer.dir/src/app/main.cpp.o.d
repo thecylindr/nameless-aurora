@@ -475,6 +475,8 @@ CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.o: \
  /home/cylindr/nameless-aurora/src/core/downloads/musicsearch.h \
  /home/cylindr/nameless-aurora/src/core/importmanager.h \
  /home/cylindr/nameless-aurora/src/core/librarymodel.h \
+ /home/cylindr/nameless-aurora/src/core/homefeed.h \
+ /usr/include/qt6/QtCore/QDate \
  /home/cylindr/nameless-aurora/src/core/libraryexchange.h \
  /home/cylindr/nameless-aurora/src/core/settingsstore.h \
  /home/cylindr/nameless-aurora/src/core/storage/storagemanager.h \

@@ -99,18 +99,18 @@ Item {
             importPreviewer.inspect(audioUrl.text, quality(), false);
     }
     // Проверяет место и подтверждение перед массовой загрузкой, затем запускает её.
-    function requestDownload(native) {
-        pendingNative = native;
-        const count = native ? selectedCount : importPreviewer.selectedCount;
+    function requestDownload(isNative) {
+        pendingNative = isNative;
+        const count = isNative ? selectedCount : importPreviewer.selectedCount;
         if (!count)
             return;
-        if (!native && importPreviewer.selectedBytes > 0 && !storageManager.canFit(importPreviewer.selectedBytes)) {
+        if (!isNative && importPreviewer.selectedBytes > 0 && !storageManager.canFit(importPreviewer.selectedBytes)) {
             toast.show("Недостаточно места. Выбери меньше треков или другую папку.");
             return;
         }
         if (settingsStore.confirmBulkDownload && count > 1)
             confirmDialog.open();
-        else if (native)
+        else if (isNative)
             startNative();
         else
             importPreviewer.startSelected();

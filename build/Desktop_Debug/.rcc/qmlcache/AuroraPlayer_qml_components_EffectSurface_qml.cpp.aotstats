@@ -72,7 +72,7 @@
                         {
                             "codegenResult": 0,
                             "column": 5,
-                            "durationMicroseconds": 9000,
+                            "durationMicroseconds": 10000,
                             "functionName": "updateVisibility",
                             "line": 26,
                             "message": ""

@@ -181,6 +181,39 @@ void AudioSources::searchCatalog(const QString& source, const QString& query)
     m_target = {{"title", query.trimmed()}};
     search(source, query);
 }
+AudioSources* AudioSources::createWorker(QObject* parent) const
+{
+    return new AudioSources(m_library, m_downloads, m_tools, parent, m_browserFactory, true);
+}
+
+void AudioSources::searchMatches(const QVariantMap& target)
+{
+    cancel();
+    m_catalogMode = false;
+    m_target = target;
+    // Read current enabled sources for each online request, without changing preferences.
+    const auto enabled = QSettings().value("downloads/sourceOrder", m_recoverySources).toStringList();
+    m_recoverySources.clear();
+    for (const auto& source : enabled)
+        if (sources().contains(source) && !m_recoverySources.contains(source))
+            m_recoverySources.append(source);
+    searchAll();
+}
+
+bool AudioSources::automaticMatch(const QVariantMap& target, const QVariantMap& candidate)
+{
+    if (target.value("title").toString().trimmed().isEmpty())
+        return false;
+    const int score = matchScore(target, candidate);
+    const auto expected = target.value("durationMs").toLongLong();
+    const auto duration = candidate.value("durationMs").toLongLong();
+    if (target.value("artist").toString().trimmed().isEmpty() && (expected <= 0 || duration <= 0))
+        return false;
+    if (expected > 0 && duration > 0)
+        return score >= 90 && qAbs(expected - duration) <= qMax<qint64>(8000, expected / 15);
+    return score == 100;
+}
+
 void AudioSources::downloadCandidate(const QVariantMap& candidate)
 {
     if (m_busy)

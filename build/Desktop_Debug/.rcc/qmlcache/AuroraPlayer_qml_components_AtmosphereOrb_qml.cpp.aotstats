@@ -50,7 +50,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "sphereVisible",
-                            "line": 24,
+                            "line": 25,
                             "message": "Cannot access value for name settingsStore"
                         },
                         {
@@ -58,7 +58,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "reacting",
-                            "line": 25,
+                            "line": 26,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -66,7 +66,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "pixelRatio",
-                            "line": 26,
+                            "line": 27,
                             "message": ""
                         },
                         {
@@ -74,7 +74,7 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "renderScale",
-                            "line": 28,
+                            "line": 29,
                             "message": ""
                         },
                         {
@@ -82,7 +82,7 @@
                             "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "implicitHeight",
-                            "line": 31,
+                            "line": 32,
                             "message": ""
                         },
                         {
@@ -90,7 +90,7 @@
                             "column": 15,
                             "durationMicroseconds": 0,
                             "functionName": "animated",
-                            "line": 32,
+                            "line": 33,
                             "message": "Cannot access value for name settingsStore"
                         },
                         {
@@ -98,7 +98,7 @@
                             "column": 13,
                             "durationMicroseconds": 0,
                             "functionName": "lively",
-                            "line": 33,
+                            "line": 34,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -106,7 +106,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "motionEnabled",
-                            "line": 34,
+                            "line": 35,
                             "message": "Cannot access value for name settingsStore"
                         },
                         {
@@ -114,7 +114,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "onReactingChanged",
-                            "line": 56,
+                            "line": 57,
                             "message": ""
                         },
                         {
@@ -122,7 +122,7 @@
                             "column": 13,
                             "durationMicroseconds": 0,
                             "functionName": "onTick",
-                            "line": 66,
+                            "line": 67,
                             "message": "Cannot access value for name settingsStore"
                         },
                         {
@@ -130,7 +130,7 @@
                             "column": 13,
                             "durationMicroseconds": 0,
                             "functionName": "onTick",
-                            "line": 66,
+                            "line": 67,
                             "message": ""
                         },
                         {
@@ -138,7 +138,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 37,
+                            "line": 38,
                             "message": ""
                         },
                         {
@@ -146,7 +146,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 43,
+                            "line": 44,
                             "message": ""
                         },
                         {
@@ -154,7 +154,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 49,
+                            "line": 50,
                             "message": ""
                         },
                         {
@@ -162,7 +162,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "type",
-                            "line": 52,
+                            "line": 53,
                             "message": ""
                         },
                         {
@@ -170,7 +170,7 @@
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "target",
-                            "line": 83,
+                            "line": 87,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -178,7 +178,7 @@
                             "column": 9,
                             "durationMicroseconds": 0,
                             "functionName": "onAudioReactivityChanged",
-                            "line": 86,
+                            "line": 90,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -186,7 +186,7 @@
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "active",
-                            "line": 98,
+                            "line": 102,
                             "message": ""
                         },
                         {
@@ -194,7 +194,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 97,
+                            "line": 101,
                             "message": ""
                         },
                         {
@@ -202,7 +202,7 @@
                             "column": 49,
                             "durationMicroseconds": 0,
                             "functionName": "validShader",
-                            "line": 102,
+                            "line": 106,
                             "message": ""
                         },
                         {
@@ -210,7 +210,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "phase",
-                            "line": 103,
+                            "line": 107,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -218,7 +218,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "intensity",
-                            "line": 104,
+                            "line": 108,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -226,7 +226,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "variant",
-                            "line": 106,
+                            "line": 110,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -234,7 +234,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "energy",
-                            "line": 107,
+                            "line": 111,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -242,7 +242,7 @@
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "bass",
-                            "line": 108,
+                            "line": 112,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -250,7 +250,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "pulse",
-                            "line": 109,
+                            "line": 113,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -258,7 +258,7 @@
                             "column": 38,
                             "durationMicroseconds": 0,
                             "functionName": "signature",
-                            "line": 110,
+                            "line": 114,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -266,7 +266,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "shock",
-                            "line": 111,
+                            "line": 115,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -274,7 +274,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "impact",
-                            "line": 112,
+                            "line": 116,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -282,7 +282,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "colorA",
-                            "line": 113,
+                            "line": 117,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -290,7 +290,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "colorB",
-                            "line": 114,
+                            "line": 118,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -298,7 +298,7 @@
                             "column": 43,
                             "durationMicroseconds": 0,
                             "functionName": "resolution",
-                            "line": 115,
+                            "line": 119,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method vector2d, returning QVariant -> QVector2D stored as QVariant"
                         },
                         {
@@ -306,7 +306,7 @@
                             "column": 40,
                             "durationMicroseconds": 0,
                             "functionName": "pointer",
-                            "line": 116,
+                            "line": 120,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -314,7 +314,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 120,
+                            "line": 124,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -322,7 +322,7 @@
                             "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "textureSize",
-                            "line": 121,
+                            "line": 125,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -330,7 +330,7 @@
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "active",
-                            "line": 129,
+                            "line": 133,
                             "message": ""
                         },
                         {
@@ -338,7 +338,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 128,
+                            "line": 132,
                             "message": ""
                         },
                         {
@@ -346,7 +346,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "scale",
-                            "line": 137,
+                            "line": 141,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -354,7 +354,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "rotation",
-                            "line": 138,
+                            "line": 142,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -362,7 +362,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "opacity",
-                            "line": 139,
+                            "line": 143,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -370,7 +370,7 @@
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "renderStrategy",
-                            "line": 140,
+                            "line": 144,
                             "message": ""
                         },
                         {
@@ -378,7 +378,7 @@
                             "column": 26,
                             "durationMicroseconds": 2000,
                             "functionName": "onPaint",
-                            "line": 184,
+                            "line": 188,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -386,7 +386,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 136,
+                            "line": 140,
                             "message": ""
                         },
                         {
@@ -394,7 +394,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "x",
-                            "line": 149,
+                            "line": 153,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -402,7 +402,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "y",
-                            "line": 150,
+                            "line": 154,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -410,7 +410,7 @@
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "xScale",
-                            "line": 145,
+                            "line": 149,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -418,7 +418,7 @@
                             "column": 33,
                             "durationMicroseconds": 0,
                             "functionName": "yScale",
-                            "line": 146,
+                            "line": 150,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -426,7 +426,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "onTriggered",
-                            "line": 157,
+                            "line": 161,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -434,7 +434,7 @@
                             "column": 29,
                             "durationMicroseconds": 0,
                             "functionName": "target",
-                            "line": 161,
+                            "line": 165,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -442,14 +442,6 @@
                             "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "onPrimaryChanged",
-                            "line": 162,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 21,
-                            "durationMicroseconds": 0,
-                            "functionName": "onSecondaryChanged",
                             "line": 166,
                             "message": ""
                         },
@@ -457,7 +449,7 @@
                             "codegenResult": 0,
                             "column": 21,
                             "durationMicroseconds": 0,
-                            "functionName": "onStyleChanged",
+                            "functionName": "onSecondaryChanged",
                             "line": 170,
                             "message": ""
                         },
@@ -465,7 +457,7 @@
                             "codegenResult": 0,
                             "column": 21,
                             "durationMicroseconds": 0,
-                            "functionName": "onIntensityChanged",
+                            "functionName": "onStyleChanged",
                             "line": 174,
                             "message": ""
                         },
@@ -473,8 +465,16 @@
                             "codegenResult": 0,
                             "column": 21,
                             "durationMicroseconds": 0,
-                            "functionName": "onSignatureChanged",
+                            "functionName": "onIntensityChanged",
                             "line": 178,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 21,
+                            "durationMicroseconds": 0,
+                            "functionName": "onSignatureChanged",
+                            "line": 182,
                             "message": ""
                         },
                         {
@@ -482,7 +482,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "model",
-                            "line": 259,
+                            "line": 263,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -490,7 +490,7 @@
                             "column": 51,
                             "durationMicroseconds": 0,
                             "functionName": "shock",
-                            "line": 264,
+                            "line": 268,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -498,7 +498,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 266,
+                            "line": 270,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -506,7 +506,7 @@
                             "column": 29,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 267,
+                            "line": 271,
                             "message": ""
                         },
                         {
@@ -514,7 +514,7 @@
                             "column": 29,
                             "durationMicroseconds": 0,
                             "functionName": "radius",
-                            "line": 269,
+                            "line": 273,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -522,7 +522,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "scale",
-                            "line": 270,
+                            "line": 274,
                             "message": ""
                         },
                         {
@@ -530,7 +530,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "rotation",
-                            "line": 271,
+                            "line": 275,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -538,7 +538,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "opacity",
-                            "line": 275,
+                            "line": 279,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -546,7 +546,7 @@
                             "column": 39,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 268,
+                            "line": 272,
                             "message": ""
                         },
                         {
@@ -554,7 +554,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 273,
+                            "line": 277,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -562,7 +562,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 274,
+                            "line": 278,
                             "message": ""
                         },
                         {
@@ -570,7 +570,7 @@
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "active",
-                            "line": 283,
+                            "line": 288,
                             "message": "Cannot access value for name settingsStore"
                         },
                         {
@@ -578,7 +578,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 282,
+                            "line": 287,
                             "message": ""
                         },
                         {
@@ -586,7 +586,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "primary",
-                            "line": 285,
+                            "line": 290,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -594,46 +594,6 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "secondary",
-                            "line": 286,
-                            "message": "Cannot access value for name root"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "signature",
-                            "line": 287,
-                            "message": "Cannot access value for name root"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 20,
-                            "durationMicroseconds": 0,
-                            "functionName": "phase",
-                            "line": 288,
-                            "message": "Cannot access value for name root"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 21,
-                            "durationMicroseconds": 0,
-                            "functionName": "energy",
-                            "line": 289,
-                            "message": "Cannot access value for name root"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 19,
-                            "durationMicroseconds": 0,
-                            "functionName": "bass",
-                            "line": 290,
-                            "message": "Cannot access value for name root"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 20,
-                            "durationMicroseconds": 0,
-                            "functionName": "pulse",
                             "line": 291,
                             "message": "Cannot access value for name root"
                         },
@@ -641,8 +601,48 @@
                             "codegenResult": 2,
                             "column": 24,
                             "durationMicroseconds": 0,
-                            "functionName": "intensity",
+                            "functionName": "signature",
                             "line": 292,
+                            "message": "Cannot access value for name root"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "phase",
+                            "line": 293,
+                            "message": "Cannot access value for name root"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 21,
+                            "durationMicroseconds": 0,
+                            "functionName": "energy",
+                            "line": 294,
+                            "message": "Cannot access value for name root"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 19,
+                            "durationMicroseconds": 0,
+                            "functionName": "bass",
+                            "line": 295,
+                            "message": "Cannot access value for name root"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "pulse",
+                            "line": 296,
+                            "message": "Cannot access value for name root"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "intensity",
+                            "line": 297,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -650,7 +650,7 @@
                             "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "detail",
-                            "line": 293,
+                            "line": 298,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -658,7 +658,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "animated",
-                            "line": 294,
+                            "line": 299,
                             "message": "Cannot access value for name root"
                         },
                         {
@@ -666,7 +666,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 299,
+                            "line": 304,
                             "message": ""
                         },
                         {
@@ -674,7 +674,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "primary",
-                            "line": 300,
+                            "line": 305,
                             "message": ""
                         },
                         {
@@ -682,46 +682,6 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "secondary",
-                            "line": 301,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 20,
-                            "durationMicroseconds": 0,
-                            "functionName": "signature",
-                            "line": 302,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 16,
-                            "durationMicroseconds": 0,
-                            "functionName": "phase",
-                            "line": 303,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 17,
-                            "durationMicroseconds": 0,
-                            "functionName": "energy",
-                            "line": 304,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 15,
-                            "durationMicroseconds": 0,
-                            "functionName": "bass",
-                            "line": 305,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 16,
-                            "durationMicroseconds": 0,
-                            "functionName": "pulse",
                             "line": 306,
                             "message": ""
                         },
@@ -729,8 +689,48 @@
                             "codegenResult": 0,
                             "column": 20,
                             "durationMicroseconds": 0,
-                            "functionName": "intensity",
+                            "functionName": "signature",
                             "line": 307,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 16,
+                            "durationMicroseconds": 0,
+                            "functionName": "phase",
+                            "line": 308,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 17,
+                            "durationMicroseconds": 0,
+                            "functionName": "energy",
+                            "line": 309,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 15,
+                            "durationMicroseconds": 0,
+                            "functionName": "bass",
+                            "line": 310,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 16,
+                            "durationMicroseconds": 0,
+                            "functionName": "pulse",
+                            "line": 311,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "intensity",
+                            "line": 312,
                             "message": ""
                         },
                         {
@@ -738,7 +738,7 @@
                             "column": 17,
                             "durationMicroseconds": 0,
                             "functionName": "detail",
-                            "line": 308,
+                            "line": 313,
                             "message": ""
                         },
                         {
@@ -746,7 +746,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 298,
+                            "line": 303,
                             "message": ""
                         },
                         {
@@ -754,7 +754,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "hoverEnabled",
-                            "line": 313,
+                            "line": 318,
                             "message": ""
                         },
                         {
@@ -762,7 +762,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "acceptedButtons",
-                            "line": 314,
+                            "line": 319,
                             "message": ""
                         },
                         {
@@ -770,7 +770,7 @@
                             "column": 18,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 315,
+                            "line": 320,
                             "message": ""
                         },
                         {
@@ -778,7 +778,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "onPositionChanged",
-                            "line": 316,
+                            "line": 321,
                             "message": ""
                         },
                         {
@@ -786,7 +786,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "onPositionChanged",
-                            "line": 316,
+                            "line": 321,
                             "message": ""
                         },
                         {
@@ -794,7 +794,7 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "onExited",
-                            "line": 320,
+                            "line": 325,
                             "message": ""
                         },
                         {
@@ -802,7 +802,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "onEnabledChanged",
-                            "line": 324,
+                            "line": 329,
                             "message": ""
                         },
                         {
@@ -810,7 +810,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 312,
+                            "line": 317,
                             "message": ""
                         }
                     ],

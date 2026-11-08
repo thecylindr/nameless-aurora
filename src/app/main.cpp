@@ -12,6 +12,7 @@
 #include "downloads/musicsearch.h"
 #include "importmanager.h"
 #include "librarymodel.h"
+#include "homefeed.h"
 #include "libraryexchange.h"
 #include "playbackcontroller.h"
 #include "settingsstore.h"
@@ -135,6 +136,9 @@ int main(int argc, char* argv[])
     startupTimes["storageScheduledMs"] = startup.elapsed();
     OAuthManager accounts(&settings);
     LibraryExchange exchange(&library, &settings, &dependencies, &accounts, &webLogin);
+    AudioSources homePreview(&library, &downloads, &dependencies, nullptr, {}, true);
+    HomeFeed homeFeed(&library, &accounts, &webLogin, &playback, nullptr, nullptr, &homePreview);
+    QObject::connect(&homeFeed, &HomeFeed::sourceRequested, &audioSources, &AudioSources::openTrack);
     startupTimes["servicesReadyMs"] = startup.elapsed();
     QObject::connect(&exchange, &LibraryExchange::audioImportRequested, &downloads, [&](const QVariantList& tracks) {
         downloads.enqueueNative(tracks, settings.quality());
@@ -180,6 +184,7 @@ int main(int argc, char* argv[])
     engine.rootContext()->setContextProperty(QStringLiteral("libraryExchange"), &exchange);
     engine.rootContext()->setContextProperty(QStringLiteral("namelessBridge"), &nameless);
     engine.rootContext()->setContextProperty(QStringLiteral("libraryModel"), &library);
+    engine.rootContext()->setContextProperty(QStringLiteral("homeFeed"), &homeFeed);
     engine.rootContext()->setContextProperty(QStringLiteral("importManager"), &importer);
     engine.rootContext()->setContextProperty(QStringLiteral("player"), &playback);
     engine.rootContext()->setContextProperty(QStringLiteral("settingsStore"), &settings);

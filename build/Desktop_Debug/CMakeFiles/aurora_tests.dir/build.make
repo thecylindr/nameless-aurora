@@ -167,10 +167,24 @@ CMakeFiles/aurora_tests.dir/src/core/librarymodel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aurora_tests.dir/src/core/librarymodel.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cylindr/nameless-aurora/src/core/librarymodel.cpp -o CMakeFiles/aurora_tests.dir/src/core/librarymodel.cpp.s
 
+CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
+CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o: /home/cylindr/nameless-aurora/src/core/homefeed.cpp
+CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o -c /home/cylindr/nameless-aurora/src/core/homefeed.cpp
+
+CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cylindr/nameless-aurora/src/core/homefeed.cpp > CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.i
+
+CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cylindr/nameless-aurora/src/core/homefeed.cpp -o CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.s
+
 CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o: /home/cylindr/nameless-aurora/src/core/artwork.cpp
 CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o -c /home/cylindr/nameless-aurora/src/core/artwork.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o: /home/cylindr/nameless-aurora/src/core/libraryexchange.cpp
 CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o -c /home/cylindr/nameless-aurora/src/core/libraryexchange.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o: /home/cylindr/nameless-aurora/src/core/settingsstore.cpp
 CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o -c /home/cylindr/nameless-aurora/src/core/settingsstore.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/importmanager.cpp
 CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/importmanager.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.o: /home/cylindr/nameless-aurora/src/core/playbackcontroller.cpp
 CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.o -c /home/cylindr/nameless-aurora/src/core/playbackcontroller.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/aurora_tests.dir/src/core/playbackcontroller.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.o: /home/cylindr/nameless-aurora/src/core/web/streamproxy.cpp
 CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.o -c /home/cylindr/nameless-aurora/src/core/web/streamproxy.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/aurora_tests.dir/src/core/web/streamproxy.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.o: /home/cylindr/nameless-aurora/src/core/audioreactivity.cpp
 CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.o -c /home/cylindr/nameless-aurora/src/core/audioreactivity.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.i: cmake_force
@@ -268,7 +282,7 @@ CMakeFiles/aurora_tests.dir/src/core/audioreactivity.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.o: /home/cylindr/nameless-aurora/src/core/audioequalizer.cpp
 CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.o -c /home/cylindr/nameless-aurora/src/core/audioequalizer.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.i: cmake_force
@@ -282,7 +296,7 @@ CMakeFiles/aurora_tests.dir/src/core/audioequalizer.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/dependencymanager.cpp
 CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/dependencymanager.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.i: cmake_force
@@ -296,7 +310,7 @@ CMakeFiles/aurora_tests.dir/src/core/downloads/dependencymanager.cpp.s: cmake_fo
 CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/importpreviewer.cpp
 CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/importpreviewer.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/aurora_tests.dir/src/core/downloads/importpreviewer.cpp.s: cmake_forc
 CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/nativedownload.cpp
 CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/nativedownload.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/downloadmanager.cpp
 CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloadmanager.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.i: cmake_force
@@ -338,7 +352,7 @@ CMakeFiles/aurora_tests.dir/src/core/downloadmanager.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/audiosources.cpp
 CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/audiosources.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.i: cmake_force
@@ -352,7 +366,7 @@ CMakeFiles/aurora_tests.dir/src/core/downloads/audiosources.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/opencatalog.cpp
 CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/opencatalog.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.i: cmake_force
@@ -366,7 +380,7 @@ CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.cpp
 CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.i: cmake_force
@@ -380,7 +394,7 @@ CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/browserauthmanager.cpp
 CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/browserauthmanager.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.i: cmake_force
@@ -394,7 +408,7 @@ CMakeFiles/aurora_tests.dir/src/core/auth/browserauthmanager.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/oauthmanager.cpp
 CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/oauthmanager.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.i: cmake_force
@@ -408,7 +422,7 @@ CMakeFiles/aurora_tests.dir/src/core/auth/oauthmanager.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/webloginmanager_native.cpp
 CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/webloginmanager_native.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.i: cmake_force
@@ -422,7 +436,7 @@ CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager_native.cpp.s: cmake_fo
 CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.o: /home/cylindr/nameless-aurora/src/core/web/mediasniffer.cpp
 CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.o -c /home/cylindr/nameless-aurora/src/core/web/mediasniffer.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.i: cmake_force
@@ -436,7 +450,7 @@ CMakeFiles/aurora_tests.dir/src/core/web/mediasniffer.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.o: /home/cylindr/nameless-aurora/src/core/web/servicepayload.cpp
 CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.o -c /home/cylindr/nameless-aurora/src/core/web/servicepayload.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.i: cmake_force
@@ -450,7 +464,7 @@ CMakeFiles/aurora_tests.dir/src/core/web/servicepayload.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/browsersession.cpp
 CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/browsersession.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.i: cmake_force
@@ -464,7 +478,7 @@ CMakeFiles/aurora_tests.dir/src/core/auth/browsersession.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/browsercookieimporter.cpp
 CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/browsercookieimporter.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.i: cmake_force
@@ -478,7 +492,7 @@ CMakeFiles/aurora_tests.dir/src/core/auth/browsercookieimporter.cpp.s: cmake_for
 CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/cdpclient.cpp
 CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/cdpclient.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.i: cmake_force
@@ -492,7 +506,7 @@ CMakeFiles/aurora_tests.dir/src/core/auth/cdpclient.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/webloginmanager.cpp
 CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/webloginmanager.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.i: cmake_force
@@ -506,7 +520,7 @@ CMakeFiles/aurora_tests.dir/src/core/auth/webloginmanager.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.o: /home/cylindr/nameless-aurora/src/core/vkprovider.cpp
 CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.o -MF CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.o.d -o CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.o -c /home/cylindr/nameless-aurora/src/core/vkprovider.cpp
 
 CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.i: cmake_force
@@ -520,7 +534,7 @@ CMakeFiles/aurora_tests.dir/src/core/vkprovider.cpp.s: cmake_force
 CMakeFiles/aurora_tests.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp.o: CMakeFiles/aurora_tests.dir/flags.make
 CMakeFiles/aurora_tests.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp.o: .qt/rcc/qrc_native_scripts_test.cpp
 CMakeFiles/aurora_tests.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp.o: CMakeFiles/aurora_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/aurora_tests.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/aurora_tests.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/aurora_tests.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp.o -MF CMakeFiles/aurora_tests.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp.o.d -o CMakeFiles/aurora_tests.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp
 
 CMakeFiles/aurora_tests.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts_test.cpp.i: cmake_force
@@ -539,6 +553,7 @@ aurora_tests_OBJECTS = \
 "CMakeFiles/aurora_tests.dir/src/core/integration/namelessbridge.cpp.o" \
 "CMakeFiles/aurora_tests.dir/src/core/data/libraryrepository.cpp.o" \
 "CMakeFiles/aurora_tests.dir/src/core/librarymodel.cpp.o" \
+"CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o" \
 "CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o" \
 "CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o" \
 "CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o" \
@@ -575,6 +590,7 @@ aurora_tests: CMakeFiles/aurora_tests.dir/src/core/storage/storagemanager.cpp.o
 aurora_tests: CMakeFiles/aurora_tests.dir/src/core/integration/namelessbridge.cpp.o
 aurora_tests: CMakeFiles/aurora_tests.dir/src/core/data/libraryrepository.cpp.o
 aurora_tests: CMakeFiles/aurora_tests.dir/src/core/librarymodel.cpp.o
+aurora_tests: CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o
 aurora_tests: CMakeFiles/aurora_tests.dir/src/core/artwork.cpp.o
 aurora_tests: CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o
 aurora_tests: CMakeFiles/aurora_tests.dir/src/core/settingsstore.cpp.o
@@ -622,7 +638,7 @@ aurora_tests: /usr/lib/libQt6Qml.so.6.12.0
 aurora_tests: /usr/lib/libQt6Network.so.6.12.0
 aurora_tests: /usr/lib/libQt6Core.so.6.12.0
 aurora_tests: CMakeFiles/aurora_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Linking CXX executable aurora_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Linking CXX executable aurora_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/aurora_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -152,7 +152,7 @@ CMakeFiles/AuroraPlayer.dir/all: CMakeFiles/AuroraPlayer_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AuroraPlayer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 63
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 62
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AuroraPlayer.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/AuroraPlayer.dir/rule
@@ -188,7 +188,7 @@ CMakeFiles/AuroraPlayer_qmltyperegistration.dir/all: CMakeFiles/AuroraPlayer_aut
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AuroraPlayer_qmltyperegistration.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AuroraPlayer_qmltyperegistration.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/AuroraPlayer_qmltyperegistration.dir/rule
@@ -220,7 +220,7 @@ CMakeFiles/all_qmltyperegistrations.dir/all: CMakeFiles/AuroraPlayer_qmltyperegi
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_qmltyperegistrations.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/all_qmltyperegistrations.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/all_qmltyperegistrations.dir/rule
@@ -252,7 +252,7 @@ CMakeFiles/AuroraPlayer_qmllint.dir/all: CMakeFiles/all_qmltyperegistrations.dir
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AuroraPlayer_qmllint.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AuroraPlayer_qmllint.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/AuroraPlayer_qmllint.dir/rule
@@ -284,7 +284,7 @@ CMakeFiles/AuroraPlayer_qmllint_json.dir/all: CMakeFiles/all_qmltyperegistration
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AuroraPlayer_qmllint_json.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AuroraPlayer_qmllint_json.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/AuroraPlayer_qmllint_json.dir/rule
@@ -316,7 +316,7 @@ CMakeFiles/AuroraPlayer_qmllint_module.dir/all: CMakeFiles/all_qmltyperegistrati
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AuroraPlayer_qmllint_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AuroraPlayer_qmllint_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/AuroraPlayer_qmllint_module.dir/rule
@@ -348,7 +348,7 @@ CMakeFiles/all_qmllint.dir/all: CMakeFiles/AuroraPlayer_qmllint.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_qmllint.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/all_qmllint.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/all_qmllint.dir/rule
@@ -380,7 +380,7 @@ CMakeFiles/all_qmllint_json.dir/all: CMakeFiles/AuroraPlayer_qmllint_json.dir/al
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_qmllint_json.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/all_qmllint_json.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/all_qmllint_json.dir/rule
@@ -412,7 +412,7 @@ CMakeFiles/all_qmllint_module.dir/all: CMakeFiles/AuroraPlayer_qmllint_module.di
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_qmllint_module.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/all_qmllint_module.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/all_qmllint_module.dir/rule
@@ -471,12 +471,12 @@ CMakeFiles/dump_qml_context_properties.dir/clean:
 CMakeFiles/clean_qml_context_properties.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean_qml_context_properties.dir/build.make CMakeFiles/clean_qml_context_properties.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean_qml_context_properties.dir/build.make CMakeFiles/clean_qml_context_properties.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Built target clean_qml_context_properties"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=78 "Built target clean_qml_context_properties"
 .PHONY : CMakeFiles/clean_qml_context_properties.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/clean_qml_context_properties.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/clean_qml_context_properties.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/clean_qml_context_properties.dir/rule
@@ -488,7 +488,7 @@ clean_qml_context_properties: CMakeFiles/clean_qml_context_properties.dir/rule
 # codegen rule for target.
 CMakeFiles/clean_qml_context_properties.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean_qml_context_properties.dir/build.make CMakeFiles/clean_qml_context_properties.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Finished codegen for target clean_qml_context_properties"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=78 "Finished codegen for target clean_qml_context_properties"
 .PHONY : CMakeFiles/clean_qml_context_properties.dir/codegen
 
 # clean rule for target.
@@ -508,7 +508,7 @@ CMakeFiles/AuroraPlayer_qmlpreview.dir/all: CMakeFiles/AuroraPlayer.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AuroraPlayer_qmlpreview.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 63
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 62
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AuroraPlayer_qmlpreview.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/AuroraPlayer_qmlpreview.dir/rule
@@ -535,12 +535,12 @@ CMakeFiles/AuroraPlayer_qmlpreview.dir/clean:
 CMakeFiles/AuroraPlayer_copy_qml.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer_copy_qml.dir/build.make CMakeFiles/AuroraPlayer_copy_qml.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer_copy_qml.dir/build.make CMakeFiles/AuroraPlayer_copy_qml.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=60 "Built target AuroraPlayer_copy_qml"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Built target AuroraPlayer_copy_qml"
 .PHONY : CMakeFiles/AuroraPlayer_copy_qml.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AuroraPlayer_copy_qml.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AuroraPlayer_copy_qml.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/AuroraPlayer_copy_qml.dir/rule
@@ -552,7 +552,7 @@ AuroraPlayer_copy_qml: CMakeFiles/AuroraPlayer_copy_qml.dir/rule
 # codegen rule for target.
 CMakeFiles/AuroraPlayer_copy_qml.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer_copy_qml.dir/build.make CMakeFiles/AuroraPlayer_copy_qml.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=60 "Finished codegen for target AuroraPlayer_copy_qml"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Finished codegen for target AuroraPlayer_copy_qml"
 .PHONY : CMakeFiles/AuroraPlayer_copy_qml.dir/codegen
 
 # clean rule for target.
@@ -1502,7 +1502,7 @@ CMakeFiles/aurora_tests.dir/all: CMakeFiles/aurora_tests_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/aurora_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/aurora_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/aurora_tests.dir/rule
@@ -1562,12 +1562,12 @@ CMakeFiles/AuroraPlayer_generate_qmlls_ini_file.dir/clean:
 CMakeFiles/generate_qmlls_build_ini_file.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generate_qmlls_build_ini_file.dir/build.make CMakeFiles/generate_qmlls_build_ini_file.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generate_qmlls_build_ini_file.dir/build.make CMakeFiles/generate_qmlls_build_ini_file.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=80 "Built target generate_qmlls_build_ini_file"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Built target generate_qmlls_build_ini_file"
 .PHONY : CMakeFiles/generate_qmlls_build_ini_file.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/generate_qmlls_build_ini_file.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/generate_qmlls_build_ini_file.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/generate_qmlls_build_ini_file.dir/rule
@@ -1579,7 +1579,7 @@ generate_qmlls_build_ini_file: CMakeFiles/generate_qmlls_build_ini_file.dir/rule
 # codegen rule for target.
 CMakeFiles/generate_qmlls_build_ini_file.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/generate_qmlls_build_ini_file.dir/build.make CMakeFiles/generate_qmlls_build_ini_file.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=80 "Finished codegen for target generate_qmlls_build_ini_file"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Finished codegen for target generate_qmlls_build_ini_file"
 .PHONY : CMakeFiles/generate_qmlls_build_ini_file.dir/codegen
 
 # clean rule for target.
@@ -1627,12 +1627,12 @@ CMakeFiles/module_AuroraPlayer_aotstats_target.dir/all: CMakeFiles/AuroraPlayer_
 CMakeFiles/module_AuroraPlayer_aotstats_target.dir/all: CMakeFiles/AuroraPlayer_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_AuroraPlayer_aotstats_target.dir/build.make CMakeFiles/module_AuroraPlayer_aotstats_target.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_AuroraPlayer_aotstats_target.dir/build.make CMakeFiles/module_AuroraPlayer_aotstats_target.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Built target module_AuroraPlayer_aotstats_target"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Built target module_AuroraPlayer_aotstats_target"
 .PHONY : CMakeFiles/module_AuroraPlayer_aotstats_target.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/module_AuroraPlayer_aotstats_target.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/module_AuroraPlayer_aotstats_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/module_AuroraPlayer_aotstats_target.dir/rule
@@ -1645,7 +1645,7 @@ module_AuroraPlayer_aotstats_target: CMakeFiles/module_AuroraPlayer_aotstats_tar
 CMakeFiles/module_AuroraPlayer_aotstats_target.dir/codegen: CMakeFiles/AuroraPlayer_qmltyperegistration.dir/all
 CMakeFiles/module_AuroraPlayer_aotstats_target.dir/codegen: CMakeFiles/AuroraPlayer_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_AuroraPlayer_aotstats_target.dir/build.make CMakeFiles/module_AuroraPlayer_aotstats_target.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Finished codegen for target module_AuroraPlayer_aotstats_target"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Finished codegen for target module_AuroraPlayer_aotstats_target"
 .PHONY : CMakeFiles/module_AuroraPlayer_aotstats_target.dir/codegen
 
 # clean rule for target.
@@ -1666,7 +1666,7 @@ CMakeFiles/all_aotstats.dir/all: CMakeFiles/AuroraPlayer_autogen_timestamp_deps.
 
 # Build rule for subdir invocation for target.
 CMakeFiles/all_aotstats.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 25
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/all_aotstats.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/all_aotstats.dir/rule
@@ -1694,12 +1694,12 @@ CMakeFiles/all_aotstats.dir/clean:
 CMakeFiles/aurora_tests_qmlimportscan.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aurora_tests_qmlimportscan.dir/build.make CMakeFiles/aurora_tests_qmlimportscan.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aurora_tests_qmlimportscan.dir/build.make CMakeFiles/aurora_tests_qmlimportscan.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=78 "Built target aurora_tests_qmlimportscan"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Built target aurora_tests_qmlimportscan"
 .PHONY : CMakeFiles/aurora_tests_qmlimportscan.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/aurora_tests_qmlimportscan.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/aurora_tests_qmlimportscan.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/aurora_tests_qmlimportscan.dir/rule
@@ -1711,7 +1711,7 @@ aurora_tests_qmlimportscan: CMakeFiles/aurora_tests_qmlimportscan.dir/rule
 # codegen rule for target.
 CMakeFiles/aurora_tests_qmlimportscan.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aurora_tests_qmlimportscan.dir/build.make CMakeFiles/aurora_tests_qmlimportscan.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=78 "Finished codegen for target aurora_tests_qmlimportscan"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Finished codegen for target aurora_tests_qmlimportscan"
 .PHONY : CMakeFiles/aurora_tests_qmlimportscan.dir/codegen
 
 # clean rule for target.
@@ -1768,7 +1768,7 @@ CMakeFiles/AuroraPlayer_autogen_timestamp_deps.dir/all: CMakeFiles/AuroraPlayer_
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AuroraPlayer_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AuroraPlayer_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/AuroraPlayer_autogen_timestamp_deps.dir/rule
@@ -1795,12 +1795,12 @@ CMakeFiles/AuroraPlayer_autogen_timestamp_deps.dir/clean:
 CMakeFiles/AuroraPlayer_autogen.dir/all: CMakeFiles/AuroraPlayer_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer_autogen.dir/build.make CMakeFiles/AuroraPlayer_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer_autogen.dir/build.make CMakeFiles/AuroraPlayer_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Built target AuroraPlayer_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=60 "Built target AuroraPlayer_autogen"
 .PHONY : CMakeFiles/AuroraPlayer_autogen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AuroraPlayer_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/AuroraPlayer_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/AuroraPlayer_autogen.dir/rule
@@ -1812,7 +1812,7 @@ AuroraPlayer_autogen: CMakeFiles/AuroraPlayer_autogen.dir/rule
 # codegen rule for target.
 CMakeFiles/AuroraPlayer_autogen.dir/codegen: CMakeFiles/AuroraPlayer_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer_autogen.dir/build.make CMakeFiles/AuroraPlayer_autogen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num= "Finished codegen for target AuroraPlayer_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=60 "Finished codegen for target AuroraPlayer_autogen"
 .PHONY : CMakeFiles/AuroraPlayer_autogen.dir/codegen
 
 # clean rule for target.
@@ -1832,7 +1832,7 @@ CMakeFiles/aurora_tests_autogen_timestamp_deps.dir/all: CMakeFiles/aurora_tests_
 
 # Build rule for subdir invocation for target.
 CMakeFiles/aurora_tests_autogen_timestamp_deps.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/aurora_tests_autogen_timestamp_deps.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/aurora_tests_autogen_timestamp_deps.dir/rule
@@ -1864,7 +1864,7 @@ CMakeFiles/aurora_tests_autogen.dir/all: CMakeFiles/aurora_tests_autogen_timesta
 
 # Build rule for subdir invocation for target.
 CMakeFiles/aurora_tests_autogen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/aurora_tests_autogen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles 0
 .PHONY : CMakeFiles/aurora_tests_autogen.dir/rule

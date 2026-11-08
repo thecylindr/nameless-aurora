@@ -40,8 +40,12 @@ template <> constexpr inline auto PlaybackController::qt_create_metaobjectdata<q
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "PlaybackController",
-        "currentTrackChanged",
+        "streamRequested",
         "",
+        "QVariantMap",
+        "candidate",
+        "streamQueueExhausted",
+        "currentTrackChanged",
         "playingChanged",
         "streamLoadingChanged",
         "positionChanged",
@@ -61,6 +65,10 @@ template <> constexpr inline auto PlaybackController::qt_create_metaobjectdata<q
         "id",
         "playQueueTrack",
         "playMix",
+        "playSelection",
+        "QVariantList",
+        "ids",
+        "firstId",
         "toggle",
         "play",
         "pause",
@@ -98,7 +106,6 @@ template <> constexpr inline auto PlaybackController::qt_create_metaobjectdata<q
         "shuffle",
         "repeatMode",
         "queue",
-        "QVariantList",
         "audioLevels",
         "audioEnergy",
         "bassEnergy",
@@ -107,136 +114,150 @@ template <> constexpr inline auto PlaybackController::qt_create_metaobjectdata<q
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Signal 'currentTrackChanged'
-        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'playingChanged'
-        QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'streamLoadingChanged'
-        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'positionChanged'
+        // Signal 'streamRequested'
+        QtMocHelpers::SignalData<void(const QVariantMap &)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 3, 4 },
+        }}),
+        // Signal 'streamQueueExhausted'
         QtMocHelpers::SignalData<void()>(5, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'durationChanged'
+        // Signal 'currentTrackChanged'
         QtMocHelpers::SignalData<void()>(6, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'volumeChanged'
+        // Signal 'playingChanged'
         QtMocHelpers::SignalData<void()>(7, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'lastErrorChanged'
+        // Signal 'streamLoadingChanged'
         QtMocHelpers::SignalData<void()>(8, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'modesChanged'
+        // Signal 'positionChanged'
         QtMocHelpers::SignalData<void()>(9, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'queueChanged'
+        // Signal 'durationChanged'
         QtMocHelpers::SignalData<void()>(10, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'audioLevelsChanged'
+        // Signal 'volumeChanged'
         QtMocHelpers::SignalData<void()>(11, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'audioReactivityChanged'
+        // Signal 'lastErrorChanged'
         QtMocHelpers::SignalData<void()>(12, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'modesChanged'
+        QtMocHelpers::SignalData<void()>(13, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'queueChanged'
+        QtMocHelpers::SignalData<void()>(14, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'audioLevelsChanged'
+        QtMocHelpers::SignalData<void()>(15, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'audioReactivityChanged'
+        QtMocHelpers::SignalData<void()>(16, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'seeked'
-        QtMocHelpers::SignalData<void(qint64)>(13, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::LongLong, 14 },
+        QtMocHelpers::SignalData<void(qint64)>(17, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::LongLong, 18 },
         }}),
         // Signal 'seekableChanged'
-        QtMocHelpers::SignalData<void()>(15, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SignalData<void()>(19, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'playIndex'
-        QtMocHelpers::MethodData<void(int)>(16, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 17 },
+        QtMocHelpers::MethodData<void(int)>(20, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 21 },
         }}),
         // Method 'playTrackId'
-        QtMocHelpers::MethodData<void(int)>(18, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 19 },
+        QtMocHelpers::MethodData<void(int)>(22, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 23 },
         }}),
         // Method 'playQueueTrack'
-        QtMocHelpers::MethodData<void(int)>(20, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 19 },
+        QtMocHelpers::MethodData<void(int)>(24, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 23 },
         }}),
         // Method 'playMix'
-        QtMocHelpers::MethodData<void()>(21, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'toggle'
-        QtMocHelpers::MethodData<void()>(22, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'play'
-        QtMocHelpers::MethodData<void()>(23, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'pause'
-        QtMocHelpers::MethodData<void()>(24, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'stop'
         QtMocHelpers::MethodData<void()>(25, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'playSelection'
+        QtMocHelpers::MethodData<void(const QVariantList &, int)>(26, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 }, { QMetaType::Int, 29 },
+        }}),
+        // Method 'playSelection'
+        QtMocHelpers::MethodData<void(const QVariantList &)>(26, 2, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
+            { 0x80000000 | 27, 28 },
+        }}),
+        // Method 'toggle'
+        QtMocHelpers::MethodData<void()>(30, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'play'
+        QtMocHelpers::MethodData<void()>(31, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'pause'
+        QtMocHelpers::MethodData<void()>(32, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'stop'
+        QtMocHelpers::MethodData<void()>(33, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'next'
-        QtMocHelpers::MethodData<void()>(26, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(34, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'previous'
-        QtMocHelpers::MethodData<void()>(27, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(35, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'seek'
-        QtMocHelpers::MethodData<void(qint64)>(28, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::LongLong, 14 },
+        QtMocHelpers::MethodData<void(qint64)>(36, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::LongLong, 18 },
         }}),
         // Method 'toggleFavorite'
-        QtMocHelpers::MethodData<void()>(29, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(37, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'enqueue'
-        QtMocHelpers::MethodData<void(int)>(30, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 19 },
+        QtMocHelpers::MethodData<void(int)>(38, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 23 },
         }}),
         // Method 'removeFromQueue'
-        QtMocHelpers::MethodData<void(int)>(31, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 19 },
+        QtMocHelpers::MethodData<void(int)>(39, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 23 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'equalizer'
-        QtMocHelpers::PropertyData<AudioEqualizer*>(32, 0x80000000 | 33, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
+        QtMocHelpers::PropertyData<AudioEqualizer*>(40, 0x80000000 | 41, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
         // property 'currentIndex'
-        QtMocHelpers::PropertyData<int>(34, QMetaType::Int, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<int>(42, QMetaType::Int, QMC::DefaultPropertyFlags, 2),
         // property 'currentTrackId'
-        QtMocHelpers::PropertyData<int>(35, QMetaType::Int, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<int>(43, QMetaType::Int, QMC::DefaultPropertyFlags, 2),
         // property 'currentTitle'
-        QtMocHelpers::PropertyData<QString>(36, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(44, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'currentArtist'
-        QtMocHelpers::PropertyData<QString>(37, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(45, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'currentFormat'
-        QtMocHelpers::PropertyData<QString>(38, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(46, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'currentCoverPath'
-        QtMocHelpers::PropertyData<QString>(39, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(47, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'artworkUrl'
-        QtMocHelpers::PropertyData<QUrl>(40, 0x80000000 | 41, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 0),
+        QtMocHelpers::PropertyData<QUrl>(48, 0x80000000 | 49, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 2),
         // property 'atmosphereColor'
-        QtMocHelpers::PropertyData<QColor>(42, 0x80000000 | 43, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 0),
+        QtMocHelpers::PropertyData<QColor>(50, 0x80000000 | 51, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 2),
         // property 'atmosphereSecondary'
-        QtMocHelpers::PropertyData<QColor>(44, 0x80000000 | 43, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 0),
+        QtMocHelpers::PropertyData<QColor>(52, 0x80000000 | 51, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 2),
         // property 'atmosphereShape'
-        QtMocHelpers::PropertyData<double>(45, QMetaType::Double, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<double>(53, QMetaType::Double, QMC::DefaultPropertyFlags, 2),
         // property 'favorite'
-        QtMocHelpers::PropertyData<bool>(46, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(54, QMetaType::Bool, QMC::DefaultPropertyFlags, 2),
         // property 'hasTrack'
-        QtMocHelpers::PropertyData<bool>(47, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(55, QMetaType::Bool, QMC::DefaultPropertyFlags, 2),
         // property 'streaming'
-        QtMocHelpers::PropertyData<bool>(48, QMetaType::Bool, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<bool>(56, QMetaType::Bool, QMC::DefaultPropertyFlags, 2),
         // property 'streamLoading'
-        QtMocHelpers::PropertyData<bool>(49, QMetaType::Bool, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<bool>(57, QMetaType::Bool, QMC::DefaultPropertyFlags, 4),
         // property 'streamKey'
-        QtMocHelpers::PropertyData<QString>(50, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(58, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'seekable'
-        QtMocHelpers::PropertyData<bool>(51, QMetaType::Bool, QMC::DefaultPropertyFlags, 12),
+        QtMocHelpers::PropertyData<bool>(59, QMetaType::Bool, QMC::DefaultPropertyFlags, 14),
         // property 'playing'
-        QtMocHelpers::PropertyData<bool>(52, QMetaType::Bool, QMC::DefaultPropertyFlags, 1),
+        QtMocHelpers::PropertyData<bool>(60, QMetaType::Bool, QMC::DefaultPropertyFlags, 3),
         // property 'position'
-        QtMocHelpers::PropertyData<qint64>(14, QMetaType::LongLong, QMC::DefaultPropertyFlags, 3),
+        QtMocHelpers::PropertyData<qint64>(18, QMetaType::LongLong, QMC::DefaultPropertyFlags, 5),
         // property 'duration'
-        QtMocHelpers::PropertyData<qint64>(53, QMetaType::LongLong, QMC::DefaultPropertyFlags, 4),
+        QtMocHelpers::PropertyData<qint64>(61, QMetaType::LongLong, QMC::DefaultPropertyFlags, 6),
         // property 'volume'
-        QtMocHelpers::PropertyData<double>(54, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 5),
+        QtMocHelpers::PropertyData<double>(62, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 7),
         // property 'lastError'
-        QtMocHelpers::PropertyData<QString>(55, QMetaType::QString, QMC::DefaultPropertyFlags, 6),
+        QtMocHelpers::PropertyData<QString>(63, QMetaType::QString, QMC::DefaultPropertyFlags, 8),
         // property 'shuffle'
-        QtMocHelpers::PropertyData<bool>(56, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 7),
+        QtMocHelpers::PropertyData<bool>(64, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 9),
         // property 'repeatMode'
-        QtMocHelpers::PropertyData<int>(57, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 7),
+        QtMocHelpers::PropertyData<int>(65, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 9),
         // property 'queue'
-        QtMocHelpers::PropertyData<QVariantList>(58, 0x80000000 | 59, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 8),
+        QtMocHelpers::PropertyData<QVariantList>(66, 0x80000000 | 27, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 10),
         // property 'audioLevels'
-        QtMocHelpers::PropertyData<QVariantList>(60, 0x80000000 | 59, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 9),
+        QtMocHelpers::PropertyData<QVariantList>(67, 0x80000000 | 27, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 11),
         // property 'audioEnergy'
-        QtMocHelpers::PropertyData<double>(61, QMetaType::Double, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<double>(68, QMetaType::Double, QMC::DefaultPropertyFlags, 12),
         // property 'bassEnergy'
-        QtMocHelpers::PropertyData<double>(62, QMetaType::Double, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<double>(69, QMetaType::Double, QMC::DefaultPropertyFlags, 12),
         // property 'beatPulse'
-        QtMocHelpers::PropertyData<double>(63, QMetaType::Double, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<double>(70, QMetaType::Double, QMC::DefaultPropertyFlags, 12),
         // property 'beatSerial'
-        QtMocHelpers::PropertyData<quint64>(64, QMetaType::ULongLong, QMC::DefaultPropertyFlags, 10),
+        QtMocHelpers::PropertyData<quint64>(71, QMetaType::ULongLong, QMC::DefaultPropertyFlags, 12),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -258,62 +279,70 @@ void PlaybackController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
     auto *_t = static_cast<PlaybackController *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->currentTrackChanged(); break;
-        case 1: _t->playingChanged(); break;
-        case 2: _t->streamLoadingChanged(); break;
-        case 3: _t->positionChanged(); break;
-        case 4: _t->durationChanged(); break;
-        case 5: _t->volumeChanged(); break;
-        case 6: _t->lastErrorChanged(); break;
-        case 7: _t->modesChanged(); break;
-        case 8: _t->queueChanged(); break;
-        case 9: _t->audioLevelsChanged(); break;
-        case 10: _t->audioReactivityChanged(); break;
-        case 11: _t->seeked((*reinterpret_cast<std::add_pointer_t<qint64>>(_a[1]))); break;
-        case 12: _t->seekableChanged(); break;
-        case 13: _t->playIndex((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 14: _t->playTrackId((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 15: _t->playQueueTrack((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 16: _t->playMix(); break;
-        case 17: _t->toggle(); break;
-        case 18: _t->play(); break;
-        case 19: _t->pause(); break;
-        case 20: _t->stop(); break;
-        case 21: _t->next(); break;
-        case 22: _t->previous(); break;
-        case 23: _t->seek((*reinterpret_cast<std::add_pointer_t<qint64>>(_a[1]))); break;
-        case 24: _t->toggleFavorite(); break;
-        case 25: _t->enqueue((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
-        case 26: _t->removeFromQueue((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 0: _t->streamRequested((*reinterpret_cast<std::add_pointer_t<QVariantMap>>(_a[1]))); break;
+        case 1: _t->streamQueueExhausted(); break;
+        case 2: _t->currentTrackChanged(); break;
+        case 3: _t->playingChanged(); break;
+        case 4: _t->streamLoadingChanged(); break;
+        case 5: _t->positionChanged(); break;
+        case 6: _t->durationChanged(); break;
+        case 7: _t->volumeChanged(); break;
+        case 8: _t->lastErrorChanged(); break;
+        case 9: _t->modesChanged(); break;
+        case 10: _t->queueChanged(); break;
+        case 11: _t->audioLevelsChanged(); break;
+        case 12: _t->audioReactivityChanged(); break;
+        case 13: _t->seeked((*reinterpret_cast<std::add_pointer_t<qint64>>(_a[1]))); break;
+        case 14: _t->seekableChanged(); break;
+        case 15: _t->playIndex((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 16: _t->playTrackId((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 17: _t->playQueueTrack((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 18: _t->playMix(); break;
+        case 19: _t->playSelection((*reinterpret_cast<std::add_pointer_t<QVariantList>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2]))); break;
+        case 20: _t->playSelection((*reinterpret_cast<std::add_pointer_t<QVariantList>>(_a[1]))); break;
+        case 21: _t->toggle(); break;
+        case 22: _t->play(); break;
+        case 23: _t->pause(); break;
+        case 24: _t->stop(); break;
+        case 25: _t->next(); break;
+        case 26: _t->previous(); break;
+        case 27: _t->seek((*reinterpret_cast<std::add_pointer_t<qint64>>(_a[1]))); break;
+        case 28: _t->toggleFavorite(); break;
+        case 29: _t->enqueue((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
+        case 30: _t->removeFromQueue((*reinterpret_cast<std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::currentTrackChanged, 0))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)(const QVariantMap & )>(_a, &PlaybackController::streamRequested, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::playingChanged, 1))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::streamQueueExhausted, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::streamLoadingChanged, 2))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::currentTrackChanged, 2))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::positionChanged, 3))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::playingChanged, 3))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::durationChanged, 4))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::streamLoadingChanged, 4))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::volumeChanged, 5))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::positionChanged, 5))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::lastErrorChanged, 6))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::durationChanged, 6))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::modesChanged, 7))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::volumeChanged, 7))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::queueChanged, 8))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::lastErrorChanged, 8))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::audioLevelsChanged, 9))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::modesChanged, 9))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::audioReactivityChanged, 10))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::queueChanged, 10))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)(qint64 )>(_a, &PlaybackController::seeked, 11))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::audioLevelsChanged, 11))
             return;
-        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::seekableChanged, 12))
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::audioReactivityChanged, 12))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)(qint64 )>(_a, &PlaybackController::seeked, 13))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (PlaybackController::*)()>(_a, &PlaybackController::seekableChanged, 14))
             return;
     }
     if (_c == QMetaObject::RegisterPropertyMetaType) {
@@ -389,14 +418,14 @@ int PlaybackController::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 27)
+        if (_id < 31)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 27;
+        _id -= 31;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 27)
+        if (_id < 31)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 27;
+        _id -= 31;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
@@ -408,80 +437,92 @@ int PlaybackController::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void PlaybackController::currentTrackChanged()
+void PlaybackController::streamRequested(const QVariantMap & _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
 }
 
 // SIGNAL 1
-void PlaybackController::playingChanged()
+void PlaybackController::streamQueueExhausted()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 
 // SIGNAL 2
-void PlaybackController::streamLoadingChanged()
+void PlaybackController::currentTrackChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 
 // SIGNAL 3
-void PlaybackController::positionChanged()
+void PlaybackController::playingChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 
 // SIGNAL 4
-void PlaybackController::durationChanged()
+void PlaybackController::streamLoadingChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 
 // SIGNAL 5
-void PlaybackController::volumeChanged()
+void PlaybackController::positionChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 5, nullptr);
 }
 
 // SIGNAL 6
-void PlaybackController::lastErrorChanged()
+void PlaybackController::durationChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
 }
 
 // SIGNAL 7
-void PlaybackController::modesChanged()
+void PlaybackController::volumeChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 7, nullptr);
 }
 
 // SIGNAL 8
-void PlaybackController::queueChanged()
+void PlaybackController::lastErrorChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 8, nullptr);
 }
 
 // SIGNAL 9
-void PlaybackController::audioLevelsChanged()
+void PlaybackController::modesChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 9, nullptr);
 }
 
 // SIGNAL 10
-void PlaybackController::audioReactivityChanged()
+void PlaybackController::queueChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 10, nullptr);
 }
 
 // SIGNAL 11
-void PlaybackController::seeked(qint64 _t1)
+void PlaybackController::audioLevelsChanged()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 11, nullptr, _t1);
+    QMetaObject::activate(this, &staticMetaObject, 11, nullptr);
 }
 
 // SIGNAL 12
-void PlaybackController::seekableChanged()
+void PlaybackController::audioReactivityChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 12, nullptr);
+}
+
+// SIGNAL 13
+void PlaybackController::seeked(qint64 _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 13, nullptr, _t1);
+}
+
+// SIGNAL 14
+void PlaybackController::seekableChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 14, nullptr);
 }
 QT_WARNING_POP

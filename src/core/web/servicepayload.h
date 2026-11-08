@@ -16,6 +16,8 @@ struct Collection
 };
 // Предпросмотр веб-коллекции, плейлист (полный или только идентификаторы) и ответы POST /tracks.
 Collection yandex(const QJsonValue& payload);
+// Цепочка рекомендаций rotor: только доступные треки, без дублей и данных аккаунта.
+QVector<Track> yandexWave(const QJsonValue& payload);
 // Формирует каноническую ссылку на трек Яндекс Музыки по его идентификатору.
 QString yandexTrackUrl(const QString& id);
 } // namespace ServicePayload

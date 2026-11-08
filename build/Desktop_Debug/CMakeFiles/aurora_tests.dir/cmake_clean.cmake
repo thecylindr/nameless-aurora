@@ -44,6 +44,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o.d"
   "CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o"
   "CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o.d"
+  "CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o"
+  "CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o.d"
   "CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o"
   "CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o.d"
   "CMakeFiles/aurora_tests.dir/src/core/integration/namelessbridge.cpp.o"

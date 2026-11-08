@@ -13,6 +13,7 @@
 #include "IKGJW7Z4MA/moc_musicsearch.cpp"
 #include "IKGJW7Z4MA/moc_opencatalog.cpp"
 #include "IKGJW7Z4MA/moc_zaycevcatalog.cpp"
+#include "PRMOGMWJPH/moc_homefeed.cpp"
 #include "PRMOGMWJPH/moc_importmanager.cpp"
 #include "QGLZD3XGMX/moc_mpris.cpp"
 #include "QGLZD3XGMX/moc_namelessbridge.cpp"

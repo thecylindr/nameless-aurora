@@ -30,7 +30,7 @@
                         }
                     ],
                     "index": 9,
-                    "lineNumber": 100,
+                    "lineNumber": 103,
                     "name": "search",
                     "returnType": "void"
                 },
@@ -44,7 +44,7 @@
                     ],
                     "index": 10,
                     "isCloned": true,
-                    "lineNumber": 100,
+                    "lineNumber": 103,
                     "name": "search",
                     "returnType": "void"
                 },
@@ -57,7 +57,7 @@
                         }
                     ],
                     "index": 11,
-                    "lineNumber": 102,
+                    "lineNumber": 105,
                     "name": "searchAll",
                     "returnType": "void"
                 },
@@ -65,7 +65,7 @@
                     "access": "public",
                     "index": 12,
                     "isCloned": true,
-                    "lineNumber": 102,
+                    "lineNumber": 105,
                     "name": "searchAll",
                     "returnType": "void"
                 },
@@ -78,7 +78,7 @@
                         }
                     ],
                     "index": 13,
-                    "lineNumber": 104,
+                    "lineNumber": 107,
                     "name": "choose",
                     "returnType": "void"
                 },
@@ -91,21 +91,21 @@
                         }
                     ],
                     "index": 14,
-                    "lineNumber": 106,
+                    "lineNumber": 109,
                     "name": "downloadLink",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 15,
-                    "lineNumber": 108,
+                    "lineNumber": 111,
                     "name": "cancel",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 16,
-                    "lineNumber": 110,
+                    "lineNumber": 113,
                     "name": "close",
                     "returnType": "void"
                 },
@@ -118,21 +118,21 @@
                         }
                     ],
                     "index": 17,
-                    "lineNumber": 112,
+                    "lineNumber": 115,
                     "name": "recoverTrack",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 18,
-                    "lineNumber": 114,
+                    "lineNumber": 117,
                     "name": "recoverMissing",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 19,
-                    "lineNumber": 116,
+                    "lineNumber": 119,
                     "name": "cancelRecovery",
                     "returnType": "void"
                 }
@@ -351,35 +351,35 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 120,
+                    "lineNumber": 123,
                     "name": "opened",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 1,
-                    "lineNumber": 121,
+                    "lineNumber": 124,
                     "name": "targetChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "lineNumber": 122,
+                    "lineNumber": 125,
                     "name": "resultsChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 3,
-                    "lineNumber": 123,
+                    "lineNumber": 126,
                     "name": "changed",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 4,
-                    "lineNumber": 124,
+                    "lineNumber": 127,
                     "name": "queued",
                     "returnType": "void"
                 },
@@ -392,14 +392,14 @@
                         }
                     ],
                     "index": 5,
-                    "lineNumber": 125,
+                    "lineNumber": 128,
                     "name": "catalogQueued",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 6,
-                    "lineNumber": 126,
+                    "lineNumber": 129,
                     "name": "operationFinished",
                     "returnType": "void"
                 },
@@ -416,7 +416,7 @@
                         }
                     ],
                     "index": 7,
-                    "lineNumber": 127,
+                    "lineNumber": 130,
                     "name": "previewResolved",
                     "returnType": "void"
                 }

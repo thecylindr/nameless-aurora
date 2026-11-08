@@ -46,6 +46,8 @@ AuroraPlayer_autogen/timestamp: /home/cylindr/nameless-aurora/CMakeLists.txt \
   /home/cylindr/nameless-aurora/src/core/downloads/opencatalog.h \
   /home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.cpp \
   /home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.h \
+  /home/cylindr/nameless-aurora/src/core/homefeed.cpp \
+  /home/cylindr/nameless-aurora/src/core/homefeed.h \
   /home/cylindr/nameless-aurora/src/core/importmanager.cpp \
   /home/cylindr/nameless-aurora/src/core/importmanager.h \
   /home/cylindr/nameless-aurora/src/core/integration/mpris.cpp \
@@ -392,6 +394,7 @@ AuroraPlayer_autogen/timestamp: /home/cylindr/nameless-aurora/CMakeLists.txt \
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QAbstractListModel \
   /usr/include/qt6/QtCore/QByteArray \
+  /usr/include/qt6/QtCore/QDate \
   /usr/include/qt6/QtCore/QElapsedTimer \
   /usr/include/qt6/QtCore/QFileSystemWatcher \
   /usr/include/qt6/QtCore/QFlags \
@@ -3254,10 +3257,6 @@ AuroraPlayer_autogen/timestamp: /home/cylindr/nameless-aurora/CMakeLists.txt \
 
 /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryNmeaPluginAdditionalTargetInfo.cmake:
 
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargetsPrecheck.cmake:
-
-/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargetsPrecheck.cmake:
-
 /usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets-relwithdebinfo.cmake:
@@ -3286,9 +3285,7 @@ AuroraPlayer_autogen/timestamp: /home/cylindr/nameless-aurora/CMakeLists.txt \
 
 /usr/lib/cmake/Qt6Positioning/Qt6PositioningAdditionalTargetInfo.cmake:
 
-/usr/include/qt6/QtCore/qstringconverter_base.h:
-
-/usr/include/qt6/QtCore/qqueue.h:
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake:
 
 /usr/include/qt6/QtCore/qstring.h:
 
@@ -3329,12 +3326,6 @@ AuroraPlayer_autogen/timestamp: /home/cylindr/nameless-aurora/CMakeLists.txt \
 /usr/lib/cmake/Qt6WebChannelQuick/Qt6WebChannelQuickTargets.cmake:
 
 /usr/include/qt6/QtDBus/qtdbusglobal.h:
-
-/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets.cmake:
 
 /usr/include/qt6/QtCore/qmetatype.h:
 
@@ -3572,6 +3563,12 @@ AuroraPlayer_autogen/moc_predefs.h:
 
 /usr/include/qt6/QtCore/QElapsedTimer:
 
+/usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsTargets.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginTargets.cmake:
+
 /usr/include/qt6/QtCore/QByteArray:
 
 /usr/lib/cmake/Qt6Qml/Qt6QQuick3DProfilerAdapterFactoryPluginTargets-relwithdebinfo.cmake:
@@ -3659,8 +3656,6 @@ AuroraPlayer_autogen/moc_predefs.h:
 /usr/include/qt6/QtCore/QHash:
 
 /usr/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake:
-
-/usr/include/c++/16/tr1/hypergeometric.tcc:
 
 /usr/include/c++/16/tr1/beta_function.tcc:
 
@@ -3856,6 +3851,20 @@ AuroraPlayer_autogen/moc_predefs.h:
 
 /usr/include/c++/16/bits/stl_tempbuf.h:
 
+/usr/include/features-time64.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets-relwithdebinfo.cmake:
+
+/usr/include/qt6/QtNetwork/QSslConfiguration:
+
+/usr/include/c++/16/bits/stl_set.h:
+
+/usr/share/cmake/Modules/GNUInstallDirs.cmake:
+
+/usr/include/asm/posix_types_64.h:
+
+/usr/include/qt6/QtCore/q26numeric.h:
+
 /usr/include/bits/types/clock_t.h:
 
 /usr/include/c++/16/bits/stl_relops.h:
@@ -3969,8 +3978,6 @@ AuroraPlayer_autogen/moc_predefs.h:
 /usr/include/qt6/QtMultimedia/qtaudio.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTsLibPluginTargets-relwithdebinfo.cmake:
-
-/usr/include/bits/types/cookie_io_functions_t.h:
 
 /home/cylindr/nameless-aurora/src/core/vkprovider.h:
 
@@ -4090,18 +4097,6 @@ AuroraPlayer_autogen/moc_predefs.h:
 
 /usr/include/c++/16/bits/cxxabi_init_exception.h:
 
-/home/cylindr/nameless-aurora/src/core/importmanager.cpp:
-
-/usr/include/qt6/QtCore/qsettings.h:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginTargets.cmake:
-
-/usr/include/c++/16/optional:
-
-/usr/include/qt6/QtGui/qtguiexports.h:
-
-/usr/include/c++/16/bits/stl_algo.h:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets-relwithdebinfo.cmake:
 
 /home/cylindr/nameless-aurora/src/core/storage/storagemanager.h:
@@ -4188,6 +4183,8 @@ AuroraPlayer_autogen/moc_predefs.h:
 
 /usr/include/c++/16/version:
 
+/usr/include/c++/16/tr1/hypergeometric.tcc:
+
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginAdditionalTargetInfo.cmake:
 
 /home/cylindr/nameless-aurora/src/core/downloads/opencatalog.cpp:
@@ -4207,6 +4204,16 @@ AuroraPlayer_autogen/moc_predefs.h:
 /usr/include/c++/16/bits/locale_facets_nonio.tcc:
 
 /home/cylindr/nameless-aurora/src/core/auth/cdpclient.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargetsPrecheck.cmake:
+
+/usr/lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginTargetsPrecheck.cmake:
+
+/home/cylindr/nameless-aurora/src/core/homefeed.cpp:
+
+/usr/share/cmake/Modules/DartConfiguration.tcl.in:
+
+/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:
 
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_base.h:
 
@@ -4304,12 +4311,6 @@ AuroraPlayer_autogen/moc_predefs.h:
 
 /usr/include/bits/timesize.h:
 
-/usr/share/cmake/Modules/GNUInstallDirs.cmake:
-
-/usr/include/asm/posix_types_64.h:
-
-/usr/include/c++/16/bits/stl_set.h:
-
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dcorepluginTargets-relwithdebinfo.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargetsPrecheck.cmake:
@@ -4389,18 +4390,6 @@ AuroraPlayer_autogen/moc_predefs.h:
 /home/cylindr/nameless-aurora/src/core/libraryexchange.h:
 
 /usr/include/c++/16/bits/hashtable_policy.h:
-
-/usr/include/qt6/QtCore/qcontainertools_impl.h:
-
-/usr/include/bits/types/__fpos64_t.h:
-
-/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginConfig.cmake:
-
-/home/cylindr/nameless-aurora/src/core/librarymodel.cpp:
-
-/usr/include/c++/16/bits/atomic_base.h:
-
-/home/cylindr/nameless-aurora/src/core/web/streamproxy.cpp:
 
 /usr/include/c++/16/bits/basic_string.h:
 
@@ -4492,12 +4481,6 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 
 /usr/include/qt6/QtCore/qvariantlist.h:
 
-/usr/include/c++/16/tr1/poly_hermite.tcc:
-
-/usr/include/qt6/QtGui/qimage.h:
-
-/usr/include/bits/types/error_t.h:
-
 /usr/lib/cmake/Qt6WebEngineCoreTools/Qt6WebEngineCoreToolsTargets.cmake:
 
 /usr/lib/cmake/Qt6QuickControls2/Qt6QuickControls2Dependencies.cmake:
@@ -4526,6 +4509,44 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 
 /usr/include/qt6/QtMultimedia/qaudiooutput.h:
 
+/usr/include/c++/16/tr1/gamma.tcc:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/qt6/QtCore/qcontainertools_impl.h:
+
+/usr/include/bits/types/__fpos64_t.h:
+
+/usr/lib/cmake/Qt6Gui/Qt6QIbusPlatformInputContextPluginConfig.cmake:
+
+/home/cylindr/nameless-aurora/src/core/librarymodel.cpp:
+
+/usr/include/c++/16/bits/atomic_base.h:
+
+/home/cylindr/nameless-aurora/src/core/web/streamproxy.cpp:
+
+/home/cylindr/nameless-aurora/src/core/importmanager.cpp:
+
+/usr/include/qt6/QtCore/qsettings.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtvkbopenwnnpluginTargets.cmake:
+
+/usr/include/c++/16/optional:
+
+/usr/include/qt6/QtGui/qtguiexports.h:
+
+/usr/include/c++/16/bits/stl_algo.h:
+
+/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptAdditionalTargetInfo.cmake:
+
+/usr/include/c++/16/bits/ostream_insert.h:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets.cmake:
+
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6canvas2dpluginTargets.cmake:
+
+/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:
+
 /home/cylindr/nameless-aurora/src/core/playbackcontroller.h:
 
 /usr/lib/cmake/Qt6Qml/Qt6QQuickEventReplayServiceFactoryPluginTargetsPrecheck.cmake:
@@ -4533,10 +4554,6 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 /usr/include/c++/16/bits/locale_facets.tcc:
 
 /usr/include/c++/16/bits/cpp_type_traits.h:
-
-/usr/include/c++/16/tr1/gamma.tcc:
-
-/usr/include/asm-generic/posix_types.h:
 
 /usr/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargetsPrecheck.cmake:
 
@@ -4585,6 +4602,14 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6/QtPublicJsonHelpers.cmake:
 
 /usr/include/c++/16/bits/exception_defines.h:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
+
+/usr/include/c++/16/tr1/poly_hermite.tcc:
+
+/usr/include/qt6/QtGui/qimage.h:
+
+/usr/include/bits/types/error_t.h:
 
 /usr/lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsToolsConfig.cmake:
 
@@ -4665,16 +4690,6 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginTargetsPrecheck.cmake:
 
 /usr/include/c++/16/bits/shared_ptr_atomic.h:
-
-/usr/lib/cmake/Qt6QmlWorkerScript/Qt6QmlWorkerScriptAdditionalTargetInfo.cmake:
-
-/usr/include/c++/16/bits/ostream_insert.h:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets.cmake:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6canvas2dpluginTargets.cmake:
-
-/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:
 
 /usr/include/c++/16/new:
 
@@ -4852,10 +4867,6 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 
 /usr/include/c++/16/bits/concept_check.h:
 
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfig.cmake:
-
-/usr/include/qt6/QtCore/qstringbuilder.h:
-
 /home/cylindr/nameless-aurora/src/core/playbackcontroller.cpp:
 
 /usr/lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake:
@@ -4923,6 +4934,10 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_scxmlTargets.cmake:
 
 /usr/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake:
+
+/usr/include/qt6/QtCore/qqueue.h:
+
+/usr/include/qt6/QtCore/qstringconverter_base.h:
 
 /home/cylindr/nameless-aurora/src/core/artwork.cpp:
 
@@ -5014,9 +5029,9 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake:
 
-/usr/include/asm-generic/int-ll64.h:
-
 /usr/include/qt6/QtDBus/qtdbusexports.h:
+
+/usr/include/asm-generic/int-ll64.h:
 
 /usr/include/c++/16/bits/stl_iterator_base_funcs.h:
 
@@ -5058,13 +5073,9 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake:
 
-/usr/include/qt6/QtCore/q26numeric.h:
+/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfig.cmake:
 
-/usr/include/features-time64.h:
-
-/usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets-relwithdebinfo.cmake:
-
-/usr/include/qt6/QtNetwork/QSslConfiguration:
+/usr/include/qt6/QtCore/qstringbuilder.h:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qwaylandcompositorpluginTargets.cmake:
 
@@ -5406,6 +5417,10 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6/FindWrapAtomic.cmake:
 
+/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargetsPrecheck.cmake:
+
+/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake:
+
 /usr/lib/cmake/Qt6/FindWrapOpenGL.cmake:
 
 /usr/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebenginequickdelegatespluginConfig.cmake:
@@ -5618,10 +5633,6 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake:
 
-/usr/share/cmake/Modules/DartConfiguration.tcl.in:
-
-/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:
-
 /usr/include/c++/16/x86_64-pc-linux-gnu/bits/cpu_defines.h:
 
 /usr/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake:
@@ -5727,6 +5738,8 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 /usr/include/qt6/QtCore/qbindingstorage.h:
 
 /usr/include/qt6/QtCore/QVariantMap:
+
+/home/cylindr/nameless-aurora/src/core/homefeed.h:
 
 /usr/include/qt6/QtWebEngineCore/qtwebenginecore-config.h:
 
@@ -5907,6 +5920,8 @@ CMakeFiles/4.4.4/CMakeSystem.cmake:
 /usr/lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake:
 
 /usr/lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake:
+
+/usr/include/qt6/QtCore/QDate:
 
 /usr/include/qt6/QtNetwork/qtnetworkexports.h:
 
@@ -6209,9 +6224,3 @@ CMakeFiles/4.4.4/CMakeCXXCompiler.cmake:
 /usr/include/qt6/QtCore/q20iterator.h:
 
 /usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets-relwithdebinfo.cmake:
-
-/usr/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLTargetsPrecheck.cmake:
-
-/usr/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessAliasTargets.cmake:

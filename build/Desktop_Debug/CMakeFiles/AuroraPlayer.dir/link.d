@@ -8,6 +8,7 @@ AuroraPlayer: \
   CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o \
   CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o \
   CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o \
+  CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o \
   CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o \
   CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o \
   CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o \
@@ -62,6 +63,7 @@ AuroraPlayer: \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o \
+  CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.o \
@@ -79,6 +81,10 @@ AuroraPlayer: \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o \
+  CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o \
+  CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o \
+  CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o \
+  CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o \
   CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o \
@@ -425,6 +431,8 @@ CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o:
 
 CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o:
 
+CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o:
+
 CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o:
 
 CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o:
@@ -533,6 +541,8 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o:
 
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o:
+
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o:
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o:
@@ -566,6 +576,14 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o:
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o:
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o:
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o:
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o:
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o:
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o:
 

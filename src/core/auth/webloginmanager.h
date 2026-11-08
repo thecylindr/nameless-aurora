@@ -117,6 +117,11 @@ class WebLoginManager : public QObject
     void searchMusic(const QString& query, bool recommendations = false);
     // Отменяет поиск VK.
     void cancelSearch();
+    void requestVkRecommendations();
+    void cancelVkRecommendations();
+    // Читает персональную волну с сохранённой сессией, без импорта в медиатеку.
+    void requestWave(const QStringList& queue = {});
+    void cancelWave();
     // Список профилей локальных браузеров для импорта.
     Q_INVOKABLE QVariantList localBrowserProfiles() const;
     // Получает прямую аудио-ссылку трека через окно сервиса.
@@ -170,6 +175,8 @@ class WebLoginManager : public QObject
     void collectionReady(const QVector<Track>& tracks, const QString& name, const QString& error);
     // Поиск VK завершён (треки или ошибка).
     void searchReady(const QVector<Track>& tracks, const QString& error);
+    void vkRecommendationsReady(const QVector<Track>& tracks, const QString& error);
+    void waveReady(const QVector<Track>& tracks, const QString& error);
     // Получена прямая аудио-ссылка трека (или ошибка).
     void mediaReady(int requestId, const QUrl& url, const QString& error);
     // Изменился флаг занятости.
@@ -191,10 +198,12 @@ class WebLoginManager : public QObject
         Resolve,
         ReadLocalSession,
         Search,
-        ReadSearchSession
+        ReadSearchSession,
+        Wave,
+        Recommend
     };
     // Запускает сбор плейлиста/поиск с подготовкой состояния.
-    void startCollection(const QUrl& url, bool search = false);
+    void startCollection(const QUrl& url, bool search = false, bool recommendations = false);
     // Разбирает ответ API Яндекс Музыки и накапливает треки.
     void consumeApiPayload(const QUrl& url, const QJsonValue& payload);
     // Ставит запрос к API Яндекса в очередь (с дедупликацией).
@@ -218,6 +227,7 @@ class WebLoginManager : public QObject
     QHash<QString, QQuickWebEngineProfile*> m_profiles;
     QQuickWebEngineProfile* m_nativeProfile = nullptr;
     QString m_nativeSlug, m_pageError, m_collectionName;
+    QStringList m_waveQueue;
     QString m_importReport;
     QJsonObject m_harvestDiagnostic;
     QUrl m_harvestPage;

@@ -6,7 +6,7 @@
             "methods": [
                 {
                     "access": "public",
-                    "index": 10,
+                    "index": 12,
                     "lineNumber": 67,
                     "name": "openImportReport",
                     "returnType": "void"
@@ -19,7 +19,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 11,
+                    "index": 13,
                     "lineNumber": 101,
                     "name": "openNative",
                     "returnType": "void"
@@ -32,7 +32,7 @@
                             "type": "bool"
                         }
                     ],
-                    "index": 12,
+                    "index": 14,
                     "lineNumber": 103,
                     "name": "setBrowserVisible",
                     "returnType": "void"
@@ -53,7 +53,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 13,
+                    "index": 15,
                     "lineNumber": 105,
                     "name": "pageLoaded",
                     "returnType": "void"
@@ -70,7 +70,7 @@
                             "type": "bool"
                         }
                     ],
-                    "index": 14,
+                    "index": 16,
                     "isCloned": true,
                     "lineNumber": 105,
                     "name": "pageLoaded",
@@ -78,7 +78,7 @@
                 },
                 {
                     "access": "public",
-                    "index": 15,
+                    "index": 17,
                     "lineNumber": 107,
                     "name": "confirmNativeLogin",
                     "returnType": "void"
@@ -95,23 +95,23 @@
                             "type": "QVariant"
                         }
                     ],
-                    "index": 16,
+                    "index": 18,
                     "lineNumber": 111,
                     "name": "submitScriptResult",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 17,
+                    "index": 19,
                     "isConst": true,
-                    "lineNumber": 121,
+                    "lineNumber": 126,
                     "name": "localBrowserProfiles",
                     "returnType": "QVariantList"
                 },
                 {
                     "access": "public",
-                    "index": 18,
-                    "lineNumber": 131,
+                    "index": 20,
+                    "lineNumber": 136,
                     "name": "availableBrowsers",
                     "returnType": "QStringList"
                 },
@@ -127,15 +127,15 @@
                             "type": "int"
                         }
                     ],
-                    "index": 19,
-                    "lineNumber": 133,
+                    "index": 21,
+                    "lineNumber": 138,
                     "name": "startLogin",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 20,
-                    "lineNumber": 135,
+                    "index": 22,
+                    "lineNumber": 140,
                     "name": "cancel",
                     "returnType": "void"
                 },
@@ -147,8 +147,8 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 21,
-                    "lineNumber": 137,
+                    "index": 23,
+                    "lineNumber": 142,
                     "name": "logout",
                     "returnType": "void"
                 },
@@ -160,9 +160,9 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 22,
+                    "index": 24,
                     "isConst": true,
-                    "lineNumber": 139,
+                    "lineNumber": 144,
                     "name": "hasSession",
                     "returnType": "bool"
                 }
@@ -362,7 +362,7 @@
                 {
                     "access": "public",
                     "index": 0,
-                    "lineNumber": 164,
+                    "lineNumber": 169,
                     "name": "nativeBrowserChanged",
                     "returnType": "void"
                 },
@@ -375,7 +375,7 @@
                         }
                     ],
                     "index": 1,
-                    "lineNumber": 166,
+                    "lineNumber": 171,
                     "name": "navigateRequested",
                     "returnType": "void"
                 },
@@ -392,7 +392,7 @@
                         }
                     ],
                     "index": 2,
-                    "lineNumber": 168,
+                    "lineNumber": 173,
                     "name": "scriptRequested",
                     "returnType": "void"
                 },
@@ -413,7 +413,7 @@
                         }
                     ],
                     "index": 3,
-                    "lineNumber": 170,
+                    "lineNumber": 175,
                     "name": "collectionReady",
                     "returnType": "void"
                 },
@@ -430,8 +430,42 @@
                         }
                     ],
                     "index": 4,
-                    "lineNumber": 172,
+                    "lineNumber": 177,
                     "name": "searchReady",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "tracks",
+                            "type": "QList<Track>"
+                        },
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 178,
+                    "name": "vkRecommendationsReady",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "tracks",
+                            "type": "QList<Track>"
+                        },
+                        {
+                            "name": "error",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "lineNumber": 179,
+                    "name": "waveReady",
                     "returnType": "void"
                 },
                 {
@@ -450,29 +484,29 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 5,
-                    "lineNumber": 174,
+                    "index": 7,
+                    "lineNumber": 181,
                     "name": "mediaReady",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 6,
-                    "lineNumber": 176,
+                    "index": 8,
+                    "lineNumber": 183,
                     "name": "busyChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 7,
-                    "lineNumber": 178,
+                    "index": 9,
+                    "lineNumber": 185,
                     "name": "statusChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 8,
-                    "lineNumber": 180,
+                    "index": 10,
+                    "lineNumber": 187,
                     "name": "sessionsChanged",
                     "returnType": "void"
                 },
@@ -492,8 +526,8 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 9,
-                    "lineNumber": 182,
+                    "index": 11,
+                    "lineNumber": 189,
                     "name": "loginDone",
                     "returnType": "void"
                 }

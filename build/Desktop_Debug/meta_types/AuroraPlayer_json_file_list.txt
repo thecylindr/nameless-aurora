@@ -15,6 +15,7 @@
 /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/include/../OQ3OECGN5T/moc_webloginmanager.cpp.json
 /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/include/../PRMOGMWJPH/moc_audioequalizer.cpp.json
 /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/include/../PRMOGMWJPH/moc_downloadmanager.cpp.json
+/home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/include/../PRMOGMWJPH/moc_homefeed.cpp.json
 /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/include/../PRMOGMWJPH/moc_importmanager.cpp.json
 /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/include/../PRMOGMWJPH/moc_libraryexchange.cpp.json
 /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/include/../PRMOGMWJPH/moc_librarymodel.cpp.json

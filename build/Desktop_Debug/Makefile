@@ -1857,6 +1857,78 @@ build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.s
 .PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.s
 
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.o: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.o
+
+# target to build an object file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.i: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.i
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.i
+
+# target to preprocess a source file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.i
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.i
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.s: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.s
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.s
+
+# target to generate assembly for a file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.s
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.s
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.o: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.o
+
+# target to build an object file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.i: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.i
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.i
+
+# target to preprocess a source file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.i
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.i
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.s: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.s
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.s
+
+# target to generate assembly for a file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.s
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.s
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.o: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.o
+
+# target to build an object file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.i: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.i
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.i
+
+# target to preprocess a source file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.i
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.i
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.s: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.s
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.s
+
+# target to generate assembly for a file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.s
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.s
+
 build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.o: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.o
 .PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.o
 
@@ -1976,6 +2048,30 @@ build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.s: b
 build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.s
 .PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.s
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.o: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.o
+
+# target to build an object file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.i: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.i
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.i
+
+# target to preprocess a source file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.i
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.i
+
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.s: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.s
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.s
+
+# target to generate assembly for a file
+build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.s
+.PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.s
 
 build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.o: build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o
 .PHONY : build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.o
@@ -2823,6 +2919,33 @@ src/core/downloads/zaycevcatalog.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/aurora_tests.dir/build.make CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.s
 .PHONY : src/core/downloads/zaycevcatalog.cpp.s
 
+src/core/homefeed.o: src/core/homefeed.cpp.o
+.PHONY : src/core/homefeed.o
+
+# target to build an object file
+src/core/homefeed.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aurora_tests.dir/build.make CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o
+.PHONY : src/core/homefeed.cpp.o
+
+src/core/homefeed.i: src/core/homefeed.cpp.i
+.PHONY : src/core/homefeed.i
+
+# target to preprocess a source file
+src/core/homefeed.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aurora_tests.dir/build.make CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.i
+.PHONY : src/core/homefeed.cpp.i
+
+src/core/homefeed.s: src/core/homefeed.cpp.s
+.PHONY : src/core/homefeed.s
+
+# target to generate assembly for a file
+src/core/homefeed.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AuroraPlayer.dir/build.make CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/aurora_tests.dir/build.make CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.s
+.PHONY : src/core/homefeed.cpp.s
+
 src/core/importmanager.o: src/core/importmanager.cpp.o
 .PHONY : src/core/importmanager.o
 
@@ -3358,6 +3481,15 @@ help:
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.o"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.i"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.s"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.o"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.i"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.s"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.o"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.i"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.s"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.o"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.i"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.s"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.o"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.i"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.s"
@@ -3373,6 +3505,9 @@ help:
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.o"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.i"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.s"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.o"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.i"
+	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.s"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.o"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.i"
 	@echo "... build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.s"
@@ -3472,6 +3607,9 @@ help:
 	@echo "... src/core/downloads/zaycevcatalog.o"
 	@echo "... src/core/downloads/zaycevcatalog.i"
 	@echo "... src/core/downloads/zaycevcatalog.s"
+	@echo "... src/core/homefeed.o"
+	@echo "... src/core/homefeed.i"
+	@echo "... src/core/homefeed.s"
 	@echo "... src/core/importmanager.o"
 	@echo "... src/core/importmanager.i"
 	@echo "... src/core/importmanager.s"

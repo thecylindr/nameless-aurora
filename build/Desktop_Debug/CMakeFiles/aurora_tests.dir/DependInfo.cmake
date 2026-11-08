@@ -28,6 +28,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/cylindr/nameless-aurora/src/core/downloads/nativedownload.cpp" "CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o" "gcc" "CMakeFiles/aurora_tests.dir/src/core/downloads/nativedownload.cpp.o.d"
   "/home/cylindr/nameless-aurora/src/core/downloads/opencatalog.cpp" "CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o" "gcc" "CMakeFiles/aurora_tests.dir/src/core/downloads/opencatalog.cpp.o.d"
   "/home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.cpp" "CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o" "gcc" "CMakeFiles/aurora_tests.dir/src/core/downloads/zaycevcatalog.cpp.o.d"
+  "/home/cylindr/nameless-aurora/src/core/homefeed.cpp" "CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o" "gcc" "CMakeFiles/aurora_tests.dir/src/core/homefeed.cpp.o.d"
   "/home/cylindr/nameless-aurora/src/core/importmanager.cpp" "CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o" "gcc" "CMakeFiles/aurora_tests.dir/src/core/importmanager.cpp.o.d"
   "/home/cylindr/nameless-aurora/src/core/integration/namelessbridge.cpp" "CMakeFiles/aurora_tests.dir/src/core/integration/namelessbridge.cpp.o" "gcc" "CMakeFiles/aurora_tests.dir/src/core/integration/namelessbridge.cpp.o.d"
   "/home/cylindr/nameless-aurora/src/core/libraryexchange.cpp" "CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o" "gcc" "CMakeFiles/aurora_tests.dir/src/core/libraryexchange.cpp.o.d"

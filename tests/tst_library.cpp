@@ -20,6 +20,7 @@
 #include <QTemporaryDir>
 #include <QStandardPaths>
 #include "librarymodel.h"
+#include "homefeed.h"
 #include "libraryexchange.h"
 #include "importmanager.h"
 #include "playbackcontroller.h"
@@ -107,6 +108,7 @@ public:
     int fallbackContextFailures=0;
     bool fallbackException=false;
     QString navigationUrl;
+    QStringList navigationHistory;
     bool active=false;int next=0;QList<QPair<QString,QJsonObject>> commands;
     void connectToHost(const QUrl &,int) override {QTimer::singleShot(0,this,[this]{active=true;emit connected();});}
     bool isConnected() const override {return active;}
@@ -117,7 +119,7 @@ public:
             if(!active)return;QJsonObject result;
             if(method=="Page.navigate") {
                 if(navigationFailures-->0){emit commandError(id,navigationError,-32000);return;}
-                navigationUrl=params.value("url").toString();result={{"frameId","main"}};
+                navigationUrl=params.value("url").toString();navigationHistory.append(navigationUrl);result={{"frameId","main"}};
             }
             else if(method=="Browser.getVersion") {
                 if(stallBrowserVersion)return;
@@ -137,6 +139,7 @@ public:
                     if(fallbackException){emit commandResult(id,{{"exceptionDetails",QJsonObject{{"text","private-error"}}}});return;}
                     const auto start=expression.indexOf("const auroraNavigateTo=")+QString("const auroraNavigateTo=").size();
                     navigationUrl=QJsonDocument::fromJson(expression.mid(start,expression.indexOf("[0];",start)-start).toUtf8()).array().first().toString();
+                    navigationHistory.append(navigationUrl);
                     emit commandResult(id,{{"result",QJsonObject{{"value",true}}}});
                     if(!fallbackWithoutEvents) {
                         emit eventReceived("Page.frameNavigated",{{"frame",QJsonObject{{"id","main"},{"url",navigationUrl}}}});
@@ -149,8 +152,9 @@ public:
                     const int start=expression.indexOf("const options = ")+QString("const options = ").size();
                     const auto args=QJsonDocument::fromJson(expression.mid(start,expression.indexOf(";\n",start)-start).toUtf8()).object();
                     if(!args.value("submitted").toBool() && !args.value("resolve").toBool() && !publicSearchNavigation.isEmpty()) {
+                        navigationUrl = std::exchange(publicSearchNavigation, QString());
                         emit commandError(id,"Execution context was destroyed");
-                        emit eventReceived("Page.frameNavigated",{{"frame",QJsonObject{{"id","main"},{"url",std::exchange(publicSearchNavigation,QString())}}}});
+                        emit eventReceived("Page.frameNavigated",{{"frame",QJsonObject{{"id","main"},{"url",navigationUrl}}}});
                         emit eventReceived("Page.domContentEventFired",{});return;
                     }
                     value=QString::fromUtf8(QJsonDocument(publicFixture(args)).toJson(QJsonDocument::Compact));
@@ -209,6 +213,514 @@ class LibraryTests : public QObject {
         }QSqlDatabase::removeDatabase(connection);return ok?profile:QString();
     }
 private slots:
+    void homePreferencesFilterRenameAndPersist()
+    {
+        QSettings stored;
+        const auto previous = stored.value("home/recommendations");
+        const auto restore = qScopeGuard([&] { stored.setValue("home/recommendations", previous); });
+        stored.remove("home/recommendations");
+        QTemporaryDir dir;
+        LibraryModel library(nullptr, dir.filePath("library.db"));
+        const int imported = library.createPlaylist("Импортированный плейлист");
+        const int liked = library.createPlaylist("Мне нравится");
+        Track track;
+        track.title = "Local";
+        track.artist = "Garden";
+        track.filePath = wav(dir.filePath("local.wav"));
+        const int local = library.repository().saveTrack(track);
+        library.repository().addToPlaylist(imported, local);
+        track.id = 0;
+        track.title = "Remote";
+        track.filePath.clear();
+        track.sourceUrl = "https://vk.ru/audio99_2";
+        const int remote = library.repository().saveTrack(track);
+        library.repository().addToPlaylist(liked, remote);
+        library.refresh();
+        const auto mixes = HomeFeed::buildSections(&library, QDate(2026, 11, 6))[0].toMap()["mixes"].toList();
+        for (const auto& entry : mixes) {
+            const auto mix = entry.toMap();
+            if (mix["playlistId"].toInt() == imported) {
+                QCOMPARE(mix["title"].toString(), QString("Микс · Garden"));
+                QCOMPARE(mix["playlistName"].toString(), QString("Импортированный плейлист"));
+            }
+            if (mix["playlistId"].toInt() == liked)
+                QCOMPARE(mix["title"].toString(), QString("Любимое сегодня"));
+        }
+        const auto offline = HomeFeed::buildSections(&library, QDate(2026, 11, 6), {{"onlyDownloaded", true}});
+        QCOMPARE(offline[0].toMap()["mixes"].toList()[0].toMap()["trackIds"].toList(), QVariantList{local});
+        const auto excluded = HomeFeed::buildSections(&library, QDate(2026, 11, 6),
+            {{"excludedPlaylists", QVariantList{imported, liked}}, {"includeUnsorted", false}});
+        QVERIFY(excluded.isEmpty());
+        SettingsStore settings;
+        OAuthManager accounts(&settings);
+        WebLoginManager web(&settings);
+        PlaybackController player(&library, &settings);
+        HomeFeed feed(&library, &accounts, &web, &player);
+        feed.setPreferences({{"waveSource", "vk"}, {"discoveryMode", "familiar"}, {"showYandex", false}});
+        HomeFeed reopened(&library, &accounts, &web, &player);
+        QCOMPARE(reopened.preferences()["waveSource"].toString(), QString("vk"));
+        QCOMPARE(reopened.preferences()["discoveryMode"].toString(), QString("familiar"));
+        QVERIFY(!reopened.preferences()["showYandex"].toBool());
+        feed.setPreferences({{"waveSource", "invalid"}});
+        QCOMPARE(feed.preferences()["waveSource"].toString(), QString("auto"));
+    }
+
+    void mixedQueueKeepsLocalAndOnlineNavigation()
+    {
+        QTemporaryDir dir;
+        SettingsStore settings;
+        settings.setVolume(0);
+        LibraryModel library(nullptr, dir.filePath("library.db"));
+        Track track;
+        track.title = "Local";
+        track.filePath = wav(dir.filePath("local.wav"));
+        const int local = library.repository().saveTrack(track);
+        library.refresh();
+        PlaybackController player(&library, &settings);
+        QSignalSpy requested(&player, &PlaybackController::streamRequested);
+        player.playStreamQueue({QVariantMap{{"libraryId", local}, {"title", "Local"}},
+            QVariantMap{{"url", "https://vk.ru/audio99_2"}, {"title", "Online"}}});
+        QCOMPARE(player.currentTrackId(), local);
+        QCOMPARE(player.queue().size(), 2);
+        library.setSearchText("hidden");
+        player.next();
+        QCOMPARE(requested.last()[0].toMap()["title"].toString(), QString("Online"));
+        player.previous();
+        QCOMPARE(player.currentTrackId(), local);
+        QCOMPARE(player.queue().size(), 2);
+        player.playQueueTrack(-1001);
+        QCOMPARE(requested.last()[0].toMap()["title"].toString(), QString("Online"));
+        player.previous();
+        player.removeFromQueue(-1001);
+        QCOMPARE(player.currentTrackId(), local);
+        QCOMPARE(player.queue().size(), 1);
+        player.stop();
+    }
+
+    void onlineFallbackTriesEnabledServicesWithoutDownloadingAndCancels()
+    {
+#ifdef Q_OS_WIN
+        QSKIP("Fixture executable uses a POSIX launcher");
+#else
+        QTemporaryDir dir;
+        const auto oldSources = QSettings().value("downloads/sourceOrder");
+        const auto restore = qScopeGuard([&] {
+            if (oldSources.isValid()) QSettings().setValue("downloads/sourceOrder", oldSources);
+            else QSettings().remove("downloads/sourceOrder");
+        });
+        QSettings().setValue("downloads/sourceOrder", QStringList{"YouTube", "SoundCloud"});
+        const QString log = dir.filePath("online-attempts.jsonl");
+        const auto quotedLog = QString::fromUtf8(QJsonDocument(QJsonArray{log}).toJson(QJsonDocument::Compact));
+        const auto executable = dir.filePath("yt-dlp");
+        QFile tool(executable);
+        QVERIFY(tool.open(QIODevice::WriteOnly));
+        tool.write(("#!/usr/bin/env python3\nimport sys,json,pathlib\na=sys.argv[1:]\n"
+            "if '--version' in a: print('2026.11.05');sys.exit(0)\n"
+            "if a[-1].startswith(('ytsearch','scsearch')):\n"
+            " url='https://www.youtube.com/watch?v=fixture' if a[-1].startswith('ytsearch') else 'https://soundcloud.com/fixture/song'\n"
+            " print(json.dumps({'entries':[{'title':'Artist - A song','uploader':'Artist','duration':12,'url':url}]}));sys.exit(0)\n"
+            "with open(" + quotedLog + "[0],'a') as f: f.write(json.dumps(a[-1])+'\\n')\n"
+            "print('fixture stream unavailable',file=sys.stderr);sys.exit(1)\n").toUtf8());
+        tool.close();
+        QVERIFY(tool.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner));
+        SettingsStore settings;
+        settings.setLibraryFolder(dir.filePath("music"));
+        settings.setYtDlpPath(executable);
+        LibraryModel library(nullptr, dir.filePath("fallback.db"));
+        Track track;
+        track.title = "A song"; track.artist = "Artist"; track.duration = 12000;
+        track.source = "VK"; track.sourceUrl = "https://vk.ru/audio99_42";
+        const int id = library.repository().saveTrack(track);
+        library.refresh();
+        OAuthManager accounts(&settings);
+        PlaybackController player(&library, &settings);
+        WebLoginManager web(&settings);
+        web.logout("vk");
+        DependencyManager tools(&settings);
+        QVERIFY(tools.runtimeReady());
+        DownloadManager downloads(nullptr, nullptr, nullptr, nullptr);
+        AudioSources preview(&library, &downloads, &tools, nullptr, {}, true);
+        HomeFeed feed(&library, &accounts, &web, &player, nullptr, nullptr, &preview);
+        feed.playLibraryTrack(id);
+        QTRY_VERIFY_WITH_TIMEOUT(QFileInfo::exists(log), 5000);
+        QTRY_VERIFY_WITH_TIMEOUT(feed.resolvingId() == 0, 5000);
+        QFile attempts(log); QVERIFY(attempts.open(QIODevice::ReadOnly));
+        const auto before = attempts.readAll(); attempts.close();
+        QVERIFY(before.contains("youtube.com"));
+        QVERIFY(before.contains("soundcloud.com"));
+        QCOMPARE(before.count('\n'), 2);
+        QCOMPARE(downloads.rowCount(), 0);
+        QCOMPARE(library.repository().count(), 1);
+        QCOMPARE(library.trackById(id).sourceUrl, track.sourceUrl);
+        QVERIFY(library.trackById(id).filePath.isEmpty());
+        QCOMPARE(player.queue().size(), 1);
+        feed.playLibraryTrack(id);
+        player.stop();
+        QTest::qWait(150);
+        QVERIFY(feed.playbackStatus().isEmpty());
+        QVERIFY(attempts.open(QIODevice::ReadOnly));
+        QCOMPARE(attempts.readAll(), before);
+#endif
+    }
+
+    void automaticOnlineMatchChecksVersionDurationAndIdentity()
+    {
+        const QVariantMap target{{"title", "Memory Reboot"}, {"artist", "VOJ, Narvent"}, {"durationMs", 209000}};
+        QVariantMap candidate{{"title", "VØJ & Narvent - Memory Reboot (Official Music Video)"}, {"artist", "Narvent"}, {"durationMs", 211000}};
+        QVERIFY(AudioSources::automaticMatch(target, candidate));
+        candidate["title"] = "VOJ Narvent Memory Reboot Slowed Remix";
+        QVERIFY(!AudioSources::automaticMatch(target, candidate));
+        candidate["title"] = "VOJ Narvent Memory Reboot";
+        candidate["durationMs"] = 30000;
+        QVERIFY(!AudioSources::automaticMatch(target, candidate));
+        candidate["durationMs"] = 0;
+        QVERIFY(AudioSources::automaticMatch(target, candidate));
+        QVERIFY(!AudioSources::automaticMatch({{"title", "Intro"}}, {{"title", "Intro"}}));
+    }
+
+    void libraryOnlineQueueKeepsTracksWithoutFilesOrSourceUrls()
+    {
+        QTemporaryDir dir;
+        SettingsStore settings;
+        OAuthManager accounts(&settings);
+        LibraryModel library(nullptr, dir.filePath("online-queue.db"));
+        Track track;
+        track.title = "First";
+        track.artist = "Fixture";
+        const int first = library.repository().saveTrack(track);
+        track.id = 0;
+        track.title = "Second";
+        const int second = library.repository().saveTrack(track);
+        QVERIFY(first > 0 && second > 0);
+        library.refresh();
+        PlaybackController player(&library, &settings);
+        WebLoginManager web(&settings);
+        HomeFeed feed(&library, &accounts, &web, &player);
+        QSignalSpy requested(&player, &PlaybackController::streamRequested);
+        feed.playLibraryTrack(second);
+        QCOMPARE(player.queue().size(), 2);
+        QCOMPARE(requested.last().at(0).toMap().value("libraryTrackId").toInt(), second);
+        QCOMPARE(requested.last().at(0).toMap().value("key").toString(), "aurora:track/" + QString::number(second));
+        library.setSearchText("Second");
+        feed.playLibraryTrack(second);
+        QCOMPARE(player.queue().size(), 1);
+        player.stop();
+        QVERIFY(requested.last().at(0).toMap().isEmpty());
+        QCOMPARE(feed.resolvingId(), 0);
+        QCOMPARE(library.repository().tracks().size(), 2);
+        QVERIFY(library.trackById(second).filePath.isEmpty());
+    }
+
+    void homeVkRecommendationsStaySeparateFromSearch()
+    {
+#ifdef Q_OS_WIN
+        QSKIP("Fixture Chromium launcher uses a POSIX shell");
+#else
+        QTemporaryDir dir;
+        QFile browser(dir.filePath("brave"));
+        QVERIFY(browser.open(QIODevice::WriteOnly));
+        browser.write("#!/bin/sh\nexec sleep 30\n");
+        browser.close();
+        browser.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
+        const auto oldPath = qgetenv("PATH");
+        const auto restorePath = qScopeGuard([&] { qputenv("PATH", oldPath); });
+        qputenv("PATH", dir.path().toUtf8() + ':' + oldPath);
+        SettingsStore settings;
+        OAuthManager accounts(&settings);
+        LibraryModel library(nullptr, dir.filePath("library.db"));
+        PlaybackController player(&library, &settings);
+        DevToolsTransport network;
+        BrowserProtocol protocol;
+        QJsonArray tracks;
+        for (int i = 0; i < 24; ++i)
+            tracks.append(QJsonObject{{"title", "Personal " + QString::number(i)},
+                {"artist", "VK artist"}, {"url", "https://vk.ru/audio99_" + QString::number(i + 1)}});
+        protocol.harvestOverride = {{"tracks", tracks}, {"complete", true}, {"atBottom", true}};
+        WebLoginManager web(&settings, nullptr, [&](QObject* parent) {
+            return new BrowserSession(parent, &network, &protocol, [] { return 9222; });
+        });
+        web.saveCookies("vk", {{"remixsid6", "fixture", ".vk.ru", "/", 0, true, true}});
+        const auto logout = qScopeGuard([&] { web.logout("vk"); });
+        HomeFeed feed(&library, &accounts, &web, &player);
+        QSignalSpy search(&web, &WebLoginManager::searchReady);
+        QSignalSpy recommendations(&web, &WebLoginManager::vkRecommendationsReady);
+        QVERIFY(feed.vkConnected());
+        feed.refreshVk();
+        QTRY_VERIFY_WITH_TIMEOUT(!feed.vkBusy(), 9000);
+        QCOMPARE(feed.vkTracks().size(), 24);
+        QCOMPARE(recommendations.count(), 1);
+        QCOMPARE(search.count(), 0);
+        bool explored = false;
+        for (const auto& command : protocol.commands)
+            if (command.first == "Page.navigate" &&
+                QUrl(command.second.value("url").toString()).query() == "section=explore")
+                explored = true;
+        QVERIFY(explored);
+        feed.refreshVk();
+        QVERIFY(!feed.vkBusy());
+        QCOMPARE(recommendations.count(), 1);
+        web.logout("vk");
+        QVERIFY(feed.vkTracks().isEmpty());
+        QVERIFY(!feed.vkConnected());
+#endif
+    }
+
+    void homeMixesRotateAndIncludeUnheardPlaylistTracks()
+    {
+        QTemporaryDir dir;
+        LibraryModel library(nullptr, dir.filePath("library.db"));
+        const int morning = library.createPlaylist("Утро");
+        const int evening = library.createPlaylist("Вечер");
+        for (int i = 0; i < 48; ++i) {
+            Track track;
+            track.title = "Track " + QString::number(i);
+            track.artist = "Artist " + QString::number(i % 12);
+            track.sourceUrl = "https://music.yandex.ru/track/" + QString::number(100 + i);
+            track.playCount = i < 24 ? 1000 : 0;
+            const int id = library.repository().saveTrack(track);
+            QVERIFY(id > 0);
+            if (i < 24)
+                QVERIFY(library.repository().recordPlay(id));
+            QVERIFY(library.repository().addToPlaylist(i % 2 ? morning : evening, id));
+        }
+        library.refresh();
+        const QDate date(2026, 11, 5);
+        const auto sections = HomeFeed::buildSections(&library, date);
+        QCOMPARE(sections.size(), 3);
+        QCOMPARE(sections, HomeFeed::buildSections(&library, date));
+        QCOMPARE(sections[0].toMap().value("mixes").toList().first().toMap().value("count").toInt(), 18);
+        QCOMPARE(sections[1].toMap().value("mixes").toList().first().toMap().value("count").toInt(), 36);
+        QCOMPARE(sections[2].toMap().value("mixes").toList().first().toMap().value("count").toInt(), 48);
+        for (const auto& section : sections) {
+            const auto mixes = section.toMap().value("mixes").toList();
+            QCOMPARE(mixes.size(), 3);
+            for (const auto& entry : mixes) {
+                const auto mix = entry.toMap();
+                const int playlist = mix.value("playlistId").toInt();
+                QSet<int> allowed, seen;
+                for (const auto& track : library.repository().tracks({}, playlist))
+                    allowed.insert(track.id);
+                int unheard = 0;
+                for (const auto& id : mix.value("trackIds").toList()) {
+                    QVERIFY(allowed.contains(id.toInt()));
+                    QVERIFY(!seen.contains(id.toInt()));
+                    seen.insert(id.toInt());
+                    unheard += library.trackById(id.toInt()).playCount == 0;
+                }
+                QVERIFY(unheard >= 6);
+                QVERIFY(mix.value("playableIds").toList().isEmpty());
+                QVERIFY(mix.value("covers").toList().size() <= 4);
+            }
+        }
+        library.setPlaylistFilter(morning);
+        library.setSearchText("nothing matches");
+        QCOMPARE(HomeFeed::buildSections(&library, date), sections);
+        const auto tomorrow = HomeFeed::buildSections(&library, date.addDays(1));
+        QVERIFY(tomorrow[0].toMap().value("mixes") != sections[0].toMap().value("mixes"));
+        QCOMPARE(tomorrow[2].toMap().value("mixes"), sections[2].toMap().value("mixes"));
+        QDate threeDayStart = date.addDays(-(date.toJulianDay() % 3));
+        QCOMPARE(HomeFeed::buildSections(&library, threeDayStart)[1].toMap().value("mixes"),
+                 HomeFeed::buildSections(&library, threeDayStart.addDays(2))[1].toMap().value("mixes"));
+        QVERIFY(HomeFeed::buildSections(&library, threeDayStart)[1].toMap().value("mixes")
+                != HomeFeed::buildSections(&library, threeDayStart.addDays(3))[1].toMap().value("mixes"));
+    }
+
+    void homeSelectionKeepsItsOwnPlayableQueue()
+    {
+        QTemporaryDir dir;
+        SettingsStore settings;
+        settings.setVolume(0);
+        LibraryModel library(nullptr, dir.filePath("library.db"));
+        QVariantList ids;
+        for (int i = 0; i < 3; ++i) {
+            Track track;
+            track.title = QString::number(i);
+            track.filePath = wav(dir.filePath(track.title + ".wav"));
+            ids.append(library.repository().saveTrack(track));
+        }
+        library.refresh();
+        PlaybackController player(&library, &settings);
+        player.playSelection({ids[1], ids[1], -999, ids[2]}, ids[1].toInt());
+        QCOMPARE(player.currentTrackId(), ids[1].toInt());
+        QCOMPARE(player.queue().size(), 2);
+        library.setSearchText("hidden");
+        player.next();
+        QCOMPARE(player.currentTrackId(), ids[2].toInt());
+        QCOMPARE(player.queue().size(), 2);
+        player.previous();
+        QCOMPARE(player.currentTrackId(), ids[1].toInt());
+        QVERIFY(!player.shuffle());
+        QSignalSpy requested(&player, &PlaybackController::streamRequested);
+        player.playStreamQueue({QVariantMap{{"url", "https://music.yandex.ru/track/42"}}});
+        player.playTrackId(ids[1].toInt());
+        QVERIFY(requested.last()[0].toMap().isEmpty());
+        QCOMPARE(player.currentTrackId(), ids[1].toInt());
+        QVERIFY(!player.queue().isEmpty());
+        player.stop();
+    }
+
+    void streamQueueHandlesNextPreviousRemovalAndCancellation()
+    {
+        QTemporaryDir dir;
+        SettingsStore settings;
+        LibraryModel library(nullptr, dir.filePath("library.db"));
+        PlaybackController player(&library, &settings);
+        QSignalSpy requested(&player, &PlaybackController::streamRequested);
+        QSignalSpy exhausted(&player, &PlaybackController::streamQueueExhausted);
+        const QVariantList tracks{QVariantMap{{"url", "https://music.yandex.ru/track/1"}, {"title", "One"}},
+                                  QVariantMap{{"url", "https://music.yandex.ru/track/2"}, {"title", "Two"}},
+                                  QVariantMap{{"url", "https://music.yandex.ru/track/3"}, {"title", "Three"}}};
+        player.playStreamQueue(tracks);
+        QCOMPARE(player.queue().size(), 3);
+        QCOMPARE(requested.last()[0].toMap().value("title").toString(), QString("One"));
+        player.next();
+        QCOMPARE(requested.last()[0].toMap().value("title").toString(), QString("Two"));
+        player.removeFromQueue(-1000);
+        QCOMPARE(player.queue().size(), 2);
+        player.next();
+        QCOMPARE(requested.last()[0].toMap().value("title").toString(), QString("Three"));
+        player.next();
+        QCOMPARE(exhausted.count(), 1);
+        player.previous();
+        QCOMPARE(requested.last()[0].toMap().value("title").toString(), QString("Two"));
+        player.playQueueTrack(-1002);
+        QCOMPARE(requested.last()[0].toMap().value("title").toString(), QString("Three"));
+        player.stop();
+        QVERIFY(requested.last()[0].toMap().isEmpty());
+        QVERIFY(player.queue().isEmpty());
+    }
+
+    void yandexWaveParsesOnlyAvailableUniqueTracks()
+    {
+        const auto track = [](int id) {
+            return QJsonObject{{"id", id}, {"title", "Wave song"}, {"durationMs", 180000},
+                               {"artists", QJsonArray{QJsonObject{{"name", "Wave artist"}}}},
+                               {"coverUri", "avatars.yandex.net/get-music-content/test/%%"},
+                               {"secret", "private-account-field"}};
+        };
+        auto unavailable = track(3);
+        unavailable["available"] = false;
+        const auto tracks = ServicePayload::yandexWave(QJsonObject{{"result", QJsonObject{{"sequence", QJsonArray{
+            QJsonObject{{"track", track(1)}}, QJsonObject{{"track", track(1)}},
+            QJsonObject{{"track", unavailable}}, QJsonObject{{"track", track(2)}}}}}}});
+        QCOMPARE(tracks.size(), 2);
+        QCOMPARE(tracks[0].sourceUrl, QString("https://music.yandex.ru/track/1"));
+        QCOMPARE(tracks[1].artist, QString("Wave artist"));
+        QVERIFY(tracks[0].coverUrl.endsWith("/400x400"));
+        QVERIFY(!tracks[0].webData.contains("secret"));
+        QVERIFY(ServicePayload::yandexWave(QJsonObject{{"error", "denied"}}).isEmpty());
+        QVERIFY(BrowserSession::isWaveApi(QUrl("https://api.music.yandex.ru/rotor/station/user:onyourwave/tracks")));
+        QVERIFY(!BrowserSession::isWaveApi(QUrl("https://api.music.yandex.ru.evil.test/rotor/station/user:onyourwave/tracks")));
+        QVERIFY(!BrowserSession::isWaveApi(QUrl("http://api.music.yandex.ru/rotor/station/user:onyourwave/tracks")));
+        QVERIFY(!BrowserSession::isWaveApi(QUrl("https://api.music.yandex.ru/account")));
+    }
+
+    void homeYandexUsesAccountAndCacheAndDiscardsLateResponses()
+    {
+        QTemporaryDir dir;
+        SettingsStore settings;
+        settings.setYandexToken({});
+        LibraryModel library(nullptr, dir.filePath("library.db"));
+        OAuthManager accounts(&settings);
+        WebLoginManager web(&settings);
+        web.logout("yandex");
+        PlaybackController player(&library, &settings);
+        AudioTransport network;
+        network.payload = R"({"result":{"sequence":[{"track":{"id":"42","title":"From Yandex","artists":[{"name":"Artist"}]}}]}})";
+        HomeFeed feed(&library, &accounts, &web, &player, nullptr, &network);
+        feed.refreshYandex();
+        QCOMPARE(network.requests, 0);
+        QVERIFY(feed.yandexTracks().isEmpty());
+        accounts.saveToken("yandex", "fixture-token");
+        feed.playWave();
+        QVERIFY(feed.busy());
+        player.stop();
+        QTRY_VERIFY(!feed.busy());
+        QVERIFY(player.queue().isEmpty());
+        QVERIFY(!web.busy());
+        QCOMPARE(feed.yandexTracks().size(), 1);
+        QCOMPARE(feed.yandexTracks().first().toMap().value("title").toString(), QString("From Yandex"));
+        QCOMPARE(network.lastRequest.rawHeader("Authorization"), QByteArray("OAuth fixture-token"));
+        QCOMPARE(network.lastRequest.url().host(), QString("api.music.yandex.net"));
+        feed.refreshYandex();
+        QCOMPARE(network.requests, 1);
+        network.status = 403;
+        feed.refreshYandex(true);
+        QTRY_VERIFY(!feed.busy());
+        QCOMPARE(network.requests, 2);
+        QCOMPARE(QUrlQuery(network.lastRequest.url()).queryItemValue("queue"), QString("42"));
+        QCOMPARE(feed.yandexTracks().size(), 1);
+        QVERIFY(feed.status().contains("Войди"));
+        QVERIFY(!feed.status().contains("fixture-token"));
+        network.status = 200;
+        network.delay = 50;
+        feed.refreshYandex(true);
+        accounts.logout("yandex");
+        QTest::qWait(100);
+        QVERIFY(feed.yandexTracks().isEmpty());
+        QVERIFY(!feed.busy());
+        QVERIFY(!feed.yandexConnected());
+        accounts.saveToken("yandex", "expired-fixture");
+        settings.setYandexTokenExpiry(QDateTime::currentSecsSinceEpoch() - 1);
+        feed.refreshYandex();
+        QVERIFY(!feed.busy());
+        QVERIFY(feed.yandexTracks().isEmpty());
+        QVERIFY(feed.status().contains("Войди"));
+    }
+
+    void yandexWaveReadsThroughBrowserSession_data()
+    {
+        QTest::addColumn<int>("apiStatus");
+        QTest::newRow("account-wave") << 200;
+        QTest::newRow("expired-session") << 403;
+    }
+
+    void yandexWaveReadsThroughBrowserSession()
+    {
+#ifndef Q_OS_WIN
+        QFETCH(int, apiStatus);
+        QTemporaryDir dir;
+        const auto executable = dir.filePath("brave");
+        QFile file(executable);
+        QVERIFY(file.open(QIODevice::WriteOnly));
+        file.write("#!/bin/sh\nexec sleep 30\n");
+        file.close();
+        QVERIFY(file.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner));
+        const auto oldPath = qgetenv("PATH");
+        const auto restore = qScopeGuard([&] { qputenv("PATH", oldPath); });
+        qputenv("PATH", dir.path().toUtf8() + ":" + oldPath);
+        SettingsStore settings;
+        DevToolsTransport network;
+        BrowserProtocol protocol;
+        bool waveRequested = false;
+        protocol.apiFixture = [&](const QJsonObject& args) {
+            waveRequested = QUrl(args.value("url").toString()).path() == "/rotor/station/user:onyourwave/tracks";
+            return QJsonObject{{"status", apiStatus}, {"payload", QJsonObject{{"result", QJsonObject{
+                {"sequence", QJsonArray{QJsonObject{{"track", QJsonObject{{"id", "19"}, {"title", "Personal wave"}}}}}}}}}}};
+        };
+        WebLoginManager web(&settings, nullptr, [&](QObject* parent) {
+            return new BrowserSession(parent, &network, &protocol, [] { return 9222; });
+        });
+        web.saveCookies("yandex", {{"Session_id", "fixture-session", ".yandex.ru", "/", 0, true, true}});
+        QSignalSpy ready(&web, &WebLoginManager::waveReady);
+        web.requestWave();
+        QTRY_COMPARE_WITH_TIMEOUT(ready.count(), 1, 9000);
+        QVERIFY(waveRequested);
+        QVERIFY(!web.busy());
+        const auto tracks = qvariant_cast<QVector<Track>>(ready[0][0]);
+        if (apiStatus == 200) {
+            QCOMPARE(tracks.size(), 1);
+            QCOMPARE(tracks[0].title, QString("Personal wave"));
+            QVERIFY(ready[0][1].toString().isEmpty());
+        } else {
+            QVERIFY(tracks.isEmpty());
+            QVERIFY(ready[0][1].toString().contains("Войди"));
+        }
+        QVERIFY(!ready[0][1].toString().contains("fixture-session"));
+        web.logout("yandex");
+#endif
+    }
+
     void archiveCatalogKeepsOnlyPublicIndividualAudioFiles() {
         QJsonObject root{{"metadata",QJsonObject{{"identifier","album-2026"},{"creator","Artist"}}},
             {"files",QJsonArray{QJsonObject{{"name","01 song.mp3"},{"title","Song"},{"length","3:20"}},
@@ -410,7 +922,7 @@ private slots:
     void publicSourceSearchDownloadsIntoExistingTrack_data() {
         QTest::addColumn<QString>("source");QTest::addColumn<QString>("sourceUrl");QTest::addColumn<QString>("searchUrl");
         QTest::newRow("Hitmo")<<"Hitmo"<<"https://rus.hitmos.fm/song/123"<<"https://rus.hitmos.fm/search?q=Artist+A+song";
-        QTest::newRow("Zaycev")<<"Zaycev.net"<<"https://zaycev.net/pages/123/456.shtml"<<"https://zaycev.net/search.html?query_search=Artist+A+song";
+        QTest::newRow("Zaycev")<<"Zaycev.net"<<"https://zaycev.net/pages/123/456.shtml"<<"https://zaycev.net/search?query_search=Artist+A+song";
     }
     void publicSourceSearchDownloadsIntoExistingTrack() {
 #ifndef Q_OS_WIN
@@ -443,8 +955,14 @@ private slots:
         AudioSources sources(&library,&downloads,nullptr,nullptr,[&](QObject *parent){return new BrowserSession(parent,&network,&protocol,[]{return 9222;});});
         QSignalSpy queued(&sources,&AudioSources::queued);sources.openTrack(id);sources.search(source);QTRY_VERIFY_WITH_TIMEOUT(!sources.busy(),6000);
         QCOMPARE(sources.results().size(),1);QCOMPARE(sources.results()[0].toMap().value("score").toInt(),100);
-        const auto searched=QUrl(protocol.navigationUrl);QCOMPARE(searched.path(),QUrl(searchUrl).path());
-        QCOMPARE(QUrlQuery(searched).queryItemValue(source=="Hitmo"?"q":"query_search"),source=="Hitmo"?QString("artist a song"):QString("Artist A song"));
+        QUrl searched;
+        for (const auto& visited : protocol.navigationHistory) {
+            const QUrl url(visited);
+            if (url.host() == QUrl(searchUrl).host() && url.path() == QUrl(searchUrl).path())
+                searched = url;
+        }
+        QCOMPARE(searched.path(),QUrl(searchUrl).path());
+        QCOMPARE(QUrlQuery(searched).queryItemValue(source=="Hitmo"?"q":"query_search").toCaseFolded(), QString("artist a song"));
         sources.choose(0);QTRY_COMPARE_WITH_TIMEOUT(queued.count(),1,5000);QTRY_VERIFY_WITH_TIMEOUT(!downloads.busy(),6000);
         QCOMPARE(downloads.succeededCount(),1);QCOMPARE(downloads.failedCount(),0);QCOMPARE(library.repository().count(),1);
         QCOMPARE(downloads.firstFailedTrack(),0);QCOMPARE(downloads.data(downloads.index(0),DownloadManager::StatusRole).toString(),QString("recovered"));

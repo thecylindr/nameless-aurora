@@ -35,6 +35,7 @@ class BrowserSession : public QObject
     void fetchJson(int requestId, const QUrl& url, const QJsonArray& trackIds = {});
     // Проверяет, является ли URL вызовом API коллекции Яндекс Музыки.
     static bool isCollectionApi(const QUrl& url);
+    static bool isWaveApi(const QUrl& url);
     // Собирает диагностику протокола CDP для отчёта импорта.
     QJsonObject protocolDiagnostic() const;
     // Скрывает окно и приостанавливает воспроизведение до следующей операции.

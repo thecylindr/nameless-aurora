@@ -1,6 +1,7 @@
 // Карточка рекомендации: обложка с кнопкой воспроизведения и подписи названия и исполнителя.
 import QtQuick
 import QtQuick.Layouts
+import ".."
 import "../common" as Common
 
 Item {
@@ -31,7 +32,7 @@ Item {
                 text: "Слушать"
                 implicitWidth: 40
                 implicitHeight: 40
-                visible: hover.containsMouse || player.currentTrackId === root.trackData.trackId
+                visible: true
                 onClicked: root.clicked()
             }
             MouseArea {

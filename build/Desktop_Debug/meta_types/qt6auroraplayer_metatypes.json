@@ -279,7 +279,7 @@
                             }
                         ],
                         "index": 9,
-                        "lineNumber": 100,
+                        "lineNumber": 103,
                         "name": "search",
                         "returnType": "void"
                     },
@@ -293,7 +293,7 @@
                         ],
                         "index": 10,
                         "isCloned": true,
-                        "lineNumber": 100,
+                        "lineNumber": 103,
                         "name": "search",
                         "returnType": "void"
                     },
@@ -306,7 +306,7 @@
                             }
                         ],
                         "index": 11,
-                        "lineNumber": 102,
+                        "lineNumber": 105,
                         "name": "searchAll",
                         "returnType": "void"
                     },
@@ -314,7 +314,7 @@
                         "access": "public",
                         "index": 12,
                         "isCloned": true,
-                        "lineNumber": 102,
+                        "lineNumber": 105,
                         "name": "searchAll",
                         "returnType": "void"
                     },
@@ -327,7 +327,7 @@
                             }
                         ],
                         "index": 13,
-                        "lineNumber": 104,
+                        "lineNumber": 107,
                         "name": "choose",
                         "returnType": "void"
                     },
@@ -340,21 +340,21 @@
                             }
                         ],
                         "index": 14,
-                        "lineNumber": 106,
+                        "lineNumber": 109,
                         "name": "downloadLink",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 15,
-                        "lineNumber": 108,
+                        "lineNumber": 111,
                         "name": "cancel",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 16,
-                        "lineNumber": 110,
+                        "lineNumber": 113,
                         "name": "close",
                         "returnType": "void"
                     },
@@ -367,21 +367,21 @@
                             }
                         ],
                         "index": 17,
-                        "lineNumber": 112,
+                        "lineNumber": 115,
                         "name": "recoverTrack",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 18,
-                        "lineNumber": 114,
+                        "lineNumber": 117,
                         "name": "recoverMissing",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 19,
-                        "lineNumber": 116,
+                        "lineNumber": 119,
                         "name": "cancelRecovery",
                         "returnType": "void"
                     }
@@ -600,35 +600,35 @@
                     {
                         "access": "public",
                         "index": 0,
-                        "lineNumber": 120,
+                        "lineNumber": 123,
                         "name": "opened",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 1,
-                        "lineNumber": 121,
+                        "lineNumber": 124,
                         "name": "targetChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 2,
-                        "lineNumber": 122,
+                        "lineNumber": 125,
                         "name": "resultsChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 3,
-                        "lineNumber": 123,
+                        "lineNumber": 126,
                         "name": "changed",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 4,
-                        "lineNumber": 124,
+                        "lineNumber": 127,
                         "name": "queued",
                         "returnType": "void"
                     },
@@ -641,14 +641,14 @@
                             }
                         ],
                         "index": 5,
-                        "lineNumber": 125,
+                        "lineNumber": 128,
                         "name": "catalogQueued",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 6,
-                        "lineNumber": 126,
+                        "lineNumber": 129,
                         "name": "operationFinished",
                         "returnType": "void"
                     },
@@ -665,7 +665,7 @@
                             }
                         ],
                         "index": 7,
-                        "lineNumber": 127,
+                        "lineNumber": 130,
                         "name": "previewResolved",
                         "returnType": "void"
                     }
@@ -1993,7 +1993,7 @@
                             }
                         ],
                         "index": 0,
-                        "lineNumber": 60,
+                        "lineNumber": 61,
                         "name": "loaded",
                         "returnType": "void"
                     },
@@ -2010,7 +2010,7 @@
                             }
                         ],
                         "index": 1,
-                        "lineNumber": 62,
+                        "lineNumber": 63,
                         "name": "evaluated",
                         "returnType": "void"
                     },
@@ -2027,7 +2027,7 @@
                             }
                         ],
                         "index": 2,
-                        "lineNumber": 64,
+                        "lineNumber": 65,
                         "name": "cookiesReceived",
                         "returnType": "void"
                     },
@@ -2040,7 +2040,7 @@
                             }
                         ],
                         "index": 3,
-                        "lineNumber": 66,
+                        "lineNumber": 67,
                         "name": "audioRequested",
                         "returnType": "void"
                     },
@@ -2057,7 +2057,7 @@
                             }
                         ],
                         "index": 4,
-                        "lineNumber": 68,
+                        "lineNumber": 69,
                         "name": "apiReceived",
                         "returnType": "void"
                     },
@@ -2082,7 +2082,7 @@
                             }
                         ],
                         "index": 5,
-                        "lineNumber": 70,
+                        "lineNumber": 71,
                         "name": "apiFetched",
                         "returnType": "void"
                     },
@@ -2095,7 +2095,7 @@
                             }
                         ],
                         "index": 6,
-                        "lineNumber": 72,
+                        "lineNumber": 73,
                         "name": "failed",
                         "returnType": "void"
                     }
@@ -2430,7 +2430,7 @@
                 "methods": [
                     {
                         "access": "public",
-                        "index": 10,
+                        "index": 12,
                         "lineNumber": 67,
                         "name": "openImportReport",
                         "returnType": "void"
@@ -2443,7 +2443,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 11,
+                        "index": 13,
                         "lineNumber": 101,
                         "name": "openNative",
                         "returnType": "void"
@@ -2456,7 +2456,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 12,
+                        "index": 14,
                         "lineNumber": 103,
                         "name": "setBrowserVisible",
                         "returnType": "void"
@@ -2477,7 +2477,7 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 13,
+                        "index": 15,
                         "lineNumber": 105,
                         "name": "pageLoaded",
                         "returnType": "void"
@@ -2494,7 +2494,7 @@
                                 "type": "bool"
                             }
                         ],
-                        "index": 14,
+                        "index": 16,
                         "isCloned": true,
                         "lineNumber": 105,
                         "name": "pageLoaded",
@@ -2502,7 +2502,7 @@
                     },
                     {
                         "access": "public",
-                        "index": 15,
+                        "index": 17,
                         "lineNumber": 107,
                         "name": "confirmNativeLogin",
                         "returnType": "void"
@@ -2519,23 +2519,23 @@
                                 "type": "QVariant"
                             }
                         ],
-                        "index": 16,
+                        "index": 18,
                         "lineNumber": 111,
                         "name": "submitScriptResult",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 17,
+                        "index": 19,
                         "isConst": true,
-                        "lineNumber": 121,
+                        "lineNumber": 126,
                         "name": "localBrowserProfiles",
                         "returnType": "QVariantList"
                     },
                     {
                         "access": "public",
-                        "index": 18,
-                        "lineNumber": 131,
+                        "index": 20,
+                        "lineNumber": 136,
                         "name": "availableBrowsers",
                         "returnType": "QStringList"
                     },
@@ -2551,15 +2551,15 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 19,
-                        "lineNumber": 133,
+                        "index": 21,
+                        "lineNumber": 138,
                         "name": "startLogin",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 20,
-                        "lineNumber": 135,
+                        "index": 22,
+                        "lineNumber": 140,
                         "name": "cancel",
                         "returnType": "void"
                     },
@@ -2571,8 +2571,8 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 21,
-                        "lineNumber": 137,
+                        "index": 23,
+                        "lineNumber": 142,
                         "name": "logout",
                         "returnType": "void"
                     },
@@ -2584,9 +2584,9 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 22,
+                        "index": 24,
                         "isConst": true,
-                        "lineNumber": 139,
+                        "lineNumber": 144,
                         "name": "hasSession",
                         "returnType": "bool"
                     }
@@ -2786,7 +2786,7 @@
                     {
                         "access": "public",
                         "index": 0,
-                        "lineNumber": 164,
+                        "lineNumber": 169,
                         "name": "nativeBrowserChanged",
                         "returnType": "void"
                     },
@@ -2799,7 +2799,7 @@
                             }
                         ],
                         "index": 1,
-                        "lineNumber": 166,
+                        "lineNumber": 171,
                         "name": "navigateRequested",
                         "returnType": "void"
                     },
@@ -2816,7 +2816,7 @@
                             }
                         ],
                         "index": 2,
-                        "lineNumber": 168,
+                        "lineNumber": 173,
                         "name": "scriptRequested",
                         "returnType": "void"
                     },
@@ -2837,7 +2837,7 @@
                             }
                         ],
                         "index": 3,
-                        "lineNumber": 170,
+                        "lineNumber": 175,
                         "name": "collectionReady",
                         "returnType": "void"
                     },
@@ -2854,8 +2854,42 @@
                             }
                         ],
                         "index": 4,
-                        "lineNumber": 172,
+                        "lineNumber": 177,
                         "name": "searchReady",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "tracks",
+                                "type": "QList<Track>"
+                            },
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 5,
+                        "lineNumber": 178,
+                        "name": "vkRecommendationsReady",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "tracks",
+                                "type": "QList<Track>"
+                            },
+                            {
+                                "name": "error",
+                                "type": "QString"
+                            }
+                        ],
+                        "index": 6,
+                        "lineNumber": 179,
+                        "name": "waveReady",
                         "returnType": "void"
                     },
                     {
@@ -2874,29 +2908,29 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 5,
-                        "lineNumber": 174,
+                        "index": 7,
+                        "lineNumber": 181,
                         "name": "mediaReady",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 6,
-                        "lineNumber": 176,
+                        "index": 8,
+                        "lineNumber": 183,
                         "name": "busyChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 7,
-                        "lineNumber": 178,
+                        "index": 9,
+                        "lineNumber": 185,
                         "name": "statusChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 8,
-                        "lineNumber": 180,
+                        "index": 10,
+                        "lineNumber": 187,
                         "name": "sessionsChanged",
                         "returnType": "void"
                     },
@@ -2916,8 +2950,8 @@
                                 "type": "QString"
                             }
                         ],
-                        "index": 9,
-                        "lineNumber": 182,
+                        "index": 11,
+                        "lineNumber": 189,
                         "name": "loginDone",
                         "returnType": "void"
                     }
@@ -3661,6 +3695,468 @@
             }
         ],
         "inputFile": "downloadmanager.h",
+        "outputRevision": 69
+    },
+    {
+        "classes": [
+            {
+                "className": "HomeFeed",
+                "lineNumber": 18,
+                "methods": [
+                    {
+                        "access": "public",
+                        "index": 6,
+                        "lineNumber": 89,
+                        "name": "refresh",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "force",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 7,
+                        "lineNumber": 90,
+                        "name": "refreshYandex",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 8,
+                        "isCloned": true,
+                        "lineNumber": 90,
+                        "name": "refreshYandex",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "mix",
+                                "type": "QVariantMap"
+                            },
+                            {
+                                "name": "trackId",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 9,
+                        "lineNumber": 91,
+                        "name": "playMix",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "mix",
+                                "type": "QVariantMap"
+                            }
+                        ],
+                        "index": 10,
+                        "isCloned": true,
+                        "lineNumber": 91,
+                        "name": "playMix",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 11,
+                        "lineNumber": 92,
+                        "name": "playWave",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 12,
+                        "lineNumber": 93,
+                        "name": "playYandex",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 13,
+                        "isCloned": true,
+                        "lineNumber": 93,
+                        "name": "playYandex",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "force",
+                                "type": "bool"
+                            }
+                        ],
+                        "index": 14,
+                        "lineNumber": 94,
+                        "name": "refreshVk",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 15,
+                        "isCloned": true,
+                        "lineNumber": 94,
+                        "name": "refreshVk",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "index",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 16,
+                        "lineNumber": 95,
+                        "name": "playVk",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 17,
+                        "isCloned": true,
+                        "lineNumber": 95,
+                        "name": "playVk",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "trackId",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 18,
+                        "lineNumber": 96,
+                        "name": "playTrack",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "trackId",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 19,
+                        "lineNumber": 97,
+                        "name": "playLibraryTrack",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "trackId",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 20,
+                        "lineNumber": 98,
+                        "name": "findSource",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "lineNumber": 21,
+                        "name": "sections",
+                        "notify": "sectionsChanged",
+                        "override": false,
+                        "read": "sections",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 1,
+                        "lineNumber": 22,
+                        "name": "yandexTracks",
+                        "notify": "yandexChanged",
+                        "override": false,
+                        "read": "yandexTracks",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 2,
+                        "lineNumber": 23,
+                        "name": "yandexConnected",
+                        "notify": "yandexChanged",
+                        "override": false,
+                        "read": "yandexConnected",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 3,
+                        "lineNumber": 24,
+                        "name": "busy",
+                        "notify": "yandexChanged",
+                        "override": false,
+                        "read": "busy",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 4,
+                        "lineNumber": 25,
+                        "name": "status",
+                        "notify": "yandexChanged",
+                        "override": false,
+                        "read": "status",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 5,
+                        "lineNumber": 26,
+                        "name": "vkTracks",
+                        "notify": "vkChanged",
+                        "override": false,
+                        "read": "vkTracks",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantList",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 6,
+                        "lineNumber": 27,
+                        "name": "vkConnected",
+                        "notify": "vkChanged",
+                        "override": false,
+                        "read": "vkConnected",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 7,
+                        "lineNumber": 28,
+                        "name": "vkBusy",
+                        "notify": "vkChanged",
+                        "override": false,
+                        "read": "vkBusy",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "bool",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 8,
+                        "lineNumber": 29,
+                        "name": "vkStatus",
+                        "notify": "vkChanged",
+                        "override": false,
+                        "read": "vkStatus",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 9,
+                        "lineNumber": 30,
+                        "name": "preferences",
+                        "notify": "preferencesChanged",
+                        "override": false,
+                        "read": "preferences",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QVariantMap",
+                        "user": false,
+                        "virtual": false,
+                        "write": "setPreferences"
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 10,
+                        "lineNumber": 31,
+                        "name": "playbackStatus",
+                        "notify": "playbackChanged",
+                        "override": false,
+                        "read": "playbackStatus",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 11,
+                        "lineNumber": 32,
+                        "name": "resolvingId",
+                        "notify": "playbackChanged",
+                        "override": false,
+                        "read": "resolvingId",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "int",
+                        "user": false,
+                        "virtual": false
+                    },
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 12,
+                        "lineNumber": 33,
+                        "name": "resolvingUrl",
+                        "notify": "playbackChanged",
+                        "override": false,
+                        "read": "resolvingUrl",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "virtual": false
+                    }
+                ],
+                "qualifiedClassName": "HomeFeed",
+                "signals": [
+                    {
+                        "access": "public",
+                        "index": 0,
+                        "lineNumber": 101,
+                        "name": "sectionsChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 1,
+                        "lineNumber": 102,
+                        "name": "yandexChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "trackId",
+                                "type": "int"
+                            }
+                        ],
+                        "index": 2,
+                        "lineNumber": 103,
+                        "name": "sourceRequested",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 3,
+                        "lineNumber": 104,
+                        "name": "vkChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 4,
+                        "lineNumber": 105,
+                        "name": "preferencesChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 5,
+                        "lineNumber": 106,
+                        "name": "playbackChanged",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "homefeed.h",
         "outputRevision": 69
     },
     {
@@ -4686,7 +5182,7 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 13,
+                        "index": 15,
                         "lineNumber": 184,
                         "name": "playIndex",
                         "returnType": "void"
@@ -4699,7 +5195,7 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 14,
+                        "index": 16,
                         "lineNumber": 186,
                         "name": "playTrackId",
                         "returnType": "void"
@@ -4712,57 +5208,88 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 15,
+                        "index": 17,
                         "lineNumber": 190,
                         "name": "playQueueTrack",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 16,
+                        "index": 18,
                         "lineNumber": 192,
                         "name": "playMix",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 17,
-                        "lineNumber": 194,
-                        "name": "toggle",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
-                        "index": 18,
-                        "lineNumber": 195,
-                        "name": "play",
-                        "returnType": "void"
-                    },
-                    {
-                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "ids",
+                                "type": "QVariantList"
+                            },
+                            {
+                                "name": "firstId",
+                                "type": "int"
+                            }
+                        ],
                         "index": 19,
-                        "lineNumber": 196,
-                        "name": "pause",
+                        "lineNumber": 194,
+                        "name": "playSelection",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
+                        "arguments": [
+                            {
+                                "name": "ids",
+                                "type": "QVariantList"
+                            }
+                        ],
                         "index": 20,
-                        "lineNumber": 198,
-                        "name": "stop",
+                        "isCloned": true,
+                        "lineNumber": 194,
+                        "name": "playSelection",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 21,
-                        "lineNumber": 200,
-                        "name": "next",
+                        "lineNumber": 197,
+                        "name": "toggle",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 22,
-                        "lineNumber": 202,
+                        "lineNumber": 198,
+                        "name": "play",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 23,
+                        "lineNumber": 199,
+                        "name": "pause",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 24,
+                        "lineNumber": 201,
+                        "name": "stop",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 25,
+                        "lineNumber": 203,
+                        "name": "next",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 26,
+                        "lineNumber": 205,
                         "name": "previous",
                         "returnType": "void"
                     },
@@ -4774,15 +5301,15 @@
                                 "type": "qint64"
                             }
                         ],
-                        "index": 23,
-                        "lineNumber": 204,
+                        "index": 27,
+                        "lineNumber": 207,
                         "name": "seek",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 24,
-                        "lineNumber": 206,
+                        "index": 28,
+                        "lineNumber": 209,
                         "name": "toggleFavorite",
                         "returnType": "void"
                     },
@@ -4794,8 +5321,8 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 25,
-                        "lineNumber": 208,
+                        "index": 29,
+                        "lineNumber": 211,
                         "name": "enqueue",
                         "returnType": "void"
                     },
@@ -4807,8 +5334,8 @@
                                 "type": "int"
                             }
                         ],
-                        "index": 26,
-                        "lineNumber": 209,
+                        "index": 30,
+                        "lineNumber": 212,
                         "name": "removeFromQueue",
                         "returnType": "void"
                     }
@@ -5332,78 +5859,98 @@
                 "signals": [
                     {
                         "access": "public",
+                        "arguments": [
+                            {
+                                "name": "candidate",
+                                "type": "QVariantMap"
+                            }
+                        ],
                         "index": 0,
-                        "lineNumber": 216,
-                        "name": "currentTrackChanged",
+                        "lineNumber": 219,
+                        "name": "streamRequested",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 1,
-                        "lineNumber": 217,
-                        "name": "playingChanged",
+                        "lineNumber": 220,
+                        "name": "streamQueueExhausted",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 2,
-                        "lineNumber": 218,
-                        "name": "streamLoadingChanged",
+                        "lineNumber": 221,
+                        "name": "currentTrackChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 3,
-                        "lineNumber": 219,
-                        "name": "positionChanged",
+                        "lineNumber": 222,
+                        "name": "playingChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 4,
-                        "lineNumber": 220,
-                        "name": "durationChanged",
+                        "lineNumber": 223,
+                        "name": "streamLoadingChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 5,
-                        "lineNumber": 221,
-                        "name": "volumeChanged",
+                        "lineNumber": 224,
+                        "name": "positionChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 6,
-                        "lineNumber": 222,
-                        "name": "lastErrorChanged",
+                        "lineNumber": 225,
+                        "name": "durationChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 7,
-                        "lineNumber": 223,
-                        "name": "modesChanged",
+                        "lineNumber": 226,
+                        "name": "volumeChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 8,
-                        "lineNumber": 224,
-                        "name": "queueChanged",
+                        "lineNumber": 227,
+                        "name": "lastErrorChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 9,
-                        "lineNumber": 225,
-                        "name": "audioLevelsChanged",
+                        "lineNumber": 228,
+                        "name": "modesChanged",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
                         "index": 10,
-                        "lineNumber": 226,
+                        "lineNumber": 229,
+                        "name": "queueChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 11,
+                        "lineNumber": 230,
+                        "name": "audioLevelsChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "index": 12,
+                        "lineNumber": 231,
                         "name": "audioReactivityChanged",
                         "returnType": "void"
                     },
@@ -5415,15 +5962,15 @@
                                 "type": "qint64"
                             }
                         ],
-                        "index": 11,
-                        "lineNumber": 227,
+                        "index": 13,
+                        "lineNumber": 232,
                         "name": "seeked",
                         "returnType": "void"
                     },
                     {
                         "access": "public",
-                        "index": 12,
-                        "lineNumber": 228,
+                        "index": 14,
+                        "lineNumber": 233,
                         "name": "seekableChanged",
                         "returnType": "void"
                     }

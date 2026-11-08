@@ -808,6 +808,70 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.aotstats
 
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: /usr/lib/qt6/qmlcachegen
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: /home/cylindr/nameless-aurora/qml/components/HomeMixCard.qml
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/native_scripts.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: .qt/rcc/aurora_effects.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp: qml/AuroraPlayer/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
+	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/HomeMixCard.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp /home/cylindr/nameless-aurora/qml/components/HomeMixCard.qml
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.aotstats
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: /usr/lib/qt6/qmlcachegen
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: /home/cylindr/nameless-aurora/qml/components/HomeProviderShelf.qml
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/native_scripts.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: .qt/rcc/aurora_effects.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp: qml/AuroraPlayer/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
+	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/HomeProviderShelf.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp /home/cylindr/nameless-aurora/qml/components/HomeProviderShelf.qml
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.aotstats
+
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: /usr/lib/qt6/qmlcachegen
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: /home/cylindr/nameless-aurora/qml/components/ProviderPlaylistDialog.qml
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/native_scripts.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: .qt/rcc/aurora_effects.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp: qml/AuroraPlayer/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
+	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/ProviderPlaylistDialog.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp /home/cylindr/nameless-aurora/qml/components/ProviderPlaylistDialog.qml
+
+.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.aotstats
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: /usr/lib/qt6/qmlcachegen
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: /home/cylindr/nameless-aurora/qml/components/HomeMusicPreferences.qml
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/native_scripts.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: .qt/rcc/aurora_effects.qrc
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp: qml/AuroraPlayer/qmldir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.aotstats"
+	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
+	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/HomeMusicPreferences.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp /home/cylindr/nameless-aurora/qml/components/HomeMusicPreferences.qml
+
+.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.aotstats: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.aotstats
+
 .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp: /usr/lib/qt6/qmlcachegen
 .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp: /home/cylindr/nameless-aurora/qml/pages/HomePage.qml
 .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp: .qt/rcc/qmake_AuroraPlayer.qrc
@@ -817,7 +881,7 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/HomePage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/HomePage.qml
 
@@ -833,7 +897,7 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/LibraryPage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/LibraryPage.qml
 
@@ -849,7 +913,7 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/ImportPage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/ImportPage.qml
 
@@ -865,7 +929,7 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/SettingsPage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/SettingsPage.qml
 
@@ -881,7 +945,7 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Generating .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/pages/SearchPage.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp /home/cylindr/nameless-aurora/qml/pages/SearchPage.qml
 
@@ -897,7 +961,7 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp: .qt/rcc/aurora_effects.qrc
 .rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp: qml/AuroraPlayer/AuroraPlayer.qmltypes
 .rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp: qml/AuroraPlayer/qmldir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.aotstats"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Generating .rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp, .rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.aotstats"
 	/usr/bin/cmake -E make_directory /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache
 	/usr/lib/qt6/qmlcachegen --bare --resource-path /qt/qml/AuroraPlayer/qml/components/AtmosphereObjects.qml -I /home/cylindr/nameless-aurora/build/Desktop_Debug -I /usr/lib/qt6/qml -i /home/cylindr/nameless-aurora/build/Desktop_Debug/qml/AuroraPlayer/qmldir --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qmake_AuroraPlayer.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc --resource /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc --dump-aot-stats "--module-id=AuroraPlayer(AuroraPlayer)" -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp /home/cylindr/nameless-aurora/qml/components/AtmosphereObjects.qml
 
@@ -947,6 +1011,10 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/components/StorageSummary.qml
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/components/DependencyCard.qml
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/components/RecommendationCard.qml
+.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/components/HomeMixCard.qml
+.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/components/HomeProviderShelf.qml
+.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/components/ProviderPlaylistDialog.qml
+.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/components/HomeMusicPreferences.qml
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/pages/HomePage.qml
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/pages/LibraryPage.qml
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/pages/ImportPage.qml
@@ -955,7 +1023,7 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /home/cylindr/nameless-aurora/qml/components/AtmosphereObjects.qml
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: .qt/rcc/AuroraPlayer_raw_qml_0.qrc
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp: /usr/lib/qt6/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Running rcc for resource AuroraPlayer_raw_qml_0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Running rcc for resource AuroraPlayer_raw_qml_0"
 	/usr/lib/qt6/rcc --output /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp --name AuroraPlayer_raw_qml_0 /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0.qrc
 
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp: qml/AuroraPlayer/qml/web/qmldir
@@ -965,7 +1033,7 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp: qml/AuroraPlayer/qml/pages/qmldir
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp: .qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
 .qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp: /usr/lib/qt6/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Running rcc for resource AuroraPlayer_raw_qml_0_extra_qmldirs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Running rcc for resource AuroraPlayer_raw_qml_0_extra_qmldirs"
 	/usr/lib/qt6/rcc --output /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp --name AuroraPlayer_raw_qml_0_extra_qmldirs /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/AuroraPlayer_raw_qml_0_extra_qmldirs.qrc
 
 .qt/rcc/qrc_native_scripts.cpp: /home/cylindr/nameless-aurora/src/core/web/harvest.js
@@ -976,29 +1044,29 @@ qml/AuroraPlayer/AuroraPlayer.qmltypes: auroraplayer_qmltyperegistrations.cpp
 .qt/rcc/qrc_native_scripts.cpp: /home/cylindr/nameless-aurora/src/core/web/public-source.js
 .qt/rcc/qrc_native_scripts.cpp: .qt/rcc/native_scripts.qrc
 .qt/rcc/qrc_native_scripts.cpp: /usr/lib/qt6/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Running rcc for resource native_scripts"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Running rcc for resource native_scripts"
 	/usr/lib/qt6/rcc --output /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp --name native_scripts /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/native_scripts.qrc
 
 .qt/rcc/qrc_aurora_effects.cpp: .qsb/aurora-orb.frag.qsb
 .qt/rcc/qrc_aurora_effects.cpp: .qt/rcc/aurora_effects.qrc
 .qt/rcc/qrc_aurora_effects.cpp: /usr/lib/qt6/rcc
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Running rcc for resource aurora_effects"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Running rcc for resource aurora_effects"
 	/usr/lib/qt6/rcc --output /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp --name aurora_effects /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/aurora_effects.qrc
 
 .qsb/aurora-orb.frag.qsb: /home/cylindr/nameless-aurora/shaders/aurora-orb.frag
 .qsb/aurora-orb.frag.qsb: /home/cylindr/nameless-aurora/shaders/aurora-orb.frag
 .qsb/aurora-orb.frag.qsb: /usr/lib/qt6/bin/qsb
 .qsb/aurora-orb.frag.qsb: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Generating .qsb/aurora-orb.frag.qsb"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Generating .qsb/aurora-orb.frag.qsb"
 	/usr/lib/qt6/bin/qsb --glsl 100es,120,150 --hlsl 50 --msl 12 -o /home/cylindr/nameless-aurora/build/Desktop_Debug/.qsb/aurora-orb.frag.qsb --depfile /home/cylindr/nameless-aurora/build/Desktop_Debug/.qsb/aurora-orb.frag.qsb.d /home/cylindr/nameless-aurora/shaders/aurora-orb.frag
 
 meta_types/AuroraPlayer_json_file_list.txt: /usr/lib/qt6/cmake_automoc_parser
 meta_types/AuroraPlayer_json_file_list.txt: AuroraPlayer_autogen/timestamp
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Running AUTOMOC file extraction for target AuroraPlayer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Running AUTOMOC file extraction for target AuroraPlayer"
 	/usr/lib/qt6/cmake_automoc_parser --cmake-autogen-cache-file /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles/AuroraPlayer_autogen.dir/ParseCache.txt --cmake-autogen-info-file /home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles/AuroraPlayer_autogen.dir/AutogenInfo.json --output-file-path /home/cylindr/nameless-aurora/build/Desktop_Debug/meta_types/AuroraPlayer_json_file_list.txt --timestamp-file-path /home/cylindr/nameless-aurora/build/Desktop_Debug/meta_types/AuroraPlayer_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/include
 
 meta_types/qt6auroraplayer_metatypes.json: meta_types/qt6auroraplayer_metatypes.json.gen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Generating meta_types/qt6auroraplayer_metatypes.json"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Generating meta_types/qt6auroraplayer_metatypes.json"
 	/usr/bin/cmake -E true
 
 CMakeFiles/AuroraPlayer.dir/codegen:
@@ -1007,7 +1075,7 @@ CMakeFiles/AuroraPlayer.dir/codegen:
 CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.o: AuroraPlayer_autogen/mocs_compilation.cpp
 CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.o -MF CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/mocs_compilation.cpp
 
 CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.i: cmake_force
@@ -1021,7 +1089,7 @@ CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.s: cmake_f
 CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.o: /home/cylindr/nameless-aurora/src/app/main.cpp
 CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.o -c /home/cylindr/nameless-aurora/src/app/main.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.i: cmake_force
@@ -1035,7 +1103,7 @@ CMakeFiles/AuroraPlayer.dir/src/app/main.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.o: /home/cylindr/nameless-aurora/src/core/integration/namelessbridge.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.o -c /home/cylindr/nameless-aurora/src/core/integration/namelessbridge.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.i: cmake_force
@@ -1049,7 +1117,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cpp.s: cmake_for
 CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o: /home/cylindr/nameless-aurora/src/core/data/libraryrepository.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o -c /home/cylindr/nameless-aurora/src/core/data/libraryrepository.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.i: cmake_force
@@ -1063,7 +1131,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o: /home/cylindr/nameless-aurora/src/core/libraryexchange.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o -c /home/cylindr/nameless-aurora/src/core/libraryexchange.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.i: cmake_force
@@ -1077,7 +1145,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o: /home/cylindr/nameless-aurora/src/core/librarymodel.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o -c /home/cylindr/nameless-aurora/src/core/librarymodel.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.i: cmake_force
@@ -1088,10 +1156,24 @@ CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cylindr/nameless-aurora/src/core/librarymodel.cpp -o CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.s
 
+CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
+CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o: /home/cylindr/nameless-aurora/src/core/homefeed.cpp
+CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o -c /home/cylindr/nameless-aurora/src/core/homefeed.cpp
+
+CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cylindr/nameless-aurora/src/core/homefeed.cpp > CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.i
+
+CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cylindr/nameless-aurora/src/core/homefeed.cpp -o CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.s
+
 CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o: /home/cylindr/nameless-aurora/src/core/artwork.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o -c /home/cylindr/nameless-aurora/src/core/artwork.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.i: cmake_force
@@ -1105,7 +1187,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o: /home/cylindr/nameless-aurora/src/core/playbackcontroller.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o -c /home/cylindr/nameless-aurora/src/core/playbackcontroller.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.i: cmake_force
@@ -1119,7 +1201,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o: /home/cylindr/nameless-aurora/src/core/web/streamproxy.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o -c /home/cylindr/nameless-aurora/src/core/web/streamproxy.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.i: cmake_force
@@ -1133,7 +1215,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.o: /home/cylindr/nameless-aurora/src/core/audioreactivity.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.o -c /home/cylindr/nameless-aurora/src/core/audioreactivity.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.i: cmake_force
@@ -1147,7 +1229,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/audioreactivity.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.o: /home/cylindr/nameless-aurora/src/core/audioequalizer.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.o -c /home/cylindr/nameless-aurora/src/core/audioequalizer.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.i: cmake_force
@@ -1161,7 +1243,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/audioequalizer.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/importmanager.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/importmanager.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.i: cmake_force
@@ -1175,7 +1257,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/importmanager.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/nativedownload.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/nativedownload.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.i: cmake_force
@@ -1189,7 +1271,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/downloads/nativedownload.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/downloadmanager.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloadmanager.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.i: cmake_force
@@ -1203,7 +1285,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/downloadmanager.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/audiosources.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/audiosources.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.i: cmake_force
@@ -1217,7 +1299,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/downloads/audiosources.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/musicsearch.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/musicsearch.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.i: cmake_force
@@ -1231,7 +1313,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/downloads/musicsearch.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/opencatalog.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/opencatalog.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.i: cmake_force
@@ -1245,7 +1327,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/downloads/opencatalog.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/zaycevcatalog.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.i: cmake_force
@@ -1259,7 +1341,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/downloads/zaycevcatalog.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.o: /home/cylindr/nameless-aurora/src/core/settingsstore.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.o -c /home/cylindr/nameless-aurora/src/core/settingsstore.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.i: cmake_force
@@ -1273,7 +1355,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/settingsstore.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/dependencymanager.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/dependencymanager.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.i: cmake_force
@@ -1287,7 +1369,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/downloads/dependencymanager.cpp.s: cmake_fo
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.o: /home/cylindr/nameless-aurora/src/core/downloads/importpreviewer.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.o -c /home/cylindr/nameless-aurora/src/core/downloads/importpreviewer.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.i: cmake_force
@@ -1301,7 +1383,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/downloads/importpreviewer.cpp.s: cmake_forc
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/browserauthmanager.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/browserauthmanager.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.i: cmake_force
@@ -1315,7 +1397,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/auth/browserauthmanager.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/oauthmanager.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/oauthmanager.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.i: cmake_force
@@ -1329,7 +1411,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/auth/oauthmanager.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/webloginmanager_native.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/webloginmanager_native.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.i: cmake_force
@@ -1343,7 +1425,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager_native.cpp.s: cmake_fo
 CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.o: /home/cylindr/nameless-aurora/src/core/web/mediasniffer.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.o -c /home/cylindr/nameless-aurora/src/core/web/mediasniffer.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.i: cmake_force
@@ -1357,7 +1439,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/web/mediasniffer.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.o: /home/cylindr/nameless-aurora/src/core/web/servicepayload.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.o -c /home/cylindr/nameless-aurora/src/core/web/servicepayload.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.i: cmake_force
@@ -1371,7 +1453,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/web/servicepayload.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/browsersession.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/browsersession.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.i: cmake_force
@@ -1385,7 +1467,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/auth/browsersession.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/browsercookieimporter.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/browsercookieimporter.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.i: cmake_force
@@ -1399,7 +1481,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/auth/browsercookieimporter.cpp.s: cmake_for
 CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/cdpclient.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/cdpclient.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.i: cmake_force
@@ -1413,7 +1495,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/auth/cdpclient.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.o: /home/cylindr/nameless-aurora/src/core/auth/webloginmanager.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/auth/webloginmanager.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.i: cmake_force
@@ -1427,7 +1509,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/auth/webloginmanager.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.o: /home/cylindr/nameless-aurora/src/core/vkprovider.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.o -c /home/cylindr/nameless-aurora/src/core/vkprovider.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.i: cmake_force
@@ -1441,7 +1523,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/vkprovider.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.o: /home/cylindr/nameless-aurora/src/core/storage/storagemanager.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_92) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.o -c /home/cylindr/nameless-aurora/src/core/storage/storagemanager.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.i: cmake_force
@@ -1455,7 +1537,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/storage/storagemanager.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.o: auroraplayer_qmltyperegistrations.cpp
 CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building CXX object CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building CXX object CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.o -MF CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/auroraplayer_qmltyperegistrations.cpp
 
 CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.i: cmake_force
@@ -1469,7 +1551,7 @@ CMakeFiles/AuroraPlayer.dir/auroraplayer_qmltyperegistrations.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.o: .qt/rcc/qrc_qmake_AuroraPlayer.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.cpp.i: cmake_force
@@ -1483,7 +1565,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_qmake_AuroraPlayer.c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.o: .rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlcache_loader.cpp.i: cmake_force
@@ -1497,7 +1579,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qmlca
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_web_NativeBrowser_qml.cpp.i: cmake_force
@@ -1511,7 +1593,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_w
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Main_qml.cpp.i: cmake_force
@@ -1525,7 +1607,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_M
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_Theme_qml.cpp.i: cmake_force
@@ -1539,7 +1621,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_T
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_99) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraButton_qml.cpp.i: cmake_force
@@ -1553,7 +1635,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraIcon_qml.cpp.i: cmake_force
@@ -1567,7 +1649,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_101) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCard_qml.cpp.i: cmake_force
@@ -1581,7 +1663,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_102) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraCombo_qml.cpp.i: cmake_force
@@ -1595,7 +1677,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraField_qml.cpp.i: cmake_force
@@ -1609,7 +1691,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_104) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSlider_qml.cpp.i: cmake_force
@@ -1623,7 +1705,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSwitch_qml.cpp.i: cmake_force
@@ -1637,7 +1719,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_106) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSegmented_qml.cpp.i: cmake_force
@@ -1651,7 +1733,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_107) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraProgress_qml.cpp.i: cmake_force
@@ -1665,7 +1747,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_108) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraDialog_qml.cpp.i: cmake_force
@@ -1679,7 +1761,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_109) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenu_qml.cpp.i: cmake_force
@@ -1693,7 +1775,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_110) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraMenuItem_qml.cpp.i: cmake_force
@@ -1707,7 +1789,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraSection_qml.cpp.i: cmake_force
@@ -1721,7 +1803,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraScrollBar_qml.cpp.i: cmake_force
@@ -1735,7 +1817,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_AuroraToast_qml.cpp.i: cmake_force
@@ -1749,7 +1831,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_114) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NavigationPane_qml.cpp.i: cmake_force
@@ -1763,7 +1845,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_115) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackList_qml.cpp.i: cmake_force
@@ -1777,7 +1859,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_116) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackDelegate_qml.cpp.i: cmake_force
@@ -1791,7 +1873,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_117) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp.i: cmake_force
@@ -1805,7 +1887,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_118) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_CornerCover_qml.cpp.i: cmake_force
@@ -1819,7 +1901,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_119) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_common_ProgressRing_qml.cpp.i: cmake_force
@@ -1833,7 +1915,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiScene_qml.cpp.i: cmake_force
@@ -1847,7 +1929,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_121) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_BonsaiRoot_qml.cpp.i: cmake_force
@@ -1861,7 +1943,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_122) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereOrb_qml.cpp.i: cmake_force
@@ -1875,7 +1957,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_123) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EffectSurface_qml.cpp.i: cmake_force
@@ -1889,7 +1971,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_124) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AppearancePanel_qml.cpp.i: cmake_force
@@ -1903,7 +1985,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_125) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.i: cmake_force
@@ -1917,7 +1999,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_126) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.i: cmake_force
@@ -1931,7 +2013,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_127) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.i: cmake_force
@@ -1945,7 +2027,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_128) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AmbientBackdrop_qml.cpp.i: cmake_force
@@ -1959,7 +2041,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_129) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumArt_qml.cpp.i: cmake_force
@@ -1973,7 +2055,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_130) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.i: cmake_force
@@ -1987,7 +2069,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp.i: cmake_force
@@ -2001,7 +2083,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_132) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DownloadDock_qml.cpp.i: cmake_force
@@ -2015,7 +2097,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_133) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_TrackEditor_qml.cpp.i: cmake_force
@@ -2029,7 +2111,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_134) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AlbumEditor_qml.cpp.i: cmake_force
@@ -2043,7 +2125,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_135) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.i: cmake_force
@@ -2057,7 +2139,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_136) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.i: cmake_force
@@ -2071,7 +2153,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_137) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.i: cmake_force
@@ -2085,7 +2167,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_138) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.i: cmake_force
@@ -2096,10 +2178,66 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.s
 
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp > CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.i
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.s
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp > CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.i
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.s
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp > CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.i
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.s
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp > CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.i
+
+CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.s
+
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.i: cmake_force
@@ -2113,7 +2251,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_p
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_140) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.i: cmake_force
@@ -2127,7 +2265,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_p
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_141) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.i: cmake_force
@@ -2141,7 +2279,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_p
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_142) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_151) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SettingsPage_qml.cpp.i: cmake_force
@@ -2155,7 +2293,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_p
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_143) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_152) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_SearchPage_qml.cpp.i: cmake_force
@@ -2169,7 +2307,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_p
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.o: .rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_144) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_153) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_AtmosphereObjects_qml.cpp.i: cmake_force
@@ -2183,7 +2321,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_c
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.o: .qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_145) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_154) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0.cpp.i: cmake_force
@@ -2197,7 +2335,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.o: .qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_146) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml_0_extra_qmldirs.cpp.i: cmake_force
@@ -2211,7 +2349,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_AuroraPlayer_raw_qml
 CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.o: /home/cylindr/nameless-aurora/src/core/integration/mpris.cpp
 CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_147) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Building CXX object CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.o -MF CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.o -c /home/cylindr/nameless-aurora/src/core/integration/mpris.cpp
 
 CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.i: cmake_force
@@ -2225,7 +2363,7 @@ CMakeFiles/AuroraPlayer.dir/src/core/integration/mpris.cpp.s: cmake_force
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.o: .qt/rcc/qrc_native_scripts.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_148) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.i: cmake_force
@@ -2239,7 +2377,7 @@ CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_native_scripts.cpp.s
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.o: CMakeFiles/AuroraPlayer.dir/flags.make
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.o: .qt/rcc/qrc_aurora_effects.cpp
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.o: CMakeFiles/AuroraPlayer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_149) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Building CXX object CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.o -MF CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.o.d -o CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.o -c /home/cylindr/nameless-aurora/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp
 
 CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.qt/rcc/qrc_aurora_effects.cpp.i: cmake_force
@@ -2258,6 +2396,7 @@ AuroraPlayer_OBJECTS = \
 "CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o" \
+"CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o" \
@@ -2330,6 +2469,10 @@ AuroraPlayer_OBJECTS = \
 "CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o" \
+"CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o" \
+"CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o" \
+"CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o" \
+"CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o" \
 "CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o" \
@@ -2351,6 +2494,7 @@ AuroraPlayer: CMakeFiles/AuroraPlayer.dir/src/core/integration/namelessbridge.cp
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/src/core/data/libraryrepository.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/src/core/libraryexchange.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/src/core/librarymodel.cpp.o
+AuroraPlayer: CMakeFiles/AuroraPlayer.dir/src/core/homefeed.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/src/core/artwork.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/src/core/playbackcontroller.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/src/core/web/streamproxy.cpp.o
@@ -2423,6 +2567,10 @@ AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/Auro
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_StorageSummary_qml.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_DependencyCard_qml.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.o
+AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.o
+AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.o
+AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.o
+AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_HomePage_qml.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_LibraryPage_qml.cpp.o
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/build/Desktop_Debug/.rcc/qmlcache/AuroraPlayer_qml_pages_ImportPage_qml.cpp.o
@@ -2457,7 +2605,7 @@ AuroraPlayer: /usr/lib/libQt6Qml.so.6.12.0
 AuroraPlayer: /usr/lib/libQt6Network.so.6.12.0
 AuroraPlayer: /usr/lib/libQt6Core.so.6.12.0
 AuroraPlayer: CMakeFiles/AuroraPlayer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_150) "Linking CXX executable AuroraPlayer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/cylindr/nameless-aurora/build/Desktop_Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Linking CXX executable AuroraPlayer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AuroraPlayer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2538,6 +2686,12 @@ CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_Eq
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerDialog_qml.cpp.aotstats
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_EqualizerPanel_qml.cpp.aotstats
+CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp
+CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMixCard_qml.cpp.aotstats
+CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp
+CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_HomeMusicPreferences_qml.cpp.aotstats
+CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp
+CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_HomeProviderShelf_qml.cpp.aotstats
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_LibrarySettings_qml.cpp.aotstats
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_ListeningView_qml.cpp
@@ -2548,6 +2702,8 @@ CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_No
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_NowPlayingPanel_qml.cpp.aotstats
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_PlayerBar_qml.cpp.aotstats
+CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp
+CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_ProviderPlaylistDialog_qml.cpp.aotstats
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_RecommendationCard_qml.cpp.aotstats
 CMakeFiles/AuroraPlayer.dir/depend: .rcc/qmlcache/AuroraPlayer_qml_components_SourceDialog_qml.cpp

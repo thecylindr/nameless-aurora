@@ -17,6 +17,20 @@ QString ServicePayload::yandexTrackUrl(const QString& id)
 {
     return "https://music.yandex.ru/track/" + id;
 }
+QVector<Track> ServicePayload::yandexWave(const QJsonValue& payload)
+{
+    const auto object = payload.toObject();
+    const auto result = object.contains("result") ? object.value("result").toObject() : object;
+    QJsonArray tracks;
+    for (const auto& entry : result.value("sequence").toArray()) {
+        const auto track = entry.toObject().value("track").toObject();
+        if (track.value("available").toBool(true) && !track.value("title").toString().trimmed().isEmpty())
+            tracks.append(track);
+        if (tracks.size() >= 50)
+            break;
+    }
+    return yandex(QJsonObject{{"tracks", tracks}}).tracks;
+}
 ServicePayload::Collection ServicePayload::yandex(const QJsonValue& payload)
 {
     Collection out;

@@ -1,64 +1,101 @@
-// Главная страница: приветствие, «моя волна», быстрые карточки и лента рекомендаций.
+// Главная: подборки по плейлистам и персональная волна Яндекс Музыки.
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import ".."
 import "../common" as Common
 import "../components" as Components
 
 Item {
     id: root
+
     property bool compact: false
-    property var recommendations: []
-    signal importRequested
-    signal libraryRequested
-    signal filesRequested
-    signal searchRequested
-    signal discoveryRequested
+    property int period: 0
+    property var selectedMix: ({
+    })
+    readonly property var section: homeFeed.sections[period] || ({
+    })
+    readonly property var mixes: section.mixes || []
+    readonly property string waveSource: homeFeed.preferences.waveSource !== "auto" ? homeFeed.preferences.waveSource : homeFeed.yandexConnected && homeFeed.preferences.showYandex ? "yandex" : homeFeed.vkConnected && homeFeed.preferences.showVk ? "vk" : "local"
+
+    signal importRequested()
+    signal libraryRequested()
+    signal playlistsRequested()
+    signal filesRequested()
+    signal searchRequested()
+    signal discoveryRequested()
+
+    function openMix(mix) {
+        selectedMix = mix;
+        mixPage = 0;
+        mixDialog.open();
+    }
+
+    function showProviders() {
+        const flick = scroll.contentItem as Flickable;
+        if (flick)
+            flick.contentY = Math.max(0, Math.min(yandexShelf.y, flick.contentHeight - flick.height));
+
+    }
+
+    function openPreferences() {
+        preferencesDialog.open();
+    }
+
+    Component.onCompleted: {
+        if (homeFeed.yandexConnected && homeFeed.preferences.showYandex)
+            homeFeed.refreshYandex();
+
+        if (homeFeed.vkConnected && homeFeed.preferences.showVk)
+            homeFeed.refreshVk();
+
+    }
+
     Theme {
         id: theme
     }
-    // Запрашивает свежую подборку рекомендаций (до 14 треков).
-    function reload() {
-        recommendations = libraryModel.recommendations(14);
-    }
-    Component.onCompleted: reload()
-    Connections {
-        target: libraryModel
-        function onLibraryChanged() {
-            root.reload();
-        }
-    }
+
     ScrollView {
         id: scroll
+
         anchors.fill: parent
         clip: true
         contentWidth: availableWidth
         ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+
         ColumnLayout {
             width: scroll.availableWidth - (root.compact ? 32 : 64)
             x: root.compact ? 16 : 32
-            spacing: 26
+            spacing: 22
+
             Item {
                 implicitHeight: 6
             }
+
             RowLayout {
                 Layout.fillWidth: true
+
                 ColumnLayout {
                     Layout.fillWidth: true
-                    spacing: 7
+                    spacing: 6
+
                     Text {
-                        text: "ТВОЁ ЛИЧНОЕ ПРОСТРАНСТВО"
+                        text: new Date(root.section.date ? root.section.date + "T12:00:00" : Date.now()).toLocaleDateString(Qt.locale("ru_RU"), "dddd, d MMMM").toUpperCase()
                         color: theme.subtext
                         font.pixelSize: 10
-                        font.letterSpacing: 2
+                        font.letterSpacing: 1.6
                     }
+
                     Text {
-                        text: "Главная"
+                        text: "Твоя музыка сегодня"
                         color: theme.text
-                        font.pixelSize: 32
+                        font.pixelSize: root.compact ? 25 : 32
                         font.weight: Font.DemiBold
+                        font.letterSpacing: -0.6
                     }
+
                 }
+
                 Common.AuroraButton {
                     uiTheme: theme
                     iconName: "plus"
@@ -66,254 +103,508 @@ Item {
                     iconOnly: root.compact
                     onClicked: root.filesRequested()
                 }
+
             }
+
             Rectangle {
                 id: hero
+
                 visible: settingsStore.homeHeroVisible
                 Layout.fillWidth: true
-                implicitHeight: root.compact ? 300 : 292
+                implicitHeight: root.compact ? 250 : 236
                 radius: 24
                 clip: true
                 color: theme.surfaceHigh
+
                 Components.AmbientBackdrop {
                     anchors.fill: parent
                     animated: true
                 }
+
                 Components.AtmosphereOrb {
-                    width: Math.min(parent.width * 0.72, 430)
+                    width: Math.min(parent.width * 0.65, 360)
                     height: width
                     anchors.right: parent.right
-                    anchors.rightMargin: root.compact ? -100 : -6
+                    anchors.rightMargin: root.compact ? -92 : 4
                     anchors.verticalCenter: parent.verticalCenter
-                    opacity: root.compact ? 0.65 : 1
+                    opacity: root.compact ? 0.42 : 0.85
                 }
+
                 Components.CornerCover {
                     anchors.fill: parent
                     radius: 24
                     color: theme.base
                     z: 5
                 }
+
                 ColumnLayout {
                     anchors.left: parent.left
                     anchors.top: parent.top
                     anchors.bottom: parent.bottom
-                    anchors.margins: root.compact ? 24 : 32
-                    width: parent.width * (root.compact ? 0.85 : 0.62)
-                    spacing: 12
+                    anchors.margins: root.compact ? 22 : 24
+                    width: parent.width * (root.compact ? 0.88 : 0.68)
+                    spacing: 8
+
                     Text {
-                        text: "НА ТВОЕЙ ЧАСТОТЕ"
+                        text: root.waveSource === "vk" ? "ТВОЯ ВОЛНА · VK МУЗЫКА" : root.waveSource === "yandex" ? "ТВОЯ ВОЛНА · ЯНДЕКС" : "ИЗ ТВОЕЙ КОЛЛЕКЦИИ"
                         color: theme.accent
                         font.pixelSize: 10
-                        font.letterSpacing: 2.4
+                        font.letterSpacing: 1.5
                     }
+
+                    Text {
+                        text: "Моя волна"
+                        color: theme.text
+                        font.pixelSize: root.compact ? 37 : 44
+                        font.weight: Font.DemiBold
+                        font.letterSpacing: -1.5
+                    }
+
+                    Text {
+                        Layout.fillWidth: true
+                        text: root.waveSource === "yandex" ? "Рекомендации твоего аккаунта Яндекса.\nНовые треки и любимое — в одном потоке." : root.waveSource === "vk" ? "Персональная подборка из твоей VK Музыки.\nНовые треки и любимые исполнители рядом." : "Открывай непрослушанное в своих плейлистах.\nНастрой настроение и источники музыки."
+                        color: theme.subtext
+                        font.pixelSize: root.compact ? 12 : 14
+                        lineHeight: 1.35
+                        wrapMode: Text.WordWrap
+                    }
+
                     Item {
                         Layout.fillHeight: true
                     }
-                    Text {
-                        text: "Моя волна"
-                        color: "#ffffff"
-                        font.pixelSize: root.compact ? 40 : 48
-                        font.weight: Font.DemiBold
-                        font.letterSpacing: -1.8
+
+                    RowLayout {
+                        spacing: 10
+
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            primary: true
+                            iconName: "play"
+                            text: homeFeed.busy || homeFeed.vkBusy ? "Собираем музыку…" : "Включить волну"
+                            enabled: !homeFeed.busy && !homeFeed.vkBusy
+                            onClicked: {
+                                if (homeFeed.yandexConnected || homeFeed.vkConnected || homeFeed.sections.length)
+                                    homeFeed.playWave();
+                                else
+                                    root.filesRequested();
+                            }
+                        }
+
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            iconOnly: root.compact
+                            iconName: "search"
+                            text: "Найти новое"
+                            onClicked: root.discoveryRequested()
+                        }
+
                     }
-                    Text {
-                        Layout.fillWidth: true
-                        text: "Знакомые треки. Новое настроение.\nПодборка, которая слышит тебя."
-                        color: theme.subtext
-                        font.pixelSize: 14
-                        lineHeight: 1.4
-                        wrapMode: Text.WordWrap
-                    }
-                    Item {
-                        implicitHeight: 5
-                    }
-                    Common.AuroraButton {
-                        uiTheme: theme
-                        primary: true
-                        iconName: "play"
-                        text: libraryModel.totalCount ? "Включить волну" : "Добавить первые треки"
-                        implicitHeight: 46
-                        onClicked: libraryModel.totalCount ? player.playMix() : root.filesRequested()
-                    }
+
                 }
+
             }
-            RowLayout {
+
+            Text {
                 Layout.fillWidth: true
-                spacing: 8
-                Common.AuroraButton {
-                    uiTheme: theme
-                    Layout.fillWidth: true
-                    text: "Найти музыку"
-                    iconName: "search"
-                    outlined: true
-                    onClicked: root.searchRequested()
-                }
-                Common.AuroraButton {
-                    uiTheme: theme
-                    Layout.fillWidth: true
-                    text: "По моему вкусу"
-                    iconName: "shuffle"
-                    onClicked: root.discoveryRequested()
-                }
+                visible: homeFeed.playbackStatus.length > 0 && !mixDialog.visible
+                text: homeFeed.playbackStatus
+                color: theme.accent
+                font.pixelSize: 12
+                wrapMode: Text.WordWrap
             }
-            RowLayout {
+
+            ColumnLayout {
                 Layout.fillWidth: true
                 spacing: 12
-                Repeater {
-                    model: [
-                        {
-                            name: "Мне нравится",
-                            sub: "Любимое рядом",
-                            icon: "heart",
-                            tint: "#67529a"
-                        },
-                        {
-                            name: "Моя коллекция",
-                            sub: "Вся музыка с собой",
-                            icon: "library",
-                            tint: "#386d69"
-                        }
-                    ]
-                    delegate: Rectangle {
-                        required property var modelData
-                        required property int index
+
+                RowLayout {
+                    Layout.fillWidth: true
+
+                    Text {
                         Layout.fillWidth: true
-                        implicitHeight: root.compact ? 88 : 84
-                        radius: 14
-                        color: tileHover.containsMouse ? theme.hover : theme.surface
-                        border.color: theme.line
-                        RowLayout {
-                            anchors.fill: parent
-                            anchors.margins: 14
-                            spacing: 14
-                            Rectangle {
-                                Layout.preferredWidth: 48
-                                Layout.preferredHeight: 48
-                                radius: 12
-                                color: modelData.tint
-                                visible: !root.compact
-                                Common.AuroraIcon {
-                                    anchors.centerIn: parent
-                                    name: modelData.icon
-                                    size: 22
-                                    color: "#f6edff"
-                                }
-                            }
-                            ColumnLayout {
-                                Layout.fillWidth: true
-                                spacing: 6
-                                Text {
-                                    Layout.fillWidth: true
-                                    text: modelData.name
-                                    color: theme.text
-                                    font.pixelSize: root.compact ? 13 : 15
-                                    font.weight: Font.Medium
-                                    elide: Text.ElideRight
-                                }
-                                Text {
-                                    Layout.fillWidth: true
-                                    text: modelData.sub
-                                    color: theme.subtext
-                                    font.pixelSize: 11
-                                    elide: Text.ElideRight
-                                }
-                            }
-                        }
-                        MouseArea {
-                            id: tileHover
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            cursorShape: Qt.PointingHandCursor
-                            // Первая карточка ведёт в «Мне нравится» (-1), вторая — во всю коллекцию (0).
-                            onClicked: {
-                                libraryModel.playlistFilter = index === 0 ? -1 : 0;
-                                root.libraryRequested();
-                            }
-                        }
+                        text: "Собрано для тебя"
+                        color: theme.text
+                        font.pixelSize: 22
+                        font.weight: Font.DemiBold
+                    }
+
+                    Common.AuroraButton {
+                        uiTheme: theme
+                        iconName: "settings"
+                        iconOnly: root.compact
+                        text: "Настроить"
+                        implicitHeight: 34
+                        onClicked: root.openPreferences()
+                    }
+
+                    Common.AuroraButton {
+                        uiTheme: theme
+                        iconName: "library"
+                        iconOnly: root.compact
+                        text: "Плейлисты"
+                        implicitHeight: 34
+                        onClicked: root.playlistsRequested()
+                    }
+
+                }
+
+                Common.AuroraSegmented {
+                    Layout.fillWidth: true
+                    Layout.maximumWidth: 470
+                    uiTheme: theme
+                    model: ["На сегодня", "На 3 дня", root.compact ? "Эта неделя" : "На этой неделе"]
+                    currentIndex: root.period
+                    onOptionSelected: function(index, value) {
+                        root.period = index;
                     }
                 }
-            }
-            RowLayout {
-                Layout.fillWidth: true
+
                 Text {
-                    text: root.recommendations.length ? "В твоём ритме" : "Вся музыка — в одном месте"
-                    color: theme.text
-                    font.pixelSize: 22
-                    font.weight: Font.DemiBold
                     Layout.fillWidth: true
+                    text: root.section.subtitle || (libraryModel.totalCount ? "Нет треков с учётом настроек подбора" : "Добавь плейлисты — здесь появятся твои подборки")
+                    color: theme.subtext
+                    font.pixelSize: 12
                     wrapMode: Text.WordWrap
                 }
+
+            }
+
+            ListView {
+                id: mixShelf
+
+                Layout.fillWidth: true
+                implicitHeight: 336
+                visible: root.mixes.length > 0
+                orientation: ListView.Horizontal
+                model: root.mixes
+                spacing: 14
+                clip: true
+                boundsBehavior: Flickable.StopAtBounds
+                onModelChanged: positionViewAtBeginning()
+
+                delegate: Components.HomeMixCard {
+                    required property var modelData
+                    required property int index
+
+                    mix: modelData
+                    tint: ["#493e75", "#275d60", "#74483d", "#3b526e"][index % 4]
+                    onPlayRequested: homeFeed.playMix(modelData)
+                    onOpened: root.openMix(modelData)
+                }
+
+            }
+
+            Rectangle {
+                Layout.fillWidth: true
+                visible: !root.mixes.length
+                implicitHeight: emptyContent.implicitHeight + 40
+                color: theme.surface
+                radius: 16
+                border.color: theme.line
+
+                ColumnLayout {
+                    id: emptyContent
+
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.top: parent.top
+                    anchors.margins: 20
+                    spacing: 14
+
+                    Text {
+                        Layout.fillWidth: true
+                        text: libraryModel.totalCount ? "Проверь выбранные плейлисты и фильтр файлов в настройках музыки." : "Перенеси плейлисты из VK или Яндекса либо добавь файлы. Подборки появятся даже у треков, которые ты ещё не слушал."
+                        color: theme.subtext
+                        font.pixelSize: 14
+                        wrapMode: Text.WordWrap
+                    }
+
+                    Common.AuroraButton {
+                        uiTheme: theme
+                        text: libraryModel.totalCount ? "Настроить подборки" : "Перенести плейлисты"
+                        iconName: "settings"
+                        onClicked: libraryModel.totalCount ? root.openPreferences() : root.importRequested()
+                    }
+
+                }
+
+            }
+
+            Components.HomeProviderShelf {
+                id: yandexShelf
+
+                Layout.fillWidth: true
+                visible: homeFeed.preferences.showYandex
+                title: "Из твоей Яндекс Музыки"
+                compact: root.compact
+                connected: homeFeed.yandexConnected
+                busy: homeFeed.busy
+                status: homeFeed.status
+                tracks: homeFeed.yandexTracks
+                onConnectRequested: webLogin.openNative("Яндекс Музыка")
+                onOpened: {
+                    providerPlaylist.provider = "yandex";
+                    providerPlaylist.open();
+                }
+                onRefreshRequested: homeFeed.refreshYandex(true)
+                onPlayRequested: function(index) {
+                    homeFeed.playYandex(index);
+                }
+            }
+
+            Components.HomeProviderShelf {
+                id: vkShelf
+
+                Layout.fillWidth: true
+                visible: homeFeed.preferences.showVk
+                title: "Из твоей VK Музыки"
+                compact: root.compact
+                connected: homeFeed.vkConnected
+                busy: homeFeed.vkBusy
+                status: homeFeed.vkStatus
+                tracks: homeFeed.vkTracks
+                onConnectRequested: webLogin.openNative("VK")
+                onOpened: {
+                    providerPlaylist.provider = "vk";
+                    providerPlaylist.open();
+                }
+                onRefreshRequested: homeFeed.refreshVk(true)
+                onPlayRequested: function(index) {
+                    homeFeed.playVk(index);
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+
                 Common.AuroraButton {
+                    Layout.fillWidth: true
                     uiTheme: theme
-                    text: "Открыть всё"
-                    visible: root.recommendations.length > 0
-                    implicitHeight: 34
+                    text: "Мне нравится"
+                    iconName: "heart"
+                    onClicked: {
+                        libraryModel.playlistFilter = -1;
+                        root.libraryRequested();
+                    }
+                }
+
+                Common.AuroraButton {
+                    Layout.fillWidth: true
+                    uiTheme: theme
+                    text: "Вся музыка"
+                    iconName: "library"
                     onClicked: {
                         libraryModel.playlistFilter = 0;
                         root.libraryRequested();
                     }
                 }
+
             }
-            ListView {
+
+            Item {
+                implicitHeight: 16
+            }
+
+        }
+
+    }
+
+    Components.HomeMusicPreferences {
+        id: preferencesDialog
+
+        parent: Overlay.overlay
+        onDiscoveryRequested: root.discoveryRequested()
+    }
+
+    Components.ProviderPlaylistDialog {
+        id: providerPlaylist
+
+        parent: Overlay.overlay
+    }
+
+    Common.AuroraDialog {
+        id: mixDialog
+
+        parent: Overlay.overlay
+        uiTheme: theme
+        title: root.selectedMix.title || "Подборка"
+        standardButtons: Dialog.NoButton
+
+        ColumnLayout {
+            width: parent.width
+            spacing: 12
+
+            Text {
                 Layout.fillWidth: true
-                implicitHeight: 232
-                visible: root.recommendations.length > 0
-                orientation: ListView.Horizontal
-                model: root.recommendations
-                spacing: 16
-                clip: true
-                boundsBehavior: Flickable.StopAtBounds
-                delegate: Components.RecommendationCard {
-                    required property var modelData
-                    trackData: modelData
-                    onClicked: player.playTrackId(modelData.trackId)
+                text: (root.selectedMix.description || root.selectedMix.subtitle || "") + " · " + (root.selectedMix.count || 0) + " треков"
+                color: theme.subtext
+                wrapMode: Text.WordWrap
+            }
+
+            Common.AuroraButton {
+                uiTheme: theme
+                primary: true
+                text: "Слушать подборку"
+                iconName: "play"
+                onClicked: {
+                    homeFeed.playMix(root.selectedMix);
                 }
             }
-            Rectangle {
+
+            Text {
                 Layout.fillWidth: true
-                implicitHeight: emptyContent.implicitHeight + 40
-                visible: root.recommendations.length === 0
-                color: theme.surface
-                radius: 16
-                border.color: theme.line
-                ColumnLayout {
-                    id: emptyContent
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                    anchors.top: parent.top
-                    anchors.margins: 20
-                    spacing: 16
-                    Text {
-                        Layout.fillWidth: true
-                        text: "Перенеси свои плейлисты или добавь музыку с устройства. Aurora сохранит коллекцию, а волна подстроится под твои оценки и прослушивания."
-                        color: theme.subtext
-                        font.pixelSize: 14
-                        wrapMode: Text.WordWrap
-                        lineHeight: 1.4
+                visible: homeFeed.playbackStatus.length > 0
+                text: homeFeed.playbackStatus
+                color: theme.accent
+                font.pixelSize: 12
+                wrapMode: Text.WordWrap
+            }
+
+            ListView {
+                id: mixTracks
+
+                Layout.fillWidth: true
+                Layout.preferredHeight: Math.max(120, Math.min(340, root.height - 280))
+                clip: true
+                model: (root.selectedMix.tracks || []).slice(root.mixPage * 12, (root.mixPage + 1) * 12)
+                boundsBehavior: Flickable.StopAtBounds
+
+                delegate: ItemDelegate {
+                    id: trackRow
+
+                    required property var modelData
+
+                    width: mixTracks.width
+                    implicitHeight: 64
+                    onClicked: {
+                        homeFeed.playMix(root.selectedMix, modelData.trackId);
                     }
-                    Flow {
-                        Layout.fillWidth: true
-                        spacing: 8
-                        Repeater {
-                            model: ["Яндекс Музыка", "VK Музыка", "YouTube"]
-                            delegate: Common.AuroraButton {
-                                required property string modelData
-                                uiTheme: theme
-                                text: modelData
-                                implicitHeight: 38
-                                onClicked: root.importRequested()
+
+                    background: Rectangle {
+                        radius: 8
+                        color: trackRow.hovered ? theme.hover : "transparent"
+                    }
+
+                    contentItem: RowLayout {
+                        spacing: 12
+
+                        Components.AlbumArt {
+                            Layout.preferredWidth: 40
+                            Layout.preferredHeight: 40
+                            path: modelData.coverPath || ""
+                            seed: modelData.title
+                            cornerRadius: 7
+                        }
+
+                        ColumnLayout {
+                            Layout.fillWidth: true
+                            spacing: 4
+
+                            Text {
+                                Layout.fillWidth: true
+                                text: modelData.title
+                                color: theme.text
+                                font.pixelSize: 13
+                                elide: Text.ElideRight
+                            }
+
+                            Text {
+                                Layout.fillWidth: true
+                                text: modelData.artist
+                                color: theme.subtext
+                                font.pixelSize: 11
+                                elide: Text.ElideRight
+                            }
+
+                        }
+
+                        Common.AuroraButton {
+                            readonly property bool pending: homeFeed.resolvingId === trackRow.modelData.trackId
+                            readonly property bool current: player.currentTrackId === trackRow.modelData.trackId || (trackRow.modelData.url && player.streamKey === trackRow.modelData.url)
+
+                            uiTheme: theme
+                            iconOnly: true
+                            primary: true
+                            iconName: pending ? "close" : current && player.playing ? "pause" : "play"
+                            text: pending ? "Отменить подключение" : current && player.playing ? "Пауза" : "Слушать трек"
+                            enabled: trackRow.modelData.canListen
+                            implicitWidth: 40
+                            implicitHeight: 40
+                            onClicked: {
+                                if (pending)
+                                    player.stop();
+                                else
+                                    homeFeed.playTrack(trackRow.modelData.trackId);
                             }
                         }
+
+                        Common.AuroraButton {
+                            uiTheme: theme
+                            iconOnly: true
+                            iconName: "search"
+                            text: "Выбрать другой источник"
+                            implicitWidth: 36
+                            implicitHeight: 40
+                            visible: !trackRow.modelData.downloaded
+                            onClicked: {
+                                mixDialog.close();
+                                homeFeed.findSource(trackRow.modelData.trackId);
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+
+                Text {
+                    Layout.fillWidth: true
+                    text: "Страница " + (root.mixPage + 1) + " из " + root.mixPageCount
+                    color: theme.subtext
+                    font.pixelSize: 11
+                }
+
+                Common.AuroraButton {
+                    uiTheme: theme
+                    iconOnly: true
+                    iconName: "previous"
+                    text: "Предыдущая страница"
+                    implicitHeight: 34
+                    enabled: root.mixPage > 0
+                    onClicked: {
+                        root.mixPage--;
+                        mixTracks.positionViewAtBeginning();
                     }
                 }
+
+                Common.AuroraButton {
+                    uiTheme: theme
+                    iconOnly: true
+                    iconName: "next"
+                    text: "Следующая страница"
+                    implicitHeight: 34
+                    enabled: root.mixPage + 1 < root.mixPageCount
+                    onClicked: {
+                        root.mixPage++;
+                        mixTracks.positionViewAtBeginning();
+                    }
+                }
+
             }
-            Text {
-                text: "ТВОЯ МУЗЫКА. ТВОИ ПРАВИЛА.  /  NAMELESS AURORA"
-                color: theme.textMuted
-                font.pixelSize: 9
-                font.letterSpacing: 1.5
-                Layout.bottomMargin: 24
+
+            Common.AuroraButton {
+                Layout.alignment: Qt.AlignRight
+                uiTheme: theme
+                text: "Закрыть"
+                onClicked: mixDialog.close()
             }
+
         }
+
     }
+
 }

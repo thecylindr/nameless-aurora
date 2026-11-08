@@ -205,6 +205,14 @@ namespace _qt_qml_AuroraPlayer_qml_components_BonsaiScene_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], &validateLookupSignatures
     };
 }
+namespace _qt_qml_AuroraPlayer_qml_components_BonsaiRoot_qml { 
+    extern bool validateLookupSignatures(QQmlEngine *engine, QV4::CompiledData::CompilationUnit *cu);
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], &validateLookupSignatures
+    };
+}
 namespace _qt_qml_AuroraPlayer_qml_components_AtmosphereOrb_qml { 
     extern bool validateLookupSignatures(QQmlEngine *engine, QV4::CompiledData::CompilationUnit *cu);
     extern const unsigned char qmlData[];
@@ -341,6 +349,38 @@ namespace _qt_qml_AuroraPlayer_qml_components_RecommendationCard_qml {
         reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], &validateLookupSignatures
     };
 }
+namespace _qt_qml_AuroraPlayer_qml_components_HomeMixCard_qml { 
+    extern bool validateLookupSignatures(QQmlEngine *engine, QV4::CompiledData::CompilationUnit *cu);
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], &validateLookupSignatures
+    };
+}
+namespace _qt_qml_AuroraPlayer_qml_components_HomeProviderShelf_qml { 
+    extern bool validateLookupSignatures(QQmlEngine *engine, QV4::CompiledData::CompilationUnit *cu);
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], &validateLookupSignatures
+    };
+}
+namespace _qt_qml_AuroraPlayer_qml_components_ProviderPlaylistDialog_qml { 
+    extern bool validateLookupSignatures(QQmlEngine *engine, QV4::CompiledData::CompilationUnit *cu);
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], &validateLookupSignatures
+    };
+}
+namespace _qt_qml_AuroraPlayer_qml_components_HomeMusicPreferences_qml { 
+    extern bool validateLookupSignatures(QQmlEngine *engine, QV4::CompiledData::CompilationUnit *cu);
+    extern const unsigned char qmlData[];
+    extern const QQmlPrivate::AOTCompiledFunction aotBuiltFunctions[];
+    const QQmlPrivate::CachedQmlUnit unit = {
+        reinterpret_cast<const QV4::CompiledData::Unit*>(&qmlData), &aotBuiltFunctions[0], &validateLookupSignatures
+    };
+}
 namespace _qt_qml_AuroraPlayer_qml_pages_HomePage_qml { 
     extern bool validateLookupSignatures(QQmlEngine *engine, QV4::CompiledData::CompilationUnit *cu);
     extern const unsigned char qmlData[];
@@ -428,6 +468,7 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/CornerCover.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_CornerCover_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/common/ProgressRing.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_common_ProgressRing_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/BonsaiScene.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_BonsaiScene_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/BonsaiRoot.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_BonsaiRoot_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/AtmosphereOrb.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_AtmosphereOrb_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/EffectSurface.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_EffectSurface_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/AppearancePanel.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_AppearancePanel_qml::unit);
@@ -445,6 +486,10 @@ Registry::Registry() {
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/StorageSummary.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_StorageSummary_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/DependencyCard.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_DependencyCard_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/RecommendationCard.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_RecommendationCard_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/HomeMixCard.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_HomeMixCard_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/HomeProviderShelf.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_HomeProviderShelf_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/ProviderPlaylistDialog.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_ProviderPlaylistDialog_qml::unit);
+    resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/components/HomeMusicPreferences.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_components_HomeMusicPreferences_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/pages/HomePage.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_pages_HomePage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/pages/LibraryPage.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_pages_LibraryPage_qml::unit);
     resourcePathToCachedUnit.insert(QStringLiteral("/qt/qml/AuroraPlayer/qml/pages/ImportPage.qml"), &QmlCacheGeneratedCode::_qt_qml_AuroraPlayer_qml_pages_ImportPage_qml::unit);

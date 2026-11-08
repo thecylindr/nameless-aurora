@@ -51,6 +51,10 @@
 /qt/qml/AuroraPlayer/qml/components/StorageSummary.qml
 /qt/qml/AuroraPlayer/qml/components/DependencyCard.qml
 /qt/qml/AuroraPlayer/qml/components/RecommendationCard.qml
+/qt/qml/AuroraPlayer/qml/components/HomeMixCard.qml
+/qt/qml/AuroraPlayer/qml/components/HomeProviderShelf.qml
+/qt/qml/AuroraPlayer/qml/components/ProviderPlaylistDialog.qml
+/qt/qml/AuroraPlayer/qml/components/HomeMusicPreferences.qml
 /qt/qml/AuroraPlayer/qml/pages/HomePage.qml
 /qt/qml/AuroraPlayer/qml/pages/LibraryPage.qml
 /qt/qml/AuroraPlayer/qml/pages/ImportPage.qml

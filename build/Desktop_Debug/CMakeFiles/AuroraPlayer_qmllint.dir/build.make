@@ -110,6 +110,10 @@ CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/components/No
 CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/components/StorageSummary.qml
 CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/components/DependencyCard.qml
 CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/components/RecommendationCard.qml
+CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/components/HomeMixCard.qml
+CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/components/HomeProviderShelf.qml
+CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/components/ProviderPlaylistDialog.qml
+CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/components/HomeMusicPreferences.qml
 CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/pages/HomePage.qml
 CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/pages/LibraryPage.qml
 CMakeFiles/AuroraPlayer_qmllint: /home/cylindr/nameless-aurora/qml/pages/ImportPage.qml

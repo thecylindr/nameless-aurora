@@ -74,8 +74,9 @@ EffectSurface {
         pulse += (targetPulse - pulse) * (1 - Math.exp(-seconds / 0.035));
         phase += seconds * settingsStore.effectSpeed * (0.4 + energy * 0.8 + pulse * 0.5);
         shockProgress = Math.min(1, shockProgress + seconds / 0.76);
-        if (bonsaiLoader.item)
-            bonsaiLoader.item.advance(seconds);
+        const bonsai = bonsaiLoader.item as BonsaiScene;
+        if (bonsai)
+            bonsai.advance(seconds);
     }
 
     Theme {

@@ -12,7 +12,7 @@
                             "type": "int"
                         }
                     ],
-                    "index": 13,
+                    "index": 15,
                     "lineNumber": 184,
                     "name": "playIndex",
                     "returnType": "void"
@@ -25,7 +25,7 @@
                             "type": "int"
                         }
                     ],
-                    "index": 14,
+                    "index": 16,
                     "lineNumber": 186,
                     "name": "playTrackId",
                     "returnType": "void"
@@ -38,57 +38,88 @@
                             "type": "int"
                         }
                     ],
-                    "index": 15,
+                    "index": 17,
                     "lineNumber": 190,
                     "name": "playQueueTrack",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 16,
+                    "index": 18,
                     "lineNumber": 192,
                     "name": "playMix",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 17,
-                    "lineNumber": 194,
-                    "name": "toggle",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "index": 18,
-                    "lineNumber": 195,
-                    "name": "play",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ids",
+                            "type": "QVariantList"
+                        },
+                        {
+                            "name": "firstId",
+                            "type": "int"
+                        }
+                    ],
                     "index": 19,
-                    "lineNumber": 196,
-                    "name": "pause",
+                    "lineNumber": 194,
+                    "name": "playSelection",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
+                    "arguments": [
+                        {
+                            "name": "ids",
+                            "type": "QVariantList"
+                        }
+                    ],
                     "index": 20,
-                    "lineNumber": 198,
-                    "name": "stop",
+                    "isCloned": true,
+                    "lineNumber": 194,
+                    "name": "playSelection",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 21,
-                    "lineNumber": 200,
-                    "name": "next",
+                    "lineNumber": 197,
+                    "name": "toggle",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 22,
-                    "lineNumber": 202,
+                    "lineNumber": 198,
+                    "name": "play",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 23,
+                    "lineNumber": 199,
+                    "name": "pause",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 24,
+                    "lineNumber": 201,
+                    "name": "stop",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 25,
+                    "lineNumber": 203,
+                    "name": "next",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 26,
+                    "lineNumber": 205,
                     "name": "previous",
                     "returnType": "void"
                 },
@@ -100,15 +131,15 @@
                             "type": "qint64"
                         }
                     ],
-                    "index": 23,
-                    "lineNumber": 204,
+                    "index": 27,
+                    "lineNumber": 207,
                     "name": "seek",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 24,
-                    "lineNumber": 206,
+                    "index": 28,
+                    "lineNumber": 209,
                     "name": "toggleFavorite",
                     "returnType": "void"
                 },
@@ -120,8 +151,8 @@
                             "type": "int"
                         }
                     ],
-                    "index": 25,
-                    "lineNumber": 208,
+                    "index": 29,
+                    "lineNumber": 211,
                     "name": "enqueue",
                     "returnType": "void"
                 },
@@ -133,8 +164,8 @@
                             "type": "int"
                         }
                     ],
-                    "index": 26,
-                    "lineNumber": 209,
+                    "index": 30,
+                    "lineNumber": 212,
                     "name": "removeFromQueue",
                     "returnType": "void"
                 }
@@ -658,78 +689,98 @@
             "signals": [
                 {
                     "access": "public",
+                    "arguments": [
+                        {
+                            "name": "candidate",
+                            "type": "QVariantMap"
+                        }
+                    ],
                     "index": 0,
-                    "lineNumber": 216,
-                    "name": "currentTrackChanged",
+                    "lineNumber": 219,
+                    "name": "streamRequested",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 1,
-                    "lineNumber": 217,
-                    "name": "playingChanged",
+                    "lineNumber": 220,
+                    "name": "streamQueueExhausted",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "lineNumber": 218,
-                    "name": "streamLoadingChanged",
+                    "lineNumber": 221,
+                    "name": "currentTrackChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 3,
-                    "lineNumber": 219,
-                    "name": "positionChanged",
+                    "lineNumber": 222,
+                    "name": "playingChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 4,
-                    "lineNumber": 220,
-                    "name": "durationChanged",
+                    "lineNumber": 223,
+                    "name": "streamLoadingChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 5,
-                    "lineNumber": 221,
-                    "name": "volumeChanged",
+                    "lineNumber": 224,
+                    "name": "positionChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 6,
-                    "lineNumber": 222,
-                    "name": "lastErrorChanged",
+                    "lineNumber": 225,
+                    "name": "durationChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 7,
-                    "lineNumber": 223,
-                    "name": "modesChanged",
+                    "lineNumber": 226,
+                    "name": "volumeChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 8,
-                    "lineNumber": 224,
-                    "name": "queueChanged",
+                    "lineNumber": 227,
+                    "name": "lastErrorChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 9,
-                    "lineNumber": 225,
-                    "name": "audioLevelsChanged",
+                    "lineNumber": 228,
+                    "name": "modesChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 10,
-                    "lineNumber": 226,
+                    "lineNumber": 229,
+                    "name": "queueChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 11,
+                    "lineNumber": 230,
+                    "name": "audioLevelsChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 12,
+                    "lineNumber": 231,
                     "name": "audioReactivityChanged",
                     "returnType": "void"
                 },
@@ -741,15 +792,15 @@
                             "type": "qint64"
                         }
                     ],
-                    "index": 11,
-                    "lineNumber": 227,
+                    "index": 13,
+                    "lineNumber": 232,
                     "name": "seeked",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 12,
-                    "lineNumber": 228,
+                    "index": 14,
+                    "lineNumber": 233,
                     "name": "seekableChanged",
                     "returnType": "void"
                 }

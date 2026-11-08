@@ -44,6 +44,10 @@ NowPlayingPanel 3.0 qml/components/NowPlayingPanel.qml
 StorageSummary 3.0 qml/components/StorageSummary.qml
 DependencyCard 3.0 qml/components/DependencyCard.qml
 RecommendationCard 3.0 qml/components/RecommendationCard.qml
+HomeMixCard 3.0 qml/components/HomeMixCard.qml
+HomeProviderShelf 3.0 qml/components/HomeProviderShelf.qml
+ProviderPlaylistDialog 3.0 qml/components/ProviderPlaylistDialog.qml
+HomeMusicPreferences 3.0 qml/components/HomeMusicPreferences.qml
 HomePage 3.0 qml/pages/HomePage.qml
 LibraryPage 3.0 qml/pages/LibraryPage.qml
 ImportPage 3.0 qml/pages/ImportPage.qml

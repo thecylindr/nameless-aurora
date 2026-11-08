@@ -24,7 +24,7 @@
                         {
                             "codegenResult": 2,
                             "column": 12,
-                            "durationMicroseconds": 2000,
+                            "durationMicroseconds": 3000,
                             "functionName": "color",
                             "line": 15,
                             "message": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: Theme::surface with type QColor (stored as QVariant) -> Theme::surface with type QColor (adjusted to QColor, stored as QVariant)"

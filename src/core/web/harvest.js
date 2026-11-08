@@ -1,6 +1,8 @@
 (() => {
     const out = {title: document.title.replace(/\s*[|—–]\s*(VK|ВКонтакте|Яндекс Музыка).*$/i, ''), tracks: [], url: location.href};
     const decode = value => { const node = document.createElement('textarea'); node.innerHTML = String(value || ''); return node.value.trim().normalize('NFC'); };
+    const catalogSearch = Boolean(window.__auroraCatalogSearch);
+    const recommendations = Boolean(window.__auroraRecommendations);
     const paged=typeof window!=='undefined'?window.__auroraVkLibrary:null;
     if(paged?.entryUrl)out.entryUrl=paged.entryUrl;
     const visible = node => Boolean(node && (!node.getClientRects || (node.getClientRects().length && getComputedStyle(node).visibility !== 'hidden')));
@@ -8,9 +10,32 @@
     const rowSelector = '[data-audio], [data-full-id], [data-audio-id], a[href*="/track/"]';
     // A hidden legacy placeholder or an unrelated <main> must not hide the new VK list.
     let scope = document;
-    for (const selector of ['[data-audio-context="my_audios_full"]', '.CatalogBlock__my_audios', '[data-testid="MusicPlaylistTracks_Items"]', '[data-testid="audiolistitems-list"]', '.audio_page__audio_rows_list', '.audio_page__audio_rows', '[data-test-id="playlist-tracks"]', '[data-testid="playlist-tracks"]', 'main']) {
+    for (const selector of (catalogSearch ? ['main', '[role="main"]'] : ['[data-audio-context="my_audios_full"]', '.CatalogBlock__my_audios', '[data-testid="MusicPlaylistTracks_Items"]', '[data-testid="audiolistitems-list"]', '.audio_page__audio_rows_list', '.audio_page__audio_rows', '[data-test-id="playlist-tracks"]', '[data-testid="playlist-tracks"]', 'main'])) {
         const node = document.querySelector(selector);
         if (visible(node) && all(node, rowSelector).length) { scope = node; break; }
+    }
+    if (recommendations) {
+        // Use the site's own recommendation navigation when an obsolete entry URL
+        // restores the library tab. Never open a playlist or a track at random.
+        window.__auroraRecommendationControls ||= new WeakSet();
+        const target = all(document, 'a[href], [role="tab"], button').find(node => {
+            if (!visible(node) || window.__auroraRecommendationControls.has(node)) return false;
+            const label = (node.textContent || node.getAttribute('aria-label') || '').trim();
+            if (!/^(для вас|рекомендации|вам понравится|for you|recommendations)$/i.test(label)) return false;
+            if (node.getAttribute('aria-selected') === 'true' || node.getAttribute('aria-current')) return false;
+            if (node.href) {
+                const url = new URL(node.href, location.href);
+                if (url.origin !== location.origin || !/audio|music/.test(url.pathname)) return false;
+                if (url.href === location.href) return false;
+            }
+            return true;
+        });
+        if (target) {
+            window.__auroraRecommendationControls.add(target);
+            target.click();
+            out.loading = true;
+            return JSON.stringify(out);
+        }
     }
     const seen = new Map();
     function add(track) {
@@ -57,7 +82,7 @@
         const owner = /^\/audios(-?\d+)/.exec(location.pathname || new URL(location.href).pathname);
         const playlist = /\/music\/playlist\/(-?\d+)_(\d+)/.exec(location.pathname || '');
         const albumRoute = /\/music\/album\/(\d+)_(-?\d+)/.exec(location.pathname || '');
-        const catalogSearch=Boolean(window.__auroraCatalogSearch);
+
         const wantedOwner = catalogSearch?'':owner ? owner[1] : playlist ? playlist[1] : albumRoute ? albumRoute[2] : String(window.vk?.id || '');
         const wantedAlbum = playlist ? playlist[2] : albumRoute ? albumRoute[1] : null;
         // The current VK music app keeps its playlist in React props rather
@@ -65,7 +90,10 @@
         // using the playlist's own normal pagination method. Do not traverse
         // the global application store or unrelated component state.
         const modelLists = new Set(), fibersSeen = new Set(), propsSeen = new Set();
-        const anchors=[modern[0],modern[Math.floor(modern.length/2)],modern.at(-1),scope];
+        const catalogAnchors = catalogSearch
+            ? all(scope, '[data-audio-id], [data-full-id], [data-audio], [data-testid*="Track"], [class*="AudioRow"], a[href*="/audio"]').filter(visible).slice(0, 100)
+            : [];
+        const anchors=[modern[0],modern[Math.floor(modern.length/2)],modern.at(-1),...catalogAnchors,scope];
         for (const anchor of anchors) for (let node=anchor,up=0; node && up<14; node=node.parentElement,up++) {
             const key=Object.getOwnPropertyNames(node).find(key=>key.startsWith('__reactFiber$') || key.startsWith('__reactInternalInstance$'));
             let fiber=key && node[key];
@@ -103,6 +131,26 @@
               if(!props || typeof props!=='object' || propsSeen.has(props))continue;propsSeen.add(props);
               try {
                 const model=props.tracksModel;
+                if (catalogSearch) {
+                    // Recommendation shelves also expose plain arrays and individual
+                    // track props, without the library's infinite-playlist interface.
+                    const readTrack = item => {
+                        if (Array.isArray(item)) { audio(item); return; }
+                        if (!item || typeof item !== 'object') return;
+                        const data = item.data || item;
+                        const identity = item.identity?.fullId || data.fullId ||
+                            (data.owner_id && data.id ? `${data.owner_id}_${data.id}` : '');
+                        if (!/^(-?\d+)_(\d+)$/.test(identity) || !data.title) return;
+                        add({title: decode(data.title), artist: decode(item.authors?.single || data.artist || data.performer || ''),
+                            durationMs: Number(data.durationMs) || Math.round(Number(data.duration || 0) * 1000),
+                            coverUrl: item.cover?.pickByWidth?.(400)?.src || data.album?.thumb?.photo_300 || data.thumb?.photo_300 || '',
+                            album: data.album?.title || '', url: new URL('/audio' + identity, location.origin).href,
+                            vkFullId: identity, mediaUrl: typeof data.url === 'string' && /^https:\/\//.test(data.url) && !data.url.includes('audio_api_unavailable') ? data.url : ''});
+                    };
+                    for (const item of [props.track, props.audio, props.item, props.data]) readTrack(item);
+                    for (const list of [props.tracks, props.audios, props.items, model?.tracks, props.list?.head, props.playlist?.head])
+                        if (Array.isArray(list)) list.slice(0, 200).forEach(readTrack);
+                }
                 const list=model?.playlist || props.list || props.playlist;
                 const tracks=model?.tracks || list?.head || props.tracks;
                 const total=Number(model?.count ?? list?.count ?? props.count);

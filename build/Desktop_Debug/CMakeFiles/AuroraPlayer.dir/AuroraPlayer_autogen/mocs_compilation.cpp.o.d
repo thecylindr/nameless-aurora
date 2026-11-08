@@ -471,6 +471,9 @@ CMakeFiles/AuroraPlayer.dir/AuroraPlayer_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtNetwork/QNetworkAccessManager \
  /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/IKGJW7Z4MA/moc_zaycevcatalog.cpp \
  /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/IKGJW7Z4MA/../../../../src/core/downloads/zaycevcatalog.h \
+ /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/PRMOGMWJPH/moc_homefeed.cpp \
+ /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/PRMOGMWJPH/../../../../src/core/homefeed.h \
+ /usr/include/qt6/QtCore/QDate \
  /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/PRMOGMWJPH/moc_importmanager.cpp \
  /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/PRMOGMWJPH/../../../../src/core/importmanager.h \
  /home/cylindr/nameless-aurora/build/Desktop_Debug/AuroraPlayer_autogen/QGLZD3XGMX/moc_mpris.cpp \

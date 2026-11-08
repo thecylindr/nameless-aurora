@@ -10,23 +10,55 @@
                             "column": 44,
                             "durationMicroseconds": 0,
                             "functionName": "controlsInView",
-                            "line": 24,
+                            "line": 25,
                             "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 41,
+                            "durationMicroseconds": 0,
+                            "functionName": "onlineKey",
+                            "line": 27,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 43,
+                            "durationMicroseconds": 0,
+                            "functionName": "onlineCurrent",
+                            "line": 28,
+                            "message": "Cannot access value for name player"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 43,
+                            "durationMicroseconds": 0,
+                            "functionName": "onlinePending",
+                            "line": 29,
+                            "message": "Cannot access value for name homeFeed"
                         },
                         {
                             "codegenResult": 2,
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "transfer",
-                            "line": 26,
+                            "line": 30,
                             "message": "Cannot access value for name downloadManager"
                         },
                         {
                             "codegenResult": 2,
                             "column": 5,
                             "durationMicroseconds": 0,
+                            "functionName": "listenOnline",
+                            "line": 32,
+                            "message": "Cannot access value for name player"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 5,
+                            "durationMicroseconds": 0,
                             "functionName": "openActions",
-                            "line": 34,
+                            "line": 39,
                             "message": "Cannot retrieve a non-object type by ID: menu"
                         },
                         {
@@ -34,7 +66,7 @@
                             "column": 12,
                             "durationMicroseconds": 0,
                             "functionName": "width",
-                            "line": 41,
+                            "line": 44,
                             "message": ""
                         },
                         {
@@ -42,7 +74,7 @@
                             "column": 13,
                             "durationMicroseconds": 0,
                             "functionName": "height",
-                            "line": 42,
+                            "line": 45,
                             "message": ""
                         },
                         {
@@ -50,23 +82,23 @@
                             "column": 12,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 44,
+                            "line": 47,
                             "message": "Cannot access value for name player"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 17,
-                            "durationMicroseconds": 0,
-                            "functionName": "target",
-                            "line": 28,
-                            "message": "Cannot access value for name downloadManager"
                         },
                         {
                             "codegenResult": 2,
                             "column": 9,
                             "durationMicroseconds": 0,
                             "functionName": "onSummaryChanged",
-                            "line": 29,
+                            "line": 50,
+                            "message": "Cannot access value for name downloadManager"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 17,
+                            "durationMicroseconds": 0,
+                            "functionName": "target",
+                            "line": 54,
                             "message": "Cannot access value for name downloadManager"
                         },
                         {
@@ -74,7 +106,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "acceptedButtons",
-                            "line": 49,
+                            "line": 67,
                             "message": ""
                         },
                         {
@@ -82,7 +114,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "onDoubleClicked",
-                            "line": 50,
+                            "line": 68,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -90,7 +122,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 51,
+                            "line": 69,
                             "message": "Cannot retrieve a non-object type by ID: menu"
                         },
                         {
@@ -98,7 +130,7 @@
                             "column": 20,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 51,
+                            "line": 69,
                             "message": ""
                         },
                         {
@@ -106,7 +138,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 47,
+                            "line": 65,
                             "message": ""
                         },
                         {
@@ -114,7 +146,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 57,
+                            "line": 77,
                             "message": ""
                         },
                         {
@@ -122,7 +154,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "path",
-                            "line": 66,
+                            "line": 88,
                             "message": ""
                         },
                         {
@@ -130,7 +162,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "seed",
-                            "line": 67,
+                            "line": 89,
                             "message": ""
                         },
                         {
@@ -138,7 +170,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 65,
+                            "line": 87,
                             "message": ""
                         },
                         {
@@ -146,7 +178,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 74,
+                            "line": 97,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -154,7 +186,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 71,
+                            "line": 94,
                             "message": ""
                         },
                         {
@@ -162,7 +194,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "name",
-                            "line": 78,
+                            "line": 102,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -170,7 +202,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 81,
+                            "line": 105,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -178,7 +210,7 @@
                             "column": 35,
                             "durationMicroseconds": 0,
                             "functionName": "centerIn",
-                            "line": 77,
+                            "line": 101,
                             "message": ""
                         },
                         {
@@ -186,7 +218,7 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "cursorShape",
-                            "line": 85,
+                            "line": 110,
                             "message": ""
                         },
                         {
@@ -194,7 +226,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
-                            "line": 86,
+                            "line": 111,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -202,7 +234,7 @@
                             "column": 31,
                             "durationMicroseconds": 0,
                             "functionName": "fill",
-                            "line": 84,
+                            "line": 109,
                             "message": ""
                         },
                         {
@@ -210,7 +242,7 @@
                             "column": 36,
                             "durationMicroseconds": 0,
                             "functionName": "preferredWidth",
-                            "line": 90,
+                            "line": 117,
                             "message": ""
                         },
                         {
@@ -218,7 +250,7 @@
                             "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "maximumWidth",
-                            "line": 91,
+                            "line": 118,
                             "message": ""
                         },
                         {
@@ -226,7 +258,7 @@
                             "column": 23,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 96,
+                            "line": 124,
                             "message": ""
                         },
                         {
@@ -234,7 +266,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 97,
+                            "line": 125,
                             "message": "Cannot access value for name player"
                         },
                         {
@@ -242,7 +274,7 @@
                             "column": 24,
                             "durationMicroseconds": 0,
                             "functionName": "elide",
-                            "line": 100,
+                            "line": 128,
                             "message": ""
                         },
                         {
@@ -250,118 +282,30 @@
                             "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "weight",
-                            "line": 99,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 104,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 105,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "elide",
-                            "line": 107,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 114,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 36,
-                            "durationMicroseconds": 0,
-                            "functionName": "preferredWidth",
-                            "line": 111,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "minimumWidth",
-                            "line": 112,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 118,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 119,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "elide",
-                            "line": 121,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 125,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 126,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
                             "line": 127,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 24,
+                            "column": 23,
                             "durationMicroseconds": 0,
-                            "functionName": "elide",
-                            "line": 129,
+                            "functionName": "text",
+                            "line": 133,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 22,
+                            "column": 24,
                             "durationMicroseconds": 0,
-                            "functionName": "visible",
+                            "functionName": "color",
+                            "line": 134,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "elide",
                             "line": 136,
                             "message": ""
                         },
@@ -369,16 +313,56 @@
                             "codegenResult": 0,
                             "column": 22,
                             "durationMicroseconds": 0,
-                            "functionName": "opacity",
-                            "line": 137,
+                            "functionName": "visible",
+                            "line": 145,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 22,
+                            "column": 36,
                             "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 138,
+                            "functionName": "preferredWidth",
+                            "line": 142,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "minimumWidth",
+                            "line": 143,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 150,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 151,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "elide",
+                            "line": 153,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 158,
                             "message": ""
                         },
                         {
@@ -386,7 +370,55 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "visible",
-                            "line": 142,
+                            "line": 159,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 160,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "elide",
+                            "line": 162,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 171,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "opacity",
+                            "line": 172,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 173,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 178,
                             "message": ""
                         },
                         {
@@ -394,7 +426,7 @@
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "verticalCenter",
-                            "line": 140,
+                            "line": 176,
                             "message": ""
                         },
                         {
@@ -402,7 +434,7 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 147,
+                            "line": 184,
                             "message": ""
                         },
                         {
@@ -410,7 +442,7 @@
                             "column": 45,
                             "durationMicroseconds": 0,
                             "functionName": "verticalCenter",
-                            "line": 148,
+                            "line": 185,
                             "message": ""
                         },
                         {
@@ -418,7 +450,7 @@
                             "column": 27,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 151,
+                            "line": 189,
                             "message": ""
                         },
                         {
@@ -426,204 +458,60 @@
                             "column": 28,
                             "durationMicroseconds": 0,
                             "functionName": "color",
-                            "line": 152,
+                            "line": 190,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
                             "column": 26,
                             "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 157,
+                            "functionName": "visible",
+                            "line": 199,
                             "message": ""
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 23,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 159,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 162,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 163,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 28,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 164,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
+                            "codegenResult": 0,
                             "column": 41,
                             "durationMicroseconds": 0,
                             "functionName": "verticalCenter",
-                            "line": 158,
-                            "message": "Could not find property \"verticalCenter\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 168,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 172,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "opacity",
-                            "line": 173,
-                            "message": "Could not find property \"opacity\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 174,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 177,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 180,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 19,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 183,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "primary",
-                            "line": 186,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "visible",
-                            "line": 187,
-                            "message": "Could not find property \"visible\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "opacity",
-                            "line": 188,
-                            "message": "Could not find property \"opacity\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 189,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 24,
-                            "durationMicroseconds": 0,
-                            "functionName": "onClicked",
-                            "line": 190,
-                            "message": "Could not find signal \"clicked\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 19,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 194,
-                            "message": "Cannot generate efficient code for call to untyped JavaScript function"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 20,
-                            "durationMicroseconds": 0,
-                            "functionName": "color",
-                            "line": 195,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "horizontalAlignment",
                             "line": 197,
                             "message": ""
                         },
                         {
                             "codegenResult": 0,
-                            "column": 22,
+                            "column": 30,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 200,
+                            "line": 202,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 22,
+                            "column": 27,
                             "durationMicroseconds": 0,
-                            "functionName": "opacity",
+                            "functionName": "text",
+                            "line": 205,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 31,
+                            "durationMicroseconds": 0,
+                            "functionName": "iconName",
                             "line": 206,
-                            "message": "Could not find property \"opacity\"."
+                            "message": "Cannot access value for name player"
                         },
                         {
-                            "codegenResult": 2,
-                            "column": 22,
+                            "codegenResult": 0,
+                            "column": 31,
                             "durationMicroseconds": 0,
-                            "functionName": "enabled",
+                            "functionName": "outlined",
                             "line": 207,
-                            "message": "Could not find property \"enabled\"."
+                            "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 24,
+                            "column": 32,
                             "durationMicroseconds": 0,
                             "functionName": "onClicked",
                             "line": 208,
@@ -631,227 +519,147 @@
                         },
                         {
                             "codegenResult": 0,
-                            "column": 18,
+                            "column": 34,
                             "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
+                            "functionName": "visible",
+                            "line": 219,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 220,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 39,
+                            "durationMicroseconds": 0,
+                            "functionName": "left",
+                            "line": 211,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 49,
+                            "durationMicroseconds": 0,
+                            "functionName": "verticalCenter",
                             "line": 213,
                             "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 226,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 232,
+                            "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 216,
+                            "line": 240,
                             "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 23,
+                            "durationMicroseconds": 0,
+                            "functionName": "iconName",
+                            "line": 242,
+                            "message": "Cannot access value for name player"
                         },
                         {
                             "codegenResult": 2,
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 217,
+                            "line": 243,
                             "message": "Could not find property \"text\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "onTriggered",
-                            "line": 218,
-                            "message": "Could not find signal \"triggered\"."
-                        },
-                        {
-                            "codegenResult": 0,
                             "column": 22,
                             "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 221,
-                            "message": ""
+                            "functionName": "visible",
+                            "line": 244,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "opacity",
+                            "line": 245,
+                            "message": "Could not find property \"opacity\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 223,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "onTriggered",
-                            "line": 224,
-                            "message": "Could not find signal \"triggered\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 228,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 230,
+                            "line": 246,
                             "message": "Could not find property \"enabled\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 24,
                             "durationMicroseconds": 0,
-                            "functionName": "model",
-                            "line": 232,
-                            "message": "Cannot access value for name libraryModel"
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onObjectAdded",
-                            "line": 239,
-                            "message": "Cannot retrieve a non-object type by ID: playlistsMenu"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onObjectAdded",
-                            "line": 239,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "onObjectRemoved",
-                            "line": 240,
-                            "message": "Cannot retrieve a non-object type by ID: playlistsMenu"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "onObjectRemoved",
-                            "line": 240,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 234,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 236,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "onTriggered",
-                            "line": 237,
-                            "message": "Could not find signal \"triggered\"."
+                            "functionName": "onClicked",
+                            "line": 249,
+                            "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 245,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 20,
-                            "durationMicroseconds": 0,
-                            "functionName": "title",
-                            "line": 246,
-                            "message": "Could not find property \"title\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onObjectAdded",
-                            "line": 255,
-                            "message": "Cannot retrieve a non-object type by ID: ratingsMenu"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 32,
-                            "durationMicroseconds": 0,
-                            "functionName": "onObjectAdded",
-                            "line": 255,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "onObjectRemoved",
-                            "line": 256,
-                            "message": "Cannot retrieve a non-object type by ID: ratingsMenu"
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "onObjectRemoved",
-                            "line": 256,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 30,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 250,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 27,
-                            "durationMicroseconds": 0,
-                            "functionName": "text",
-                            "line": 252,
-                            "message": "Could not find property \"text\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 34,
-                            "durationMicroseconds": 0,
-                            "functionName": "onTriggered",
                             "line": 253,
-                            "message": "Could not find signal \"triggered\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 261,
                             "message": ""
                         },
                         {
                             "codegenResult": 2,
-                            "column": 26,
+                            "column": 22,
                             "durationMicroseconds": 0,
-                            "functionName": "onTriggered",
-                            "line": 263,
-                            "message": "Could not find signal \"triggered\"."
+                            "functionName": "visible",
+                            "line": 257,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "opacity",
+                            "line": 258,
+                            "message": "Could not find property \"opacity\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 259,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 262,
+                            "message": "Could not find signal \"clicked\"."
                         },
                         {
                             "codegenResult": 0,
@@ -866,7 +674,127 @@
                             "column": 19,
                             "durationMicroseconds": 0,
                             "functionName": "text",
-                            "line": 267,
+                            "line": 269,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "primary",
+                            "line": 272,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 273,
+                            "message": "Could not find property \"visible\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "opacity",
+                            "line": 274,
+                            "message": "Could not find property \"opacity\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 275,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 276,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 19,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 281,
+                            "message": "Cannot generate efficient code for call to untyped JavaScript function"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "color",
+                            "line": 282,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "horizontalAlignment",
+                            "line": 284,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 288,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "opacity",
+                            "line": 294,
+                            "message": "Could not find property \"opacity\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 295,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "onClicked",
+                            "line": 296,
+                            "message": "Could not find signal \"clicked\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 18,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 304,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 308,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 19,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 309,
                             "message": "Could not find property \"text\"."
                         },
                         {
@@ -874,7 +802,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "onTriggered",
-                            "line": 268,
+                            "line": 310,
                             "message": "Could not find signal \"triggered\"."
                         },
                         {
@@ -882,15 +810,31 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 271,
+                            "line": 314,
                             "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 19,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 315,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "visible",
+                            "line": 316,
+                            "message": "Could not find property \"visible\"."
                         },
                         {
                             "codegenResult": 2,
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "onTriggered",
-                            "line": 273,
+                            "line": 317,
                             "message": "Could not find signal \"triggered\"."
                         },
                         {
@@ -898,31 +842,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 276,
-                            "message": ""
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "enabled",
-                            "line": 278,
-                            "message": "Could not find property \"enabled\"."
-                        },
-                        {
-                            "codegenResult": 2,
-                            "column": 26,
-                            "durationMicroseconds": 0,
-                            "functionName": "onTriggered",
-                            "line": 279,
-                            "message": "Could not find signal \"triggered\"."
-                        },
-                        {
-                            "codegenResult": 0,
-                            "column": 22,
-                            "durationMicroseconds": 0,
-                            "functionName": "uiTheme",
-                            "line": 282,
+                            "line": 321,
                             "message": ""
                         },
                         {
@@ -930,7 +850,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 284,
+                            "line": 323,
                             "message": "Could not find property \"enabled\"."
                         },
                         {
@@ -938,7 +858,7 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "onTriggered",
-                            "line": 285,
+                            "line": 324,
                             "message": "Could not find signal \"triggered\"."
                         },
                         {
@@ -946,7 +866,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 289,
+                            "line": 330,
                             "message": ""
                         },
                         {
@@ -954,15 +874,71 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "enabled",
-                            "line": 291,
+                            "line": 332,
                             "message": "Could not find property \"enabled\"."
                         },
                         {
                             "codegenResult": 2,
-                            "column": 26,
+                            "column": 24,
+                            "durationMicroseconds": 0,
+                            "functionName": "model",
+                            "line": 335,
+                            "message": "Cannot access value for name libraryModel"
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onObjectAdded",
+                            "line": 336,
+                            "message": "Cannot retrieve a non-object type by ID: playlistsMenu"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onObjectAdded",
+                            "line": 336,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "onObjectRemoved",
+                            "line": 339,
+                            "message": "Cannot retrieve a non-object type by ID: playlistsMenu"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "onObjectRemoved",
+                            "line": 339,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 346,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 347,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
                             "durationMicroseconds": 0,
                             "functionName": "onTriggered",
-                            "line": 292,
+                            "line": 348,
                             "message": "Could not find signal \"triggered\"."
                         },
                         {
@@ -970,7 +946,79 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "uiTheme",
-                            "line": 295,
+                            "line": 358,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 20,
+                            "durationMicroseconds": 0,
+                            "functionName": "title",
+                            "line": 359,
+                            "message": "Could not find property \"title\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onObjectAdded",
+                            "line": 363,
+                            "message": "Cannot retrieve a non-object type by ID: ratingsMenu"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 32,
+                            "durationMicroseconds": 0,
+                            "functionName": "onObjectAdded",
+                            "line": 363,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "onObjectRemoved",
+                            "line": 366,
+                            "message": "Cannot retrieve a non-object type by ID: ratingsMenu"
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "onObjectRemoved",
+                            "line": 366,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 30,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 373,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 27,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 374,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 34,
+                            "durationMicroseconds": 0,
+                            "functionName": "onTriggered",
+                            "line": 375,
+                            "message": "Could not find signal \"triggered\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 386,
                             "message": ""
                         },
                         {
@@ -978,7 +1026,135 @@
                             "column": 26,
                             "durationMicroseconds": 0,
                             "functionName": "onTriggered",
-                            "line": 297,
+                            "line": 388,
+                            "message": "Could not find signal \"triggered\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 392,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 19,
+                            "durationMicroseconds": 0,
+                            "functionName": "text",
+                            "line": 393,
+                            "message": "Could not find property \"text\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "onTriggered",
+                            "line": 394,
+                            "message": "Could not find signal \"triggered\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 398,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "onTriggered",
+                            "line": 400,
+                            "message": "Could not find signal \"triggered\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 404,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 406,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "onTriggered",
+                            "line": 407,
+                            "message": "Could not find signal \"triggered\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 411,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 413,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "onTriggered",
+                            "line": 414,
+                            "message": "Could not find signal \"triggered\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 421,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "enabled",
+                            "line": 423,
+                            "message": "Could not find property \"enabled\"."
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "onTriggered",
+                            "line": 424,
+                            "message": "Could not find signal \"triggered\"."
+                        },
+                        {
+                            "codegenResult": 0,
+                            "column": 22,
+                            "durationMicroseconds": 0,
+                            "functionName": "uiTheme",
+                            "line": 428,
+                            "message": ""
+                        },
+                        {
+                            "codegenResult": 2,
+                            "column": 26,
+                            "durationMicroseconds": 0,
+                            "functionName": "onTriggered",
+                            "line": 430,
                             "message": "Could not find signal \"triggered\"."
                         },
                         {
@@ -986,7 +1162,7 @@
                             "column": 16,
                             "durationMicroseconds": 0,
                             "functionName": "title",
-                            "line": 302,
+                            "line": 438,
                             "message": ""
                         },
                         {
@@ -994,7 +1170,7 @@
                             "column": 22,
                             "durationMicroseconds": 0,
                             "functionName": "nameFilters",
-                            "line": 303,
+                            "line": 439,
                             "message": ""
                         },
                         {
@@ -1002,7 +1178,7 @@
                             "column": 21,
                             "durationMicroseconds": 0,
                             "functionName": "onAccepted",
-                            "line": 304,
+                            "line": 440,
                             "message": "Cannot access value for name importManager"
                         }
                     ],

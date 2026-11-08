@@ -629,7 +629,7 @@ void BrowserSession::onEvent(const QString& method, const QJsonObject& params)
         const auto request = params.value("request").toObject();
         const QUrl apiUrl(request.value("url").toString());
         if (m_service == "yandex" && apiUrl.scheme() == "https" && apiUrl.host() == "api.music.yandex.ru") {
-            if (isCollectionApi(apiUrl) && m_apiRequests.size() < 128)
+            if ((isCollectionApi(apiUrl) || isWaveApi(apiUrl)) && m_apiRequests.size() < 128)
                 m_apiRequests[params.value("requestId").toString()] = apiUrl;
             const auto headers = request.value("headers").toObject();
             for (auto it = headers.begin(); it != headers.end(); ++it)
@@ -691,7 +691,7 @@ bool BrowserSession::isCollectionApi(const QUrl& url)
 void BrowserSession::fetchJson(int requestId, const QUrl& url, const QJsonArray& trackIds)
 {
     // Выполняем fetch в контексте страницы, подставляя сохранённые заголовки API.
-    if (m_stopping || !m_initialized || !isCollectionApi(url) || m_service != "yandex" ||
+    if (m_stopping || !m_initialized || (!isCollectionApi(url) && !isWaveApi(url)) || m_service != "yandex" ||
         WebLoginManager::serviceForHost(m_loaded.host()) != "yandex" || trackIds.size() > 200) {
         emit apiFetched(requestId, url, {}, 0);
         return;
@@ -713,6 +713,12 @@ void BrowserSession::fetchJson(int requestId, const QUrl& url, const QJsonArray&
                 requestId);
     if (id >= 0)
         m_apiCommands[id] = url;
+}
+bool BrowserSession::isWaveApi(const QUrl& url)
+{
+    return url.scheme() == "https" && url.host() == "api.music.yandex.ru" && url.userInfo().isEmpty()
+           && (url.port() == -1 || url.port() == 443)
+           && url.path() == "/rotor/station/user:onyourwave/tracks";
 }
 void BrowserSession::evaluate(int requestId, const QString& script, bool userGesture)
 {
