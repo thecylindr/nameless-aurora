@@ -9,10 +9,15 @@
 #include <QJsonArray>
 #include <QSet>
 #include <QUrl>
+#ifdef AURORA_WEBENGINE
 #include <QQuickWebEngineProfile>
+#else
+using QQuickWebEngineProfile = QObject;
+#endif
 #include <QElapsedTimer>
 #include <QTemporaryDir>
 #include <QQueue>
+#include <QMap>
 #include <functional>
 #include "../data/libraryrepository.h"
 // Координация веб-входа и импорта: хранение cookies сессий, запуск внешнего
@@ -27,7 +32,11 @@ class WebLoginManager : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(bool awaitingLogin READ awaitingLogin NOTIFY nativeBrowserChanged)
+#ifdef AURORA_WEBENGINE
     Q_PROPERTY(QQuickWebEngineProfile* nativeProfile READ nativeProfile NOTIFY nativeBrowserChanged)
+#else
+    Q_PROPERTY(QObject* nativeProfile READ nativeProfile NOTIFY nativeBrowserChanged)
+#endif
     Q_PROPERTY(bool browserVisible READ browserVisible NOTIFY nativeBrowserChanged)
     Q_PROPERTY(QUrl pageUrl READ pageUrl NOTIFY nativeBrowserChanged)
     Q_PROPERTY(QString pageError READ pageError NOTIFY nativeBrowserChanged)
@@ -208,6 +217,9 @@ class WebLoginManager : public QObject
     void consumeApiPayload(const QUrl& url, const QJsonValue& payload);
     // Ставит запрос к API Яндекса в очередь (с дедупликацией).
     void requestYandex(const QUrl& url, const QJsonArray& ids = {});
+    void receiveYandex(int id, const QUrl& url, const QJsonValue& payload, int status, int retryAfterMs = 0);
+    void advanceYandex();
+    void failYandexIncomplete(const QString& reason);
     // Отправляет следующий запрос к API Яндекса, если канал свободен.
     void dispatchYandex();
     // Проверяет, собран ли полный плейлист через API, и завершает сбор.
@@ -235,8 +247,21 @@ class WebLoginManager : public QObject
     bool m_vkEntryRedirected = false;
     QString m_apiPlaylist;
     QStringList m_apiOrder;
-    QHash<int, QUrl> m_apiRequests;
-    QQueue<QPair<QUrl, QJsonArray>> m_apiQueue;
+    struct YandexRequest {
+        QUrl url;
+        QJsonArray ids;
+        int attempt = 0;
+    };
+    QHash<int, YandexRequest> m_apiRequests;
+    QQueue<YandexRequest> m_apiQueue;
+    QMap<int, QStringList> m_apiPages;
+    QHash<QString, int> m_apiTrackAttempts;
+    QSet<QString> m_apiRetryPending;
+    QElapsedTimer m_apiProgress;
+    QString m_apiOwner, m_apiKind;
+    QString m_apiBase = "https://api.music.yandex.ru";
+    bool m_apiTotalKnown = false, m_apiManifestComplete = false, m_apiLegacyRequested = false;
+    int m_apiGeneration = 0, m_apiNativeScript = 0, m_apiNativeRequest = 0;
     QSet<QString> m_apiRequested;
     int m_apiNextId = 0, m_apiResponses = 0, m_apiHttpStatus = 0;
     QUrl m_nativeUrl, m_loadedUrl;

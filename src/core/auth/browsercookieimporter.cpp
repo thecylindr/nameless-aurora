@@ -48,6 +48,23 @@ QVariantList BrowserCookieImporter::profiles(const QString& home, const QString&
                                  {"modified", db.lastModified().toMSecsSinceEpoch()}});
     };
     // Известные Chromium-подобные браузеры и пути к их профилям (включая Flatpak/Snap).
+#ifdef Q_OS_WIN
+    const QString local = home == QDir::homePath() && configRoot.isEmpty()
+                              ? qEnvironmentVariable("LOCALAPPDATA", home + "/AppData/Local")
+                              : home + "/AppData/Local";
+    const QString roaming = home == QDir::homePath() && configRoot.isEmpty()
+                                ? qEnvironmentVariable("APPDATA", home + "/AppData/Roaming")
+                                : home + "/AppData/Roaming";
+    const QList<QStringList> chromium{
+        {"brave", "Brave", local + "/BraveSoftware/Brave-Browser/User Data"},
+        {"chrome", "Chrome", local + "/Google/Chrome/User Data"},
+        {"chromium", "Chromium", local + "/Chromium/User Data"},
+        {"yandex", "Яндекс Браузер", local + "/Yandex/YandexBrowser/User Data"},
+        {"edge", "Edge", local + "/Microsoft/Edge/User Data"},
+        {"vivaldi", "Vivaldi", local + "/Vivaldi/User Data"},
+        {"opera", "Opera", roaming + "/Opera Software/Opera Stable"},
+    };
+#else
     const QList<QStringList> chromium{
         {"brave", "Brave", config + "/BraveSoftware/Brave-Browser"},
         {"chrome", "Chrome", config + "/google-chrome"},
@@ -61,6 +78,7 @@ QVariantList BrowserCookieImporter::profiles(const QString& home, const QString&
         {"chromium", "Chromium (Flatpak)", home + "/.var/app/org.chromium.Chromium/config/chromium"},
         {"chromium", "Chromium (Snap)", home + "/snap/chromium/common/chromium"},
     };
+#endif
     for (const auto& browser : chromium) {
         QFile state(browser[2] + "/Local State");
         QJsonObject profile;
@@ -79,9 +97,14 @@ QVariantList BrowserCookieImporter::profiles(const QString& home, const QString&
             add(browser[0], browser[1], browser[2], "Default", true);
     }
     // Firefox хранит профили в profiles.ini, путь может быть относительным.
-    for (const auto& root : QStringList{config + "/mozilla/firefox", home + "/.mozilla/firefox",
-                                        home + "/snap/firefox/common/.mozilla/firefox",
-                                        home + "/.var/app/org.mozilla.firefox/.mozilla/firefox"}) {
+#ifdef Q_OS_WIN
+    const QStringList firefoxRoots{roaming + "/Mozilla/Firefox"};
+#else
+    const QStringList firefoxRoots{config + "/mozilla/firefox", home + "/.mozilla/firefox",
+                                   home + "/snap/firefox/common/.mozilla/firefox",
+                                   home + "/.var/app/org.mozilla.firefox/.mozilla/firefox"};
+#endif
+    for (const auto& root : firefoxRoots) {
         QSettings ini(root + "/profiles.ini", QSettings::IniFormat);
         for (const auto& group : ini.childGroups()) {
             if (!group.startsWith("Profile"))
@@ -111,11 +134,20 @@ QVariantList BrowserCookieImporter::availableProfiles() const
 }
 QString BrowserCookieImporter::python() const
 {
-    const QString managed =
-        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/tools/venv/bin/python3";
+    const auto root = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+#ifdef Q_OS_WIN
+    const QString managed = root + "/tools/venv/Scripts/python.exe";
+#else
+    const QString managed = root + "/tools/venv/bin/python3";
+#endif
     if (QFileInfo(managed).isExecutable())
         return managed;
-    return QStandardPaths::findExecutable("python3");
+    for (const auto& name : QStringList{"python3", "python"}) {
+        const auto path = QStandardPaths::findExecutable(name);
+        if (!path.isEmpty())
+            return path;
+    }
+    return {};
 }
 QString BrowserCookieImporter::errorText(const QString& code)
 {

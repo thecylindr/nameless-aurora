@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="1010" viewBox="0 0 1160 1010" role="img" aria-labelledby="title desc">
+<title id="title">Aurora — SQLite, схема версии 2</title>
+<desc id="desc">Семь таблиц, поля, первичные и внешние ключи. Стрелки направлены от внешнего ключа к родительской таблице.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#94a3b8"/></marker></defs>
+<rect width="1160" height="1010" fill="#0f172a"/>
+<text x="40" y="30" fill="#e2e8f0" font-family="sans-serif" font-size="19">Aurora · SQLite v2</text>
+<path d="M420 117 L386 117 L386 44 L196 44 L196 60" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M480 290 L480 262 L200 262 L200 150" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M540 290 L540 174" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M620 290 L620 255 L960 255 L960 150" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M800 703 L770 703 L770 510 L732 510" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M960 640 L960 540" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M352 663 L385 663 L385 560 L420 560" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="40" y="60" width="312" height="90" rx="10" fill="#1e293b" stroke="#475569"/>
+<text x="56" y="87" fill="#c4b5fd" font-family="monospace" font-size="17" font-weight="bold">artists</text>
+<text x="56" y="113" fill="#e2e8f0" font-family="monospace" font-size="12">id  integer PK</text>
+<text x="56" y="137" fill="#e2e8f0" font-family="monospace" font-size="12">name  text UQ</text>
+<rect x="420" y="60" width="312" height="114" rx="10" fill="#1e293b" stroke="#475569"/>
+<text x="436" y="87" fill="#c4b5fd" font-family="monospace" font-size="17" font-weight="bold">albums</text>
+<text x="436" y="113" fill="#e2e8f0" font-family="monospace" font-size="12">id  integer PK</text>
+<text x="436" y="137" fill="#e2e8f0" font-family="monospace" font-size="12">title  text</text>
+<text x="436" y="161" fill="#e2e8f0" font-family="monospace" font-size="12">artist_id  integer FK</text>
+<rect x="800" y="60" width="312" height="90" rx="10" fill="#1e293b" stroke="#475569"/>
+<text x="816" y="87" fill="#c4b5fd" font-family="monospace" font-size="17" font-weight="bold">sources</text>
+<text x="816" y="113" fill="#e2e8f0" font-family="monospace" font-size="12">id  integer PK</text>
+<text x="816" y="137" fill="#e2e8f0" font-family="monospace" font-size="12">name  text UQ</text>
+<rect x="420" y="290" width="312" height="426" rx="10" fill="#1e293b" stroke="#475569"/>
+<text x="436" y="317" fill="#c4b5fd" font-family="monospace" font-size="17" font-weight="bold">tracks</text>
+<text x="436" y="343" fill="#e2e8f0" font-family="monospace" font-size="12">id  integer PK</text>
+<text x="436" y="367" fill="#e2e8f0" font-family="monospace" font-size="12">title  text</text>
+<text x="436" y="391" fill="#e2e8f0" font-family="monospace" font-size="12">artist_id  integer FK</text>
+<text x="436" y="415" fill="#e2e8f0" font-family="monospace" font-size="12">album_id  integer FK</text>
+<text x="436" y="439" fill="#e2e8f0" font-family="monospace" font-size="12">source_id  integer FK</text>
+<text x="436" y="463" fill="#e2e8f0" font-family="monospace" font-size="12">file_path  text UQ</text>
+<text x="436" y="487" fill="#e2e8f0" font-family="monospace" font-size="12">source_url  text</text>
+<text x="436" y="511" fill="#e2e8f0" font-family="monospace" font-size="12">format  text</text>
+<text x="436" y="535" fill="#e2e8f0" font-family="monospace" font-size="12">cover_path  text</text>
+<text x="436" y="559" fill="#e2e8f0" font-family="monospace" font-size="12">duration  integer</text>
+<text x="436" y="583" fill="#e2e8f0" font-family="monospace" font-size="12">bitrate  integer</text>
+<text x="436" y="607" fill="#e2e8f0" font-family="monospace" font-size="12">rating  integer</text>
+<text x="436" y="631" fill="#e2e8f0" font-family="monospace" font-size="12">play_count  integer</text>
+<text x="436" y="655" fill="#e2e8f0" font-family="monospace" font-size="12">last_played  integer</text>
+<text x="436" y="679" fill="#e2e8f0" font-family="monospace" font-size="12">skip_count  integer</text>
+<text x="436" y="703" fill="#e2e8f0" font-family="monospace" font-size="12">listen_ms  integer</text>
+<rect x="800" y="420" width="312" height="114" rx="10" fill="#1e293b" stroke="#475569"/>
+<text x="816" y="447" fill="#c4b5fd" font-family="monospace" font-size="17" font-weight="bold">playlists</text>
+<text x="816" y="473" fill="#e2e8f0" font-family="monospace" font-size="12">id  integer PK</text>
+<text x="816" y="497" fill="#e2e8f0" font-family="monospace" font-size="12">name  text</text>
+<text x="816" y="521" fill="#e2e8f0" font-family="monospace" font-size="12">created_at  integer</text>
+<rect x="800" y="640" width="312" height="114" rx="10" fill="#1e293b" stroke="#475569"/>
+<text x="816" y="667" fill="#c4b5fd" font-family="monospace" font-size="17" font-weight="bold">playlist_tracks</text>
+<text x="816" y="693" fill="#e2e8f0" font-family="monospace" font-size="12">playlist_id  integer PK FK</text>
+<text x="816" y="717" fill="#e2e8f0" font-family="monospace" font-size="12">track_id  integer PK FK</text>
+<text x="816" y="741" fill="#e2e8f0" font-family="monospace" font-size="12">position  integer</text>
+<rect x="40" y="600" width="312" height="162" rx="10" fill="#1e293b" stroke="#475569"/>
+<text x="56" y="627" fill="#c4b5fd" font-family="monospace" font-size="17" font-weight="bold">listening_events</text>
+<text x="56" y="653" fill="#e2e8f0" font-family="monospace" font-size="12">id  integer PK</text>
+<text x="56" y="677" fill="#e2e8f0" font-family="monospace" font-size="12">track_id  integer FK</text>
+<text x="56" y="701" fill="#e2e8f0" font-family="monospace" font-size="12">played_at  integer</text>
+<text x="56" y="725" fill="#e2e8f0" font-family="monospace" font-size="12">listened_ms  integer</text>
+<text x="56" y="749" fill="#e2e8f0" font-family="monospace" font-size="12">skipped  integer</text>
+<text x="40" y="948" fill="#94a3b8" font-family="sans-serif" font-size="13">PK — первичный ключ · FK — внешний ключ · UQ — уникальное поле</text>
+<text x="40" y="972" fill="#94a3b8" font-family="sans-serif" font-size="13">Составные ограничения и представление track_details: database.md и database-schema.sql</text>
+</svg>

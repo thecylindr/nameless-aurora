@@ -33,6 +33,7 @@ class BrowserSession : public QObject
     void requestCookies();
     // Выполняет fetch на странице и возвращает JSON-ответ (для API Яндекс Музыки).
     void fetchJson(int requestId, const QUrl& url, const QJsonArray& trackIds = {});
+    static QString jsonFetchScript(const QUrl& url, const QJsonObject& headers = {}, const QJsonArray& trackIds = {});
     // Проверяет, является ли URL вызовом API коллекции Яндекс Музыки.
     static bool isCollectionApi(const QUrl& url);
     static bool isWaveApi(const QUrl& url);
@@ -68,7 +69,7 @@ class BrowserSession : public QObject
     // Получено тело ответа API (для коллекций Яндекса).
     void apiReceived(const QUrl& url, const QJsonValue& payload);
     // Завершён fetchJson: статус и полезная нагрузка.
-    void apiFetched(int requestId, const QUrl& url, const QJsonValue& payload, int status);
+    void apiFetched(int requestId, const QUrl& url, const QJsonValue& payload, int status, int retryAfterMs = 0);
     // Операция завершилась ошибкой.
     void failed(const QString& error);
 

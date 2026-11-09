@@ -74,6 +74,7 @@ class MusicSearch : public QObject
     Q_INVOKABLE void download(const QString& key);
     // Запускает онлайн-прослушивание выбранной записи.
     Q_INVOKABLE void listen(const QString& key);
+    void reportPlaybackError(const QString& key, const QString& error);
     // Останавливает текущее прослушивание.
     Q_INVOKABLE void cancelAudition();
     // Открывает запись в её сервисе (браузером).

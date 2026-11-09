@@ -522,7 +522,8 @@ void BrowserSession::onResult(int id, const QJsonObject& result)
         const auto url = m_apiCommands.take(id);
         const auto bytes = result.value("result").toObject().value("value").toString().toUtf8();
         const auto response = QJsonDocument::fromJson(bytes).object();
-        emit apiFetched(task.second, url, response.value("payload"), response.value("status").toInt());
+        emit apiFetched(task.second, url, response.value("payload"), response.value("status").toInt(),
+                        qBound(0, response.value("retryAfterMs").toInt(), 60000));
         break;
     }
     case Cookies:
@@ -628,7 +629,7 @@ void BrowserSession::onEvent(const QString& method, const QJsonObject& params)
     } else if (method == "Network.requestWillBeSent" && !m_hidden) {
         const auto request = params.value("request").toObject();
         const QUrl apiUrl(request.value("url").toString());
-        if (m_service == "yandex" && apiUrl.scheme() == "https" && apiUrl.host() == "api.music.yandex.ru") {
+        if (m_service == "yandex" && apiUrl.scheme() == "https" && QStringList{"api.music.yandex.ru", "api.music.yandex.net"}.contains(apiUrl.host())) {
             if ((isCollectionApi(apiUrl) || isWaveApi(apiUrl)) && m_apiRequests.size() < 128)
                 m_apiRequests[params.value("requestId").toString()] = apiUrl;
             const auto headers = request.value("headers").toObject();
@@ -682,11 +683,12 @@ void BrowserSession::onEvent(const QString& method, const QJsonObject& params)
 }
 bool BrowserSession::isCollectionApi(const QUrl& url)
 {
-    if (url.scheme() != "https" || url.host() != "api.music.yandex.ru" || !url.userInfo().isEmpty() ||
+    if (url.scheme() != "https" || !QStringList{"api.music.yandex.ru", "api.music.yandex.net"}.contains(url.host()) || !url.userInfo().isEmpty() ||
         (url.port() != -1 && url.port() != 443))
         return false;
     return url.path() == "/tracks" || url.path() == "/landing-blocks/collection/playlist-with-likes" ||
-           QRegularExpression("^/playlist/[A-Za-z0-9_.-]{1,100}$").match(url.path()).hasMatch();
+           QRegularExpression("^/playlist/[A-Za-z0-9_.-]{1,100}$").match(url.path()).hasMatch() ||
+           QRegularExpression("^/users/[0-9]{1,20}/playlists/[0-9]{1,20}$").match(url.path()).hasMatch();
 }
 void BrowserSession::fetchJson(int requestId, const QUrl& url, const QJsonArray& trackIds)
 {
@@ -696,23 +698,31 @@ void BrowserSession::fetchJson(int requestId, const QUrl& url, const QJsonArray&
         emit apiFetched(requestId, url, {}, 0);
         return;
     }
+    const auto script = jsonFetchScript(url, m_apiHeaders, trackIds);
+    const int id =
+        command("Runtime.evaluate", {{"expression", script}, {"returnByValue", true}, {"awaitPromise", true}}, ApiFetch,
+                requestId);
+    if (id >= 0)
+        m_apiCommands[id] = url;
+}
+QString BrowserSession::jsonFetchScript(const QUrl& url, const QJsonObject& headers, const QJsonArray& trackIds)
+{
+    if ((!isCollectionApi(url) && !isWaveApi(url)) || trackIds.size() > 200)
+        return {};
     const auto args = QString::fromUtf8(
-        QJsonDocument(QJsonObject{{"url", url.toString()}, {"headers", m_apiHeaders}, {"ids", trackIds}})
+        QJsonDocument(QJsonObject{{"url", url.toString()}, {"headers", headers}, {"ids", trackIds}})
             .toJson(QJsonDocument::Compact));
-    const QString script = "(async()=>{const a=" + args +
+    return "(async()=>{const a=" + args +
                            ";const c=new AbortController();const timer=setTimeout(()=>c.abort(),12000);"
                            "try{const o={credentials:'include',headers:a.headers,signal:c.signal};"
                            "if(a.ids.length){o.method='POST';o.body=new FormData();for(const id of "
                            "a.ids)o.body.append('trackIds',id);o.body.append('removeDuplicates','false');}"
                            "const r=await fetch(a.url,o);const text=await r.text();if(text.length>10485760)return "
                            "JSON.stringify({status:413});"
-                           "return JSON.stringify({status:r.status,payload:JSON.parse(text)});}catch(e){return "
+                           "const h=r.headers.get('Retry-After');const wait=h?(Number(h)*1000 || Date.parse(h)-Date.now()):0;"
+                           "let payload;try{payload=JSON.parse(text);}catch(_){}"
+                           "return JSON.stringify({status:r.status,retryAfterMs:Math.max(0,Math.min(60000,wait || 0)),payload});}catch(e){return "
                            "JSON.stringify({status:0});}finally{clearTimeout(timer);}})()";
-    const int id =
-        command("Runtime.evaluate", {{"expression", script}, {"returnByValue", true}, {"awaitPromise", true}}, ApiFetch,
-                requestId);
-    if (id >= 0)
-        m_apiCommands[id] = url;
 }
 bool BrowserSession::isWaveApi(const QUrl& url)
 {

@@ -1,10 +1,16 @@
 # NameLess Aurora
 
-Локальный музыкальный плеер на C++20 / Qt 6.12 / QML. Главный экран с «Моей волной», экран прослушивания с атмосферой из цветов обложки, собственная SQLite-медиатека и связь с NameLess UI.
+Локальный музыкальный плеер на C++20 / Qt 6.11+ / QML. Главный экран с «Моей волной», экран прослушивания с атмосферой из цветов обложки, собственная SQLite-медиатека и связь с NameLess UI.
 
 Обновление: общий поиск YouTube / Zaycev.net / VK, настройка вкуса, фоновые сцены и компоновка окна. [Изменения и ограничения проверки](docs/discovery-scenes-and-panels.md).
 
 Актуальные изменения: [раздельное прослушивание и скачивание, исправление названий VK и EQ](docs/listening-downloads-and-equalizer.md).
+
+Схема БД: [таблицы и связи (SVG)](docs/database-schema.svg), [описание](docs/database.md), [SQL](docs/database-schema.sql).
+
+Windows: [сборка, упаковка и исправления онлайн-прослушивания](docs/windows-and-online-playback.md).
+
+Яндекс Музыка: [полный импорт больших плейлистов вместо обрезанного списка](docs/yandex-large-playlists.md).
 
 ## Запуск
 
@@ -28,7 +34,7 @@ ctest --test-dir ~/player/build/aurora --output-on-failure
 cmake --fresh -S ~/nameless-aurora -B ~/nameless-aurora/build/Desktop_Debug -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug
 ```
 
-Нужны Qt 6.12: Core, Gui, Widgets, Qml, Quick, QuickControls2, QuickShapes, ShaderTools, Sql с драйвером QSQLITE, Multimedia, Network, Concurrent, WebEngineQuick; на Linux также DBus. Тесты используют Qt Test (`-DBUILD_TESTING=OFF`, чтобы собрать только приложение). FFmpeg (`ffprobe` и `ffmpeg`) читает теги и встроенные обложки. Доступность кодеков воспроизведения зависит от сборки Qt Multimedia.
+Нужны Qt 6.11+: Core, Gui, Widgets, Qml, Quick, QuickControls2, QuickShapes, ShaderTools, Sql с драйвером QSQLITE, Multimedia, Network, Concurrent; WebEngineQuick необязателен (без него используется установленный Chromium-браузер), на Linux также DBus. Тесты используют Qt Test (`-DBUILD_TESTING=OFF`, чтобы собрать только приложение). FFmpeg (`ffprobe` и `ffmpeg`) читает теги и встроенные обложки. Доступность кодеков воспроизведения зависит от сборки Qt Multimedia.
 
 Ярлык для лаунчера NameLess UI и команда `~/.local/bin/aurora` устанавливаются без прав root:
 
@@ -159,7 +165,7 @@ SoundCloud; дополнительные сайты включаются отд�
 
 Схема включает 7 таблиц: `artists`, `albums`, `sources`, `tracks`, `playlists`, `playlist_tracks`, `listening_events`, а также представление `track_details`. Структура и запросы описаны в [docs/database.md](docs/database.md).
 
-Сборка и автоматические проверки выполнены для Linux / Qt 6.12. Компактный интерфейс проверяется в Linux-окне 390×760. Windows-сборка и APK в этом изменении не выпускались. Импорт из сервисов рассчитан на desktop-браузер; Qt WebEngine служит запасным вариантом. Для Android нужны отдельный веб-компонент, интеграция SAF и загрузчики; эта сборка APK не поддерживает.
+Собраны Linux / Qt 6.12 (с WebEngine и без него) и Windows x64 / Qt 6.11.1 / LLVM MinGW. Windows-пакет находится в `dist/windows`; запуск на реальной Windows в этой среде не проверен. Результаты тестов и ограничения — в [отчёте](docs/windows-and-online-playback.md#проверка). APK в этом изменении не выпускается. Импорт из сервисов рассчитан на desktop-браузер; Qt WebEngine служит запасным вариантом. Для Android нужны отдельный веб-компонент, интеграция SAF и загрузчики; эта сборка APK не поддерживает.
 
 Проверка запуска, декодирования и QML без звукового устройства:
 

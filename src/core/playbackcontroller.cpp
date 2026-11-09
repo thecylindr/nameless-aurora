@@ -111,6 +111,7 @@ PlaybackController::PlaybackController(LibraryModel* library, SettingsStore* set
     }
     connect(&m_player, &QMediaPlayer::positionChanged, this, &PlaybackController::positionChanged);
     connect(&m_player, &QMediaPlayer::durationChanged, this, &PlaybackController::durationChanged);
+    connect(&m_player, &QMediaPlayer::bufferProgressChanged, this, &PlaybackController::streamLoadingChanged);
     connect(&m_player, &QMediaPlayer::seekableChanged, this, &PlaybackController::seekableChanged);
     connect(&m_player, &QMediaPlayer::playbackStateChanged, this, [this] {
         if (m_equalizedSink) {
@@ -440,6 +441,21 @@ void PlaybackController::playIndex(int index)
         return;
     playTrackId(m_library->data(i, LibraryModel::IdRole).toInt());
 }
+QString PlaybackController::streamStatus() const
+{
+    if (!m_streaming)
+        return {};
+    if (!m_lastError.isEmpty())
+        return m_lastError;
+    const auto status = m_player.mediaStatus();
+    if (status == QMediaPlayer::LoadingMedia)
+        return "Подключение к аудиопотоку…";
+    if (status == QMediaPlayer::BufferingMedia || status == QMediaPlayer::StalledMedia)
+        return QString(status == QMediaPlayer::StalledMedia ? "Ожидание данных · буфер %1%" : "Буферизация · %1%")
+            .arg(qRound(streamBufferProgress() * 100));
+    return {};
+}
+
 void PlaybackController::playStream(const QVariantMap& candidate)
 {
     if (m_streamIndex < 0 || m_streamIndex >= m_streamQueue.size() ||
@@ -657,6 +673,15 @@ void PlaybackController::stop()
     commitListen(false);
     m_player.stop();
     flushEqualizedAudio();
+    if (m_streaming) {
+        m_player.setSource({});
+        m_streamProxy.reset();
+        m_streaming = false;
+        m_streamCandidate.clear();
+        m_currentTrackId = -1;
+        emit currentTrackChanged();
+        emit streamLoadingChanged();
+    }
 }
 void PlaybackController::toggle()
 {

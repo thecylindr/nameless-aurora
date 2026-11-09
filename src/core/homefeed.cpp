@@ -271,6 +271,7 @@ HomeFeed::HomeFeed(LibraryModel* library, OAuthManager* accounts, WebLoginManage
     m_webConnected = web->yandexLoggedIn();
     m_vkWebConnected = web->vkLoggedIn();
     connect(web, &WebLoginManager::sessionsChanged, this, [this] {
+        m_streamCache.clear();
         const bool connected = m_web->yandexLoggedIn();
         if (m_webConnected != connected) {
             m_webConnected = connected;
@@ -341,13 +342,28 @@ HomeFeed::HomeFeed(LibraryModel* library, OAuthManager* accounts, WebLoginManage
                         finishStream(candidate, error);
                 });
     }
+    m_totalResolveTimer.setParent(this);
+    m_totalResolveTimer.setObjectName("onlineResolutionDeadline");
+    m_totalResolveTimer.setSingleShot(true);
+    m_totalResolveTimer.setInterval(45000);
+    connect(&m_totalResolveTimer, &QTimer::timeout, this, [this] {
+        const bool ownStream = m_player->streaming() && m_player->streamKey() == m_candidate.value("key").toString();
+        const auto cached = m_streamCache.take(m_candidate.value("key").toString()).second;
+        if (m_preview)
+            m_preview->invalidatePreview(m_selectedAlternative.value("url", cached.value("resolvedUrl", m_candidate.value("url"))).toString());
+        cancelResolution();
+        if (ownStream)
+            m_player->stop();
+        m_playbackStatus = "Не удалось подключить трек за 45 секунд. Повтори или выбери источник вручную.";
+        emit playbackChanged();
+    });
     m_resolveTimer.setSingleShot(true);
     m_resolveTimer.setInterval(15000);
     connect(&m_resolveTimer, &QTimer::timeout, this, [this] {
         failAttempt("Источник не предоставил поток за 15 секунд.");
     });
     m_sourceGraceTimer.setSingleShot(true);
-    m_sourceGraceTimer.setInterval(4500);
+    m_sourceGraceTimer.setInterval(1500);
     connect(&m_sourceGraceTimer, &QTimer::timeout, this, [this] {
         m_fallbackAllowed = true;
         tryAlternative();
@@ -765,6 +781,7 @@ void HomeFeed::playVk(int index)
 void HomeFeed::cancelResolution()
 {
     ++m_resolutionGeneration;
+    m_totalResolveTimer.stop();
     m_resolveTimer.stop();
     m_sourceGraceTimer.stop();
     m_bufferTimer.stop();
@@ -825,7 +842,7 @@ void HomeFeed::tryAlternative()
         const auto item = m_alternatives[index].toMap();
         const auto url = item.value("url").toString();
         const auto service = item.value("source").toString();
-        if (m_attemptedUrls.contains(url) || m_sourceAttempts.value(service) >= 3 ||
+        if (m_attemptedUrls.contains(url) || m_sourceAttempts.value(service) >= 2 ||
             !AudioSources::automaticMatch(m_candidate, item))
             continue;
         const auto expected = m_candidate.value("durationMs").toLongLong();
@@ -851,8 +868,9 @@ void HomeFeed::tryAlternative()
         m_previewPending = true;
         m_fallbackAttempt = true;
         m_resolveTimer.start();
-        m_playbackStatus = "Подключаем «" + m_candidate.value("title").toString() + "» · " +
-                           m_selectedAlternative.value("source").toString();
+        m_playbackStatus = QString("Подключаем «%1» · %2 · попытка %3")
+                               .arg(m_candidate.value("title").toString(), m_selectedAlternative.value("source").toString())
+                               .arg(m_attemptedUrls.size());
         emit playbackChanged();
         m_preview->previewCandidate(m_selectedAlternative);
         return;
@@ -862,6 +880,7 @@ void HomeFeed::tryAlternative()
     if (m_lookup && m_lookup->busy()) {
         m_playbackStatus = "Ищем подходящую версию во включённых источниках…";
     } else {
+        m_totalResolveTimer.stop();
         m_resolvingId = 0;
         m_resolvingUrl.clear();
         m_playbackStatus = "Не удалось включить «" + m_candidate.value("title").toString() +
@@ -876,7 +895,14 @@ void HomeFeed::failAttempt(const QString& error)
 {
     if (m_candidate.isEmpty())
         return;
+    if (!m_totalResolveTimer.isActive())
+        m_totalResolveTimer.start();
     m_resolutionError = error;
+    const auto cached = m_streamCache.take(m_candidate.value("key").toString()).second;
+    const auto failedUrl = m_selectedAlternative.value("url", cached.value("resolvedUrl", m_candidate.value("url"))).toString();
+    m_attemptedUrls.insert(failedUrl);
+    if (m_preview)
+        m_preview->invalidatePreview(failedUrl);
     if (m_player->streamKey() == m_candidate.value("key").toString())
         m_player->pause();
     m_resolvingId = m_candidate.value("libraryTrackId").toInt();
@@ -900,6 +926,7 @@ void HomeFeed::playbackStarted()
     if (m_startingStream || m_candidate.isEmpty() || !m_player->playing() || m_player->position() <= 0 ||
         m_player->streamKey() != m_candidate.value("key").toString())
         return;
+    m_totalResolveTimer.stop();
     m_bufferTimer.stop();
     m_playbackAttempt = false;
     if (m_resolvingId == 0 && m_resolvingUrl.isEmpty())
@@ -934,7 +961,12 @@ void HomeFeed::finishStream(const QVariantMap& resolved, const QString& error)
     candidate["mediaUrl"] = media.toString();
     candidate["userAgent"] = resolved.value("userAgent", m_web->serviceUserAgent());
     candidate["streamHeaders"] = resolved.value("streamHeaders");
-    candidate["streamReferer"] = resolved.value("url", candidate.value("url"));
+    candidate["streamReferer"] = resolved.value("streamReferer", resolved.value("url", candidate.value("url")));
+    if (resolved.contains("resolvedUrl")) {
+        candidate["source"] = resolved.value("source");
+        candidate["resolvedUrl"] = resolved.value("resolvedUrl");
+        candidate["originSource"] = resolved.value("originSource");
+    }
     if (m_fallbackAttempt) {
         candidate["originSource"] = candidate.value("source");
         candidate["source"] = m_selectedAlternative.value("source");
@@ -944,6 +976,10 @@ void HomeFeed::finishStream(const QVariantMap& resolved, const QString& error)
     }
     // Keep the original url/key/queueId and title: an alternative must not replace
     // the playlist identity or write substitute metadata into the library.
+    if (m_streamCache.size() >= 64)
+        m_streamCache.clear();
+    if (!candidate.value("key").toString().isEmpty())
+        m_streamCache[candidate.value("key").toString()] = {QDateTime::currentMSecsSinceEpoch(), candidate};
     m_playbackAttempt = true;
     m_startingStream = true;
     m_player->playStream(candidate);
@@ -970,11 +1006,18 @@ void HomeFeed::resolveStream(const QVariantMap& requested)
         emit playbackChanged();
         return;
     }
+    m_totalResolveTimer.start();
     m_resolvingId = candidate.value("libraryTrackId").toInt();
     m_resolvingUrl = candidate.value("url").toString();
     m_playbackStatus = "Подключаем «" + candidate.value("title").toString() + "»…";
     emit playbackChanged();
     const auto originalUrl = candidate.value("url").toString();
+    const auto cached = m_streamCache.value(candidate.value("key").toString());
+    if (cached.first > QDateTime::currentMSecsSinceEpoch() - 120000) {
+        m_attemptedUrls.insert(originalUrl);
+        finishStream(cached.second, {});
+        return;
+    }
     const QUrl direct(candidate.value("mediaUrl").toString());
     if (direct.scheme() == "https" && direct.userInfo().isEmpty() &&
         (MediaSniffer::isAudioUrl(direct) || candidate.value("mediaVerified").toBool())) {

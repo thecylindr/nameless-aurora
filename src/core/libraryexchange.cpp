@@ -1,5 +1,6 @@
 #include "libraryexchange.h"
 #include "web/vktext.h"
+#include "web/servicepayload.h"
 #include <QSettings>
 #include "librarymodel.h"
 #include "settingsstore.h"
@@ -323,13 +324,23 @@ void LibraryExchange::saveList(const QVector<Track>& tracks, const QString& name
         finish(repo.error());
         return;
     }
+    // Older DOM imports used /album/.../track/... URLs. Reuse their IDs and files
+    // when the complete API import returns the canonical /track/... identity.
+    QHash<QString, Track> yandexExisting;
+    for (const auto& track : repo.tracks()) {
+        const auto key = ServicePayload::canonicalYandexTrackUrl(QUrl(track.sourceUrl));
+        if (!key.isEmpty() && (!yandexExisting.contains(key) || !track.filePath.isEmpty()))
+            yandexExisting[key] = track;
+    }
     int playlist = repo.createPlaylist(name.isEmpty() ? QStringLiteral("Импортированный плейлист") : name);
     bool ok = playlist > 0;
     QVariantList preview;
     for (const auto& track : tracks) {
         if (!ok)
             break;
-        int id = repo.saveTrack(track);
+        const auto canonical = ServicePayload::canonicalYandexTrackUrl(QUrl(track.sourceUrl));
+        int id = !canonical.isEmpty() && yandexExisting.contains(canonical)
+                     ? yandexExisting.value(canonical).id : repo.saveTrack(track);
         ok = id && repo.addToPlaylist(playlist, id);
         auto item = track.webData;
         item.insert("trackId", id);

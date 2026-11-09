@@ -17,7 +17,9 @@
 #include <QUrlQuery>
 #include <QStandardPaths>
 #include <QTimer>
+#ifdef AURORA_WEBENGINE
 #include <QWebEngineCookieStore>
+#endif
 
 // Нативная часть WebLoginManager: запуск браузера/профиля, инжекция скриптов,
 // сбор плейлистов, поиск VK, получение аудио и сохранение отчётов об импорте.
@@ -60,7 +62,7 @@ bool WebLoginManager::ensureNative(const QString& slug)
             connect(m_external, &BrowserSession::evaluated, this, &WebLoginManager::submitScriptResult);
             connect(m_external, &BrowserSession::apiReceived, this, &WebLoginManager::consumeApiPayload);
             connect(m_external, &BrowserSession::apiFetched, this,
-                    [this](int id, const QUrl& url, const QJsonValue& payload, int status) {
+                    [this](int id, const QUrl& url, const QJsonValue& payload, int status, int retryAfterMs) {
                         if (m_nativeTask == Wave && id == m_apiNextId && BrowserSession::isWaveApi(url)) {
                             const auto tracks = ServicePayload::yandexWave(payload);
                             if (status < 200 || status >= 300) {
@@ -73,18 +75,7 @@ bool WebLoginManager::ensureNative(const QString& slug)
                             }
                             return;
                         }
-                        if (!m_apiRequests.remove(id) || m_nativeTask != Collect)
-                            return;
-                        m_apiHttpStatus = status;
-                        if (status >= 200 && status < 300)
-                            consumeApiPayload(url, payload);
-                        else if (status == 401 || status == 403)
-                            finishNative("API Яндекс Музыки не принял перенесённую сессию (HTTP " +
-                                         QString::number(status) + "). Подробности — в отчёте импорта.");
-                        if (m_nativeTask == Collect) {
-                            dispatchYandex();
-                            finishApiCollection();
-                        }
+                        receiveYandex(id, url, payload, status, retryAfterMs);
                     });
             connect(m_external, &BrowserSession::failed, this, [this](const QString& error) {
                 if (m_nativeTask != Idle)
@@ -110,6 +101,7 @@ bool WebLoginManager::ensureNative(const QString& slug)
         }
         return true;
     }
+#ifdef AURORA_WEBENGINE
     if (!m_profiles.contains(slug)) {
         // Chromium требует локальный IPC; проверяем заранее, до фатального
         // запуска в песочнице в ограниченных сессиях.
@@ -190,6 +182,10 @@ bool WebLoginManager::ensureNative(const QString& slug)
         connect(m_nativeTimer, &QTimer::timeout, this, &WebLoginManager::nativeTick);
     }
     return true;
+#else
+    setStatus("Установи Chrome, Edge, Brave или Яндекс Браузер для входа в сервис.");
+    return false;
+#endif
 }
 void WebLoginManager::openNative(const QString& service)
 {
@@ -243,9 +239,11 @@ void WebLoginManager::pageLoaded(const QUrl& url, bool ok, const QString& error)
 void WebLoginManager::confirmNativeLogin()
 {
     if (!m_externalMode) {
+#ifdef AURORA_WEBENGINE
         if (m_nativeProfile)
             m_nativeProfile->cookieStore()->loadAllCookies();
         else
+#endif
             return;
     }
     QTimer::singleShot(250, this, [this] {
@@ -321,6 +319,18 @@ void WebLoginManager::startCollection(const QUrl& url, bool search, bool recomme
     m_expectedTracks = 0;
     m_importReport.clear();
     m_vkEntryRedirected = false;
+    ++m_apiGeneration;
+    m_apiNativeScript = 0;
+    m_apiRetryPending.clear();
+    m_apiPages.clear();
+    m_apiTrackAttempts.clear();
+    m_apiBase = "https://api.music.yandex.ru";
+    m_apiOwner.clear();
+    m_apiKind.clear();
+    m_apiTotalKnown = false;
+    m_apiManifestComplete = false;
+    m_apiLegacyRequested = false;
+    m_apiProgress.start();
     m_apiPlaylist.clear();
     m_apiOrder.clear();
     m_apiRequests.clear();
@@ -351,23 +361,83 @@ void WebLoginManager::startCollection(const QUrl& url, bool search, bool recomme
 }
 void WebLoginManager::requestYandex(const QUrl& url, const QJsonArray& ids)
 {
-    if (!m_externalMode || !m_external || m_nativeTask != Collect)
+    if (m_nativeTask != Collect || !BrowserSession::isCollectionApi(url))
         return;
-    const auto key = url.toString() + QString::fromUtf8(QJsonDocument(ids).toJson(QJsonDocument::Compact));
-    if (m_apiRequested.contains(key))
+    const auto key = url.toString();
+    if (ids.isEmpty() && m_apiRequested.contains(key))
         return;
-    m_apiRequested.insert(key);
-    m_apiQueue.enqueue({url, ids});
+    if (ids.isEmpty())
+        m_apiRequested.insert(key);
+    m_apiQueue.enqueue({url, ids, 0});
     dispatchYandex();
 }
 void WebLoginManager::dispatchYandex()
 {
-    if (m_nativeTask != Collect || !m_external || !m_apiRequests.isEmpty() || m_apiQueue.isEmpty())
+    if (m_nativeTask != Collect || !m_apiRequests.isEmpty() || !m_apiRetryPending.isEmpty() || m_apiQueue.isEmpty())
         return;
     const auto request = m_apiQueue.dequeue();
     const int id = ++m_apiNextId;
-    m_apiRequests[id] = request.first;
-    m_external->fetchJson(id, request.first, request.second);
+    m_apiRequests[id] = request;
+    if (m_externalMode && m_external) {
+        m_external->fetchJson(id, request.url, request.ids);
+    } else {
+        m_scriptPending = true;
+        m_apiNativeRequest = id;
+        m_apiNativeScript = ++m_scriptId;
+        const int script = m_apiNativeScript;
+        emit scriptRequested(script, BrowserSession::jsonFetchScript(request.url, {}, request.ids));
+        QTimer::singleShot(14000, this, [this, id, script, request] {
+            if (m_apiNativeScript != script || !m_apiRequests.contains(id))
+                return;
+            m_apiNativeScript = 0;
+            m_scriptPending = false;
+            receiveYandex(id, request.url, {}, 0);
+        });
+    }
+}
+void WebLoginManager::receiveYandex(int id, const QUrl& url, const QJsonValue& payload, int status, int retryAfterMs)
+{
+    if (m_nativeTask != Collect || !m_apiRequests.contains(id))
+        return; // A response from a cancelled or previous import.
+    auto request = m_apiRequests.take(id);
+    if (request.url != url) {
+        failYandexIncomplete("Получен ответ другого запроса API.");
+        return;
+    }
+    m_apiHttpStatus = status;
+    if (status >= 200 && status < 300 && (payload.isObject() || payload.isArray())) {
+        consumeApiPayload(url, payload);
+    } else if ((status == 0 || status == 408 || status == 429 || status >= 500 ||
+                ((status == 401 || status == 403) && request.attempt == 0 && m_apiResponses == 0)) && request.attempt < 2) {
+        ++request.attempt;
+        if (status == 0 && request.attempt == 1)
+            request.url.setHost(url.host() == "api.music.yandex.ru" ? "api.music.yandex.net" : "api.music.yandex.ru");
+        const auto key = QString::number(id);
+        m_apiRetryPending.insert(key);
+        const int generation = m_apiGeneration;
+        setStatus(QString("Яндекс временно не ответил · повтор %1/2 · получено %2 / %3")
+                      .arg(request.attempt).arg(m_harvest.size()).arg(m_expectedTracks));
+        const int delay = qMax((status == 429 ? 1500 : 300) * request.attempt, qBound(0, retryAfterMs, 60000));
+        QTimer::singleShot(delay, this,
+                          [this, key, generation, request] {
+            if (m_nativeTask != Collect || generation != m_apiGeneration)
+                return;
+            m_apiRetryPending.remove(key);
+            m_apiQueue.prepend(request);
+            dispatchYandex();
+        });
+    } else if (url.path().startsWith("/users/") && status != 401 && status != 403) {
+        // The modern endpoint can still paginate if this account has no legacy route.
+        advanceYandex();
+    } else {
+        failYandexIncomplete(status == 401 || status == 403
+                                 ? QString("Яндекс не принял сессию (HTTP %1). Войди в аккаунт заново.").arg(status)
+                                 : QString("Запрос к API не завершён (HTTP %1).").arg(status));
+    }
+    if (m_nativeTask == Collect) {
+        dispatchYandex();
+        finishApiCollection();
+    }
 }
 void WebLoginManager::consumeApiPayload(const QUrl& url, const QJsonValue& payload)
 {
@@ -383,6 +453,7 @@ void WebLoginManager::consumeApiPayload(const QUrl& url, const QJsonValue& paylo
         return;
     const bool preview = url.path() == "/landing-blocks/collection/playlist-with-likes";
     const bool playlist = url.path().startsWith("/playlist/");
+    const bool legacy = url.path().startsWith("/users/");
     const bool collection = m_nativeUrl.path() == "/collection" || m_nativeUrl.path() == "/collection/";
     const auto data = ServicePayload::yandex(payload);
     if (preview) {
@@ -392,65 +463,164 @@ void WebLoginManager::consumeApiPayload(const QUrl& url, const QJsonValue& paylo
     } else if (playlist) {
         if (m_apiPlaylist.isEmpty() || url.path() != "/playlist/" + m_apiPlaylist)
             return;
-    } else if (m_apiPlaylist.isEmpty())
+        if (!data.playlistUuid.isEmpty() && data.playlistUuid != m_apiPlaylist) {
+            failYandexIncomplete("API вернул другой плейлист.");
+            return;
+        }
+    } else if (legacy) {
+        if (m_apiOwner.isEmpty() || url.path() != "/users/" + m_apiOwner + "/playlists/" + m_apiKind)
+            return;
+        if ((!data.ownerId.isEmpty() && data.ownerId != m_apiOwner) ||
+            (!data.kind.isEmpty() && data.kind != m_apiKind)) {
+            failYandexIncomplete("API вернул другой плейлист или владельца.");
+            return;
+        }
+    } else if (m_apiPlaylist.isEmpty()) {
         return;
+    }
+    m_apiBase = "https://" + url.host();
     ++m_apiResponses;
-    if (preview || playlist) {
-        if (data.fullPlaylist)
-            m_expectedTracks = data.total;
-        else
-            m_expectedTracks = qMax(m_expectedTracks, data.total);
-        if (m_expectedTracks > 10000) {
+    const int before = m_harvest.size(), beforeOrder = m_apiOrder.size(), beforeTotal = m_expectedTracks;
+    if (preview || playlist || legacy) {
+        m_expectedTracks = qMax(m_expectedTracks, data.total); // Never shrink to a later page's size.
+        m_apiTotalKnown = m_apiTotalKnown || data.totalKnown;
+        if (m_expectedTracks > 10000 || data.order.size() > 10000) {
             finishNative("За один импорт можно получить до 10 000 треков.");
             return;
         }
         if (!data.title.isEmpty())
             m_collectionName = data.title;
-    }
-    if (playlist && data.fullPlaylist && data.total == 0 && data.order.isEmpty()) {
-        finishNative("Сервис сообщает, что этот список музыки пуст.");
-        return;
-    }
-    for (const auto& track : data.tracks) {
-        m_harvest[track.sourceUrl] = track;
-        if (!m_harvestOrder.contains(track.sourceUrl))
-            m_harvestOrder.append(track.sourceUrl);
-    }
-    if (playlist && data.fullPlaylist) {
-        for (const auto& key : data.order)
-            if (!m_apiOrder.contains(key))
-                m_apiOrder.append(key);
-        // Некоторые аккаунты получают только id треков, хотя запрошены richTracks.
-        QJsonArray missing;
-        const auto flush = [&] {
-            if (!missing.isEmpty()) {
-                requestYandex(QUrl("https://api.music.yandex.ru/tracks"), missing);
-                missing = {};
-            }
-        };
-        for (const auto& key : m_apiOrder)
-            if (!m_harvest.contains(key)) {
-                missing.append(QUrl(key).path().section('/', -1));
-                if (missing.size() == 200)
-                    flush();
-            }
-        flush();
-        if (!data.order.isEmpty() && m_apiOrder.size() < m_expectedTracks) {
-            const int page = QUrlQuery(url).queryItemValue("page").toInt() + 1;
-            if (page <= 50)
-                requestYandex(QUrl("https://api.music.yandex.ru/playlist/" + m_apiPlaylist +
-                                   "?resumeStream=false&richTracks=true&pageSize=200&page=" + QString::number(page)));
+        if (!data.ownerId.isEmpty() && !data.kind.isEmpty()) {
+            m_apiOwner = data.ownerId;
+            m_apiKind = data.kind;
         }
     }
-    if (preview && !m_apiPlaylist.isEmpty())
-        requestYandex(QUrl("https://api.music.yandex.ru/playlist/" + m_apiPlaylist +
-                           "?resumeStream=false&richTracks=true&pageSize=200&page=0"));
-    setStatus(QString("Получено из API Яндекса: %1 / %2…").arg(m_harvest.size()).arg(m_expectedTracks));
+    for (const auto& track : data.tracks) {
+        // Metadata endpoints may return extra entries. Membership comes from the manifest only.
+        if (url.path() == "/tracks" && !m_apiOrder.contains(track.sourceUrl))
+            continue;
+        m_harvest[track.sourceUrl] = track;
+    }
+    if ((playlist || legacy) && (data.fullPlaylist || m_apiTotalKnown)) {
+        if (m_expectedTracks == 0 && data.order.isEmpty()) {
+            finishNative("Сервис сообщает, что этот список музыки пуст.");
+            return;
+        }
+        bool validPage = false;
+        const auto pageText = QUrlQuery(url).queryItemValue("page");
+        const int page = pageText.isEmpty() ? 0 : pageText.toInt(&validPage);
+        if ((!pageText.isEmpty() && !validPage) || page < 0 || page > 50)
+            return;
+        // A later page can arrive first through CDP and report only its page size.
+        // It cannot establish a complete manifest without the beginning of the list.
+        const bool complete = (legacy || data.manifest || page == 0) && data.order.size() >= m_expectedTracks;
+        if (complete) {
+            m_apiPages.clear();
+            m_apiPages[0] = data.order;
+            m_apiManifestComplete = true;
+        } else if (!m_apiManifestComplete) {
+            bool repeated = false;
+            for (auto it = m_apiPages.cbegin(); it != m_apiPages.cend(); ++it)
+                repeated = repeated || (it.key() != page && it.value() == data.order);
+            if (data.order.isEmpty() || repeated) {
+                if (!m_apiLegacyRequested && !m_apiOwner.isEmpty()) {
+                    m_apiLegacyRequested = true;
+                    requestYandex(QUrl(m_apiBase + "/users/" + m_apiOwner + "/playlists/" + m_apiKind));
+                    return;
+                }
+                failYandexIncomplete(repeated ? "API повторил ту же страницу вместо продолжения."
+                                              : "API вернул пустую страницу до конца плейлиста.");
+                return;
+            }
+            // A small passive preview must not replace a more complete page already received.
+            if (data.order.size() >= m_apiPages.value(page).size())
+                m_apiPages[page] = data.order;
+        }
+        m_apiOrder.clear();
+        QSet<QString> seen;
+        for (int page = 0; m_apiPages.contains(page); ++page)
+            for (const auto& key : m_apiPages.value(page))
+                if (!seen.contains(key)) {
+                    seen.insert(key);
+                    m_apiOrder.append(key);
+                }
+        m_apiManifestComplete = m_apiTotalKnown && m_apiOrder.size() >= m_expectedTracks;
+    }
+    if (before != m_harvest.size() || beforeOrder != m_apiOrder.size() || beforeTotal != m_expectedTracks)
+        m_apiProgress.restart();
+    if (m_apiManifestComplete) {
+        int ready = 0;
+        for (const auto& key : m_apiOrder)
+            ready += m_harvest.contains(key);
+        setStatus(QString("Получено треков Яндекса: %1 / %2 · %3%")
+                      .arg(ready).arg(m_apiOrder.size()).arg(m_apiOrder.isEmpty() ? 0 : 100 * ready / m_apiOrder.size()));
+    }
+    advanceYandex();
+}
+void WebLoginManager::advanceYandex()
+{
+    if (m_nativeTask != Collect || !m_apiRequests.isEmpty() || !m_apiQueue.isEmpty() || !m_apiRetryPending.isEmpty())
+        return;
+    if (!m_apiManifestComplete) {
+        if (!m_apiLegacyRequested && !m_apiOwner.isEmpty() && !m_apiKind.isEmpty()) {
+            m_apiLegacyRequested = true;
+            requestYandex(QUrl(m_apiBase + "/users/" + m_apiOwner + "/playlists/" + m_apiKind));
+            return;
+        }
+        int page = 0;
+        while (m_apiPages.contains(page))
+            ++page;
+        if (page > 50) {
+            failYandexIncomplete("Достигнут предел страниц API.");
+            return;
+        }
+        if (!m_apiPlaylist.isEmpty())
+            requestYandex(QUrl(m_apiBase + "/playlist/" + m_apiPlaylist +
+                               "?resumeStream=false&richTracks=true&pageSize=200&page=" + QString::number(page)));
+        setStatus(QString("Читаем список Яндекса: %1 / %2 · страница %3")
+                      .arg(m_apiOrder.size()).arg(m_expectedTracks).arg(page + 1));
+        return;
+    }
+    QJsonArray batch;
+    const auto enqueueBatch = [&] {
+        if (!batch.isEmpty()) {
+            requestYandex(QUrl(m_apiBase + "/tracks"), batch);
+            batch = {};
+        }
+    };
+    int ready = 0;
+    for (const auto& key : m_apiOrder) {
+        if (m_harvest.contains(key)) {
+            ++ready;
+            continue;
+        }
+        if (++m_apiTrackAttempts[key] > 3) {
+            failYandexIncomplete("API не вернул метаданные части записей после трёх попыток.");
+            return;
+        }
+        batch.append(QUrl(key).path().section('/', -1));
+        if (batch.size() == 200)
+            enqueueBatch();
+    }
+    enqueueBatch();
+    setStatus(QString("Получено треков Яндекса: %1 / %2 · %3%")
+                  .arg(ready).arg(m_apiOrder.size()).arg(m_apiOrder.isEmpty() ? 0 : 100 * ready / m_apiOrder.size()));
     finishApiCollection();
+}
+void WebLoginManager::failYandexIncomplete(const QString& reason)
+{
+    int ready = 0;
+    for (const auto& key : m_apiOrder)
+        ready += m_harvest.contains(key);
+    const int expected = qMax(m_expectedTracks, int(m_apiOrder.size()));
+    const auto progress = expected > 0 ? QString("Получено %1 из %2 треков. ").arg(ready).arg(expected)
+                                      : QString("Полный размер плейлиста не подтверждён. ");
+    finishNative("Яндекс: " + progress + reason + " Неполный список не сохранён; повтори импорт.");
 }
 bool WebLoginManager::finishApiCollection()
 {
-    if (m_nativeTask != Collect || m_apiOrder.isEmpty() || !m_apiRequests.isEmpty() || !m_apiQueue.isEmpty() ||
+    if (m_nativeTask != Collect || !m_apiTotalKnown || !m_apiManifestComplete || m_apiOrder.isEmpty() ||
+        !m_apiRequests.isEmpty() || !m_apiQueue.isEmpty() || !m_apiRetryPending.isEmpty() ||
         m_apiOrder.size() < m_expectedTracks)
         return false;
     QVector<Track> tracks;
@@ -587,8 +757,13 @@ void WebLoginManager::nativeTick()
     const int limit = m_nativeTask == Login                                                         ? 180000
                       : m_nativeTask == Resolve                                                     ? 25000
                       : m_nativeTask == Search || m_nativeTask == Wave || m_nativeTask == Recommend ? 35000
+                      : m_nativeTask == Collect && m_nativeSlug == "yandex"                        ? 600000
                                                                                                     : 240000;
     if (m_nativeElapsed.elapsed() > limit) {
+        if (m_nativeTask == Collect && m_nativeSlug == "yandex") {
+            failYandexIncomplete("Истекло время ожидания API.");
+            return;
+        }
         finishNative(
             m_nativeTask == Collect ? "Сервис не завершил выдачу списка. Попробуй открыть сам плейлист вместо страницы "
                                       "всей музыки."
@@ -626,14 +801,16 @@ void WebLoginManager::nativeTick()
         }
         return;
     }
-    if (m_nativeTask == Collect && m_nativeSlug == "yandex" && m_externalMode && m_apiResponses == 0 &&
-        m_nativeElapsed.elapsed() > 5000) {
+    if (m_nativeTask == Collect && m_nativeSlug == "yandex" && !m_collectLogin && m_apiRequested.isEmpty() &&
+        m_nativeElapsed.elapsed() > 2500) {
         if (!m_apiPlaylist.isEmpty())
             requestYandex(QUrl("https://api.music.yandex.ru/playlist/" + m_apiPlaylist +
                                "?resumeStream=false&richTracks=true&pageSize=200&page=0"));
         else if (m_nativeUrl.path() == "/collection" || m_nativeUrl.path() == "/collection/")
             requestYandex(QUrl("https://api.music.yandex.ru/landing-blocks/collection/playlist-with-likes?count=8"));
     }
+    if (m_apiNativeScript != 0)
+        return;
     QString script =
         nativeScript(m_nativeTask == Login                                                            ? "login.js"
                      : m_nativeTask == Collect || m_nativeTask == Search || m_nativeTask == Recommend ? "harvest.js"
@@ -700,6 +877,16 @@ QVector<Track> WebLoginManager::parseHarvest(const QByteArray& json, const QStri
 }
 void WebLoginManager::submitScriptResult(int id, const QVariant& result)
 {
+    if (m_nativeTask == Collect && m_apiNativeScript != 0 && id == m_apiNativeScript) {
+        const auto response = QJsonDocument::fromJson(result.toString().toUtf8()).object();
+        const int request = m_apiNativeRequest;
+        m_apiNativeScript = 0;
+        m_scriptPending = false;
+        if (m_apiRequests.contains(request))
+            receiveYandex(request, m_apiRequests.value(request).url, response.value("payload"),
+                          response.value("status").toInt(), qBound(0, response.value("retryAfterMs").toInt(), 60000));
+        return;
+    }
     if (id != m_scriptId || !m_scriptPending || m_nativeTask == Idle)
         return;
     m_scriptPending = false;
@@ -822,14 +1009,11 @@ void WebLoginManager::submitScriptResult(int id, const QVariant& result)
         navigateNative(m_nativeUrl);
         return;
     }
-    // Порядок плейлиста определяет пагинация API; не завершаем по восьми
-    // строкам превью и не затираем метаданные текстом из DOM.
-    if (!m_apiOrder.isEmpty() || !m_apiRequests.isEmpty() || !m_apiQueue.isEmpty()) {
-        if (!finishApiCollection() && m_nativeElapsed.elapsed() > 30000 && m_apiRequests.isEmpty())
-            finishNative(QString("API Яндекса вернул список, но не все метаданные треков (%1 / %2). Неполный список не "
-                                 "сохранён; открой отчёт импорта.")
-                             .arg(m_harvest.size())
-                             .arg(m_expectedTracks));
+    // DOM rows are a virtualized preview, never proof of a complete Yandex playlist.
+    if (m_nativeSlug == "yandex") {
+        if (!finishApiCollection() && m_apiRequests.isEmpty() && m_apiQueue.isEmpty() &&
+            m_apiRetryPending.isEmpty() && m_apiProgress.elapsed() > 30000)
+            failYandexIncomplete("Сервис не подтвердил полный список через API.");
         return;
     }
     const auto tracks = parseHarvest(bytes, m_nativeSlug);
@@ -928,6 +1112,9 @@ void WebLoginManager::finishNative(const QString& error)
     if (task == Collect && !error.isEmpty())
         saveImportReport(error);
     m_nativeTask = Idle;
+    ++m_apiGeneration;
+    m_apiNativeScript = 0;
+    m_apiRetryPending.clear();
     if (task == Wave || task == Recommend)
         m_nativeVisible = false;
     m_apiRequests.clear();
@@ -1004,7 +1191,11 @@ void WebLoginManager::saveImportReport(const QString& error)
                                     {"ordered", m_apiOrder.size()},
                                     {"pending", m_apiRequests.size()},
                                     {"queued", m_apiQueue.size()},
-                                    {"httpStatus", m_apiHttpStatus}}},
+                                    {"httpStatus", m_apiHttpStatus},
+                                    {"pages", m_apiPages.size()},
+                                    {"totalKnown", m_apiTotalKnown},
+                                    {"manifestComplete", m_apiManifestComplete},
+                                    {"retryPending", m_apiRetryPending.size()}}},
                 {"browserProtocol", m_external ? m_external->protocolDiagnostic() : QJsonObject{}}})
             .toJson(QJsonDocument::Indented);
     if (file.write(bytes) == bytes.size() && file.commit())

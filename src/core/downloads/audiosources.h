@@ -96,6 +96,7 @@ class AudioSources : public QObject
     void downloadCandidate(const QVariantMap& candidate);
     // Разрешает поток аудио для прослушивания без скачивания.
     void previewCandidate(const QVariantMap& candidate);
+    void invalidatePreview(const QString& url);
     AudioSources* createWorker(QObject* parent) const;
     void searchMatches(const QVariantMap& target);
     static bool automaticMatch(const QVariantMap& target, const QVariantMap& candidate);
@@ -152,6 +153,7 @@ class AudioSources : public QObject
     OpenCatalog* m_catalog = nullptr;
     ZaycevCatalog* m_zaycev = nullptr;
     QHash<QString, QPair<qint64, QVariantList>> m_searchCache;
+    QHash<QString, QPair<qint64, QVariantMap>> m_previewCache;
     std::function<BrowserSession*(QObject*)> m_browserFactory;
     QProcess* m_process = nullptr;
     QTimer m_timer;

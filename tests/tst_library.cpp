@@ -297,6 +297,38 @@ private slots:
         player.stop();
     }
 
+    void previewCachePreservesRequestMetadataAndCanBeInvalidated()
+    {
+        AudioSources preview(nullptr, nullptr, nullptr, nullptr, {}, true);
+        QSignalSpy resolved(&preview, &AudioSources::previewResolved);
+        QVariantMap first{{"url", "https://www.youtube.com/watch?v=cache-fixture"},
+                          {"source", "YouTube"}, {"title", "First title"}, {"queueId", -1001},
+                          {"mediaUrl", "https://cdn.example/song.m4a"}, {"mediaVerified", true},
+                          {"streamHeaders", QVariantMap{{"User-Agent", "Aurora fixture"}}}};
+        preview.previewCandidate(first);
+        QCOMPARE(resolved.count(), 1);
+        QVERIFY(resolved.last()[1].toString().isEmpty());
+        auto second = first;
+        second.remove("mediaUrl");
+        second.remove("mediaVerified");
+        second.remove("streamHeaders");
+        second["queueId"] = -2002;
+        second["title"] = "Updated title";
+        preview.previewCandidate(second);
+        QCOMPARE(resolved.count(), 2);
+        const auto cached = resolved.last()[0].toMap();
+        QCOMPARE(cached.value("title").toString(), QString("Updated title"));
+        QCOMPARE(cached.value("queueId").toInt(), -2002);
+        QCOMPARE(cached.value("mediaUrl"), first.value("mediaUrl"));
+        QCOMPARE(cached.value("streamHeaders"), first.value("streamHeaders"));
+        QVERIFY(!preview.busy());
+        preview.invalidatePreview(first.value("url").toString());
+        preview.previewCandidate(second);
+        QCOMPARE(resolved.count(), 3);
+        QVERIFY(!resolved.last()[1].toString().isEmpty());
+        QVERIFY(resolved.last()[0].toMap().isEmpty());
+    }
+
     void onlineFallbackTriesEnabledServicesWithoutDownloadingAndCancels()
     {
 #ifdef Q_OS_WIN
@@ -355,6 +387,13 @@ private slots:
         QVERIFY(library.trackById(id).filePath.isEmpty());
         QCOMPARE(player.queue().size(), 1);
         feed.playLibraryTrack(id);
+        auto* deadline = feed.findChild<QTimer*>("onlineResolutionDeadline");
+        QVERIFY(deadline);
+        QVERIFY(deadline->isActive());
+        QVERIFY(QMetaObject::invokeMethod(deadline, "timeout", Qt::DirectConnection));
+        QVERIFY(feed.playbackStatus().contains("45 секунд"));
+        QCOMPARE(feed.resolvingId(), 0);
+        QVERIFY(!deadline->isActive());
         player.stop();
         QTest::qWait(150);
         QVERIFY(feed.playbackStatus().isEmpty());
@@ -999,6 +1038,11 @@ private slots:
         QVERIFY(BrowserSession::isCollectionApi(QUrl("https://api.music.yandex.ru/playlist/lk.test")));
         QVERIFY(!BrowserSession::isCollectionApi(QUrl("https://api.music.yandex.ru.evil.test/tracks")));
         QVERIFY(!BrowserSession::isCollectionApi(QUrl("https://api.music.yandex.ru/account")));
+        QVERIFY(BrowserSession::isCollectionApi(QUrl("https://api.music.yandex.net/users/99/playlists/3")));
+        QVERIFY(BrowserSession::jsonFetchScript(QUrl("https://api.music.yandex.ru.evil.test/tracks")).isEmpty());
+        QCOMPARE(ServicePayload::canonicalYandexTrackUrl(QUrl("https://music.yandex.ru/album/77/track/23?from=playlist")),
+                 QString("https://music.yandex.ru/track/23"));
+        QVERIFY(ServicePayload::canonicalYandexTrackUrl(QUrl("https://music.yandex.ru.evil.test/track/23")).isEmpty());
     }
     void browserSeedsCookiesAndNavigatesWithoutRendererUserAgent() {
 #ifndef Q_OS_WIN
@@ -1086,6 +1130,169 @@ private slots:
             if(call.first=="Runtime.evaluate" && call.second.value("expression").toString().contains("o.body.append('trackIds',id)"))hydrated=true;
         }
         QVERIFY(correctRoute);QVERIFY(hydrated);web.logout("yandex");
+#endif
+    }
+    void yandexLargePlaylistImport_data()
+    {
+        QTest::addColumn<QString>("scenario");
+        for (const auto& scenario : QStringList{"nested-manifest", "paged-shrinking-count", "metadata-retry",
+                                               "repeated-page", "metadata-permanently-missing", "cancel-retry",
+                                               "legacy-manifest", "api-unavailable-dom198", "reimport-198", "out-of-order-page"})
+            QTest::newRow(qPrintable(scenario)) << scenario;
+    }
+    void yandexLargePlaylistImport()
+    {
+#ifdef Q_OS_WIN
+        QSKIP("Fixture browser uses a POSIX launcher");
+#else
+        QFETCH(QString, scenario);
+        QTemporaryDir dir;
+        const auto executable = dir.filePath("brave");
+        QFile browser(executable);
+        QVERIFY(browser.open(QIODevice::WriteOnly));
+        browser.write("#!/bin/sh\nexec sleep 30\n");
+        browser.close();
+        QVERIFY(browser.setPermissions(QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner));
+        const auto previousPath = qgetenv("PATH");
+        const auto restore = qScopeGuard([&] { qputenv("PATH", previousPath); });
+        qputenv("PATH", dir.path().toUtf8() + ':' + previousPath);
+        constexpr int total = 2037;
+        const QString uuid = "lk.b964a04c-643d-49f4-9c60-927c0552288b";
+        const auto rich = [](int id) {
+            return QJsonObject{{"id", QString::number(id)}, {"title", "Song " + QString::number(id)},
+                               {"artists", QJsonArray{QJsonObject{{"name", "Artist"}}}}, {"durationMs", 120000}};
+        };
+        QJsonArray dom;
+        for (int id = total; id > total - 198; --id)
+            dom.append(QJsonObject{{"title", "Preview " + QString::number(id)},
+                                   {"url", "https://music.yandex.ru/track/" + QString::number(id)}});
+        SettingsStore settings;
+        DevToolsTransport transport;
+        BrowserProtocol protocol;
+        protocol.harvestOverride = {{"atBottom", true}, {"complete", true}, {"loading", false}, {"tracks", dom}};
+        int metadataCalls = 0, playlistCalls = 0, legacyCalls = 0;
+        int largestBatch = 0;
+        protocol.apiFixture = [&](const QJsonObject& args) {
+            const QUrl url(args.value("url").toString());
+            if (url.path() == "/tracks") {
+                ++metadataCalls;
+                const auto ids = args.value("ids").toArray();
+                largestBatch = qMax(largestBatch, int(ids.size()));
+                if ((scenario == "metadata-retry" && metadataCalls == 1) || scenario == "cancel-retry")
+                    return QJsonObject{{"status", 429}};
+                QJsonArray entries;
+                for (const auto& value : ids) {
+                    const int id = value.toString().toInt();
+                    if (scenario == "metadata-permanently-missing" && id == 17)
+                        continue;
+                    entries.append(rich(id));
+                }
+                return QJsonObject{{"status", 200}, {"payload", entries}};
+            }
+            if (scenario == "api-unavailable-dom198")
+                return QJsonObject{{"status", 0}};
+            const bool legacy = url.path().startsWith("/users/");
+            if (legacy) ++legacyCalls;
+            else ++playlistCalls;
+            QJsonArray ids;
+            if (scenario == "paged-shrinking-count" || scenario == "out-of-order-page" || scenario == "repeated-page" ||
+                (scenario == "legacy-manifest" && !legacy)) {
+                const int page = scenario == "repeated-page" ? 0 : QUrlQuery(url).queryItemValue("page").toInt();
+                for (int index = page * 200; index < qMin(total, (page + 1) * 200); ++index)
+                    ids.append(QJsonObject{{"id", total - index}});
+                QJsonObject playlist{{"playlistUuid", uuid}, {"trackCount", page == 0 ? total : 198}, {"tracks", ids}};
+                if (scenario == "legacy-manifest") {
+                    playlist["owner"] = QJsonObject{{"uid", "99"}};
+                    playlist["kind"] = "3";
+                }
+                return QJsonObject{{"status", 200}, {"payload", QJsonObject{{"result", playlist}}}};
+            }
+            for (int id = total; id > 0; --id)
+                ids.append(id % 2 ? QJsonValue(QString::number(id) + ":77") : QJsonValue(QJsonObject{{"id", id}}));
+            QJsonArray preview;
+            for (int id = total; id > total - 198; --id)
+                preview.append(rich(id));
+            return QJsonObject{{"status", 200}, {"payload", QJsonObject{{"result", QJsonObject{
+                {"pager", QJsonObject{{"total", total}}},
+                {"playlist", QJsonObject{{"playlistUuid", uuid}, {"title", "Large playlist"},
+                    {"trackCount", 198}, {"trackIds", ids}, {"tracks", preview}}}}}}}};
+        };
+        WebLoginManager web(&settings, nullptr, [&](QObject* parent) {
+            return new BrowserSession(parent, &transport, &protocol, [] { return 9222; });
+        });
+        LibraryModel library(nullptr, dir.filePath("large.db"));
+        int savedId = 0;
+        if (scenario == "reimport-198") {
+            for (int id = 1; id <= 198; ++id) {
+                Track old;
+                old.title = "Song " + QString::number(id);
+                old.artist = "Artist";
+                old.source = "Яндекс Музыка";
+                old.sourceUrl = "https://music.yandex.ru/album/77/track/" + QString::number(id) + "?from=playlist";
+                if (id == 1) old.filePath = wav(dir.filePath("saved.wav"));
+                const int local = library.repository().saveTrack(old);
+                QVERIFY(local > 0);
+                if (id == 17) savedId = local;
+            }
+            QVERIFY(library.repository().setRating(savedId, 5));
+            QVERIFY(library.repository().recordListen(savedId, 3000, false));
+        }
+        LibraryExchange exchange(&library, &settings, nullptr, nullptr, &web);
+        QSignalSpy completed(&exchange, &LibraryExchange::completed);
+        QSignalSpy collected(&web, &WebLoginManager::collectionReady);
+        const QString link = "https://music.yandex.ru/playlists/" + uuid +
+                             "?ref_id=fixture&utm_source=mobile_ios&utm_medium=share_link_tg";
+        exchange.importUrl(link);
+        if (scenario == "out-of-order-page") {
+            QTRY_VERIFY_WITH_TIMEOUT(protocol.isConnected(), 4000);
+            QTRY_VERIFY_WITH_TIMEOUT(!protocol.navigationUrl.isEmpty(), 4000);
+            QJsonArray page;
+            for (int index = 200; index < 400; ++index)
+                page.append(QJsonObject{{"id", total - index}});
+            protocol.responseBody = {{"result", QJsonObject{{"playlistUuid", uuid}, {"trackCount", 198}, {"tracks", page}}}};
+            emit protocol.eventReceived("Network.requestWillBeSent", {{"requestId", "page-first"},
+                {"request", QJsonObject{{"url", "https://api.music.yandex.net/playlist/" + uuid + "?page=1"}}}});
+            emit protocol.eventReceived("Network.loadingFinished", {{"requestId", "page-first"}, {"encodedDataLength", 4096}});
+        }
+        if (scenario == "cancel-retry") {
+            QTRY_VERIFY_WITH_TIMEOUT(metadataCalls > 0, 8000);
+            const int attemptsAtCancellation = metadataCalls;
+            exchange.cancel();
+            QTest::qWait(1800);
+            QVERIFY(!exchange.busy());
+            QCOMPARE(metadataCalls, attemptsAtCancellation);
+            QCOMPARE(library.repository().count(), 0);
+            QVERIFY(completed.isEmpty());
+            return;
+        }
+        QTRY_VERIFY_WITH_TIMEOUT(!exchange.busy(), 12000);
+        if (scenario == "repeated-page" || scenario == "metadata-permanently-missing" ||
+            scenario == "api-unavailable-dom198") {
+            QVERIFY(completed.isEmpty());
+            QCOMPARE(library.repository().count(), 0);
+            QVERIFY(library.repository().playlists().isEmpty());
+            QVERIFY(exchange.status().contains("Неполный список"));
+            return;
+        }
+        QCOMPARE(completed.count(), 1);
+        QCOMPARE(library.repository().count(), total);
+        const auto tracks = library.repository().tracks({}, completed[0][0].toInt());
+        QCOMPARE(tracks.size(), total);
+        QCOMPARE(tracks.first().title, QString("Song 2037"));
+        QCOMPARE(tracks.last().title, QString("Song 1"));
+        QVERIFY(largestBatch <= 200);
+        QVERIFY(metadataCalls >= 10);
+        if (scenario == "reimport-198") {
+            QCOMPARE(tracks[total - 17].id, savedId);
+            QCOMPARE(library.repository().track(savedId).rating, 5);
+            QCOMPARE(library.repository().track(savedId).listenMs, 3000);
+            QVERIFY(QFileInfo::exists(tracks.last().filePath));
+        }
+        if (scenario == "paged-shrinking-count") QCOMPARE(playlistCalls, 11);
+        if (scenario == "legacy-manifest") QCOMPARE(legacyCalls, 1);
+        // API responses from a cancelled/completed operation cannot import another partial list.
+        emit web.collectionReady({}, {}, "late-fixture");
+        QCOMPARE(completed.count(), 1);
 #endif
     }
     void unrecognizedWebPageReportsStructureWithoutSessionData() {

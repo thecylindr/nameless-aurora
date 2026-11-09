@@ -2,6 +2,7 @@
 
 #include "settingsstore.h"
 
+#include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
@@ -47,6 +48,11 @@ QString findExecutable(const QString& configured, const QStringList& fallbackNam
         }
     }
     for (const QString& name : fallbackNames) {
+#ifdef Q_OS_WIN
+        const auto bundled = existingExecutable(QDir(QCoreApplication::applicationDirPath()).filePath(executableName(name)));
+        if (!bundled.isEmpty())
+            return bundled;
+#endif
         const QString found = QStandardPaths::findExecutable(name);
         if (!found.isEmpty()) {
             return found;

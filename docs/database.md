@@ -1,5 +1,10 @@
 # SQLite-медиатека Aurora
 
+![Схема всех таблиц SQLite](database-schema.svg)
+
+[Открыть схему SVG](database-schema.svg) · [SQL всех таблиц, индексов и представления](database-schema.sql).
+SQL-снимок предназначен для пустой БД; существующую медиатеку мигрирует приложение.
+
 `LibraryRepository` владеет отдельным соединением QSQLITE, сущность `Track` хранит данные трека, `LibraryModel` предоставляет роли QML. Все значения в изменяющих запросах передаются через параметры. Имена таблиц во внутреннем `lookup` выбираются только кодом репозитория.
 
 Схема версии 2 (`PRAGMA user_version=2`), внешние ключи включены для соединения. Используются WAL и `busy_timeout=5000`.
@@ -35,10 +40,13 @@ erDiagram
         text file_path UK
         text source_url
         text cover_path
+        text format
         integer duration
         integer bitrate
         integer rating
         integer play_count
+        integer last_played
+        integer skip_count
         integer listen_ms
     }
     playlists {
@@ -60,7 +68,7 @@ erDiagram
     }
 ```
 
-`file_path` допускает NULL для перенесённых записей, у которых пока нет аудиофайла. `rating` ограничен 0–5, время неотрицательно. Состав плейлиста уникален по паре `(playlist_id, track_id)`, порядок — по `(playlist_id, position)`. Удаление плейлиста удаляет его состав; удаление трека удаляет его связи и историю. Аудиофайлы при этом сохраняются.
+`file_path` допускает NULL для перенесённых записей, у которых пока нет аудиофайла. `rating` ограничен 0–5, `duration >= 0`, `listened_ms > 0`, `skipped IN (0,1)`. Длительность и прослушанное время измеряются в миллисекундах; `created_at`, `last_played`, `played_at` — Unix-время в миллисекундах. Состав плейлиста уникален по паре `(playlist_id, track_id)`, порядок — по `(playlist_id, position)`. Удаление плейлиста удаляет его состав; удаление трека удаляет его связи и историю. Аудиофайлы при этом сохраняются.
 
 Представление `track_details` соединяет трек с исполнителем, альбомом и источником, предоставляя модель чтения для интерфейса. Например:
 

@@ -13,6 +13,7 @@ bool MediaSniffer::isAudioUrl(const QUrl& url)
     return extension.match(url.path()).hasMatch() ||
            (url.path().contains("/get-mp3/") || url.path().contains("/get-mp4/"));
 }
+#ifdef AURORA_WEBENGINE
 void MediaSniffer::interceptRequest(QWebEngineUrlRequestInfo& info)
 {
     // Игнорируем запросы с чужих доменов: нас интересует только трафик текущего сервиса.
@@ -21,3 +22,5 @@ void MediaSniffer::interceptRequest(QWebEngineUrlRequestInfo& info)
     if (isAudioUrl(info.requestUrl()))
         emit audioRequested(info.requestUrl());
 }
+
+#endif

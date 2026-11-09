@@ -9,13 +9,27 @@ namespace
 // Возвращает идентификатор трека, только если это строка из 1–20 цифр (защита от произвольных полей API).
 QString identifier(const QJsonValue& value)
 {
-    const QString id = value.toVariant().toString();
-    return QRegularExpression("^[0-9]{1,20}$").match(id).hasMatch() ? id : QString();
+    auto identity = value;
+    if (value.isObject()) {
+        const auto object = value.toObject();
+        identity = object.value("id").isUndefined() ? object.value("trackId") : object.value("id");
+    }
+    const QString id = identity.toVariant().toString();
+    const auto match = QRegularExpression("^([0-9]{1,20})(?::[0-9]{1,20})?$").match(id);
+    return match.hasMatch() ? match.captured(1) : QString();
 }
 } // namespace
 QString ServicePayload::yandexTrackUrl(const QString& id)
 {
     return "https://music.yandex.ru/track/" + id;
+}
+QString ServicePayload::canonicalYandexTrackUrl(const QUrl& url)
+{
+    if ((url.scheme() != "https" && url.scheme() != "http") || !url.userInfo().isEmpty() ||
+        !QRegularExpression("^music\\.yandex\\.(ru|com|by|kz|uz)$").match(url.host()).hasMatch())
+        return {};
+    const auto match = QRegularExpression("(?:^|/)track/([0-9]{1,20})/?$").match(url.path());
+    return match.hasMatch() ? yandexTrackUrl(match.captured(1)) : QString();
 }
 QVector<Track> ServicePayload::yandexWave(const QJsonValue& payload)
 {
@@ -38,17 +52,46 @@ ServicePayload::Collection ServicePayload::yandex(const QJsonValue& payload)
     // Некоторые ответы оборачивают данные в {"result": ...} — снимаем обёртку.
     if (root.isObject() && root.toObject().contains("result"))
         root = root.toObject().value("result");
-    const auto object = root.toObject();
-    const auto playlist = object.value("playlist").toObject();
-    out.playlistUuid = object.value("playlistUuid").toString(playlist.value("playlistUuid").toString());
-    // Допускаем только безопасный идентификатор плейлиста, иначе сбрасываем его.
+    const auto envelope = root.toObject();
+    const auto nested = envelope.value("playlist").toObject();
+    const auto object = nested.contains("tracks") || nested.contains("trackIds") ? nested : envelope;
+    out.playlistUuid = object.value("playlistUuid").toString(nested.value("playlistUuid").toString());
     if (!QRegularExpression("^[A-Za-z0-9_.-]{1,100}$").match(out.playlistUuid).hasMatch())
         out.playlistUuid.clear();
-    out.title = object.value("title").toString(playlist.value("title").toString());
-    out.fullPlaylist = object.contains("trackCount") && object.value("tracks").isArray();
-    // Общее число треков берём из trackCount (или summary.count) и ограничиваем сверху.
-    out.total =
-        qBound(0, object.value("trackCount").toInt(object.value("summary").toObject().value("count").toInt()), 100000);
+    out.title = object.value("title").toString(nested.value("title").toString());
+    out.ownerId = identifier(object.value("owner").toObject().value("uid"));
+    if (out.ownerId.isEmpty())
+        out.ownerId = identifier(object.value("ownerId"));
+    out.kind = identifier(object.value("kind"));
+    // A per-page count must never hide a larger total from the enclosing pager.
+    for (const auto& holder : {envelope, nested}) {
+        for (const auto& count : {holder.value("trackCount"), holder.value("total"), holder.value("totalCount"),
+                                  holder.value("summary").toObject().value("count"),
+                                  holder.value("pager").toObject().value("total"),
+                                  holder.value("paging").toObject().value("total")}) {
+            bool valid = false;
+            const auto number = count.toVariant().toString().toInt(&valid);
+            if (valid && number >= 0) {
+                out.totalKnown = true;
+                out.total = qMax(out.total, qMin(number, 100001));
+            }
+        }
+    }
+    const auto ids = object.value("trackIds").toArray();
+    out.manifest = object.value("trackIds").isArray();
+    if (out.manifest) {
+        out.total = qMax(out.total, int(ids.size()));
+        out.totalKnown = true;
+        QSet<QString> ordered;
+        for (const auto& value : ids) {
+            const auto id = identifier(value);
+            if (!id.isEmpty() && !ordered.contains(id)) {
+                ordered.insert(id);
+                out.order.append(yandexTrackUrl(id));
+            }
+        }
+    }
+    out.fullPlaylist = out.totalKnown && (object.value("tracks").isArray() || out.manifest);
     const auto entries = root.isArray() ? root.toArray() : object.value("tracks").toArray();
     QSet<QString> seen;
     for (const auto& entry : entries) {
@@ -61,7 +104,8 @@ ServicePayload::Collection ServicePayload::yandex(const QJsonValue& payload)
             continue;
         seen.insert(id);
         const auto url = yandexTrackUrl(id);
-        out.order.append(url);
+        if (!out.manifest)
+            out.order.append(url);
         if (track.value("title").toString().trimmed().isEmpty())
             continue;
         Track t;

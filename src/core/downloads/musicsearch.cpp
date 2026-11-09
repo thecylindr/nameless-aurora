@@ -2,6 +2,7 @@
 #include "audiosources.h"
 #include "../auth/webloginmanager.h"
 #include "../librarymodel.h"
+#include "../web/mediasniffer.h"
 #include "../downloadmanager.h"
 #include <QSettings>
 #include <QUrl>
@@ -28,16 +29,22 @@ MusicSearch::MusicSearch(LibraryModel* library, DownloadManager* downloads, Depe
                     return;
                 m_auditionTimer.stop();
                 m_auditionKey.clear();
-                m_status = error.isEmpty() ? "Слушаем онлайн · скачивание доступно отдельно" : error;
+                m_status = error.isEmpty() ? "Поток найден · подключаем аудио…" : error;
                 emit changed();
                 if (error.isEmpty())
                     emit playRequested(candidate);
             });
+    connect(m_audition, &AudioSources::changed, this, [this] {
+        if (!m_auditionKey.isEmpty() && m_audition->busy()) {
+            m_status = m_audition->status();
+            emit changed();
+        }
+    });
     m_auditionTimer.setSingleShot(true);
-    m_auditionTimer.setInterval(45000);
+    m_auditionTimer.setInterval(20000);
     connect(&m_auditionTimer, &QTimer::timeout, this, [this] {
         cancelAudition();
-        m_status = "Сервис не предоставил поток за 45 секунд. Выбери другую запись.";
+        m_status = "Сервис не предоставил поток за 20 секунд. Выбери другую запись.";
         emit changed();
     });
     connect(web, &WebLoginManager::mediaReady, this, [this](int request, const QUrl& url, const QString& error) {
@@ -49,7 +56,7 @@ MusicSearch::MusicSearch(LibraryModel* library, DownloadManager* downloads, Depe
         m_auditionRequest = 0;
         m_auditionKey.clear();
         m_auditionTimer.stop();
-        m_status = error.isEmpty() ? "Слушаем VK онлайн" : error;
+        m_status = error.isEmpty() ? "Поток VK найден · подключаем аудио…" : error;
         emit changed();
         if (error.isEmpty() && url.scheme() == "https")
             emit playRequested(candidate);
@@ -140,6 +147,19 @@ void MusicSearch::cancelAudition()
         m_web->cancelMedia(request);
     emit changed();
 }
+void MusicSearch::reportPlaybackError(const QString& key, const QString& error)
+{
+    if (key.isEmpty() || error.isEmpty())
+        return;
+    m_audition->invalidatePreview(key);
+    for (const auto& item : m_results) {
+        if (item.toMap().value("key").toString() == key) {
+            m_status = error;
+            emit changed();
+            break;
+        }
+    }
+}
 void MusicSearch::listen(const QString& key)
 {
     cancelAudition();
@@ -161,7 +181,12 @@ void MusicSearch::listen(const QString& key)
     m_auditionTimer.start();
     m_status = "Подключаем прослушивание…";
     emit changed();
-    if (candidate.value("source").toString() == "VK") {
+    const QUrl direct(candidate.value("mediaUrl").toString());
+    if (MediaSniffer::isAudioUrl(direct) ||
+        (candidate.value("mediaVerified").toBool() && direct.scheme() == "https" && direct.userInfo().isEmpty())) {
+        candidate["mediaVerified"] = true;
+        m_audition->previewCandidate(candidate);
+    } else if (candidate.value("source").toString() == "VK") {
         // Для VK используем отрицательный идентификатор, чтобы не пересекаться с обычными загрузками.
         m_auditionRequest = -1000000 - (++m_auditionSerial);
         m_web->resolveMedia(m_auditionRequest, candidate);

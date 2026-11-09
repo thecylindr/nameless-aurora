@@ -38,6 +38,8 @@ class PlaybackController : public QObject
     Q_PROPERTY(bool hasTrack READ hasTrack NOTIFY currentTrackChanged)
     Q_PROPERTY(bool streaming READ streaming NOTIFY currentTrackChanged)
     Q_PROPERTY(bool streamLoading READ streamLoading NOTIFY streamLoadingChanged)
+    Q_PROPERTY(double streamBufferProgress READ streamBufferProgress NOTIFY streamLoadingChanged)
+    Q_PROPERTY(QString streamStatus READ streamStatus NOTIFY streamLoadingChanged)
     Q_PROPERTY(QString streamKey READ streamKey NOTIFY currentTrackChanged)
     Q_PROPERTY(bool seekable READ seekable NOTIFY seekableChanged)
     Q_PROPERTY(bool playing READ playing NOTIFY playingChanged)
@@ -115,6 +117,11 @@ class PlaybackController : public QObject
                (status == QMediaPlayer::LoadingMedia || status == QMediaPlayer::StalledMedia ||
                 status == QMediaPlayer::BufferingMedia);
     }
+    double streamBufferProgress() const
+    {
+        return m_streaming ? qBound(0.0, double(m_player.bufferProgress()), 1.0) : 0.0;
+    }
+    QString streamStatus() const;
     QString streamKey() const
     {
         return m_streaming ? m_streamCandidate.value("key", m_streamCandidate.value("url")).toString() : QString();

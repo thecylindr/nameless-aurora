@@ -6,8 +6,41 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(QT_QML_GENERATE_QMLLS_INI ON)
 set(QT_QML_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/qml")
 
-find_package(Qt6 6.12 REQUIRED COMPONENTS Core Gui Widgets Qml Quick Sql Multimedia QuickControls2 QuickShapes Network Concurrent WebEngineQuick ShaderTools)
-qt_standard_project_setup(REQUIRES 6.12)
+find_package(Qt6 6.11 REQUIRED COMPONENTS Core Gui Widgets Qml Quick Sql Multimedia QuickControls2 QuickShapes Network Concurrent ShaderTools)
+qt_standard_project_setup(REQUIRES 6.11)
+
+if(CMAKE_CROSSCOMPILING)
+    find_program(AURORA_HOST_QSB NAMES qsb HINTS "${QT_HOST_PATH}/bin" "${QT_HOST_PATH}/libexec" NO_DEFAULT_PATH
+        DOC "Shader baker executable runnable on the build host")
+    if(NOT AURORA_HOST_QSB)
+        message(FATAL_ERROR "Install host Qt ShaderTools, or set AURORA_HOST_QSB to a compatible host qsb executable.")
+    endif()
+    # Some downloaded kits import the target qsb.exe even during a cross build.
+    get_target_property(aurora_qsb_configs Qt6::qsb IMPORTED_CONFIGURATIONS)
+    set_property(TARGET Qt6::qsb PROPERTY IMPORTED_LOCATION "${AURORA_HOST_QSB}")
+    foreach(config IN LISTS aurora_qsb_configs)
+        set_property(TARGET Qt6::qsb PROPERTY IMPORTED_LOCATION_${config} "${AURORA_HOST_QSB}")
+    endforeach()
+endif()
+
+# WebEngine is unavailable in MinGW kits. Service login/import can also use
+# an installed Chromium browser through CDP.
+option(AURORA_WITH_WEBENGINE "Enable the embedded service browser" ON)
+if(AURORA_WITH_WEBENGINE)
+    find_package(Qt6 QUIET COMPONENTS WebEngineQuick)
+endif()
+configure_file(qml/web/ExternalBrowser.qml ${CMAKE_CURRENT_BINARY_DIR}/browser/NativeBrowser.qml COPYONLY)
+set(AURORA_BROWSER_QML ${CMAKE_CURRENT_BINARY_DIR}/browser/NativeBrowser.qml)
+set_source_files_properties(${AURORA_BROWSER_QML} PROPERTIES QT_RESOURCE_ALIAS qml/web/NativeBrowser.qml)
+if(AURORA_WITH_WEBENGINE AND TARGET Qt6::WebEngineQuick)
+    set(AURORA_BROWSER_QML qml/web/NativeBrowser.qml)
+    set(AURORA_WEBENGINE_AVAILABLE ON)
+else()
+    message(STATUS "Aurora: using an external Chromium browser (Qt WebEngine disabled or unavailable)")
+endif()
+if(MSVC)
+    add_compile_options(/utf-8)
+endif()
 
 qt_add_executable(AuroraPlayer
     src/app/main.cpp
@@ -69,7 +102,7 @@ qt_add_qml_module(AuroraPlayer
     URI AuroraPlayer
     VERSION 3.0
     QML_FILES
-        qml/web/NativeBrowser.qml
+        ${AURORA_BROWSER_QML}
         qml/Main.qml
         qml/Theme.qml
         qml/common/AuroraButton.qml
@@ -127,8 +160,12 @@ qt_add_qml_module(AuroraPlayer
 target_include_directories(AuroraPlayer PRIVATE src/core)
 target_link_libraries(AuroraPlayer PRIVATE
     Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Qml Qt6::Quick Qt6::Sql
-    Qt6::Multimedia Qt6::QuickControls2 Qt6::QuickShapes Qt6::Network Qt6::Concurrent Qt6::WebEngineQuick
+    Qt6::Multimedia Qt6::QuickControls2 Qt6::QuickShapes Qt6::Network Qt6::Concurrent
 )
+if(AURORA_WEBENGINE_AVAILABLE)
+    target_link_libraries(AuroraPlayer PRIVATE Qt6::WebEngineQuick)
+    target_compile_definitions(AuroraPlayer PRIVATE AURORA_WEBENGINE)
+endif()
 set_target_properties(AuroraPlayer PROPERTIES WIN32_EXECUTABLE TRUE MACOSX_BUNDLE TRUE)
 
 if(ANDROID)
@@ -147,14 +184,18 @@ elseif(UNIX AND NOT APPLE)
 endif()
 
 install(TARGETS AuroraPlayer BUNDLE DESTINATION . RUNTIME DESTINATION bin LIBRARY DESTINATION lib)
-if(UNIX AND NOT APPLE AND NOT ANDROID)
+if(WIN32 OR (UNIX AND NOT APPLE AND NOT ANDROID))
     qt_generate_deploy_qml_app_script(
         TARGET AuroraPlayer
         OUTPUT_SCRIPT aurora_deploy_script
         NO_UNSUPPORTED_PLATFORM_ERROR
         NO_TRANSLATIONS
     )
-    install(CODE "if(AURORA_BUNDLE_QT)\ninclude(\"${aurora_deploy_script}\")\nendif()")
+    if(WIN32)
+        install(SCRIPT ${aurora_deploy_script})
+    else()
+        install(CODE "if(AURORA_BUNDLE_QT)\ninclude(\"${aurora_deploy_script}\")\nendif()")
+    endif()
 endif()
 
 if(UNIX AND NOT APPLE AND NOT ANDROID)
@@ -197,7 +238,11 @@ if(BUILD_TESTING AND NOT ANDROID)
         src/core/auth/webloginmanager.cpp src/core/auth/webloginmanager.h
         src/core/vkprovider.cpp src/core/vkprovider.h)
     target_include_directories(aurora_tests PRIVATE src/core)
-    target_link_libraries(aurora_tests PRIVATE Qt6::Test Qt6::Widgets Qt6::Sql Qt6::Multimedia Qt6::Network Qt6::Concurrent Qt6::WebEngineQuick)
+    target_link_libraries(aurora_tests PRIVATE Qt6::Test Qt6::Widgets Qt6::Sql Qt6::Multimedia Qt6::Network Qt6::Concurrent)
+    if(AURORA_WEBENGINE_AVAILABLE)
+        target_link_libraries(aurora_tests PRIVATE Qt6::WebEngineQuick)
+        target_compile_definitions(aurora_tests PRIVATE AURORA_WEBENGINE)
+    endif()
     add_test(NAME aurora_library COMMAND aurora_tests)
     find_program(AURORA_NODE_EXECUTABLE node)
     if(AURORA_NODE_EXECUTABLE)
@@ -207,7 +252,7 @@ if(BUILD_TESTING AND NOT ANDROID)
     if(AURORA_PYTHON_EXECUTABLE)
         add_test(NAME aurora_browser_cookies COMMAND "${AURORA_PYTHON_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tests/browser_cookies.py")
     endif()
-    set_tests_properties(aurora_library PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen;AURORA_HEADLESS=1" TIMEOUT 90)
+    set_tests_properties(aurora_library PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen;AURORA_HEADLESS=1" TIMEOUT 180)
 
     get_target_property(AURORA_QMAKE_EXECUTABLE Qt6::qmake IMPORTED_LOCATION)
     get_filename_component(AURORA_QT_BIN_DIRECTORY "${AURORA_QMAKE_EXECUTABLE}" DIRECTORY)

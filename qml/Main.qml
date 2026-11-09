@@ -320,6 +320,69 @@ ApplicationWindow {
             }
         }
 
+        Rectangle {
+            id: onlineProgress
+            readonly property bool searching: musicSearch.auditionKey.length > 0 || homeFeed.resolvingUrl.length > 0 || homeFeed.resolvingId !== 0
+            readonly property bool buffering: player.streamLoading && musicSearch.auditionKey.length === 0 && (homeFeed.resolvingUrl.length === 0 || homeFeed.resolvingUrl === player.streamKey)
+            readonly property string requestKey: musicSearch.auditionKey || homeFeed.resolvingUrl || (player.streamLoading ? player.streamKey : "")
+            property double startedAt: Date.now()
+            property int elapsedSeconds: 0
+            onRequestKeyChanged: {
+                startedAt = Date.now();
+                elapsedSeconds = 0;
+            }
+            visible: searching || player.streamLoading
+            Layout.fillWidth: true
+            Layout.preferredHeight: visible ? 64 : 0
+            Layout.leftMargin: 12
+            Layout.rightMargin: 12
+            Layout.bottomMargin: visible ? 8 : 0
+            radius: 12
+            color: theme.surface
+            Timer {
+                interval: 1000
+                running: onlineProgress.visible
+                repeat: true
+                onTriggered: onlineProgress.elapsedSeconds = Math.floor((Date.now() - onlineProgress.startedAt) / 1000)
+            }
+            RowLayout {
+                anchors.fill: parent
+                anchors.margins: 10
+                spacing: 12
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    spacing: 4
+                    Text {
+                        Layout.fillWidth: true
+                        text: (onlineProgress.buffering ? player.streamStatus : musicSearch.auditionKey.length > 0 ? musicSearch.status : homeFeed.playbackStatus) + " · " + onlineProgress.elapsedSeconds + " с"
+                        color: theme.text
+                        font.pixelSize: 12
+                        elide: Text.ElideRight
+                        ToolTip.visible: onlineStatusHover.hovered
+                        ToolTip.text: text
+                        HoverHandler { id: onlineStatusHover }
+                    }
+                    Common.AuroraProgress {
+                        uiTheme: theme
+                        Layout.fillWidth: true
+                        implicitHeight: 8
+                        value: player.streamBufferProgress
+                        indeterminate: !onlineProgress.buffering || player.streamBufferProgress <= 0
+                    }
+                }
+                Common.AuroraButton {
+                    uiTheme: theme
+                    text: "Отмена"
+                    onClicked: {
+                        if (musicSearch.auditionKey.length > 0)
+                            musicSearch.cancelAudition();
+                        else
+                            player.stop();
+                    }
+                }
+            }
+        }
+
         Components.PlayerBar {
             id: playbackBar
             Layout.fillWidth: true

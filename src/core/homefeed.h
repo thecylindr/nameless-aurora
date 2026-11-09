@@ -156,6 +156,8 @@ class HomeFeed : public QObject
     QTimer m_resolveTimer;
     QTimer m_sourceGraceTimer;
     QTimer m_bufferTimer;
+    QTimer m_totalResolveTimer;
+    QHash<QString, QPair<qint64, QVariantMap>> m_streamCache;
     QVariantList m_alternatives;
     QVariantMap m_selectedAlternative;
     QSet<QString> m_attemptedUrls;

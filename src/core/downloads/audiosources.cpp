@@ -688,7 +688,7 @@ void AudioSources::choose(int index)
         m_busy = true;
         m_resolving = true;
         m_elapsed.start();
-        m_status = "Получаем файл из Zaycev…";
+        m_status = m_preview ? "Получаем поток из Zaycev…" : "Получаем файл из Zaycev…";
         emit changed();
         m_zaycev->resolve(m_candidate);
         return;
@@ -697,7 +697,7 @@ void AudioSources::choose(int index)
     m_resolving = true;
     m_ready = false;
     m_pending = false;
-    m_status = "Получаем файл из " + m_source + "…";
+    m_status = (m_preview ? "Получаем поток из " : "Получаем файл из ") + m_source + "…";
     m_elapsed.start();
     emit changed();
     searchPublicBrowser();
@@ -708,6 +708,12 @@ void AudioSources::queue(const QVariantMap& candidate)
     if (m_browser && entry.value("userAgent").toString().isEmpty())
         entry["userAgent"] = m_browser->userAgent();
     if (m_preview) {
+        const auto key = entry.value("url").toString();
+        if (!key.isEmpty()) {
+            if (m_previewCache.size() >= 64)
+                m_previewCache.clear();
+            m_previewCache[key] = {QDateTime::currentMSecsSinceEpoch(), entry};
+        }
         m_preview = false;
         finish("Аудио готово к прослушиванию.");
         emit previewResolved(entry, {});
@@ -941,9 +947,24 @@ void AudioSources::downloadLink(const QString& text)
     queue({{"url", url.toString()}});
 }
 
+void AudioSources::invalidatePreview(const QString& url)
+{
+    m_previewCache.remove(url);
+}
+
 void AudioSources::previewCandidate(const QVariantMap& candidate)
 {
     cancel();
+    const auto cached = m_previewCache.value(candidate.value("url").toString());
+    if (cached.first > QDateTime::currentMSecsSinceEpoch() - 120000) {
+        // Preserve this request's metadata and queue identity; cache only transport data.
+        auto entry = candidate;
+        for (const auto& field : QStringList{"mediaUrl", "mediaVerified", "streamHeaders", "userAgent"})
+            if (cached.second.contains(field))
+                entry[field] = cached.second.value(field);
+        emit previewResolved(entry, {});
+        return;
+    }
     m_preview = true;
     m_catalogMode = false;
     m_source = candidate.value("source").toString();
@@ -953,8 +974,8 @@ void AudioSources::previewCandidate(const QVariantMap& candidate)
 }
 void AudioSources::resolveStream()
 {
-    if (!m_tools || !m_tools->runtimeReady()) {
-        finish("Сначала подготовь инструменты загрузки в настройках библиотеки.");
+    if (!m_tools || !m_tools->ytDlpAvailable()) {
+        finish("Сначала подготовь yt-dlp в настройках библиотеки.");
         return;
     }
     m_busy = true;
@@ -1010,9 +1031,11 @@ void AudioSources::resolveStream()
                      "-f",
                      "bestaudio[protocol=https]/bestaudio/best",
                      "--socket-timeout",
-                     "10",
+                     "7",
                      "--retries",
-                     "1"};
+                     "0",
+                     "--extractor-retries",
+                     "0"};
     args.append(m_tools->jsRuntimeArguments());
     args << "--" << m_candidate.value("url").toString();
     m_timer.start();

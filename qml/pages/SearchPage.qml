@@ -195,7 +195,7 @@ Item {
         }
         Text {
             Layout.fillWidth: true
-            text: musicSearch.status || "Слушай онлайн, а понравившееся скачивай отдельно."
+            text: player.streamLoading ? player.streamStatus : musicSearch.status || "Слушай онлайн, а понравившееся скачивай отдельно."
             color: theme.subtext
             font.pixelSize: 12
             wrapMode: Text.WordWrap

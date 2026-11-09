@@ -15,7 +15,9 @@
 #include <QStandardPaths>
 #include <QTcpServer>
 #include <QTimer>
+#ifdef AURORA_WEBENGINE
 #include <QWebEngineCookieStore>
+#endif
 
 // Реализация WebLoginManager: cookies сессий, формат Netscape, запуск входа
 // и импорт через внешний браузер или встроенный профиль.
@@ -109,16 +111,17 @@ QStringList WebLoginManager::detectBrowserExecutables()
                          QStringLiteral("microsoft-edge"),
                          QStringLiteral("microsoft-edge-stable"),
                          QStringLiteral("yandex-browser")};
-    QStringList dirs = QString(qgetenv("PATH")).split(QLatin1Char(':'), Qt::SkipEmptyParts);
+    QStringList dirs = QString(qgetenv("PATH")).split(QDir::listSeparator(), Qt::SkipEmptyParts);
 #ifdef Q_OS_WIN
-    names << QStringLiteral("brave.exe") << QStringLiteral("chrome.exe") << QStringLiteral("msedge.exe");
+    names << QStringLiteral("brave.exe") << QStringLiteral("chrome.exe") << QStringLiteral("msedge.exe") << QStringLiteral("browser.exe");
     const QStringList roots = {qEnvironmentVariable("ProgramFiles"), qEnvironmentVariable("ProgramFiles(x86)"),
                                qEnvironmentVariable("LocalAppData")};
     for (const QString& root : roots)
         if (!root.isEmpty())
             dirs << root + QStringLiteral("/BraveSoftware/Brave-Browser/Application")
                  << root + QStringLiteral("/Google/Chrome/Application")
-                 << root + QStringLiteral("/Microsoft/Edge/Application");
+                 << root + QStringLiteral("/Microsoft/Edge/Application")
+                 << root + QStringLiteral("/Yandex/YandexBrowser/Application");
 #endif
     QStringList found;
     for (const QString& name : names) {
@@ -330,8 +333,10 @@ void WebLoginManager::logout(QString service)
         finishNative("Выполнен выход из аккаунта.");
     if (m_external && m_external->service() == slug)
         m_external->stop();
+#ifdef AURORA_WEBENGINE
     if (m_profiles.contains(slug))
         m_profiles.value(slug)->cookieStore()->deleteAllCookies();
+#endif
     m_store.remove("weblogin/" + slug);
     m_store.sync();
     m_store.remove("weblogin-local/" + slug);
@@ -349,7 +354,11 @@ QString WebLoginManager::serviceUserAgent() const
 {
     if (m_externalMode && m_external && !m_external->userAgent().isEmpty())
         return m_external->userAgent();
-    return m_nativeProfile ? m_nativeProfile->httpUserAgent() : QStringLiteral("AuroraPlayer/4.0");
+#ifdef AURORA_WEBENGINE
+    if (m_nativeProfile)
+        return m_nativeProfile->httpUserAgent();
+#endif
+    return QStringLiteral("AuroraPlayer/4.0");
 }
 void WebLoginManager::navigateNative(const QUrl& url)
 {

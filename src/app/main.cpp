@@ -34,7 +34,9 @@
 #include <QTimer>
 #include <QTextStream>
 #include <QQuickStyle>
+#ifdef AURORA_WEBENGINE
 #include <QtWebEngineQuick/qtwebenginequickglobal.h>
+#endif
 
 // Точка входа приложения: инициализация Qt/WebEngine, разбор аргументов командной строки,
 // создание всех сервисов и моделей, загрузка QML-интерфейса и поддержка smoke-тестов.
@@ -46,7 +48,9 @@ int main(int argc, char* argv[])
     // Собираем замеры этапов запуска для диагностического файла startup.json.
     QJsonObject startupTimes;
     QCoreApplication::setAttribute(Qt::AA_ShareOpenGLContexts);
+#ifdef AURORA_WEBENGINE
     QtWebEngineQuick::initialize();
+#endif
     QQuickStyle::setStyle("Basic");
     // Режим без реального рендера (для headless-тестов).
     if (qEnvironmentVariableIsSet("AURORA_TEST_NULL_RHI"))
@@ -129,6 +133,9 @@ int main(int argc, char* argv[])
     AudioSources audioSources(&library, &downloads, &dependencies);
     MusicSearch musicSearch(&library, &downloads, &dependencies, &webLogin);
     QObject::connect(&musicSearch, &MusicSearch::playRequested, &playback, &PlaybackController::playStream);
+    QObject::connect(&playback, &PlaybackController::lastErrorChanged, &musicSearch, [&] {
+        musicSearch.reportPlaybackError(playback.streamKey(), playback.lastError());
+    });
     QObject::connect(&musicSearch, &MusicSearch::playLibraryRequested, &playback, &PlaybackController::playTrackId);
     ImportPreviewer previewer(&settings, &dependencies, &browserAuth, &downloads);
     startupTimes["browserReadyMs"] = startup.elapsed();
